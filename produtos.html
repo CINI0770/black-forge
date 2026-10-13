@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#090909" name="theme-color"/><meta content="BLACK FORGE — explore roupas, calçados e acessórios alternativos. Estilo gótico, punk e streetwear." name="description"/><title>Produtos | BLACK FORGE</title><link href="./style.css" rel="stylesheet"/></head>
+<body class="products-page">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="announcement"><span>BLACK FORGE / DARKWEAR &amp; STREETWEAR</span><span>SEU ESTILO. SUAS REGRAS.</span><span>DESDE 2026</span></div>
+<header class="header"><a aria-label="Black Forge, página inicial" class="brand" href="index.html"><span class="brand-mark">✦</span><span>BLACK<span class="brand-light">FORGE</span><small>DARKWEAR &amp; STREETWEAR</small></span></a><nav aria-label="Navegação principal" class="nav"><a href="index.html">INÍCIO</a><a aria-current="page" href="produtos.html">PRODUTOS</a><a href="index.html#manifesto">NOSSA HISTÓRIA</a></nav><a class="catalog-back" href="index.html">← VOLTAR À LOJA</a></header>
+<main id="conteudo"><section class="catalog-hero bf-catalog-hero"><div class="bf-catalog-copy"><p class="eyebrow">BLACK FORGE / CATÁLOGO</p><h1>ESCOLHA<br/><em>SEU ESTILO.</em></h1><p class="bf-catalog-lead">Roupas, calçados e acessórios alternativos para quem faz do estilo uma declaração. Do gótico ao streetwear, encontre peças que combinam com você.</p><div class="bf-catalog-actions"><a class="btn btn-light" href="#catalogSections">EXPLORAR PRODUTOS <span aria-hidden="true">↗</span></a><a class="text-link" href="#categoryNav">VER CATEGORIAS <span aria-hidden="true">→</span></a></div><div class="bf-catalog-micro"><span id="bfProductCount">CATÁLOGO BLACK FORGE</span><span>SEU ESTILO. SUAS REGRAS.</span></div></div><div aria-label="Campanha editorial Black Forge: moda alternativa em ambiente industrial" class="bf-catalog-photo" role="img"><span class="bf-photo-label">BLACK FORGE / EST. 2026</span></div></section>
+<div class="selection-toolbar"><span>SUA SELEÇÃO / PEDIDO EM PREPARAÇÃO — SEM PAGAMENTO ONLINE</span><a href="pedido.html">VER SELEÇÃO <b id="selectionCount">0</b> ↗</a></div><div aria-label="Navegar pelas categorias disponíveis" class="category-nav" id="categoryNav"></div>
+<div class="catalog-container"><div id="catalogSections"></div></div>
+<div class="catalog-disclaimer"><strong>INFORMAÇÕES DE COMPRA.</strong> Confira fotos, tamanhos, cores e valores antes de selecionar seus produtos. O pedido ainda é uma simulação: não há cobrança ou pagamento online ativo. Frete, disponibilidade e condições de venda devem ser confirmados antes do lançamento.</div>
+<section class="closing catalog-closing"><p>SEU ESTILO. SUAS REGRAS.</p><h2>SEJA<br/><em>DIFERENTE.</em></h2><a class="btn btn-light" href="index.html">VOLTAR À PÁGINA INICIAL <span>↗</span></a></section>
+</main>
+<footer class="footer"><div class="footer-top"><a class="brand" href="index.html"><span class="brand-mark">✦</span><span>BLACK<span class="brand-light">FORGE</span><small>DARKWEAR &amp; STREETWEAR</small></span></a><p>ACESSÓRIOS E ROUPAS ALTERNATIVAS.<br/>SEU ESTILO, SEM PADRÕES.</p><div><a href="index.html">INÍCIO ↗</a><a href="produtos.html">PRODUTOS ↗</a><a href="index.html#duvidas">DÚVIDAS ↗</a></div></div><div class="footer-bottom"><span>© 2026 BLACK FORGE</span><span>PEDIDOS EM SIMULAÇÃO — SEM PAGAMENTO ONLINE</span><a href="#">VOLTAR AO TOPO ↑</a></div></footer>
+<script src="./catalogo.js"></script><script src="./render_catalogo.js"></script><script src="./selecao.js"></script>
+<script>
+(function(){
+  const sections=[...document.querySelectorAll('#catalogSections .category-section')];
+  const nav=document.getElementById('categoryNav');
+  if(!nav)return;
+  const count=sections.reduce((n,s)=>n+s.querySelectorAll('.slot-card').length,0);
+  const total=document.getElementById('bfProductCount');
+  if(total)total.textContent=count+' PEÇAS NO CATÁLOGO';
+  for(const section of sections){
+    const title=section.querySelector('.category-head h2');
+    if(!title)continue;
+    const link=document.createElement('a');
+    link.href='#'+section.id;
+    link.textContent=title.textContent;
+    nav.append(link);
+  }
+  if(!sections.length){nav.hidden=true;}
+})();
+</script>
+</body></html>
