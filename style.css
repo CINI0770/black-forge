@@ -175,3 +175,30 @@ body{background:var(--bg)}
     gap: 16px;
   }
 }
+
+/* BLACK FORGE — campos de entrega em coluna */
+
+#checkoutForm {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+}
+
+#checkoutForm label:not(.order-check) {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  gap: 8px !important;
+}
+
+#checkoutForm input:not([type="checkbox"]),
+#checkoutForm select {
+  display: block;
+  width: 100% !important;
+  min-height: 48px;
+  padding: 12px 15px;
+  background: #24211f;
+  color: white;
+  border: 1px solid #62594f;
+  border-radius: 4px;
+}
