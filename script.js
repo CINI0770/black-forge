@@ -15,7 +15,7 @@ const art = {
 const money = n => new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL"}).format(n);
 const $ = s => document.querySelector(s);
 const grid=$("#productGrid");
-const cartKey="blackforge-demo-cart-v2";
+const cartKey="blackforge-selection-v4";
 let cart={};
 try { const saved=JSON.parse(localStorage.getItem(cartKey)||"{}"); if(saved && typeof saved==="object" && !Array.isArray(saved)) for(const p of products) {const q=Number(saved[p.id]);if(Number.isInteger(q)&&q>0)cart[p.id]=Math.min(q,99);} }catch{}
 let currentFilter="todos", searchText="", toastTimer;
