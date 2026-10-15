@@ -5,7 +5,7 @@ const validProducts=new Map(catalog.map(p=>[p.id,p]));
 const cleanText=x=>typeof x==="string"?x.slice(0,60):"";
 function readSelection(){
  try{
-  const raw=JSON.parse(sessionStorage.getItem(selectionKey)||"{}");const valid={};
+  const raw=JSON.parse(localStorage.getItem(selectionKey)||"{}");const valid={};
   for(const p of catalog){const entry=raw[p.id];if(!entry)continue;
    const old=Array.isArray(entry.items)?entry.items:[entry];const items=[];
    for(const x of old){if(!x||!Number.isInteger(x.qty)||x.qty<1)continue;
@@ -16,7 +16,7 @@ function readSelection(){
   }return valid;
  }catch{return {}}
 }
-function writeSelection(x){try{sessionStorage.setItem(selectionKey,JSON.stringify(x))}catch{}}
+function writeSelection(x){try{localStorage.setItem(selectionKey,JSON.stringify(x))}catch{}}
 const countEl=document.getElementById("selectionCount");
 function updateCount(){if(countEl)countEl.textContent=Object.values(readSelection()).reduce((sum,p)=>sum+p.items.reduce((n,i)=>n+i.qty,0),0)}
 function addToSelection(detail){
