@@ -1,226 +1,164 @@
-
 <!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090909">
+  <meta name="theme-color" content="#0b0b0b">
   <meta name="description" content="Finalize sua compra na Black Forge com pagamento seguro e frete grátis promocional durante outubro de 2026.">
-  <title>Finalizar pedido | Black Forge</title>
-
+  <title>Finalizar pedido | BLACK FORGE</title>
   <link rel="stylesheet" href="./style.css">
+  <!-- CSS exclusivo desta página. Não substitui o estilo da home ou do catálogo. -->
+  <link rel="stylesheet" href="./checkout-punk.css">
   <script src="./catalogo.js" defer></script>
   <script src="./pedido.js" defer></script>
 </head>
-
-<body class="products-page order-page">
+<body class="products-page order-page order-punk">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
   <div class="announcement">
-    <span>BLACK FORGE / LOJA OFICIAL</span>
-    <span>FRETE GRÁTIS ATÉ 31/10/2026</span>
-    <span>PAGAMENTO SEGURO</span>
+    <span>BLACK FORGE / DARKWEAR &amp; STREETWEAR</span>
+    <span>FRETE GRÁTIS EM OUTUBRO</span>
+    <span>DESDE 2026</span>
   </div>
 
-  <header class="header">
-    <a class="brand" href="index.html">
-      <span class="brand-mark">✦</span>
-      <span>
-        BLACK<span class="brand-light">FORGE</span>
-        <small>DARKWEAR & STREETWEAR</small>
-      </span>
+  <header class="header" id="topo">
+    <a class="brand" href="index.html" aria-label="Black Forge, página inicial">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>BLACK<span class="brand-light">FORGE</span><small>DARKWEAR &amp; STREETWEAR</small></span>
     </a>
-
-    <nav class="nav">
+    <nav class="nav" aria-label="Navegação principal">
       <a href="index.html">INÍCIO</a>
       <a href="produtos.html">PRODUTOS</a>
       <a href="pedido.html" aria-current="page">PEDIDO</a>
     </nav>
+    <a class="bf-back-shopping" href="produtos.html">← VOLTAR À LOJA</a>
   </header>
 
-  <main class="order-main">
-
-    <p class="eyebrow">BLACK FORGE / CHECKOUT SEGURO</p>
-    <h1>SEU <em>PEDIDO.</em></h1>
-
-    <div class="order-columns">
-
-      <section class="order-panel">
-        <h2>01 / PRODUTOS SELECIONADOS</h2>
-
-        <div id="orderItems"></div>
-
-        <a class="order-link" href="produtos.html">
-          + CONTINUAR ESCOLHENDO
-        </a>
-      </section>
-
-      <section class="order-panel">
-        <h2>02 / RESUMO</h2>
-
-        <div class="order-summary">
-          <p>
-            Itens
-            <strong id="orderQty">0</strong>
-          </p>
-
-          <p>
-            Subtotal
-            <strong id="orderSubtotal">R$ 0,00</strong>
-          </p>
-
-          <p>
-            Frete
-            <strong>GRÁTIS</strong>
-          </p>
-        </div>
-
-        <p class="order-hint">
-          Frete grátis promocional para todo o Brasil
-          em pedidos realizados até 31/10/2026.
-        </p>
-
-        <button
-          class="order-secondary"
-          id="clearOrder"
-          type="button"
-        >
-          LIMPAR SELEÇÃO
-        </button>
-      </section>
-
-    </div>
-
-    <section class="order-panel">
-      <h2>03 / DADOS PARA ENTREGA</h2>
-
-      <form id="checkoutForm">
-
-        <label>
-          Nome completo
-          <input
-            name="name"
-            required
-            maxlength="100"
-            autocomplete="name"
-          >
-        </label>
-
-        <label>
-          E-mail
-          <input
-            type="email"
-            name="email"
-            required
-            maxlength="150"
-            autocomplete="email"
-          >
-        </label>
-
-        <label>
-          Telefone com DDD
-          <input
-            name="phone"
-            required
-            maxlength="20"
-            autocomplete="tel"
-          >
-        </label>
-
-        <label>
-          CEP
-          <input
-            name="postal_code"
-            required
-            pattern="[0-9]{5}-?[0-9]{3}"
-            placeholder="00000-000"
-            autocomplete="postal-code"
-          >
-        </label>
-
-        <label>
-          Rua e número
-          <input
-            name="street"
-            required
-            maxlength="180"
-            autocomplete="street-address"
-          >
-        </label>
-
-        <label>
-          Complemento
-          <input
-            name="complement"
-            maxlength="100"
-          >
-        </label>
-
-        <label>
-          Bairro
-          <input
-            name="district"
-            required
-            maxlength="100"
-          >
-        </label>
-
-        <label>
-          Cidade
-          <input
-            name="city"
-            required
-            maxlength="100"
-          >
-        </label>
-
-        <label>
-          UF
-          <input
-            name="state"
-            required
-            maxlength="2"
-            placeholder="SC"
-          >
-        </label>
-
-        <label class="order-check">
-          <input
-            name="consent"
-            type="checkbox"
-            required
-          >
-          Concordo com o envio dos meus dados para
-          processar o pedido e a entrega.
-        </label>
-
-        <button
-          class="order-action"
-          id="payButton"
-          type="submit"
-        >
-          IR PARA PAGAMENTO SEGURO
-        </button>
-
-        <p
-          id="checkoutStatus"
-          role="status"
-          aria-live="polite"
-        ></p>
-
-      </form>
+  <main class="order-main" id="conteudo">
+    <section class="bf-checkout-hero" aria-labelledby="orderTitle">
+      <div class="bf-hero-copy">
+        <p class="bf-overline">BLACK FORGE <span aria-hidden="true">✳</span> FINALIZAR COMPRA / 2026</p>
+        <h1 id="orderTitle">SEU<br><span>PEDIDO</span></h1>
+        <p class="bf-hero-subtitle">ÚLTIMO PASSO. SUA PRÓXIMA PEÇA ESTÁ A UM CLIQUE.</p>
+      </div>
+      <div class="bf-hero-poster" aria-hidden="true">
+        <div class="bf-eight-point"></div>
+        <span class="bf-poster-top">BLACK FORGE / NO RULES</span>
+        <div class="bf-poster-sticker">SEU ESTILO.<br>SUAS REGRAS.</div>
+        <span class="bf-poster-bottom">EST. 2026&nbsp; / &nbsp;BF</span>
+      </div>
     </section>
 
+    <div class="bf-checkout-progress" aria-label="Etapas do pedido">
+      <div><span class="bf-step-number">01</span><span>SELEÇÃO</span><b aria-hidden="true">✓</b></div>
+      <div class="bf-current-step"><span class="bf-step-number">02</span><span>DADOS E ENTREGA</span><b aria-hidden="true">●</b></div>
+      <div><span class="bf-step-number">03</span><span>PAGAMENTO SEGURO</span><b aria-hidden="true">↗</b></div>
+    </div>
+
+    <div class="order-columns">
+      <div class="bf-checkout-flow">
+        <section class="order-panel bf-items-panel" aria-labelledby="itemsHeading">
+          <div class="bf-panel-header">
+            <span class="bf-section-no">01 /</span>
+            <h2 id="itemsHeading">SUAS PEÇAS</h2>
+            <span class="bf-panel-scribble" aria-hidden="true">✳</span>
+          </div>
+          <div id="orderItems"></div>
+          <a class="order-link" href="produtos.html">+ CONTINUAR ESCOLHENDO <span aria-hidden="true">↗</span></a>
+        </section>
+
+        <section class="order-panel bf-delivery-panel" aria-labelledby="deliveryHeading">
+          <div class="bf-panel-header">
+            <span class="bf-section-no">02 /</span>
+            <h2 id="deliveryHeading">DADOS DE ENTREGA</h2>
+            <span class="bf-panel-scribble" aria-hidden="true">✳</span>
+          </div>
+          <p class="bf-panel-caption">Preencha seus dados para receber o pedido no endereço informado.</p>
+
+          <form id="checkoutForm">
+            <label class="bf-field bf-field-wide">
+              <span class="bf-label-text">NOME COMPLETO <b aria-hidden="true">*</b></span>
+              <input name="name" required maxlength="100" autocomplete="name" placeholder="Seu nome completo">
+            </label>
+            <label class="bf-field">
+              E-MAIL <span aria-hidden="true">*</span>
+              <input type="email" name="email" required maxlength="150" autocomplete="email" placeholder="seu@email.com">
+            </label>
+            <label class="bf-field">
+              <span class="bf-label-text">TELEFONE COM DDD <b aria-hidden="true">*</b></span>
+              <input name="phone" type="tel" required maxlength="20" autocomplete="tel" placeholder="(00) 00000-0000">
+            </label>
+            <div class="bf-form-divider"><span>ENDEREÇO PARA ENTREGA</span><span aria-hidden="true">✳</span></div>
+            <label class="bf-field">
+              <span class="bf-label-text">CEP <b aria-hidden="true">*</b></span>
+              <input name="postal_code" required pattern="[0-9]{5}-?[0-9]{3}" inputmode="numeric" placeholder="00000-000" autocomplete="postal-code">
+            </label>
+            <label class="bf-field">
+              <span class="bf-label-text">UF <b aria-hidden="true">*</b></span>
+              <input name="state" required maxlength="2" placeholder="SC" autocomplete="address-level1">
+            </label>
+            <label class="bf-field bf-field-wide">
+              <span class="bf-label-text">RUA E NÚMERO <b aria-hidden="true">*</b></span>
+              <input name="street" required maxlength="180" autocomplete="street-address" placeholder="Rua, número">
+            </label>
+            <label class="bf-field bf-field-wide">
+              <span class="bf-label-text">COMPLEMENTO <i class="bf-optional">OPCIONAL</i></span>
+              <input name="complement" maxlength="100" placeholder="Apartamento, bloco, referência...">
+            </label>
+            <label class="bf-field">
+              <span class="bf-label-text">BAIRRO <b aria-hidden="true">*</b></span>
+              <input name="district" required maxlength="100" placeholder="Seu bairro">
+            </label>
+            <label class="bf-field">
+              <span class="bf-label-text">CIDADE <b aria-hidden="true">*</b></span>
+              <input name="city" required maxlength="100" placeholder="Sua cidade">
+            </label>
+
+            <label class="order-check">
+              <input name="consent" type="checkbox" required>
+              <span>Concordo com o envio dos meus dados para processar o pedido e a entrega.</span>
+            </label>
+
+            <button class="order-action" id="payButton" type="submit">
+              <span>IR PARA PAGAMENTO SEGURO</span>
+              <span aria-hidden="true">↗</span>
+            </button>
+            <p id="checkoutStatus" role="status" aria-live="polite"></p>
+            <p class="bf-stripe-note">O pagamento será concluído no ambiente seguro da Stripe. Nenhum dado de cartão é solicitado nesta página.</p>
+          </form>
+        </section>
+      </div>
+
+      <aside class="order-panel bf-summary-panel" aria-labelledby="summaryHeading">
+        <div class="bf-panel-header">
+          <span class="bf-section-no">03 /</span>
+          <h2 id="summaryHeading">RESUMO</h2>
+        </div>
+        <div class="bf-order-mini-banner">
+          <span>EDIÇÃO / OUTUBRO 2026</span>
+          <strong>FRETE<br>GRÁTIS<span>.</span></strong>
+          <small>PARA TODO O BRASIL · ATÉ 31/10</small>
+        </div>
+        <div class="order-summary">
+          <p>ITENS <strong id="orderQty">0</strong></p>
+          <p>SUBTOTAL <strong id="orderSubtotal">R$ 0,00</strong></p>
+          <p>FRETE <strong class="bf-free-label">GRÁTIS</strong></p>
+        </div>
+        <p class="order-hint">Frete grátis promocional em pedidos feitos até 31 de outubro de 2026. O valor do pagamento é calculado pelo servidor.</p>
+        <button class="order-secondary" id="clearOrder" type="button">LIMPAR SELEÇÃO <span aria-hidden="true">×</span></button>
+        <div class="bf-aside-footer"><span aria-hidden="true">✳</span> ESTILO NÃO PEDE PERMISSÃO.</div>
+      </aside>
+    </div>
+
+    <div class="bf-bottom-ribbon" aria-hidden="true"><span>✳</span> BLACK FORGE <span>✳</span> MODA SEM PADRÕES <span>✳</span> SEU ESTILO, SUAS REGRAS <span>✳</span></div>
   </main>
 
   <footer class="footer">
     <div class="footer-bottom">
       <span>© 2026 BLACK FORGE</span>
       <span>PAGAMENTO SEGURO / STRIPE</span>
-      <a href="produtos.html">
-        VOLTAR AOS PRODUTOS ↗
-      </a>
+      <a href="produtos.html">VOLTAR AOS PRODUTOS ↗</a>
     </div>
   </footer>
-
 </body>
 </html>
