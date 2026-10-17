@@ -1,0 +1,483 @@
+/* ================================================================
+   BLACK FORGE — CHECKOUT PUNK / ETAPA 3
+   Estilos isolados em .order-punk para NÃO alterar home ou catálogo.
+   Inclua após style.css. Nenhum JavaScript foi modificado.
+   ================================================================ */
+
+.order-punk {
+  --bf-ink: #0a0a0a;
+  --bf-panel: #151515;
+  --bf-paper: #efebe3;
+  --bf-bone: #dad5ca;
+  --bf-red: #a31b21;
+  --bf-border: #47433e;
+  background-color: var(--bf-ink);
+  color: #f4f0e9;
+  background-image: radial-gradient(#ffffff08 .7px,transparent .7px);
+  background-size: 7px 7px;
+}
+.order-punk .announcement {
+  background: #e8e4db;
+  color: #131313;
+  border-bottom: 2px solid #121212;
+  font: 800 11px/1.2 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing: .2em;
+}
+.order-punk .header {
+  position: relative;
+  height: 83px;
+  margin: 0;
+  background: #080808;
+  border-bottom: 1px solid #72706a;
+  box-shadow: none;
+}
+.order-punk .brand {font-size: 28px;letter-spacing:-.035em}
+.order-punk .brand-mark {color: var(--bf-paper)}
+.order-punk .nav {gap: 32px}
+.order-punk .nav a[aria-current="page"] {color: #fff}
+.order-punk .nav a[aria-current="page"]:after {width:100%;background:var(--bf-red);height:2px}
+.order-punk .bf-back-shopping {
+  border: 1px solid #63605a;
+  padding: 12px 17px;
+  font: 800 12px 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:.12em;
+  transition: background .2s, color .2s;
+}
+.order-punk .bf-back-shopping:hover {background:var(--bf-paper);color:#111}
+
+.order-punk .order-main {
+  max-width: 1530px;
+  padding: 0 4.2% 80px;
+  margin: auto;
+}
+.order-punk .bf-checkout-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(250px, .75fr);
+  overflow:hidden;
+  background: var(--bf-paper);
+  color: #101010;
+  min-height: 350px;
+  border: 1px solid #e2dbd0;
+  border-top: 0;
+}
+.order-punk .bf-hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: clamp(32px,5vw,72px);
+  position: relative;
+  z-index: 2;
+  background-image:radial-gradient(#00000017 .8px,transparent .8px);
+  background-size:6px 6px;
+}
+.order-punk .bf-overline {
+  margin:0 0 27px;
+  font: 800 11px 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:.23em;
+}
+.order-punk .bf-overline span {color:var(--bf-red);padding:0 10px;font-size:17px}
+.order-punk .order-main .bf-checkout-hero h1 {
+  margin:0;
+  font: 900 clamp(88px,10vw,170px)/.72 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:-.065em;
+  color:#090909;
+  transform:rotate(-1deg);
+}
+.order-punk .bf-checkout-hero h1>span:not(.bf-title-period) {
+  display:inline-block;
+  background:#0c0c0c;
+  color:var(--bf-paper);
+  padding: 5px 17px 12px 8px;
+  margin-top:6px;
+}
+.order-punk .bf-title-period {color:var(--bf-red)}
+.order-punk .bf-hero-subtitle {
+  margin:30px 0 0;
+  font: 800 12px/1.5 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:.13em;
+}
+.order-punk .bf-hero-poster {
+  position:relative;
+  overflow:hidden;
+  min-height:320px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:#161616;
+  background-image:repeating-linear-gradient(110deg,#ffffff07 0 1px,transparent 1px 12px),radial-gradient(#ffffff1a .8px,transparent .8px);
+  background-size:auto,6px 6px;
+  border-left:3px solid #111;
+}
+.order-punk .bf-eight-point {
+  position:absolute;
+  left:50%;top:50%;
+  height:300px;width:300px;
+  transform:translate(-50%,-50%) rotate(-13deg);
+  background:var(--bf-red);
+  clip-path:polygon(50% 0%,58% 36%,88% 14%,64% 44%,100% 50%,64% 56%,88% 86%,58% 64%,50% 100%,42% 64%,12% 86%,36% 56%,0% 50%,36% 44%,12% 14%,42% 36%);
+}
+.order-punk .bf-poster-top,.order-punk .bf-poster-bottom {
+  position:absolute;z-index:2;color:#fff;
+  font:800 10px 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:.25em;
+}
+.order-punk .bf-poster-top {top:22px;left:24px}
+.order-punk .bf-poster-bottom {bottom:20px;right:24px}
+.order-punk .bf-poster-sticker {
+  position:relative;z-index:2;
+  transform:rotate(8deg);
+  padding:25px 24px;
+  background:var(--bf-paper);
+  color:#111;
+  box-shadow:10px 13px 0 #0009;
+  font:900 clamp(28px,3.7vw,55px)/.9 'Barlow Condensed',Impact,sans-serif;
+  text-align:center;
+  clip-path:polygon(0 4%,98% 0,100% 95%,3% 100%);
+}
+.order-punk .bf-checkout-progress {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  margin:0 0 30px;
+  border:1px solid #4c4944;
+  border-top:0;
+  background:#171717;
+}
+.order-punk .bf-checkout-progress>div {
+  display:flex;align-items:center;gap:12px;
+  padding:16px clamp(10px,2vw,24px);
+  border-right:1px solid #4c4944;
+  font:800 12px 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:.07em;
+  min-width:0;
+}
+.order-punk .bf-checkout-progress>div:last-child {border-right:0}
+.order-punk .bf-checkout-progress b {margin-left:auto;color:#c7beb2}
+.order-punk .bf-step-number {
+  display:grid;place-items:center;
+  width:27px;height:27px;flex:none;
+  background:#36312c;color:#fff;font-size:14px;
+}
+.order-punk .bf-checkout-progress .bf-current-step {color:#fff;background:#25201d}
+.order-punk .bf-current-step .bf-step-number {background:var(--bf-red);color:#fff}
+.order-punk .bf-current-step b {color:var(--bf-red)}
+
+.order-punk .order-columns {
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(305px,.75fr);
+  align-items:start;
+  gap:24px;
+}
+.order-punk .bf-checkout-flow {display:grid;gap:22px;min-width:0}
+.order-punk .order-panel {
+  min-width:0;
+  padding:clamp(20px,2.5vw,37px);
+  border:1px solid #57524d;
+  background:#141414;
+  box-shadow: inset 0 1px 0 #ffffff09;
+}
+.order-punk .bf-panel-header {
+  display:flex;align-items:center;gap:13px;
+  border-bottom:1px solid #514c46;
+  padding-bottom:18px;
+  margin-bottom:22px;
+}
+.order-punk .bf-section-no {
+  background:var(--bf-red);
+  color:#fff;
+  font:900 18px 'Barlow Condensed',Impact,sans-serif;
+  padding:7px 10px;
+  line-height:1;
+  flex:none;
+}
+.order-punk .bf-panel-header h2 {
+  font:900 clamp(29px,3.2vw,47px)/.92 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:-.012em;
+  margin:0;
+  color:#f1ece5;
+}
+.order-punk .bf-panel-scribble {
+  margin-left:auto;color:var(--bf-red);
+  font-size:31px;line-height:1;
+}
+.order-punk .bf-panel-caption {font-size:13px;color:#b9b0a6;line-height:1.7;margin:0 0 25px}
+.order-punk .order-item {border-top:1px solid #47423c;padding:20px 0;gap:18px}
+.order-punk .order-item strong {font-size:14px;color:#fff}
+.order-punk .order-item small {font-size:11px;color:#aea59b}
+.order-punk .order-controls input,
+.order-punk .order-controls select {
+  color:#fff;
+  background:#242424;
+  border:1px solid #66605a;
+  border-radius:0;
+}
+.order-punk .order-controls button {
+  border-color:#6e6761;
+  color:#e5dcd0;
+}
+.order-punk .order-controls button:hover {background:#e6dfd6;color:#111}
+.order-punk .order-link {
+  margin:18px 0 0;
+  font:800 12px 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:.15em;
+  border-bottom:1px solid #d0c6b8;
+  padding-bottom:9px;
+  color:var(--bf-paper);
+}
+.order-punk .order-link span {color:var(--bf-red);margin-left:8px}
+
+/* IMPORTANTE: o CSS antigo usa #checkoutForm {display:flex!important}.
+   Esta regra, carregada DEPOIS, restaura o grid responsivo apenas aqui. */
+.order-punk #checkoutForm {
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  column-gap:16px!important;
+  row-gap:18px!important;
+  margin-top:15px;
+}
+.order-punk #checkoutForm label.bf-field {
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch;
+  min-width:0;
+  width:auto!important;
+  gap:8px!important;
+  color:#f0e9e1;
+  font:800 12px/1.5 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:.12em;
+}
+.order-punk .bf-field .bf-label-text {display:block;line-height:1.5;color:#f0e9e1}
+.order-punk .bf-field .bf-label-text b {color:#d64a4c;font-weight:900;margin-left:3px}
+.order-punk .bf-optional {font-size:10px;color:#9f968d;letter-spacing:.05em}
+.order-punk #checkoutForm .bf-field-wide,
+.order-punk #checkoutForm .bf-form-divider {grid-column:1/-1}
+.order-punk #checkoutForm input:not([type="checkbox"]) {
+  width:100%!important;
+  min-height:53px;
+  padding:13px 14px;
+  font:500 14px 'DM Sans',Arial,sans-serif;
+  border:1px solid #69615b;
+  border-radius:0;
+  background:#222;
+  color:#fff;
+  transition:border-color .2s,background .2s;
+}
+.order-punk #checkoutForm input::placeholder {color:#a09b96;opacity:1}
+.order-punk #checkoutForm input:not([type="checkbox"]):focus {
+  outline:2px solid #ebe4d8;
+  outline-offset:1px;
+  border-color:#eee;
+  background:#292727;
+}
+.order-punk .bf-form-divider {
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px dashed #5e5851;
+  padding-top:18px;margin-top:6px;
+  font:800 13px 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:.18em;
+  color:#dfd7cc;
+}
+.order-punk .bf-form-divider span:last-child {font-size:24px;color:var(--bf-red);line-height:0}
+.order-punk #checkoutForm .order-check {
+  grid-column:1/-1;
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:flex-start;
+  margin:13px 0 3px;
+  width:100%;
+  font:500 12px/1.7 'DM Sans',Arial,sans-serif;
+  color:#c8c0b7;
+  letter-spacing:0;
+}
+.order-punk .order-check input {
+  flex:none;
+  width:17px;height:17px;
+  margin:2px 0 0;
+  accent-color:var(--bf-red);
+}
+.order-punk #checkoutForm .order-action {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  grid-column:1/-1;
+  gap:15px;
+  background:var(--bf-red);
+  color:#fff;
+  border:1px solid #bf373d;
+  padding:20px 22px;
+  min-height:65px;
+  font:900 18px 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:.09em;
+  transition:background .2s,transform .2s;
+}
+.order-punk #checkoutForm .order-action:hover:not(:disabled) {background:#c52c32;transform:translateY(-1px)}
+.order-punk .order-action span:last-child {font-size:27px;line-height:0}
+.order-punk #checkoutStatus {
+  grid-column:1/-1;
+  min-height:0;
+  font-size:13px;
+  line-height:1.6;
+  margin:0;
+  overflow-wrap:anywhere;
+}
+.order-punk #checkoutStatus:empty {display:none}
+.order-punk .bf-stripe-note {
+  grid-column:1/-1;
+  color:#99938d;
+  font:500 11px/1.8 'DM Sans',Arial,sans-serif;
+  margin:0;
+}
+.order-punk .bf-summary-panel {
+  position:sticky;
+  top:20px;
+  overflow:hidden;
+}
+.order-punk .bf-order-mini-banner {
+  padding:20px;
+  min-height:190px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-start;
+  flex-direction:column;
+  background:var(--bf-paper);
+  color:#111;
+  margin:0 0 23px;
+  background-image:radial-gradient(#0002 .8px,transparent .8px);
+  background-size:6px 6px;
+}
+.order-punk .bf-order-mini-banner:after {
+  content:'✳';
+  position:absolute;
+  right:-10px;bottom:-65px;
+  color:var(--bf-red);
+  font-size:190px;
+  line-height:1;
+  transform:rotate(-12deg);
+  opacity:.95;
+}
+.order-punk .bf-order-mini-banner>span,
+.order-punk .bf-order-mini-banner>small {
+  position:relative;z-index:1;
+  font:900 11px 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:.17em;
+}
+.order-punk .bf-order-mini-banner>strong {
+  position:relative;z-index:1;
+  margin:17px 0 10px;
+  font:900 clamp(60px,5vw,84px)/.75 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:-.05em;
+}
+.order-punk .bf-order-mini-banner>strong span {color:var(--bf-red)}
+.order-punk .order-summary p {
+  color:#dad2ca;
+  border-bottom:1px solid #514b44;
+  margin:0;
+  padding:17px 0;
+  font:800 12px 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:.09em;
+}
+.order-punk .order-summary p strong {
+  color:#fff;
+  font:700 15px 'DM Sans',Arial,sans-serif;
+  letter-spacing:0;
+}
+.order-punk .order-summary .bf-free-label {color:#b0d8aa}
+.order-punk .order-hint {font-size:12px;color:#b5aca2;line-height:1.8;margin-top:20px}
+.order-punk .order-secondary {
+  display:flex;justify-content:space-between;align-items:center;
+  width:100%;
+  border:1px solid #5e5751;
+  padding:14px 16px;
+  color:#c9bfb3;
+  background:transparent;
+  font:800 12px 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:.12em;
+}
+.order-punk .order-secondary:hover {background:#262321;color:#fff}
+.order-punk .order-secondary span {font-size:20px}
+.order-punk .bf-aside-footer {
+  margin:32px -37px -37px;
+  padding:16px 20px;
+  border-top:1px dashed #59514a;
+  text-align:center;
+  font:800 14px 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:.16em;
+  color:#c9bfb4;
+}
+.order-punk .bf-aside-footer span {color:var(--bf-red);font-size:18px;margin-right:8px}
+.order-punk .bf-bottom-ribbon {
+  display:flex;justify-content:center;gap:34px;
+  overflow:hidden;
+  white-space:nowrap;
+  padding:21px 5%;
+  margin:55px -4.5% -30px;
+  border-top:1px solid #cfc7bd;
+  border-bottom:1px solid #cfc7bd;
+  background:#eae4da;
+  color:#090909;
+  font:900 22px 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:.08em;
+}
+.order-punk .bf-bottom-ribbon span {color:var(--bf-red)}
+.order-punk .footer {padding-top:36px;background:#0a0a0a}
+.order-punk .footer-bottom {color:#b3a9a0}
+
+@media (max-width: 920px) {
+  .order-punk .order-columns {grid-template-columns:minmax(0,1fr)}
+  .order-punk .bf-summary-panel {position:static}
+  .order-punk .bf-checkout-hero {grid-template-columns:1.4fr .6fr}
+  .order-punk .bf-order-mini-banner {min-height:145px}
+  .order-punk .bf-aside-footer {margin:30px -25px -25px}
+}
+@media (max-width: 700px) {
+  .order-punk .announcement {justify-content:center;font-size:10px}
+  .order-punk .announcement span:not(:first-child) {display:none}
+  .order-punk .header {height:auto;min-height:70px;padding:12px 5% 55px;flex-wrap:wrap;gap:6px}
+  .order-punk .brand {font-size:24px}
+  .order-punk .brand-mark {font-size:26px}
+  .order-punk .nav {position:absolute;top:auto;left:0;right:0;bottom:0;display:flex;gap:28px;justify-content:center;padding:12px 5%;border-bottom:0;background:#111}
+  .order-punk .nav a {font-size:10px}
+  .order-punk .bf-back-shopping {font-size:10px;padding:10px 11px;margin-left:auto}
+  .order-punk .order-main {padding:0 4% 40px}
+  .order-punk .bf-checkout-hero {display:block;min-height:0}
+  .order-punk .bf-hero-copy {padding:42px 7% 45px}
+  .order-punk .bf-overline {font-size:10px}
+  .order-punk .order-main .bf-checkout-hero h1 {font-size:clamp(89px,20vw,130px)}
+  .order-punk .bf-hero-subtitle {font-size:12px;max-width:260px}
+  .order-punk .bf-hero-poster {height:150px;min-height:150px;border-left:0;border-top:3px solid #111}
+  .order-punk .bf-eight-point {height:240px;width:240px}
+  .order-punk .bf-poster-sticker {font-size:32px;padding:13px 16px}
+  .order-punk .bf-checkout-progress {grid-template-columns:repeat(3,1fr);margin-bottom:16px}
+  .order-punk .bf-checkout-progress>div {padding:9px 6px;gap:6px;flex-direction:column;text-align:center;font-size:9px}
+  .order-punk .bf-checkout-progress b {display:none}
+  /* No celular: peças -> resumo -> entrega, antes de enviar para a Stripe. */
+  .order-punk .order-columns {display:flex;flex-direction:column;gap:14px}
+  .order-punk .bf-checkout-flow {display:contents}
+  .order-punk .bf-items-panel {order:1;width:100%}
+  .order-punk .bf-summary-panel {order:2;width:100%}
+  .order-punk .bf-delivery-panel {order:3;width:100%}
+  .order-punk .order-panel {padding:20px}
+  .order-punk .bf-panel-header h2 {font-size:36px}
+  .order-punk .bf-order-mini-banner>strong {font-size:77px}
+  .order-punk .bf-aside-footer {margin:28px -20px -20px}
+  .order-punk .order-item {flex-direction:column;align-items:start}
+  .order-punk .order-controls {justify-content:start}
+  .order-punk .bf-bottom-ribbon {gap:18px;font-size:17px;margin:36px -4.4% -15px;padding:15px}
+  .order-punk .footer-bottom {flex-wrap:wrap;gap:10px}
+}
+@media (max-width: 520px) {
+  .order-punk .order-main .bf-checkout-hero h1 {font-size:clamp(72px,20vw,99px)}
+  .order-punk #checkoutForm {grid-template-columns:1fr!important;row-gap:15px!important}
+  .order-punk #checkoutForm .bf-field {grid-column:1/-1}
+  .order-punk .bf-panel-header h2 {font-size:32px}
+  .order-punk .bf-section-no {font-size:15px}
+  .order-punk .bf-panel-scribble {font-size:22px}
+  .order-punk .bf-hero-poster {height:138px;min-height:138px}
+  .order-punk .bf-order-mini-banner>strong {font-size:70px}
+}
+@media (prefers-reduced-motion: reduce) {
+  .order-punk *, .order-punk *::before, .order-punk *::after {animation:none!important;transition:none!important}
+}
