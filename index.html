@@ -3,68 +3,160 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090909">
-  <meta name="description" content="BLACK FORGE — roupas, calçados e acessórios alternativos. Estilo gótico, punk, grunge e streetwear.">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="BLACK FORGE — roupas, calçados e acessórios alternativos. Moda punk, gótica, grunge e streetwear.">
   <title>BLACK FORGE — Feito para ser diferente</title>
   <link rel="stylesheet" href="./style.css">
- <script src="./catalogo.js" defer></script>
-<script src="./script.js" defer></script>
+  <script src="./catalogo.js" defer></script>
+  <script src="./script.js" defer></script>
 </head>
-<body>
+<body class="bf-home">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <div class="announcement"><span>BLACK FORGE / MODA ALTERNATIVA</span><span>SEU ESTILO. SUAS REGRAS.</span><span>DESDE 2026</span></div>
+
+  <div class="announcement" aria-label="Avisos da loja">
+    <span>BLACK FORGE / EST. 2026</span>
+    <span>FRETE GRÁTIS EM OUTUBRO</span>
+    <span>MODA ALTERNATIVA • BRASIL</span>
+  </div>
+
   <header class="header" id="topo">
-    <a class="brand" href="#topo" aria-label="Black Forge, início"><span class="brand-mark">✦</span><span>BLACK<span class="brand-light">FORGE</span><small>DARKWEAR & STREETWEAR</small></span></a>
-    <nav class="nav" aria-label="Navegação principal"><a href="produtos.html">PRODUTOS</a><a href="#categorias">CATEGORIAS</a><a href="#manifesto">NOSSA HISTÓRIA</a><a href="#duvidas">DÚVIDAS</a></nav>
-    <div class="header-actions"><button id="searchToggle" class="icon-btn" type="button" aria-label="Buscar produtos" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 5 5"/></svg></button><button id="cartToggle" class="cart-trigger" type="button" aria-label="Abrir carrinho"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16l-1.3 14H5.3L4 7ZM9 9V6a3 3 0 0 1 6 0v3"/></svg><span>CARRINHO</span><b id="cartCount">0</b></button></div>
+    <a class="brand" href="#topo" aria-label="Black Forge, início">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>BLACK<span class="brand-light">FORGE</span><small>DARKWEAR &amp; STREETWEAR</small></span>
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="produtos.html">PRODUTOS</a>
+      <a href="#categorias">CATEGORIAS</a>
+      <a href="#manifesto">MANIFESTO</a>
+      <a href="#duvidas">DÚVIDAS</a>
+    </nav>
+    <div class="header-actions">
+      <button id="searchToggle" class="icon-btn" type="button" aria-label="Buscar produtos" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 5 5"/></svg>
+      </button>
+      <button id="cartToggle" class="cart-trigger" type="button" aria-label="Abrir carrinho">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16l-1.3 14H5.3L4 7ZM9 9V6a3 3 0 0 1 6 0v3"/></svg>
+        <span>CARRINHO</span><b id="cartCount">0</b>
+      </button>
+    </div>
   </header>
-  <div id="searchPanel" class="search-panel" hidden><label for="searchInput">ENCONTRE SUA PRÓXIMA PEÇA</label><div class="search-row"><input id="searchInput" type="search" placeholder="Buscar anéis, correntes, colares..." autocomplete="off"><button id="searchClose" type="button" aria-label="Fechar busca">✕</button></div></div>
+
+  <div id="searchPanel" class="search-panel" hidden>
+    <label for="searchInput">ENCONTRE SUA PRÓXIMA PEÇA</label>
+    <div class="search-row">
+      <input id="searchInput" type="search" placeholder="Buscar roupas, acessórios, calçados..." autocomplete="off">
+      <button id="searchClose" type="button" aria-label="Fechar busca">✕</button>
+    </div>
+  </div>
+
   <main id="conteudo">
     <section class="hero" aria-labelledby="heroTitle">
-      <div class="hero-visual bf-hero-photo" aria-hidden="true"><div class="hero-stamp">BF / 001<br>DESDE 2026</div></div>
-      <div class="hero-content"><p class="eyebrow"><span class="eyebrow-line"></span> ESTILO ALTERNATIVO / SEM PADRÕES</p><h1 id="heroTitle">FEITO<br>PARA SER<br><em>DIFERENTE.</em></h1><p>Roupas, calçados e acessórios para quem transforma atitude em identidade. Do gótico ao streetwear, sem regras e sem rótulos.</p><div class="hero-actions"><a href="produtos.html" class="btn btn-light">VER PRODUTOS <span aria-hidden="true">↗</span></a><a href="#manifesto" class="text-link">CONHEÇA A MARCA <span aria-hidden="true">→</span></a></div><div class="hero-bottom"><span>01 / 03</span><span>BLACK FORGE — ASSUMA SEU ESTILO</span></div></div>
+      <div class="hero-visual bf-hero-photo" aria-hidden="true">
+        <div class="bf-hero-corner bf-hero-corner-top">BLACK FORGE<br>NOT FOR EVERYONE.</div>
+        <div class="bf-photo-sticker">UNIFORME<br>DE QUEM<br>NÃO SEGUE.</div>
+        <div class="hero-stamp">BF / 001<br>DESDE 2026</div>
+      </div>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="eyebrow-line"></span> BLACK FORGE / EDITION 001</p>
+        <div class="bf-hero-edition" aria-hidden="true">INDEPENDENT<br>SPIRIT ✦</div>
+        <h1 id="heroTitle">FEITO<br>PARA SER<br><em>DIFERENTE.</em></h1>
+        <p>Roupas, calçados e acessórios para quem não nasceu para se encaixar. Do gótico ao streetwear — sem regras, sem rótulos.</p>
+        <div class="hero-actions">
+          <a href="produtos.html" class="btn btn-light">EXPLORAR A COLEÇÃO <span aria-hidden="true">↗</span></a>
+          <a href="#manifesto" class="text-link">NOSSO MANIFESTO <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-bottom"><span>01 / BLACK FORGE</span><span>ESTÉTICA SEM PERMISSÃO ↗</span></div>
+      </div>
     </section>
-    <div class="ticker" aria-label="Estilo alternativo"><div>✦ ASSUMA SEU ESTILO <span>✦</span> FUJA DO COMUM <span>✦</span> FEITO PARA SER DIFERENTE <span>✦</span> ASSUMA SEU ESTILO <span>✦</span> FUJA DO COMUM <span>✦</span> FEITO PARA SER DIFERENTE</div></div>
-    <section class="bf-categories section" id="categorias" aria-labelledby="bfCategoriesTitle"><div class="section-kicker"><span>EXPLORE / 07 UNIVERSOS</span><span>ENCONTRE SUA IDENTIDADE</span></div><div class="bf-categories-heading"><p class="eyebrow">ESCOLHA O SEU CAMINHO</p><h2 id="bfCategoriesTitle">CADA PEÇA.<br><em>UMA ATITUDE.</em></h2><p>Sete formas de expressar quem você é. Sem seguir tendências. Sem pedir licença.</p></div><div class="bf-category-grid"><a class="bf-category-tile" href="produtos.html#categoria-0"><span class="bf-cat-number">01 / 07</span><span class="bf-cat-content"><strong>COLARES</strong><small>Correntes, chokers e pingentes</small></span><span class="bf-cat-arrow" aria-hidden="true">↗</span></a><a class="bf-category-tile" href="produtos.html#categoria-1"><span class="bf-cat-number">02 / 07</span><span class="bf-cat-content"><strong>ANÉIS & PULSEIRAS</strong><small>Peças que fazem a diferença</small></span><span class="bf-cat-arrow" aria-hidden="true">↗</span></a><a class="bf-category-tile" href="produtos.html#categoria-2"><span class="bf-cat-number">03 / 07</span><span class="bf-cat-content"><strong>CINTOS & ACESSÓRIOS</strong><small>Detalhes de atitude</small></span><span class="bf-cat-arrow" aria-hidden="true">↗</span></a><a class="bf-category-tile" href="produtos.html#categoria-3"><span class="bf-cat-number">04 / 07</span><span class="bf-cat-content"><strong>CAMISETAS & CAMISAS</strong><small>Identidade em cada estampa</small></span><span class="bf-cat-arrow" aria-hidden="true">↗</span></a><a class="bf-category-tile" href="produtos.html#categoria-4"><span class="bf-cat-number">05 / 07</span><span class="bf-cat-content"><strong>MOLETONS & CASACOS</strong><small>Camadas com personalidade</small></span><span class="bf-cat-arrow" aria-hidden="true">↗</span></a><a class="bf-category-tile" href="produtos.html#categoria-5"><span class="bf-cat-number">06 / 07</span><span class="bf-cat-content"><strong>CALÇAS & SAIAS</strong><small>Silhuetas fora do padrão</small></span><span class="bf-cat-arrow" aria-hidden="true">↗</span></a><a class="bf-category-tile" href="produtos.html#categoria-6"><span class="bf-cat-number">07 / 07</span><span class="bf-cat-content"><strong>CALÇADOS</strong><small>Do street ao underground</small></span><span class="bf-cat-arrow" aria-hidden="true">↗</span></a></div></section>
-    <!-- Vitrine demonstrativa removida; elementos ocultos mantêm compatibilidade com script.js existente. -->
+
+    <div class="ticker" aria-label="Black Forge: estilo sem regras">
+      <div>✦ ESTILO SEM REGRAS <span>✦</span> NOT FOR EVERYONE <span>✦</span> FEITO PARA SER DIFERENTE <span>✦</span> ESTILO SEM REGRAS <span>✦</span> NOT FOR EVERYONE <span>✦</span> FEITO PARA SER DIFERENTE <span>✦</span></div>
+    </div>
+
+    <section class="bf-categories section" id="categorias" aria-labelledby="bfCategoriesTitle">
+      <div class="section-kicker"><span>01 / ENCONTRE SUA PEÇA</span><span>07 UNIVERSOS / ZERO REGRAS</span></div>
+      <div class="bf-categories-heading">
+        <p class="eyebrow">A BLACK FORGE É PRA QUEM ESCOLHE O PRÓPRIO CAMINHO.</p>
+        <h2 id="bfCategoriesTitle">NÃO SIGA.<br><em>ESCOLHA.</em></h2>
+        <p>Do detalhe à peça principal. Encontre o que combina com a sua identidade.</p>
+      </div>
+      <div class="bf-category-grid">
+        <a class="bf-category-tile" href="produtos.html#categoria-0"><span class="bf-cat-number">01 / 07</span><span class="bf-cat-content"><strong>COLARES</strong><small>Correntes, chokers e pingentes</small></span><span class="bf-cat-arrow" aria-hidden="true">↗</span></a>
+        <a class="bf-category-tile" href="produtos.html#categoria-1"><span class="bf-cat-number">02 / 07</span><span class="bf-cat-content"><strong>ANÉIS &amp;<br>PULSEIRAS</strong><small>Detalhes de atitude</small></span><span class="bf-cat-arrow" aria-hidden="true">↗</span></a>
+        <a class="bf-category-tile" href="produtos.html#categoria-2"><span class="bf-cat-number">03 / 07</span><span class="bf-cat-content"><strong>CINTOS &amp;<br>ACESSÓRIOS</strong><small>O detalhe muda tudo</small></span><span class="bf-cat-arrow" aria-hidden="true">↗</span></a>
+        <a class="bf-category-tile" href="produtos.html#categoria-3"><span class="bf-cat-number">04 / 07</span><span class="bf-cat-content"><strong>CAMISETAS &amp;<br>CAMISAS</strong><small>Identidade em cada estampa</small></span><span class="bf-cat-arrow" aria-hidden="true">↗</span></a>
+        <a class="bf-category-tile" href="produtos.html#categoria-4"><span class="bf-cat-number">05 / 07</span><span class="bf-cat-content"><strong>MOLETONS &amp;<br>CASACOS</strong><small>Camadas sem padrão</small></span><span class="bf-cat-arrow" aria-hidden="true">↗</span></a>
+        <a class="bf-category-tile" href="produtos.html#categoria-5"><span class="bf-cat-number">06 / 07</span><span class="bf-cat-content"><strong>CALÇAS &amp;<br>SAIAS</strong><small>Vista sua própria atitude</small></span><span class="bf-cat-arrow" aria-hidden="true">↗</span></a>
+        <a class="bf-category-tile" href="produtos.html#categoria-6"><span class="bf-cat-number">07 / 07</span><span class="bf-cat-content"><strong>CALÇADOS</strong><small>Da rua ao underground</small></span><span class="bf-cat-arrow" aria-hidden="true">↗</span></a>
+      </div>
+      <a class="bf-all-products" href="produtos.html">VER TODAS AS PEÇAS <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <!-- IDs preservados para compatibilidade com versões anteriores do script.js. -->
     <div hidden aria-hidden="true"><div id="productGrid"></div><span id="resultCount"></span></div>
-    <section class="manifesto" id="manifesto"><div class="manifesto-side"><span>02 / NOSSA ESSÊNCIA</span><span>CRIADO NA ESCURIDÃO.</span></div><div class="manifesto-body"><p class="eyebrow">NÃO É TENDÊNCIA. É IDENTIDADE.</p><h2>NÃO<br>SEGUIMOS.<br><em>CRIAMOS.</em></h2><p>Para os que encontram beleza no incomum. Para quem mistura metal, sombra e personalidade sem pedir aprovação. A Black Forge nasce para representar uma estética que não precisa de explicação.</p><a href="produtos.html" class="text-link">CONHEÇA OS PRODUTOS BLACK FORGE <span>↗</span></a></div><div class="manifesto-art" aria-hidden="true">✦</div></section>
-    <section class="values section"><div><span class="value-icon">✦</span><h3>ESTILO PRÓPRIO</h3><p>Sua estética. Suas regras.</p></div><div><span class="value-icon">⛓</span><h3>ATITUDE EM DETALHES</h3><p>Peças que fazem parte da sua identidade.</p></div><div><span class="value-icon">◇</span><h3>SEM PADRÕES</h3><p>Para quem escolhe ser diferente.</p></div></section>
-    <section class="faq section" id="duvidas"><div class="section-kicker"><span>03 / INFORMAÇÕES</span><span>ANTES DE COMPRAR</span></div><div class="faq-layout"><div><p class="eyebrow">DÚVIDAS FREQUENTES</p><h2>TUDO O QUE<br><em>PRECISA SABER.</em></h2></div><div class="faq-items"><details><summary>Os produtos já estão disponíveis para compra?</summary><p>O catálogo está sendo preparado para o lançamento. As vendas serão abertas quando pagamento, entrega e atendimento estiverem configurados.</p></details><details><summary>Como funcionarão os pedidos?</summary><p>A proposta inicial é trabalhar sob encomenda: após a confirmação do pagamento, a loja fará o pedido ao fornecedor para entrega no endereço informado pelo cliente. Prazos e condições serão divulgados antes da abertura das vendas.</p></details><details><summary>Como serão informados os prazos de entrega?</summary><p>Os prazos estimados deverão aparecer na página do produto e no checkout quando os fornecedores e a operação estiverem definidos.</p></details><details><summary>Como entro em contato com a loja?</summary><p>Os canais oficiais de atendimento serão adicionados antes do lançamento. Não envie dados de pagamento por mensagens.</p></details></div></div></section>
-    <section class="closing"><p>SEU ESTILO. SUAS REGRAS.</p><h2>ASSUMA<br><em>SEU ESTILO.</em></h2><a class="btn btn-light" href="produtos.html">VER OS PRODUTOS <span>↗</span></a></section>
+
+    <section class="manifesto" id="manifesto">
+      <div class="manifesto-side"><span>02 / NOSSA ESSÊNCIA</span><span>SEM REGRAS. SEM PEDIR LICENÇA.</span></div>
+      <div class="manifesto-body">
+        <p class="eyebrow">NÃO É TENDÊNCIA. É IDENTIDADE.</p>
+        <h2>NÃO<br>SEGUIMOS.<br><em>CRIAMOS.</em></h2>
+        <p>Para quem encontra beleza no incomum. Para quem mistura metal, sombra e personalidade sem pedir aprovação. A Black Forge é um espaço para vestir a própria identidade.</p>
+        <a href="produtos.html" class="text-link">VISTA O MANIFESTO <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="manifesto-art" aria-hidden="true">✦</div>
+      <div class="bf-manifesto-seal" aria-hidden="true">FORGED<br>TO BE<br>DIFFERENT.</div>
+    </section>
+
+    <section class="values section" aria-label="Nossa identidade">
+      <div><span class="value-icon" aria-hidden="true">✦</span><h3>ESTILO PRÓPRIO</h3><p>Sua estética. Suas regras.</p></div>
+      <div><span class="value-icon" aria-hidden="true">⛓</span><h3>ATITUDE EM CADA DETALHE</h3><p>Uma peça também é uma forma de expressão.</p></div>
+      <div><span class="value-icon" aria-hidden="true">◇</span><h3>SEM PADRÕES</h3><p>Não precisa se encaixar para fazer parte.</p></div>
+    </section>
+
+    <section class="faq section" id="duvidas">
+      <div class="section-kicker"><span>03 / INFORMAÇÕES</span><span>LEIA ANTES DE COMPRAR</span></div>
+      <div class="faq-layout">
+        <div><p class="eyebrow">DÚVIDAS FREQUENTES</p><h2>TUDO O QUE<br><em>IMPORTA.</em></h2></div>
+        <div class="faq-items">
+          <details><summary>Como faço um pedido?</summary><p>Escolha suas peças no catálogo, adicione ao carrinho, informe os dados de entrega e siga para o pagamento seguro.</p></details>
+          <details><summary>Como funciona a entrega?</summary><p>Os pedidos são realizados sob encomenda. Após a confirmação do pagamento, preparamos o pedido com o fornecedor para envio ao endereço informado.</p></details>
+          <details><summary>O frete é grátis?</summary><p>Durante a promoção de outubro de 2026, o frete é grátis. Confira a condição vigente e o resumo do pedido antes de pagar.</p></details>
+          <details><summary>Como entro em contato com a loja?</summary><p>Utilize os canais oficiais de atendimento divulgados pela Black Forge. Nunca envie dados completos do cartão ou senhas por mensagens.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <p>BLACK FORGE / NOT FOR EVERYONE</p>
+      <h2>ASSUMA<br><em>SEU ESTILO.</em></h2>
+      <a class="btn btn-light" href="produtos.html">EXPLORAR PRODUTOS <span aria-hidden="true">↗</span></a>
+      <span class="bf-closing-decor" aria-hidden="true">✦</span>
+    </section>
   </main>
-  <footer class="footer"><div class="footer-top"><a class="brand" href="#topo"><span class="brand-mark">✦</span><span>BLACK<span class="brand-light">FORGE</span><small>DARKWEAR & STREETWEAR</small></span></a><p>ACESSÓRIOS E ROUPAS ALTERNATIVAS.<br>SEU ESTILO, SEM PADRÕES.</p><div><a href="produtos.html">PRODUTOS ↗</a><a href="#manifesto">NOSSA HISTÓRIA ↗</a><a href="#duvidas">DÚVIDAS ↗</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> BLACK FORGE</span><span>CATÁLOGO EM PREPARAÇÃO — VENDAS AINDA NÃO ABERTAS</span><a href="#topo">VOLTAR AO TOPO ↑</a></div></footer>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <a class="brand" href="#topo"><span class="brand-mark" aria-hidden="true">✦</span><span>BLACK<span class="brand-light">FORGE</span><small>DARKWEAR &amp; STREETWEAR</small></span></a>
+      <p>FEITO PARA SER<br>DIFERENTE.</p>
+      <div><a href="produtos.html">PRODUTOS ↗</a><a href="#manifesto">MANIFESTO ↗</a><a href="#duvidas">DÚVIDAS ↗</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year">2026</span> BLACK FORGE</span><span>ESTILO ALTERNATIVO / SEM PADRÕES</span><a href="#topo">VOLTAR AO TOPO ↑</a></div>
+  </footer>
+
   <div class="overlay" id="overlay" hidden></div>
-  
-<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true" tabindex="-1">
-  <div class="drawer-head">
-    <div>
-      <span class="eyebrow">BLACK FORGE</span>
-      <h2 id="cartTitle">CARRINHO <span id="drawerCount">(0)</span></h2>
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true" tabindex="-1">
+    <div class="drawer-head">
+      <div><span class="eyebrow">BLACK FORGE</span><h2 id="cartTitle">CARRINHO <span id="drawerCount">(0)</span></h2></div>
+      <button class="close-btn" id="cartClose" type="button" aria-label="Fechar carrinho">✕</button>
     </div>
-    <button class="close-btn" id="cartClose" type="button" aria-label="Fechar carrinho">✕</button>
-  </div>
-
-  <div id="cartItems" class="cart-items"></div>
-
-  <div class="drawer-foot">
-    <div class="subtotal">
-      <span>SUBTOTAL</span>
-      <strong id="cartSubtotal">R$ 0,00</strong>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="drawer-foot">
+      <div class="subtotal"><span>SUBTOTAL</span><strong id="cartSubtotal">R$ 0,00</strong></div>
+      <p>FRETE GRÁTIS PROMOCIONAL DURANTE OUTUBRO DE 2026.</p>
+      <a class="btn btn-light checkout" href="pedido.html">FINALIZAR COMPRA ↗</a>
+      <button id="continueShopping" class="continue" type="button">CONTINUAR COMPRANDO</button>
     </div>
-
-    <p>Frete grátis para todo o Brasil.</p>
-
-    <a class="btn btn-light checkout" href="pedido.html">
-      FINALIZAR COMPRA ↗
-    </a>
-
-    <button id="continueShopping" class="continue" type="button">
-      CONTINUAR COMPRANDO
-    </button>
-  </div>
-</aside>
-
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
