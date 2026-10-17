@@ -202,3 +202,597 @@ body{background:var(--bg)}
   border: 1px solid #62594f;
   border-radius: 4px;
 }
+
+/* =========================================================
+   BLACK FORGE / EDITORIAL PUNK — HOME REDESIGN (OUT/2026)
+   CSS adicional: escopo .bf-home para preservar catálogo,
+   modal, carrinho, checkout e demais páginas existentes.
+   ========================================================= */
+
+/* Home: tinta preta, papel gasto, tipografia poster e colagem. */
+.bf-home {
+  --bf-paper:#e7e4dc;
+  --bf-ink:#101010;
+  --bf-ash:#a5a39d;
+  --bf-rule:#4a4741;
+  background:#090909;
+  color:#f2f0eb;
+  overflow-x:clip;
+}
+.bf-home .announcement {
+  background:#e9e8e1;
+  color:#0a0a0a;
+  padding:11px 4.5%;
+  border-bottom:2px solid #050505;
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.11em;
+}
+.bf-home .announcement span:nth-child(2) {
+  background:#0a0a0a;
+  color:#f5f3ec;
+  padding:4px 12px;
+  transform:rotate(-1deg);
+}
+.bf-home .header {
+  min-height:91px;
+  height:auto;
+  padding:15px 4.5%;
+  border-bottom:2px solid #e0dcd4;
+  background:rgba(9,9,9,.97);
+  box-shadow:none;
+}
+.bf-home .brand {
+  font-size:clamp(28px,2.7vw,41px);
+  letter-spacing:-.055em;
+  font-weight:900;
+}
+.bf-home .brand-mark {
+  color:#f3f0e9;
+  font-size:46px;
+  transform:rotate(-12deg);
+}
+.bf-home .brand small {
+  color:#a7a7a1;
+  font-size:9px;
+  margin-top:10px;
+  letter-spacing:.19em;
+}
+.bf-home .nav a { color:#eeeae1; font-weight:800; }
+.bf-home .nav a:hover { color:white; }
+.bf-home .nav a:after { height:2px;background:white; }
+.bf-home .cart-trigger { border:1px solid #6a6760; padding:10px 13px; }
+.bf-home .cart-trigger:hover { background:#eeeae1;color:#111; }
+.bf-home .cart-trigger b { background:#eeeae1;color:#111;border:0; }
+.bf-home .icon-btn:hover { color:#a29b8d; }
+.bf-home .search-panel { background:#0f0f0e;border-bottom:2px solid #ddd8cf; }
+
+/* Hero: uma capa editorial, não um layout genérico de e-commerce. */
+.bf-home .hero {
+  display:grid;
+  grid-template-columns:minmax(0,46%) minmax(0,54%);
+  min-height:min(770px,85vh);
+  border-bottom:4px solid #080808;
+}
+.bf-home .hero-visual {
+  min-height:735px;
+  border-right:5px solid #090909;
+  background-color:#171717;
+  isolation:isolate;
+}
+.bf-home .hero-visual.bf-hero-photo {
+  background-image:
+    linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.08) 55%,rgba(0,0,0,.68)),
+    url('./BLACK_FORGE_HERO_PUNK.jpg');
+  background-size:cover;
+  background-position:center 37%;
+}
+.bf-home .hero-visual.bf-hero-photo:before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background-image:repeating-linear-gradient(0deg,#0000 0 3px,#0007 4px 5px);
+  opacity:.32;
+  pointer-events:none;
+}
+.bf-home .hero-visual:after {
+  content:"";
+  position:absolute;
+  z-index:1;
+  inset:0;
+  background:linear-gradient(90deg,#0006,transparent 48%,#0002);
+  pointer-events:none;
+}
+.bf-home .bf-hero-corner {
+  position:absolute;
+  top:32px;
+  left:35px;
+  z-index:3;
+  font:800 11px/1.45 'DM Sans',Arial,sans-serif;
+  letter-spacing:.16em;
+  color:white;
+  text-shadow:0 1px 9px #000;
+}
+.bf-home .bf-photo-sticker {
+  position:absolute;
+  right:6%;
+  bottom:15%;
+  z-index:3;
+  width:150px;
+  aspect-ratio:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:#f0eee6;
+  color:#080808;
+  font:900 23px/.94 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:.02em;
+  clip-path:polygon(11% 0,83% 3%,100% 24%,95% 73%,78% 100%,14% 94%,0 70%,6% 24%);
+  transform:rotate(9deg);
+  filter:drop-shadow(0 9px 3px #0009);
+}
+.bf-home .hero-stamp {
+  z-index:4;
+  bottom:6%;
+  left:7%;
+  font-weight:800;
+  color:white;
+}
+.bf-home .hero-content {
+  position:relative;
+  isolation:isolate;
+  display:flex;
+  justify-content:center;
+  background:#e7e4dc;
+  color:#090909;
+  padding:95px clamp(30px,5.3vw,100px) 38px;
+  overflow:hidden;
+}
+.bf-home .hero-content:before,
+.bf-home .manifesto:before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  opacity:.18;
+  pointer-events:none;
+  background-image:radial-gradient(#000 0.85px, transparent 1px);
+  background-size:5px 5px;
+  mask-image:linear-gradient(120deg,transparent 20%,black 100%);
+}
+.bf-home .hero-content:after {
+  content:"";
+  position:absolute;
+  top:0;right:0;
+  width:130px;height:160px;
+  background:repeating-linear-gradient(-40deg,#111 0 8px,transparent 8px 17px);
+  opacity:.08;
+  pointer-events:none;
+}
+.bf-home .hero .eyebrow {
+  color:#343434;
+  font-family:monospace;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.13em;
+  margin-bottom:8px;
+}
+.bf-home .hero .eyebrow-line { background:#111;width:43px;height:3px; }
+.bf-home .hero h1 {
+  font:900 clamp(80px,8.2vw,142px)/.79 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:-.047em;
+  margin:37px 0 32px;
+  max-width:100%;
+  text-wrap:balance;
+  text-transform:uppercase;
+  text-shadow:1px 0 currentColor;
+}
+.bf-home .hero h1 em {
+  color:#ece9e0;
+  display:inline-block;
+  padding:5px 9px 10px 5px;
+  margin-left:-5px;
+  background:#111;
+  font-style:normal;
+  transform:rotate(-1deg);
+}
+.bf-home .hero-content>p:not(.eyebrow) {
+  color:#292827;
+  font-size:15px;
+  font-weight:500;
+  line-height:1.7;
+  max-width:470px;
+}
+.bf-home .bf-hero-edition {
+  position:absolute;
+  top:42px;
+  right:5%;
+  font:700 9px/1.2 monospace;
+  letter-spacing:.14em;
+  text-align:right;
+  transform:rotate(7deg);
+}
+.bf-home .hero-actions { gap:22px; margin-top:32px; }
+.bf-home .btn {
+  font-size:11px;
+  font-weight:800;
+  border:2px solid currentColor;
+  letter-spacing:.13em;
+  padding:18px 20px;
+  border-radius:0;
+  transform:rotate(-.6deg);
+}
+.bf-home .btn:hover { transform:rotate(0deg) translateY(-3px); }
+.bf-home .hero .btn-light {
+  color:#f1efe8;
+  background:#090909;
+  border-color:#090909;
+}
+.bf-home .hero .btn-light:hover { background:#333; }
+.bf-home .hero .text-link {
+  color:#111;
+  border-bottom:2px solid #111;
+  font-weight:900;
+  font-size:11px;
+}
+.bf-home .hero-bottom {
+  border-top:1px solid #99978e;
+  padding-top:20px;
+  margin-top:auto;
+  padding-bottom:0;
+  color:#3b3935;
+  font-family:monospace;
+  font-weight:800;
+}
+.bf-home .ticker {
+  padding:16px 0;
+  color:#fff;
+  background:#090909;
+  border-top:1px solid #f1efe7;
+  border-bottom:1px solid #f1efe7;
+  transform:none;
+}
+.bf-home .ticker div { font-size:27px;letter-spacing:.16em; }
+.bf-home .ticker span { color:#bdb9b0; }
+
+/* Catálogo de universos: cards tipográficos com imperfeições de pôster. */
+.bf-home .bf-categories {
+  position:relative;
+  background:#0e0e0d;
+  padding-top:105px;
+  padding-bottom:110px;
+  isolation:isolate;
+}
+.bf-home .bf-categories:before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:0;
+  opacity:.1;
+  background-image:radial-gradient(#fff .7px,transparent .8px);
+  background-size:7px 7px;
+  mask-image:linear-gradient(150deg,transparent 5%,black 90%);
+}
+.bf-home .section-kicker {
+  color:#ceccc5;
+  border-bottom:2px solid #74726b;
+  font-weight:800;
+  letter-spacing:.12em;
+}
+.bf-home .bf-categories-heading {
+  grid-template-columns:minmax(0,1fr) minmax(185px,310px);
+  padding-top:70px;
+  padding-bottom:45px;
+}
+.bf-home .bf-categories-heading .eyebrow { color:#bab7ae;font-family:monospace; }
+.bf-home .bf-categories-heading h2 {
+  font:900 clamp(88px,12vw,170px)/.77 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:-.045em;
+}
+.bf-home .bf-categories-heading h2 em {
+  color:#101010;
+  display:inline-block;
+  padding:0 18px 10px 10px;
+  background:#eceae3;
+  transform:rotate(-1.2deg);
+}
+.bf-home .bf-categories-heading>p:last-child { color:#d7d4cb;line-height:1.7; }
+.bf-home .bf-category-grid {
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:13px;
+}
+.bf-home .bf-category-tile {
+  isolation:isolate;
+  min-height:260px;
+  padding:25px;
+  border:2px solid #8a8780;
+  color:#f2f0ea;
+  background:#161616;
+  box-shadow:6px 6px 0 #090909,7px 7px 0 #484640;
+  transition:transform .18s, box-shadow .18s, background .18s;
+}
+.bf-home .bf-category-tile:after {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  right:-32px;
+  bottom:-35px;
+  width:190px;
+  height:190px;
+  opacity:.07;
+  border:24px solid currentColor;
+  transform:rotate(32deg);
+  pointer-events:none;
+}
+.bf-home .bf-category-tile:nth-child(2),
+.bf-home .bf-category-tile:nth-child(5) {
+  background:#e6e3db;
+  color:#0c0c0c;
+  border-color:#f6f4ef;
+}
+.bf-home .bf-category-tile:nth-child(4) { background:#252525; }
+.bf-home .bf-category-tile:nth-child(6) { background:#191919; }
+.bf-home .bf-category-tile:nth-child(7) {
+  grid-column:span 3;
+  min-height:178px;
+  background:#dedbd2;
+  color:#101010;
+}
+.bf-home .bf-category-tile:hover {
+  background:#30302d;
+  border-color:#f5f2ed;
+  color:#fff;
+  transform:translate(-4px,-5px) rotate(-.5deg);
+  box-shadow:10px 10px 0 #050505,12px 12px 0 #85817a;
+}
+.bf-home .bf-cat-number {
+  color:inherit;
+  opacity:.65;
+  font-family:monospace;
+  font-weight:800;
+}
+.bf-home .bf-cat-content { gap:12px; max-width:95%; }
+.bf-home .bf-cat-content strong {
+  font:900 clamp(35px,4.5vw,68px)/.88 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:-.025em;
+}
+.bf-home .bf-cat-content small {
+  color:inherit;
+  opacity:.75;
+  font-size:12px;
+  font-weight:700;
+}
+.bf-home .bf-cat-arrow { font-size:36px; color:inherit; }
+.bf-home .bf-all-products {
+  display:flex;
+  width:fit-content;
+  gap:30px;
+  align-items:center;
+  border-bottom:2px solid #e8e6de;
+  padding:18px 0 9px;
+  margin:55px 0 0 auto;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+.bf-home .bf-all-products span { font-size:27px; }
+.bf-home .bf-all-products:hover { color:#bbb6ac; }
+
+/* Manifesto: papel de xerox amassado e tipografia sem concessões. */
+.bf-home .manifesto {
+  position:relative;
+  background:#dcd8ce;
+  color:#111;
+  min-height:740px;
+  border-top:9px solid #060606;
+  border-bottom:9px solid #060606;
+  overflow:hidden;
+}
+.bf-home .manifesto-side { font-family:monospace; font-weight:800; }
+.bf-home .manifesto .eyebrow { color:#252525; }
+.bf-home .manifesto-body { padding-right:70px; }
+.bf-home .manifesto h2 {
+  font:900 clamp(105px,12.3vw,200px)/.78 'Barlow Condensed',Impact,sans-serif;
+  letter-spacing:-.045em;
+  margin:44px 0;
+}
+.bf-home .manifesto h2 em {
+  display:inline-block;
+  margin-left:-12px;
+  padding:0 18px 15px 12px;
+  color:#eeeae0;
+  background:#111;
+  transform:rotate(-2deg);
+}
+.bf-home .manifesto-body>p:not(.eyebrow) { font-weight:600; }
+.bf-home .manifesto .text-link { border-bottom:2px solid #111; font-weight:900; }
+.bf-home .manifesto-art {
+  color:#99948c;
+  font-size:600px;
+  right:-4%;
+  bottom:-26%;
+  opacity:.32;
+}
+.bf-home .bf-manifesto-seal {
+  position:absolute;
+  right:7%;
+  top:8%;
+  z-index:3;
+  display:grid;
+  place-items:center;
+  width:145px;
+  aspect-ratio:1;
+  text-align:center;
+  border:5px double #151515;
+  border-radius:50%;
+  font:900 24px/.9 'Barlow Condensed',Impact,sans-serif;
+  transform:rotate(13deg);
+}
+.bf-home .values { background:#0b0b0b; gap:24px; }
+.bf-home .values>div { border-color:#696660; }
+.bf-home .value-icon { color:#e8e5dc; }
+.bf-home .values h3 { font-size:32px; }
+.bf-home .faq { background:#121211; }
+.bf-home .faq h2 { font-size:clamp(75px,9vw,134px);line-height:.8; }
+.bf-home .faq h2 em { color:#c2bdb3; }
+.bf-home .faq-items details { border-color:#626058; }
+.bf-home .faq-items summary { font-weight:700; }
+.bf-home .faq-items summary:hover { color:#e6e2d7; }
+.bf-home .closing {
+  position:relative;
+  isolation:isolate;
+  min-height:580px;
+  overflow:hidden;
+  background:#e7e4dc;
+  color:#101010;
+  border-block:7px solid #090909;
+}
+.bf-home .closing:before {
+  content:"";
+  z-index:-1;
+  position:absolute;
+  inset:0;
+  opacity:.2;
+  background:repeating-linear-gradient(135deg,#0d0d0d 0 1px,transparent 1px 17px);
+  mask-image:linear-gradient(to right,black,transparent 60%,black);
+}
+.bf-home .closing>p { font:800 12px/1 monospace; }
+.bf-home .closing h2 { font-size:clamp(110px,13vw,215px);line-height:.8; }
+.bf-home .closing h2 em { color:#efede8;background:#090909;padding:0 13px 10px;transform:rotate(-1deg); }
+.bf-home .closing .btn-light { background:#111;color:#fff;border-color:#111; }
+.bf-home .closing .btn-light:hover { background:#414141; }
+.bf-home .bf-closing-decor {
+  position:absolute;
+  z-index:-1;
+  right:-3%;
+  bottom:-40%;
+  font:normal 600px/1 Georgia,serif;
+  opacity:.14;
+  transform:rotate(-15deg);
+}
+.bf-home .footer { background:#0a0a0a;border-top:0; }
+.bf-home .footer-top p { font-size:31px;line-height:1; }
+.bf-home .footer-bottom { color:#c0bcb3; }
+/* Mantém os hooks JS do carrinho; refaz apenas sua aparência. */
+.bf-home .cart-drawer { background:#111; border-left:3px solid #e8e5dd; }
+.bf-home .drawer-head { border-bottom:2px solid #77716a; }
+.bf-home .drawer-head h2 { font-size:51px; }
+.bf-home .cart-item { border-bottom:1px dashed #78746c; }
+.bf-home .cart-thumb { background:#e7e4dc;color:#090909; }
+.bf-home .drawer-foot { border-top:2px solid #e7e4dc; }
+.bf-home .drawer-foot .btn-light { background:#e7e4dc;color:#111;border-color:#e7e4dc; }
+.bf-home .overlay { background:#000c; }
+
+@media(max-width:1160px) {
+  .bf-home .hero-visual { min-height:620px; }
+  .bf-home .hero h1 { font-size:clamp(72px,8.3vw,112px); }
+  .bf-home .hero-content { padding:75px 35px 35px; }
+  .bf-home .bf-photo-sticker { width:118px;font-size:19px; }
+  .bf-home .manifesto h2 { font-size:clamp(95px,11.5vw,150px); }
+  .bf-home .bf-manifesto-seal { width:115px;font-size:21px;right:3%; }
+}
+@media(max-width:800px) {
+  .bf-home .nav { gap:12px; }
+  .bf-home .nav a { font-size:9px; }
+  .bf-home .hero { grid-template-columns:45% 55%; }
+  .bf-home .hero h1 { font-size:clamp(64px,9.2vw,84px); }
+  .bf-home .hero-visual { min-height:570px; }
+  .bf-home .hero-content { padding:63px 20px 30px; }
+  .bf-home .hero .text-link { font-size:10px; }
+  .bf-home .bf-hero-edition { display:none; }
+  .bf-home .bf-category-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .bf-home .bf-category-tile:nth-child(7) { grid-column:span 2; }
+  .bf-home .bf-categories-heading { grid-template-columns:1fr; }
+  .bf-home .manifesto { min-height:650px; }
+  .bf-home .manifesto-body { padding-right:0; }
+}
+@media(max-width:700px) {
+  .bf-home .announcement { justify-content:center;min-height:35px; }
+  .bf-home .announcement span { display:none; }
+  .bf-home .announcement span:nth-child(2) { display:block;padding:4px 7px; }
+  .bf-home .header { min-height:70px;height:70px;padding:0 5%; }
+  .bf-home .brand { font-size:26px; }
+  .bf-home .brand-mark { font-size:33px; }
+  .bf-home .brand small { font-size:7px; }
+  .bf-home .nav {
+    top:70px;
+    left:0;right:0;
+    gap:clamp(9px,4vw,27px);
+    background:#111;
+    padding:12px 5%;
+    border-bottom:2px solid #aaa59a;
+  }
+  .bf-home .nav a { font-size:10px; }
+  .bf-home .cart-trigger { padding:7px; }
+  .bf-home .hero { grid-template-columns:1fr;min-height:unset;padding-top:39px; }
+  .bf-home .hero-visual {
+    min-height:390px;
+    height:min(108vw,560px);
+    border-right:0;
+    border-bottom:4px solid #090909;
+  }
+  .bf-home .hero-visual.bf-hero-photo { background-position:center 34%; }
+  .bf-home .bf-hero-corner { top:23px;left:5%;font-size:9px; }
+  .bf-home .bf-photo-sticker { right:5%;bottom:15%; }
+  .bf-home .hero-content { min-height:540px;padding:75px 6% 32px; }
+  .bf-home .hero h1 { font-size:clamp(75px,14vw,108px);margin:25px 0; }
+  .bf-home .hero-content>p:not(.eyebrow) { font-size:14px; }
+  .bf-home .hero-bottom { margin-top:60px; }
+  .bf-home .ticker { padding:13px 0; }
+  .bf-home .ticker div { font-size:22px; }
+  .bf-home .bf-categories { padding:70px 5% 80px; }
+  .bf-home .bf-categories-heading { padding-top:55px; }
+  .bf-home .bf-categories-heading h2 { font-size:clamp(75px,14vw,105px); }
+  .bf-home .bf-category-grid { gap:8px; }
+  .bf-home .bf-category-tile { min-height:204px;padding:15px;box-shadow:none; }
+  .bf-home .bf-cat-content strong { font-size:clamp(30px,6vw,49px); }
+  .bf-home .bf-cat-content small { font-size:10px; }
+  .bf-home .bf-cat-arrow { font-size:25px;right:13px;top:10px; }
+  .bf-home .bf-category-tile:nth-child(7) { min-height:140px; }
+  .bf-home .manifesto { min-height:720px;padding:60px 6% 90px; }
+  .bf-home .manifesto-side { margin-bottom:56px;gap:22px; }
+  .bf-home .manifesto h2 { font-size:clamp(95px,17vw,155px); }
+  .bf-home .bf-manifesto-seal { position:relative;top:auto;right:auto;margin:55px 0 0 auto; }
+  .bf-home .manifesto-art { right:-18%;bottom:-10%;font-size:430px; }
+  .bf-home .values { gap:25px; }
+  .bf-home .faq h2 { font-size:clamp(85px,14vw,125px); }
+  .bf-home .closing { min-height:460px; }
+  .bf-home .closing h2 { font-size:clamp(83px,15vw,140px); }
+}
+@media(max-width:390px) {
+  .bf-home .nav { gap:10px; }
+  .bf-home .nav a { font-size:9px; }
+  .bf-home .hero h1 { font-size:clamp(68px,13.8vw,79px); }
+  .bf-home .hero-actions { gap:14px; }
+  .bf-home .hero .btn { padding:15px 12px;gap:12px; }
+  .bf-home .bf-cat-content strong { font-size:28px; }
+  .bf-home .manifesto h2 { font-size:clamp(77px,17vw,100px); }
+  .bf-home .closing h2 { font-size:76px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .bf-home *, .bf-home *:before, .bf-home *:after {
+    animation-duration:.01ms !important;
+    transition-duration:.01ms !important;
+  }
+}
+
+/* Últimos ajustes para evitar cortes de títulos em telas estreitas. */
+@media(max-width:700px) {
+  .bf-home .bf-categories-heading,
+  .bf-home .bf-categories-heading > *,
+  .bf-home .faq-layout > * { min-width:0; }
+  .bf-home .bf-categories-heading h2 { font-size:clamp(63px,12vw,85px); }
+  .bf-home .faq h2 { font-size:clamp(67px,12vw,93px); }
+  .bf-home .hero h1 em { font-size:.91em; padding-right:5px; }
+  .bf-home .manifesto h2 em { font-size:.93em; padding-right:10px; }
+  .bf-home .closing h2 em { font-size:.9em; padding-right:8px; }
+}
+@media(max-width:390px) {
+  .bf-home .bf-categories-heading h2 { font-size:61px; }
+  .bf-home .faq h2 { font-size:66px; }
+  .bf-home .hero h1 { font-size:67px; }
+  .bf-home .manifesto h2 { font-size:76px; }
+}
