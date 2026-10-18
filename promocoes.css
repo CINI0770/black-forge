@@ -1,0 +1,79 @@
+/* BLACK FORGE — Página de lançamento.
+   Arquivo separado para preservar a home, o catálogo e o checkout. */
+.promo-page{--promo-red:#aa1115;--promo-paper:#e9e5dc;--promo-ink:#080808;background:#0b0b0b;color:#f5f2eb}
+.promo-page .header{position:relative;margin-bottom:0;background:#090909;border-bottom:1px solid #5c5852}
+.promo-page .announcement{background:#e8e3d8;color:#090909}
+.promo-page .nav a[aria-current="page"]{color:#fff;border-bottom:2px solid var(--promo-red)}
+.promo-page .brand-mark{color:#e8e3d8}
+.promo-cart-link{display:inline-flex;align-items:center;gap:14px;border:1px solid #66625c;padding:13px 17px;font-size:10px;font-weight:800;letter-spacing:.13em;white-space:nowrap}
+.promo-cart-link strong{display:grid;place-items:center;background:var(--promo-red);border-radius:50%;width:23px;height:23px;color:white;font-size:11px}
+.promo-cart-link:hover,.promo-cart-link:focus-visible{border-color:#fff}
+.promo-hero{display:grid;grid-template-columns:55% 45%;min-height:665px;border-bottom:1px solid #504b47}
+.promo-hero-copy{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:64px clamp(24px,6vw,115px);overflow:hidden;background:radial-gradient(circle at 17% 31%,#232020 0,transparent 55%),#0d0d0d}
+.promo-hero-copy:before,.promo-collection:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(#ffffff18 .65px,transparent 1px);background-size:5px 5px;mask-image:linear-gradient(110deg,#000,transparent 72%)}
+.promo-kicker{font-size:11px;letter-spacing:.16em;font-weight:800;color:#ded8cc;margin:0}
+.promo-kicker span{color:var(--promo-red);font-size:18px;margin:0 8px}
+.promo-hero h1,.promo-collection h2,.promo-lastcall h2{font-family:'Barlow Condensed',Impact,sans-serif;font-size:clamp(92px,10vw,168px);font-weight:900;line-height:.78;letter-spacing:-.035em;margin:36px 0 32px}
+.promo-hero h1 em{font-style:normal;color:var(--promo-red)}
+.promo-lead{max-width:460px;color:#d2cbc1;font-size:15px;line-height:1.7}
+.promo-hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin:28px 0 30px}
+.promo-primary{display:inline-flex;align-items:center;justify-content:space-between;gap:35px;min-height:57px;padding:17px 25px;background:var(--promo-red);border:1px solid var(--promo-red);color:white;font-size:11px;font-weight:900;letter-spacing:.1em;transition:filter .15s,transform .15s}
+.promo-primary:hover{filter:brightness(1.15);transform:translateY(-2px)}
+.promo-primary span{font-size:20px}
+.promo-link{font-size:10px;letter-spacing:.1em;font-weight:800;border-bottom:1px solid #a3a09a;padding:8px 0}
+.promo-link span{font-size:17px;margin-left:12px}
+.promo-fine{font-size:10px;color:#aca69d;letter-spacing:.12em;line-height:1.8;max-width:400px}
+.promo-hero-poster{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:var(--promo-paper);color:#080808;border-left:3px solid #161616;min-height:620px}
+.promo-hero-poster:before{content:"";position:absolute;inset:-20px;z-index:-1;background:radial-gradient(#00000028 .65px,transparent 1px);background-size:4px 4px;mask-image:radial-gradient(ellipse at 50% 45%,#000 0,transparent 75%)}
+.promo-hero-poster:after{content:"";position:absolute;right:-75px;bottom:-85px;width:280px;height:280px;opacity:.8;background:var(--promo-red);clip-path:polygon(50% 0,56% 39%,100% 19%,63% 53%,94% 89%,56% 63%,44% 100%,40% 61%,0 83%,35% 49%,8% 15%,44% 38%);transform:rotate(18deg)}
+.promo-poster-top,.promo-poster-bottom{position:absolute;left:30px;font-size:10px;letter-spacing:.18em;font-weight:900}.promo-poster-top{top:34px}.promo-poster-bottom{bottom:30px}
+.promo-poster-star{position:absolute;left:0;top:12%;font-size:150px;color:var(--promo-red);transform:rotate(-17deg)}
+.promo-poster-number{font:900 clamp(180px,27vw,430px)/.75 'Barlow Condensed',Impact,sans-serif;letter-spacing:-.11em;white-space:nowrap;transform:rotate(-8deg);text-shadow:4px 6px 0 #b3aca1}
+.promo-poster-number span{font-size:.46em;vertical-align:top;line-height:.95}
+.promo-poster-off{font:900 clamp(130px,15vw,230px)/.75 'Barlow Condensed',Impact,sans-serif;color:var(--promo-red);transform:rotate(-6deg);letter-spacing:.01em;text-shadow:3px 3px 0 #140f0d}
+.promo-poster-note{position:absolute;right:32px;top:40%;background:#080808;color:white;padding:12px 15px;transform:rotate(12deg);font:900 18px/.9 'Barlow Condensed',Impact,sans-serif;text-align:center}
+.promo-ticker{white-space:nowrap;overflow:hidden;background:var(--promo-paper);color:#0b0b0b;padding:12px 0;border-bottom:3px solid var(--promo-red)}
+.promo-ticker div{width:max-content;font:900 23px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.1em;animation:marquee 40s linear infinite}
+.promo-collection{position:relative;isolation:isolate;padding:90px 5% 120px;background:radial-gradient(ellipse at 90% 50%,#1b1718 0,transparent 55%),#0b0b0b}
+.promo-section-label{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #504b47;padding-bottom:20px;color:#b0a9a1;font:800 10px 'DM Sans',sans-serif;letter-spacing:.13em}
+.promo-collection-head{display:flex;align-items:end;justify-content:space-between;gap:50px;margin:50px 0 44px}
+.promo-collection-head h2{font-size:clamp(65px,8vw,125px);margin:15px 0 0}
+.promo-collection-head h2 em,.promo-lastcall h2 em{font-style:normal;color:#a8a096}
+.promo-collection-head>p{max-width:320px;font-size:13px;color:#b8b1a8;line-height:1.8}
+.promo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:start}
+.promo-card{position:relative;min-width:0;overflow:hidden;background:#171615;border:1px solid #4d4540;transition:transform .2s,border-color .2s}
+.promo-card:hover{transform:translateY(-3px);border-color:#c8bcb0}
+.promo-photo{position:relative;display:grid;place-items:center;aspect-ratio:4/5;overflow:hidden;background:radial-gradient(circle at 50% 35%,#363130,#171616 64%,#0c0c0c)}
+.promo-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.promo-photo .promo-image-fallback{display:none;align-items:center;justify-content:center;text-align:center;flex-direction:column;padding:30px;position:absolute;inset:0;background:repeating-linear-gradient(135deg,#191818 0 8px,#1d1b1b 8px 16px);color:#c8bfb3;font:800 26px/.95 'Barlow Condensed',sans-serif}
+.promo-photo.is-missing .promo-image-fallback{display:flex}.promo-photo.is-missing img{display:none}
+.promo-off-label{position:absolute;top:15px;left:15px;z-index:2;background:var(--promo-red);color:#fff;padding:10px 14px;font-size:13px;font-weight:900;letter-spacing:.06em}
+.promo-image-index{position:absolute;right:15px;bottom:12px;font-size:10px;color:#e7e0d7;text-shadow:0 1px 5px #000;font-weight:800;letter-spacing:.12em}
+.promo-card-info{padding:24px}
+.promo-card-info .promo-card-kicker{color:#ada298;letter-spacing:.15em;font-size:10px;font-weight:800;margin:0 0 13px}
+.promo-card h3{font:800 clamp(30px,3vw,45px)/.95 'Barlow Condensed',Impact,sans-serif;margin:0 0 14px}
+.promo-description{font-size:12px;color:#bfb6af;line-height:1.7;min-height:44px}
+.promo-prices{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:16px 0 22px}
+.promo-oldprice{text-decoration:line-through;color:#a69e96;font-size:14px}
+.promo-price{font:800 34px 'Barlow Condensed',Impact,sans-serif;color:#f2eee6}
+.promo-field{display:flex;flex-direction:column;gap:8px;margin:12px 0;color:#d2c8bf;font-size:11px;font-weight:800;letter-spacing:.09em}
+.promo-field select{background:#242222;color:#fff;border:1px solid #80756c;border-radius:0;width:100%;min-height:44px;padding:10px;font:500 13px 'DM Sans',sans-serif}
+.promo-note{margin-top:15px;font-size:11px;line-height:1.6;color:#b2aaa1}
+.promo-buy{width:100%;margin-top:18px;border:0;background:#eae3d9;color:#080808;padding:17px;font-size:11px;font-weight:900;letter-spacing:.11em;cursor:pointer}
+.promo-buy:hover{background:#fff}.promo-buy:disabled{opacity:.4;cursor:not-allowed}
+.promo-card-feedback{min-height:20px;font-size:12px;color:#ded7ce;line-height:1.6;margin:12px 0 0}
+.promo-empty{grid-column:1/-1;padding:50px;border:1px solid #504a45;color:#e4dcd2;background:#161514;line-height:1.8}
+.promo-empty strong{display:block;font:800 32px 'Barlow Condensed',sans-serif;margin-bottom:8px}
+.promo-empty a{text-decoration:underline}
+.promo-benefits{display:grid;grid-template-columns:repeat(3,1fr);background:#e8e3db;color:#111;border-top:4px solid var(--promo-red);border-bottom:4px solid #111}
+.promo-benefits>div{display:flex;flex-direction:column;gap:12px;align-items:center;padding:45px 16px;text-align:center;border-right:1px solid #beb7ac}
+.promo-benefits>div:last-child{border:0}.promo-benefit-symbol{font-size:36px;color:var(--promo-red)}
+.promo-benefits strong{font:900 29px 'Barlow Condensed',Impact,sans-serif}.promo-benefits small{color:#5f5a52;font-size:12px}
+.promo-lastcall{display:flex;flex-direction:column;align-items:center;text-align:center;padding:105px 25px 120px;background:radial-gradient(ellipse at center,#211b1b,#070707 65%)}
+.promo-lastcall p{font-size:10px;letter-spacing:.22em;font-weight:700}
+.promo-lastcall h2{font-size:clamp(86px,13vw,180px);margin:35px 0 45px}
+.promo-page .footer{padding-top:20px}
+@media(max-width:1000px){.promo-hero{grid-template-columns:1fr 1fr}.promo-hero h1{font-size:clamp(78px,10vw,115px)}.promo-hero-copy{padding:65px 5%}.promo-poster-number{font-size:28vw}.promo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.promo-collection-head h2{font-size:clamp(70px,9vw,100px)}}
+@media(max-width:700px){.promo-page .header{height:76px;padding:0 5%;margin-bottom:36px}.promo-page .nav{top:76px;padding:14px 10px;gap:20px}.promo-page .nav a{font-size:9px}.promo-cart-link{padding:9px;gap:6px}.promo-cart-link span:first-child{display:none}.promo-hero{grid-template-columns:1fr}.promo-hero-copy{padding:78px 6% 65px}.promo-hero h1{font-size:clamp(92px,15vw,145px)}.promo-hero-poster{min-height:470px;border-left:0;border-top:3px solid #161616}.promo-poster-number{font-size:58vw}.promo-poster-off{font-size:29vw}.promo-poster-star{font-size:100px}.promo-poster-note{font-size:14px}.promo-collection{padding:70px 5% 85px}.promo-collection-head{display:block;margin:35px 0 30px}.promo-collection-head>p{margin-top:25px}.promo-collection-head h2{font-size:clamp(70px,13vw,95px)}.promo-section-label span:last-child{display:none}.promo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.promo-card-info{padding:15px}.promo-card h3{font-size:26px}.promo-description{font-size:11px}.promo-price{font-size:28px}.promo-off-label{padding:7px 9px;top:9px;left:9px;font-size:10px}.promo-benefits{grid-template-columns:1fr}.promo-benefits>div{padding:28px;border-right:0;border-bottom:1px solid #beb7ac}.promo-lastcall h2{font-size:clamp(70px,14vw,110px)}}
+@media(max-width:430px){.promo-hero h1{font-size:clamp(77px,18vw,96px)}.promo-grid{grid-template-columns:1fr}.promo-card h3{font-size:35px}.promo-photo{aspect-ratio:4/4}.promo-hero-actions{gap:14px}.promo-primary{width:100%}.promo-poster-note{right:14px}.promo-poster-top{left:18px}.promo-page .brand{font-size:21px}.promo-cart-link strong{width:20px;height:20px}}
+@media(prefers-reduced-motion:reduce){.promo-ticker div{animation:none}}
