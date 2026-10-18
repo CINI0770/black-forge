@@ -77,3 +77,32 @@
 @media(max-width:700px){.promo-page .header{height:76px;padding:0 5%;margin-bottom:36px}.promo-page .nav{top:76px;padding:14px 10px;gap:20px}.promo-page .nav a{font-size:9px}.promo-cart-link{padding:9px;gap:6px}.promo-cart-link span:first-child{display:none}.promo-hero{grid-template-columns:1fr}.promo-hero-copy{padding:78px 6% 65px}.promo-hero h1{font-size:clamp(92px,15vw,145px)}.promo-hero-poster{min-height:470px;border-left:0;border-top:3px solid #161616}.promo-poster-number{font-size:58vw}.promo-poster-off{font-size:29vw}.promo-poster-star{font-size:100px}.promo-poster-note{font-size:14px}.promo-collection{padding:70px 5% 85px}.promo-collection-head{display:block;margin:35px 0 30px}.promo-collection-head>p{margin-top:25px}.promo-collection-head h2{font-size:clamp(70px,13vw,95px)}.promo-section-label span:last-child{display:none}.promo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.promo-card-info{padding:15px}.promo-card h3{font-size:26px}.promo-description{font-size:11px}.promo-price{font-size:28px}.promo-off-label{padding:7px 9px;top:9px;left:9px;font-size:10px}.promo-benefits{grid-template-columns:1fr}.promo-benefits>div{padding:28px;border-right:0;border-bottom:1px solid #beb7ac}.promo-lastcall h2{font-size:clamp(70px,14vw,110px)}}
 @media(max-width:430px){.promo-hero h1{font-size:clamp(77px,18vw,96px)}.promo-grid{grid-template-columns:1fr}.promo-card h3{font-size:35px}.promo-photo{aspect-ratio:4/4}.promo-hero-actions{gap:14px}.promo-primary{width:100%}.promo-poster-note{right:14px}.promo-poster-top{left:18px}.promo-page .brand{font-size:21px}.promo-cart-link strong{width:20px;height:20px}}
 @media(prefers-reduced-motion:reduce){.promo-ticker div{animation:none}}
+
+
+/* BLACK FORGE — DE / POR em destaque na promoção (BF-109 e próximos drops) */
+.promo-page .promo-price-feature{
+  display:flex; flex-direction:column; align-items:stretch; gap:10px;
+  margin:22px 0; padding:18px 20px;
+  border:1px solid #67544c; border-left:4px solid var(--promo-red,#b20c12);
+  background:linear-gradient(115deg,#2b2020,#171616 70%);
+}
+.promo-page .promo-price-original{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.promo-page .promo-price-caption{display:block;color:#c7bbb3;font-size:10px;letter-spacing:.12em;font-weight:800}
+.promo-page .promo-price-original .promo-oldprice{
+  color:#c8bfb8;font:600 19px 'DM Sans',sans-serif;
+  text-decoration:line-through;text-decoration-color:#d9a5a1;text-decoration-thickness:2px;
+}
+.promo-page .promo-price-new{display:flex;flex-direction:column;gap:4px}
+.promo-page .promo-price-new .promo-price{
+  font:900 clamp(37px,4vw,52px)/1 'Barlow Condensed',Impact,sans-serif;
+  color:#fff5eb;letter-spacing:.015em;
+}
+.promo-page .promo-price-saving{
+  align-self:flex-start;padding:6px 9px;background:#ae1018;color:white;
+  font-size:10px;font-weight:900;letter-spacing:.06em;
+}
+@media (max-width:700px){
+  .promo-page .promo-price-feature{padding:14px;gap:10px}
+  .promo-page .promo-price-new .promo-price{font-size:38px}
+  .promo-page .promo-price-original .promo-oldprice{font-size:16px}
+}
