@@ -17,9 +17,9 @@
   root.replaceChildren();
   if (!promos.length) {
     const empty=node("div","promo-empty");
-    empty.append(node("strong","","NOVA COLEÇÃO EM PREPARAÇÃO"),
-      node("p","","A página já está pronta. Cadastre o BF-109 no catalogo.js para liberar a primeira peça."));
-    const link=node("a","","Explorar o catálogo completo ↗");link.href="produtos.html";empty.append(link);root.append(empty);return;
+    empty.append(node("strong","","O PRÓXIMO DROP ESTÁ CHEGANDO."),
+      node("p","","Novas peças estão a caminho. Enquanto isso, explore nossa coleção e encontre seu próximo estilo."));
+    const link=node("a","","EXPLORAR PRODUTOS ↗");link.href="produtos.html";empty.append(link);root.append(empty);return;
   }
   for (const p of promos) {
     const card=node("article","promo-card");
@@ -30,18 +30,36 @@
       img.addEventListener("error",()=>photo.classList.add("is-missing"));}
     else photo.classList.add("is-missing");
     photo.append(img,node("div","promo-image-fallback","BLACK FORGE / FOTO EM PREPARAÇÃO"));
+    // Preços vindos do catálogo: não recalcular o desconto aqui.
+    const current=Number(p.price);
     const old=Number(p.originalPrice);
-    if(Number.isFinite(old) && old>Number(p.price)){
-      const percent=Math.round((1-Number(p.price)/old)*100);
+    const hasOriginal=Number.isFinite(old) && old>current;
+    if(hasOriginal){
+      const percent=Math.round((1-current/old)*100);
       photo.append(node("span","promo-off-label",percent+"% OFF"));
     }
     photo.append(node("span","promo-image-index",p.id+" / DROP 001"));
     const info=node("div","promo-card-info");
     info.append(node("p","promo-card-kicker","BLACK FORGE / LANÇAMENTO"),
       node("h3","",p.name),node("p","promo-description",p.description||"Nova peça da coleção Black Forge."));
-    const price=node("div","promo-prices");
-    if(Number.isFinite(old)&&old>Number(p.price))price.append(node("span","promo-oldprice",money(old)));
-    price.append(node("strong","promo-price",money(p.price)));info.append(price);
+
+    // DE / POR: preço antigo riscado e valor atual bem destacado.
+    const price=node("div","promo-prices promo-price-feature");
+    if(hasOriginal){
+      const oldRow=node("div","promo-price-original");
+      oldRow.append(node("span","promo-price-caption","PREÇO ORIGINAL"),
+        node("s","promo-oldprice",money(old)));
+      price.append(oldRow);
+    }
+    const newRow=node("div","promo-price-new");
+    newRow.append(node("span","promo-price-caption",hasOriginal?"PREÇO DE LANÇAMENTO":"PREÇO ATUAL"),
+      node("strong","promo-price",money(current)));
+    price.append(newRow);
+    if(hasOriginal){
+      const saving=Math.round((old-current)*100)/100;
+      price.append(node("span","promo-price-saving","VOCÊ ECONOMIZA "+money(saving)));
+    }
+    info.append(price);
     const choices={};
     for (const [field,label,key] of [["size","TAMANHO","sizes"],["color","COR","colors"],["model","MODELO","variants"]]) {
       const list=Array.isArray(p[key])?p[key].filter(x=>typeof x==="string"&&x.trim()):[];
