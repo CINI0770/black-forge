@@ -1,83 +1,88 @@
-"use strict";
-// Somente apresenta os produtos já cadastrados no catalogo.js.
-// O preço final é p.price: o desconto não é recalculado nem duplicado nesta página.
-(() => {
-  const all = Array.isArray(window.BLACK_FORGE_ITEMS) ? window.BLACK_FORGE_ITEMS : [];
-  const root = document.getElementById("promoGrid");
-  if (!root) return;
-  const money = value => Number(value).toLocaleString("pt-BR", {style:"currency",currency:"BRL"});
-  const node = (tag,cls,text) => {
-    const el = document.createElement(tag);
-    if (cls) el.className=cls;
-    if (text!==undefined) el.textContent=text;
-    return el;
-  };
-  const promos = all.filter(p => p && p.active===true && !p.placeholder && Number(p.price)>0 &&
-    (p.id==="BF-109" || p.promotion==="lancamento" || p.launchPromo===true));
-  root.replaceChildren();
-  if (!promos.length) {
-    const empty=node("div","promo-empty");
-    empty.append(node("strong","","O PRÓXIMO DROP ESTÁ CHEGANDO."),
-      node("p","","Novas peças estão a caminho. Enquanto isso, explore nossa coleção e encontre seu próximo estilo."));
-    const link=node("a","","EXPLORAR PRODUTOS ↗");link.href="produtos.html";empty.append(link);root.append(empty);return;
-  }
-  for (const p of promos) {
-    const card=node("article","promo-card");
-    const photo=node("div","promo-photo");
-    const img=node("img");
-    const firstImage=(Array.isArray(p.images)?p.images:[]).find(Boolean)||p.image||"";
-    if(firstImage){img.src=firstImage;img.alt=p.name||"Produto Black Forge";img.loading="lazy";
-      img.addEventListener("error",()=>photo.classList.add("is-missing"));}
-    else photo.classList.add("is-missing");
-    photo.append(img,node("div","promo-image-fallback","BLACK FORGE / FOTO EM PREPARAÇÃO"));
-    const old=Number(p.originalPrice);
-    if(Number.isFinite(old) && old>Number(p.price)){
-      const percent=Math.round((1-Number(p.price)/old)*100);
-      photo.append(node("span","promo-off-label",percent+"% OFF"));
-    }
-    photo.append(node("span","promo-image-index",p.id+" / DROP 001"));
-    const info=node("div","promo-card-info");
-    info.append(node("p","promo-card-kicker","BLACK FORGE / LANÇAMENTO"),
-      node("h3","",p.name),node("p","promo-description",p.description||"Nova peça da coleção Black Forge."));
-    const price=node("div","promo-prices");
-    if(Number.isFinite(old)&&old>Number(p.price))price.append(node("span","promo-oldprice",money(old)));
-    price.append(node("strong","promo-price",money(p.price)));info.append(price);
-    const choices={};
-    for (const [field,label,key] of [["size","TAMANHO","sizes"],["color","COR","colors"],["model","MODELO","variants"]]) {
-      const list=Array.isArray(p[key])?p[key].filter(x=>typeof x==="string"&&x.trim()):[];
-      // Um único valor fica pré-selecionado; ex.: cor Preto no BF-109.
-      if(list.length===1){choices[field]=list[0];if(field==="color")info.append(node("p","promo-note","COR: "+list[0].toUpperCase()));continue;}
-      if(list.length>1){
-        const labelNode=node("label","promo-field");labelNode.append(node("span","",label));
-        const select=node("select");select.setAttribute("aria-label",label);
-        const placeholder=node("option","","SELECIONE "+label);placeholder.value="";select.append(placeholder);
-        for(const value of list){const o=node("option","",value);o.value=value;select.append(o);}
-        choices[field]=select;labelNode.append(select);info.append(labelNode);
-      }
-    }
-    const buy=node("button","promo-buy","ADICIONAR AO CARRINHO ↗");buy.type="button";
-    const feedback=node("p","promo-card-feedback","");feedback.setAttribute("role","status");
-    buy.addEventListener("click",()=>{
-      const detail={id:p.id};
-      for(const [field,choice] of Object.entries(choices)){
-        detail[field]=typeof choice==="string"?choice:choice.value;
-        if(!detail[field]){feedback.textContent="Selecione todas as opções antes de continuar.";choice.focus();return;}
-      }
-      // Mesmo evento utilizado pelo render_catalogo.js, tratado pelo selecao.js existente.
-      document.dispatchEvent(new CustomEvent("bf:add-to-cart",{detail}));
-      // Confere a gravação para não dizer que foi adicionado sem confirmação.
-      let found=false;
-      for(const area of [sessionStorage,localStorage]){
-        try{
-          const v=JSON.parse(area.getItem("blackforge-selection-v4")||"{}")[p.id];
-          if(v && (Array.isArray(v.items)?v.items.some(i=>i.qty>0):v.qty>0))found=true;
-        }catch{}
-      }
-      if(found){feedback.replaceChildren();feedback.append(node("span","","Adicionado ao carrinho! "));
-        const go=node("a","","FINALIZAR PEDIDO ↗");go.href="pedido.html";go.style.textDecoration="underline";feedback.append(go);
-        buy.textContent="ADICIONAR OUTRA UNIDADE +";
-      }else{feedback.textContent="Não foi possível confirmar a seleção. Verifique se o selecao.js atual está conectado à página.";}
-    });
-    info.append(buy,feedback);card.append(photo,info);root.append(card);
-  }
-})();
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0b0b">
+  <meta name="description" content="Coleção de lançamento da Black Forge: peças selecionadas com 15% de desconto. Moda alternativa e atitude sem padrões.">
+  <title>Promoções de lançamento | BLACK FORGE</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./promocoes.css">
+  <script src="./catalogo.js" defer></script>
+  <script src="./selecao.js" defer></script>
+  <script src="./promocoes.js" defer></script>
+</head>
+<body class="products-page promo-page">
+  <a class="skip-link" href="#colecao">Pular para a coleção</a>
+  <div class="announcement promo-announcement">
+    <span>BLACK FORGE / EDIÇÃO DE LANÇAMENTO</span>
+    <span>15% OFF EM PEÇAS SELECIONADAS</span>
+    <span>FRETE GRÁTIS ATÉ 31/10/2026</span>
+  </div>
+  <header class="header" id="topo">
+    <a class="brand" href="index.html" aria-label="Black Forge, voltar à página inicial">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>BLACK<span class="brand-light">FORGE</span><small>DARKWEAR &amp; STREETWEAR</small></span>
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="index.html">INÍCIO</a>
+      <a href="produtos.html">PRODUTOS</a>
+      <a href="promocoes.html" aria-current="page">PROMOÇÕES</a>
+      <a href="index.html#duvidas">DÚVIDAS</a>
+    </nav>
+    <a class="promo-cart-link" href="pedido.html" aria-label="Ver carrinho e finalizar pedido">
+      <span>CARRINHO</span><strong id="selectionCount">0</strong><span aria-hidden="true">↗</span>
+    </a>
+  </header>
+  <main>
+    <section class="promo-hero" aria-labelledby="promoTitle">
+      <div class="promo-hero-copy">
+        <p class="promo-kicker">BLACK FORGE <span>✳</span> DROP 001 / OUTUBRO 2026</p>
+        <h1 id="promoTitle">NOVAS<br>PEÇAS.<br><em>15% OFF.</em></h1>
+        <p class="promo-lead">O underground não espera. Uma seleção especial de peças para marcar o lançamento da Black Forge.</p>
+        <div class="promo-hero-actions">
+          <a class="promo-primary" href="#colecao">EXPLORAR PROMOÇÕES <span aria-hidden="true">↗</span></a>
+          <a class="promo-link" href="produtos.html">VER CATÁLOGO COMPLETO <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="promo-fine">DESCONTO JÁ APLICADO NOS PREÇOS EXIBIDOS. NÃO É NECESSÁRIO CUPOM.</p>
+      </div>
+      <div class="promo-hero-poster" aria-hidden="true">
+        <span class="promo-poster-top">EDIÇÃO LIMITADA / BLACK FORGE</span>
+        <span class="promo-poster-star">✳</span>
+        <div class="promo-poster-number">15<span>%</span></div>
+        <div class="promo-poster-off">OFF</div>
+        <span class="promo-poster-note">SEU ESTILO.<br>SUAS REGRAS.</span>
+        <span class="promo-poster-bottom">BF / LANÇAMENTO 2026</span>
+      </div>
+    </section>
+    <div class="promo-ticker" aria-hidden="true"><div>✳ NÃO SEGUIMOS PADRÕES &nbsp; ✳ &nbsp; LANÇAMENTO BLACK FORGE &nbsp; ✳ &nbsp; 15% OFF EM PEÇAS SELECIONADAS &nbsp; ✳ &nbsp; NÃO SEGUIMOS PADRÕES &nbsp; ✳ &nbsp; LANÇAMENTO BLACK FORGE &nbsp; ✳</div></div>
+    <section class="promo-collection" id="colecao" aria-labelledby="promoCollectionTitle">
+      <div class="promo-section-label"><span>01 / NOVA COLEÇÃO</span><span>PEÇAS SELECIONADAS / PREÇOS ESPECIAIS</span></div>
+      <div class="promo-collection-head">
+        <div><p class="promo-kicker">ESCOLHA SEU PRÓXIMO LOOK</p><h2 id="promoCollectionTitle">A FORJA<br><em>COMEÇA AQUI.</em></h2></div>
+        <p>Roupas e acessórios com personalidade. Novidades entram nesta página conforme forem cadastradas na loja.</p>
+      </div>
+      <div class="promo-grid" id="promoGrid" aria-live="polite">
+        <p class="promo-loading">Carregando produtos da coleção...</p>
+      </div>
+    </section>
+    <section class="promo-benefits" aria-label="Vantagens da coleção">
+      <div><span class="promo-benefit-symbol">✳</span><strong>15% OFF</strong><small>Em produtos selecionados</small></div>
+      <div><span class="promo-benefit-symbol">⛓</span><strong>FRETE GRÁTIS</strong><small>Promoção de outubro de 2026</small></div>
+      <div><span class="promo-benefit-symbol">✦</span><strong>PAGAMENTO SEGURO</strong><small>Finalização pela Stripe</small></div>
+    </section>
+    <section class="promo-lastcall">
+      <p>BLACK FORGE / NÃO É SÓ ROUPA, É IDENTIDADE.</p>
+      <h2>USE O QUE<br><em>TE REPRESENTA.</em></h2>
+      <a href="produtos.html" class="promo-primary">VER TODAS AS PEÇAS <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer class="footer promo-footer">
+    <div class="footer-bottom">
+      <span>© 2026 BLACK FORGE</span>
+      <span>15% OFF EM ITENS SELECIONADOS · CONSULTE O PREÇO DE CADA PEÇA</span>
+      <a href="#topo">VOLTAR AO TOPO ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
