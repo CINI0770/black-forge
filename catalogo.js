@@ -2345,7 +2345,7 @@ window.BLACK_FORGE_ITEMS = [
 },
 
 // BLACK FORGE / NOVA COLEÇÃO — BF-109 a BF-137
-// launchReady:false mantém as peças visíveis, mas bloqueia compra até liberação.
+// Produtos promocionais disponíveis no catálogo, com seleção de opções e carrinho.
   {
     "id": "BF-109",
     "name": "Vestido Eclipse de Renda",
@@ -2373,7 +2373,7 @@ window.BLACK_FORGE_ITEMS = [
     "active": true,
     "placeholder": false,
     "launchPromo": true,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-110",
@@ -2398,7 +2398,7 @@ window.BLACK_FORGE_ITEMS = [
     "active": true,
     "placeholder": false,
     "launchPromo": true,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-111",
@@ -2423,7 +2423,7 @@ window.BLACK_FORGE_ITEMS = [
     "active": true,
     "placeholder": false,
     "launchPromo": true,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-112",
@@ -2448,7 +2448,7 @@ window.BLACK_FORGE_ITEMS = [
     "active": true,
     "placeholder": false,
     "launchPromo": true,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-113",
@@ -2473,7 +2473,7 @@ window.BLACK_FORGE_ITEMS = [
     "active": true,
     "placeholder": false,
     "launchPromo": true,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-114",
@@ -2498,7 +2498,7 @@ window.BLACK_FORGE_ITEMS = [
     "active": true,
     "placeholder": false,
     "launchPromo": true,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-115",
@@ -2520,7 +2520,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-116",
@@ -2542,7 +2542,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-117",
@@ -2564,7 +2564,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-118",
@@ -2586,7 +2586,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-119",
@@ -2608,7 +2608,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-120",
@@ -2630,7 +2630,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-121",
@@ -2652,7 +2652,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-122",
@@ -2685,7 +2685,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-123",
@@ -2717,7 +2717,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-124",
@@ -2749,7 +2749,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-125",
@@ -2779,7 +2779,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-126",
@@ -2808,7 +2808,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-127",
@@ -2839,7 +2839,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-128",
@@ -2869,7 +2869,34 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
+  },
+  {
+    "id": "BF-129",
+    "name": "Calça Jeans Baggy Dark",
+    "category": "PROMOÇÕES",
+    "price": 200.19,
+    "originalPrice": 235.52,
+    "images": [
+      "imagens/BF-129-01.jpg"
+    ],
+    "description": "Calça jeans preta infantil e juvenil com modelagem baggy, pernas largas e bolsos utilitários. Inspirada no streetwear e na estética Y2K.",
+    "sizes": [
+      "5",
+      "7",
+      "9",
+      "11",
+      "13",
+      "14"
+    ],
+    "colors": [
+      "Preto"
+    ],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false,
+    "launchReady": true
   },
   {
     "id": "BF-130",
@@ -2897,7 +2924,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-131",
@@ -2925,7 +2952,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-132",
@@ -2953,7 +2980,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-133",
@@ -2981,7 +3008,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-134",
@@ -3009,7 +3036,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-135",
@@ -3037,7 +3064,7 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
   {
     "id": "BF-136",
@@ -3065,7 +3092,34 @@ window.BLACK_FORGE_ITEMS = [
     "launchPromo": true,
     "active": true,
     "placeholder": false,
-    "launchReady": false
+    "launchReady": true
   },
-
+  {
+    "id": "BF-137",
+    "name": "Camisa Dark Manuscript",
+    "category": "PROMOÇÕES",
+    "price": 203.75,
+    "originalPrice": 239.71,
+    "images": [
+      "imagens/BF-137-01.jpg"
+    ],
+    "description": "Camisa branca com estampa de escrita gótica e ilustração sombria, visual Y2K e underground.",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "XXXL",
+      "4XL"
+    ],
+    "colors": [
+      "Branco"
+    ],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false,
+    "launchReady": true
+  }
 ];
