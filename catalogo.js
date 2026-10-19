@@ -2871,7 +2871,7 @@ window.BLACK_FORGE_ITEMS = [
     "placeholder": false,
     "launchReady": true
   },
-  
+ 
   {
     "id": "BF-130",
     "name": "Camisa Black Ritual",
