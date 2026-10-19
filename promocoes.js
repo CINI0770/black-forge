@@ -106,14 +106,7 @@
     }
     const buy=node("button","promo-buy","ADICIONAR AO CARRINHO ↗");buy.type="button";
     const feedback=node("p","promo-card-feedback","");feedback.setAttribute("role","status");
-    if (p.launchReady!==true) {
-      buy.disabled=true;
-      buy.textContent="LANÇAMENTO EM BREVE";
-      buy.setAttribute("aria-label","Em breve: "+p.name);
-      buy.classList.add("promo-coming-soon");
-    }
     buy.addEventListener("click",()=>{
-      if(p.launchReady!==true)return;
       const detail={id:p.id};
       for(const [field,choice] of Object.entries(choices)){
         detail[field]=typeof choice==="string"?choice:choice.value;
@@ -137,4 +130,3 @@
     info.append(buy,feedback);card.append(photo,info);root.append(card);
   }
 })();
-
