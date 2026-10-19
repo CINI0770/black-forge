@@ -2,7 +2,7 @@
 const catalogItems=window.BLACK_FORGE_ITEMS||[];
 const root=document.getElementById("catalogSections");
 
-// Vitrine BLACK FORGE: sete seções, sem alterar o cadastro original.
+// Vitrine BLACK FORGE: oito seções, incluindo a coleção promocional.
 const ordemCategorias = [
   "COLARES",
   "ANÉIS E PULSEIRAS",
@@ -10,7 +10,8 @@ const ordemCategorias = [
   "CAMISETAS E CAMISAS",
   "MOLETONS E CASACOS",
   "CALÇAS E SAIAS",
-  "CALÇADOS"
+  "CALÇADOS",
+  "PROMOÇÕES"
 ];
 
 // As categorias já estão definidas no catalogo.js.
@@ -33,7 +34,8 @@ for(const category of groups){
  const head=el("div","category-head"), heading=el("div");heading.append(el("p","eyebrow","CATÁLOGO / "+items.length+" PRODUTOS"),el("h2","",category));head.append(heading,el("span","",items.length+" PRODUTOS"));section.append(head);
  const grid=el("div","slot-grid");
  for(const [i,p] of items.entries()){
-  const active=p.active!==false&&!p.placeholder&&Number(p.price)>0;
+  const active=p.active!==false&&!p.placeholder&&Number(p.price)>0&&
+    !(p.category==="PROMOÇÕES" && p.launchReady!==true);
   const card=el("article","slot-card");card.dataset.productId=p.id;
   const art=el("div","slot-art");
   const photoList=(Array.isArray(p.images)?p.images:[]).filter(Boolean);
@@ -41,7 +43,7 @@ for(const category of groups){
   if(photoList.length){
    const img=el("img","bf-product-image");let current=0;
    const show=()=>{img.src=photoList[current];img.alt=(p.name||p.id)+" — foto "+(current+1);};
-   img.loading="lazy";img.onerror=()=>{img.style.display="none";if(!art.querySelector(".slot-icon"))art.append(el("span","slot-icon","SEM FOTO"))};
+   img.loading="lazy";img.onerror=()=>{img.style.display="none";if(!art.querySelector(".slot-icon"))art.append(el("span","slot-icon",p.category==="PROMOÇÕES"?"BLACK FORGE":"SEM FOTO"))};
    img.onload=()=>{img.style.display=""};show();art.append(img);
    if(photoList.length>1){
     const controls=el("div","bf-gallery-controls");
@@ -56,10 +58,15 @@ for(const category of groups){
   art.append(el("span","slot-index",String(i+1).padStart(2,"0")+" / "+items.length));
   const info=el("div","slot-info");info.append(el("p","",category),el("h3","",p.name||"PRODUTO "+p.id+" — NÃO CADASTRADO"));
   if(p.description)info.append(el("p","bf-description",p.description));
+  if (p.category==="PROMOÇÕES" && Number(p.originalPrice)>Number(p.price)) {
+    const oldPrice=el("s","bf-original-price",money(p.originalPrice));
+    oldPrice.style.cssText="display:block;opacity:.65;font-size:.84em;margin:8px 0 3px";
+    info.append(oldPrice);
+  }
   if(Number(p.price)>0)info.append(el("strong","bf-price",money(p.price)));
   else info.append(el("span","",p.placeholder?"ESPAÇO RESERVADO":"PREÇO A DEFINIR"));
   if(active){const btn=el("button","slot-choose","ADICIONAR AO CARRINHO +");btn.type="button";if([p.sizes,p.colors,p.variants].some(a=>Array.isArray(a)&&a.length)){btn.addEventListener("click",()=>openDetails(p));btn.textContent="ESCOLHER OPÇÕES +";}else btn.dataset.select=p.id;info.append(btn)}
-  else info.append(el("span","bf-reserved","INDISPONÍVEL ATÉ CADASTRAR PREÇO"));
+  else info.append(el("span","bf-reserved",p.category==="PROMOÇÕES"?"NOVA COLEÇÃO · EM BREVE":"INDISPONÍVEL ATÉ CADASTRAR PREÇO"));
   const detail=el("button","bf-open-details","VER DETALHES ↗");
   detail.type="button";detail.addEventListener("click",()=>openDetails(p));
   art.addEventListener("click",e=>{if(!e.target.closest("button"))openDetails(p)});
@@ -107,7 +114,12 @@ function openDetails(p){
  body.append(el("p","bf-detail-kicker",(p.category || "PRODUTO")+" · "+p.id));
  body.append(el("h2","",p.name||"PRODUTO A CADASTRAR"));
  body.append(el("p","bf-detail-description",p.description||"Descrição ainda não cadastrada."));
- if(Number(p.price)>0)body.append(el("strong","bf-detail-price",money(p.price)));
+ if (p.category==="PROMOÇÕES" && Number(p.originalPrice)>Number(p.price)) {
+    const oldPrice=el("s","bf-original-price",money(p.originalPrice));
+    oldPrice.style.cssText="display:block;opacity:.65;margin:10px 0 4px";
+    body.append(oldPrice);
+  }
+  if(Number(p.price)>0)body.append(el("strong","bf-detail-price",money(p.price)));
  else body.append(el("p","","Preço ainda não cadastrado."));
  // Seletor universal: tamanho, cor e modelo, conforme o cadastro de cada produto.
  const selectors=[];
@@ -175,7 +187,8 @@ if (colorSelect && Array.isArray(p.colors) && p.colors.length) {
   // A primeira foto é uma prévia, não uma escolha automática de modelo.
   for(const [i,b] of [...thumbs.children].entries())b.setAttribute("aria-label","Ver foto do modelo "+modelSelect.options[i+1].value);
  }
- const active=p.active===true&&!p.placeholder&&Number(p.price)>0;
+ const active=p.active===true&&!p.placeholder&&Number(p.price)>0&&
+    !(p.category==="PROMOÇÕES" && p.launchReady!==true);
  if(active){
   const add=el("button","slot-choose bf-detail-buy","ADICIONAR AO CARRINHO +");add.type="button";
   const warning=el("p","bf-variant-warning","");warning.setAttribute("role","status");
@@ -186,7 +199,7 @@ if (colorSelect && Array.isArray(p.colors) && p.colors.length) {
    document.dispatchEvent(new CustomEvent("bf:add-to-cart",{detail:data}));
    add.textContent="ADICIONADO ✓";setTimeout(()=>{add.textContent="ADICIONAR AO CARRINHO +"},1400);
   });body.append(add,warning);
- }else body.append(el("p","bf-detail-unavailable","PRODUTO INDISPONÍVEL — COMPLETE O CADASTRO"));
+ }else body.append(el("p","bf-detail-unavailable",p.category==="PROMOÇÕES"?"LANÇAMENTO EM BREVE":"PRODUTO INDISPONÍVEL — COMPLETE O CADASTRO"));
  layout.append(visual,body);dialog.append(layout);
  overlay.hidden=false;document.body.style.overflow="hidden";close.focus();
 }
