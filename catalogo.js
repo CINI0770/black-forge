@@ -2343,5 +2343,497 @@ window.BLACK_FORGE_ITEMS = [
   placeholder: false,
   supplier_search: "AliExpress cinto largo gótico rebites fivela metal"
 },
+{
+  "id": "BF-109",
+  "name": "Vestido Eclipse de Renda",
+  "category": "PROMOÇÕES",
+  "price": 169.92,
+  "originalPrice": 199.90,
+  "images": ["imagens/BF-109-01.jpg"],
+  "description": "Vestido gótico preto com mangas longas de renda, ombros à mostra e saia evasê.",
+  "sizes": ["S", "M", "L", "XL", "XXL", "XXXL", "4XL", "5XL"],
+  "colors": ["Preto"],
+  "promotion": "lancamento",
+  "active": true,
+  "placeholder": false
+}
+
+
+
+  {
+    "id": "BF-110",
+    "name": "Vestido Nocturne de Babados",
+    "category": "PROMOÇÕES",
+    "price": 223.80,
+    "originalPrice": 263.29,
+    "images": ["imagens/BF-110-01.jpg"],
+    "description": "Vestido gótico preto com babados, inspiração punk e estética Y2K.",
+    "sizes": ["P", "M", "G", "GG"],
+    "colors": ["Preto"],
+    "promotion": "lancamento",
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-111",
+    "name": "Vestido Véu Sombrio",
+    "category": "PROMOÇÕES",
+    "price": 223.80,
+    "originalPrice": 263.29,
+    "images": ["imagens/BF-111-01.jpg"],
+    "description": "Vestido preto de inspiração gótica romântica, com visual alternativo e detalhes delicados.",
+    "sizes": ["P", "M", "G", "GG"],
+    "colors": ["Preto"],
+    "promotion": "lancamento",
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-112",
+    "name": "Vestido Crepúsculo Gótico",
+    "category": "PROMOÇÕES",
+    "price": 223.80,
+    "originalPrice": 263.29,
+    "images": ["imagens/BF-112-01.jpg"],
+    "description": "Vestido preto de estética vintage e punk, ideal para looks underground.",
+    "sizes": ["P", "M", "G", "GG"],
+    "colors": ["Preto"],
+    "promotion": "lancamento",
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-113",
+    "name": "Vestido Corvo Imperial",
+    "category": "PROMOÇÕES",
+    "price": 223.80,
+    "originalPrice": 263.29,
+    "images": ["imagens/BF-113-01.jpg"],
+    "description": "Vestido preto com inspiração gótica clássica e detalhes de personalidade.",
+    "sizes": ["P", "M", "G", "GG"],
+    "colors": ["Preto"],
+    "promotion": "lancamento",
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-114",
+    "name": "Vestido Eclipse Y2K",
+    "category": "PROMOÇÕES",
+    "price": 223.80,
+    "originalPrice": 263.29,
+    "images": ["imagens/BF-114-01.jpg"],
+    "description": "Vestido preto com referências góticas dos anos 2000 e atitude streetwear.",
+    "sizes": ["P", "M", "G", "GG"],
+    "colors": ["Preto"],
+    "promotion": "lancamento",
+    "active": true,
+    "placeholder": false
+  }
+
+
+  {
+    "id": "BF-115",
+    "name": "Meia-Calça Gótica Cruz Noturna",
+    "category": "PROMOÇÕES",
+    "price": 39.90,
+    "originalPrice": 46.94,
+    "images": ["imagens/BF-115-01.jpg"],
+    "description": "Meia-calça alternativa com estética gótica e detalhes em cruz. Ideal para compor looks dark, punk e Y2K.",
+    "sizes": ["XS-3XL"],
+    "colors": ["Opção 01"],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-116",
+    "name": "Meia-Calça Véu Sombrio",
+    "category": "PROMOÇÕES",
+    "price": 39.90,
+    "originalPrice": 46.94,
+    "images": ["imagens/BF-116-01.jpg"],
+    "description": "Meia-calça com visual retrô gótico e estilo alternativo marcante para produções autênticas.",
+    "sizes": ["XS-3XL"],
+    "colors": ["Opção 02"],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-117",
+    "name": "Meia-Calça Eclipse Alternativo",
+    "category": "PROMOÇÕES",
+    "price": 39.90,
+    "originalPrice": 46.94,
+    "images": ["imagens/BF-117-01.jpg"],
+    "description": "Meia-calça de estética alternativa com presença visual forte, perfeita para looks urbanos e underground.",
+    "sizes": ["XS-3XL"],
+    "colors": ["Opção 03"],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-118",
+    "name": "Meia-Calça Ritual Urbano",
+    "category": "PROMOÇÕES",
+    "price": 39.90,
+    "originalPrice": 46.94,
+    "images": ["imagens/BF-118-01.jpg"],
+    "description": "Meia-calça com pegada gótica moderna, pensada para looks com atitude e identidade própria.",
+    "sizes": ["XS-3XL"],
+    "colors": ["Opção 04"],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-119",
+    "name": "Meia-Calça Dark Lace",
+    "category": "PROMOÇÕES",
+    "price": 39.90,
+    "originalPrice": 46.94,
+    "images": ["imagens/BF-119-01.jpg"],
+    "description": "Meia-calça com inspiração gótica e detalhes delicados para completar combinações alternativas.",
+    "sizes": ["XS-3XL"],
+    "colors": ["Opção 05"],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-120",
+    "name": "Meia-Calça Noite Rebelde",
+    "category": "PROMOÇÕES",
+    "price": 39.90,
+    "originalPrice": 46.94,
+    "images": ["imagens/BF-120-01.jpg"],
+    "description": "Meia-calça com visual alternativo e acabamento estiloso, ideal para propostas punk e streetwear.",
+    "sizes": ["XS-3XL"],
+    "colors": ["Opção 06"],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-121",
+    "name": "Meia-Calça Lolita Underground",
+    "category": "PROMOÇÕES",
+    "price": 39.90,
+    "originalPrice": 46.94,
+    "images": ["imagens/BF-121-01.jpg"],
+    "description": "Meia-calça com inspiração lolita gótica e visual marcante para quem gosta de peças fora do padrão.",
+    "sizes": ["XS-3XL"],
+    "colors": ["Opção 07"],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false
+  }
+
+{
+  id: "BF-...",
+  name: "Bota Casual Plataforma Preta",
+  category: "PROMOÇÕES",
+  price: 223.80,
+  oldPrice: 257.37,
+  images: [
+    "botas_pretas_de_combate_em_estúdio.png",
+    "botas_de_combate_pretas_em_destaque.png",
+    "botas_pretas_de_combate_com_plataforma.png"
+  ],
+  description: "Bota preta de cano alto com solado tratorado, visual alternativo e acabamento fosco.",
+  sizes: ["37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+  colors: ["Preto"],
+  active: true,
+  promotion: "lancamento"
+}
+
+
+{
+  "id": "BF-122",
+  "name": "Bota Plataforma Sombra Negra",
+  "category": "PROMOÇÕES",
+  "price": 286.65,
+  "originalPrice": 329.90,
+  "images": [
+    "imagens/BF-122-01.jpg",
+    "imagens/BF-122-02.jpg",
+    "imagens/BF-122-03.jpg"
+  ],
+  "description": "Bota preta de cano médio com cadarço, zíper lateral e solado tratorado de plataforma. Estilo gótico, punk e streetwear.",
+  "sizes": ["37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+  "colors": ["Preto"],
+  "promotion": "lancamento",
+  "launchPromo": true,
+  "active": true,
+  "placeholder": false
+}
+{
+  "id": "BF-123",
+  "name": "Bota Punk Reino Unido Preta",
+  "category": "PROMOÇÕES",
+  "id": "BF-123",
+  "price": 251.73,
+  "originalPrice": 296.15
+  "images": [
+    "imagens/BF-123-01.jpg",
+    "imagens/BF-123-02.jpg"
+
+  ],
+  "description": "Bota feminina de cano alto com fivelas, cadarço e solado tratorado. Estilo punk, gótico e streetwear.",
+  "sizes": ["35", "36", "37", "38", "39", "40", "41", "42", "43"],
+  "colors": ["Preto"],
+  "promotion": "lancamento",
+  "launchPromo": true,
+  "active": true,
+  "placeholder": false
+}
+{
+  "id": "BF-124",
+  "name": "Bota Punk Reino Unido Branca",
+  "category": "PROMOÇÕES",
+  "id": "BF-124",
+  "price": 251.73,
+  "originalPrice": 296.15
+  "images": [
+    "imagens/BF-124-01.jpg"
+  ],
+  "description": "Bota feminina de cano alto com fivelas, cadarço e solado tratorado. Estilo punk, gótico e streetwear.",
+  "sizes": ["35", "36", "37", "38", "39", "40", "41", "42", "43"],
+  "colors": ["Branco"],
+  "promotion": "lancamento",
+  "launchPromo": true,
+  "active": true,
+  "placeholder": false
+}
+
+
+{
+  "id": "BF-125",
+  "name": "Bota Combat Black Steel",
+  "category": "PROMOÇÕES",
+  "price": 439.60,
+  "originalPrice": 517.18,
+  "images": [
+    "imagens/BF-125-01.jpg",
+    "imagens/BF-125-02.jpg",
+    "imagens/BF-125-03.jpg"
+  ],
+  "description": "Bota de combate preta de cano médio, com fivela cravejada, cadarços reforçados e plataforma de solado tratorado. Visual punk e gótico.",
+  "sizes": [
+    "36",
+    "36,5",
+    "37,5",
+    "38",
+    "39",
+    "39,5",
+    "40,5"
+  ],
+  "colors": ["Preto"],
+  "promotion": "lancamento",
+  "launchPromo": true,
+  "active": true,
+  "placeholder": false
+}
+
+{
+  "id": "BF-126",
+  "name": "Bota Punk Correntes da Noite",
+  "category": "PROMOÇÕES",
+  "price": 220.08,
+  "originalPrice": 258.92,
+  "images": [
+    "imagens/BF-126-01.jpg",
+    "imagens/BF-126-02.jpg",
+    "imagens/BF-126-03.jpg"
+  ],
+  "description": "Bota punk preta de cano curto com correntes metálicas, fivelas, cadarços e plataforma tratorada. Ideal para looks góticos e alternativos.",
+  "sizes": ["35", "36", "37", "38", "39", "40"],
+  "colors": ["Preto"],
+  "promotion": "lancamento",
+  "launchPromo": true,
+  "active": true,
+  "placeholder": false
+}
+
+{
+  "id": "BF-127",
+  "name": "Bota Moto Rebel Black",
+  "category": "PROMOÇÕES",
+  "price": 311.20,
+  "originalPrice": 366.12,
+  "images": [
+    "imagens/BF-127-01.jpg",
+    "imagens/BF-127-02.jpg",
+    "imagens/BF-127-03.jpg"
+  ],
+  "description": "Bota masculina preta de inspiração motociclista, com cano médio, acabamento enrugado, duas tiras com fivelas metálicas e detalhes cravejados. Estilo punk, gótico e rocker.",
+  "sizes": [
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45"
+  ],
+  "colors": ["Preto"],
+  "promotion": "lancamento",
+  "launchPromo": true,
+  "active": true,
+  "placeholder": false
+}
+
+{
+  "id": "BF-128",
+  "name": "Saia Assimétrica Noite Eterna",
+  "category": "PROMOÇÕES",
+  "price": 229,90,
+  "originalPrice": 264.38,
+  "images": [
+    "imagens/BF-128-01.jpg",
+    "imagens/BF-128-02.jpg",
+    "imagens/BF-128-03.jpg"
+  ],
+  "description": "Saia gótica preta em camadas com corte assimétrico, frente curta e parte traseira alongada. Não inclui blusa, botas ou acessórios.",
+  "sizes": ["PP", "P", "M", "G", "GG", "EG", "EGG"],
+  "colors": ["Preto"],
+  "promotion": "lancamento",
+  "launchPromo": true,
+  "active": true,
+  "placeholder": false
+}
+
+
+[
+  {
+    "id": "BF-130",
+    "name": "Camisa Black Ritual",
+    "category": "PROMOÇÕES",
+    "price": 203.75,
+    "originalPrice": 239.71,
+    "images": ["imagens/BF-130-01.jpg"],
+    "description": "Camisa preta de manga curta com estampa gótica frontal, inspirada na estética punk e Y2K.",
+    "sizes": ["S", "M", "L", "XL", "XXL", "XXXL", "4XL"],
+    "colors": ["Preto"],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-131",
+    "name": "Camisa Shadow Scripture",
+    "category": "PROMOÇÕES",
+    "price": 203.75,
+    "originalPrice": 239.71,
+    "images": ["imagens/BF-131-01.jpg"],
+    "description": "Camisa preta com estampa gráfica sombria e referências ao streetwear gótico.",
+    "sizes": ["S", "M", "L", "XL", "XXL", "XXXL", "4XL"],
+    "colors": ["Preto"],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-132",
+    "name": "Camisa Gothic Testament",
+    "category": "PROMOÇÕES",
+    "price": 203.75,
+    "originalPrice": 239.71,
+    "images": ["imagens/BF-132-01.jpg"],
+    "description": "Camisa branca com gravata preta e estampas góticas assimétricas.",
+    "sizes": ["S", "M", "L", "XL", "XXL", "XXXL", "4XL"],
+    "colors": ["Branco"],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-133",
+    "name": "Camisa Fallen Angel",
+    "category": "PROMOÇÕES",
+    "price": 203.75,
+    "originalPrice": 239.71,
+    "images": ["imagens/BF-133-01.jpg"],
+    "description": "Camisa branca de manga curta com gravata preta e estampa ornamental de inspiração gótica.",
+    "sizes": ["S", "M", "L", "XL", "XXL", "XXXL", "4XL"],
+    "colors": ["Branco"],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-134",
+    "name": "Camisa Crimson Cross",
+    "category": "PROMOÇÕES",
+    "price": 203.75,
+    "originalPrice": 239.71,
+    "images": ["imagens/BF-134-01.jpg"],
+    "description": "Camisa branca com gravata em preto e vermelho, detalhes de cruzes e estampa alternativa.",
+    "sizes": ["S", "M", "L", "XL", "XXL", "XXXL", "4XL"],
+    "colors": ["Branco"],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-135",
+    "name": "Camisa Silent Requiem",
+    "category": "PROMOÇÕES",
+    "price": 203.75,
+    "originalPrice": 239.71,
+    "images": ["imagens/BF-135-01.jpg"],
+    "description": "Camisa branca com gravata preta, composição minimalista e referências góticas.",
+    "sizes": ["S", "M", "L", "XL", "XXL", "XXXL", "4XL"],
+    "colors": ["Branco"],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-136",
+    "name": "Camisa Scarlet Rebellion",
+    "category": "PROMOÇÕES",
+    "price": 203.75,
+    "originalPrice": 239.71,
+    "images": ["imagens/BF-136-01.jpg"],
+    "description": "Camisa branca com gravata vermelha e preta, estampas de cruzes e estética punk.",
+    "sizes": ["S", "M", "L", "XL", "XXL", "XXXL", "4XL"],
+    "colors": ["Branco"],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false
+  },
+  {
+    "id": "BF-137",
+    "name": "Camisa Dark Manuscript",
+    "category": "PROMOÇÕES",
+    "price": 203.75,
+    "originalPrice": 239.71,
+    "images": ["imagens/BF-137-01.jpg"],
+    "description": "Camisa branca com estampa de escrita gótica e ilustração sombria, visual Y2K e underground.",
+    "sizes": ["S", "M", "L", "XL", "XXL", "XXXL", "4XL"],
+    "colors": ["Branco"],
+    "promotion": "lancamento",
+    "launchPromo": true,
+    "active": true,
+    "placeholder": false
+  }
 
 ];
