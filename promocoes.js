@@ -15,6 +15,15 @@
   const promos = all.filter(p => p && p.active===true && !p.placeholder && Number(p.price)>0 &&
     (p.id==="BF-109" || p.promotion==="lancamento" || p.launchPromo===true));
   root.replaceChildren();
+  const galleryStyle=node("style");
+  galleryStyle.textContent=`
+    .promo-photo{position:relative}
+    .promo-gallery-controls{position:absolute;bottom:12px;left:12px;display:flex;gap:8px;z-index:5}
+    .promo-gallery-arrow{width:40px;height:40px;border:1px solid #e6e1d6;background:#101010e8;color:#fff;font-size:28px;cursor:pointer;border-radius:0}
+    .promo-gallery-arrow:hover{background:#a20c17}
+    .promo-buy:disabled{cursor:not-allowed;opacity:.7}
+  `;
+  document.head.append(galleryStyle);
   if (!promos.length) {
     const empty=node("div","promo-empty");
     empty.append(node("strong","","O PRÓXIMO DROP ESTÁ CHEGANDO."),
@@ -25,11 +34,33 @@
     const card=node("article","promo-card");
     const photo=node("div","promo-photo");
     const img=node("img");
-    const firstImage=(Array.isArray(p.images)?p.images:[]).find(Boolean)||p.image||"";
+    const photos=(Array.isArray(p.images)?p.images:[]).filter(Boolean);
+    if(!photos.length && p.image)photos.push(p.image);
+    let currentPhoto=0;
+    const firstImage=photos[0]||"";
     if(firstImage){img.src=firstImage;img.alt=p.name||"Produto Black Forge";img.loading="lazy";
       img.addEventListener("error",()=>photo.classList.add("is-missing"));}
     else photo.classList.add("is-missing");
-    photo.append(img,node("div","promo-image-fallback","BLACK FORGE / FOTO EM PREPARAÇÃO"));
+    photo.append(img,node("div","promo-image-fallback","BLACK FORGE / DROP 001"));
+    // Galeria: permite navegar por todas as 3 fotos dos produtos que as possuem.
+    if (photos.length>1) {
+      const gal=node("div","promo-gallery-controls");
+      const prev=node("button","promo-gallery-arrow","‹");
+      const next=node("button","promo-gallery-arrow","›");
+      prev.type=next.type="button";
+      prev.setAttribute("aria-label","Foto anterior de "+p.name);
+      next.setAttribute("aria-label","Próxima foto de "+p.name);
+      const change=step=>{
+        currentPhoto=(currentPhoto+step+photos.length)%photos.length;
+        photo.classList.remove("is-missing");
+        img.src=photos[currentPhoto];
+        img.alt=(p.name||"Produto Black Forge")+" — foto "+(currentPhoto+1);
+      };
+      prev.addEventListener("click",()=>change(-1));
+      next.addEventListener("click",()=>change(1));
+      gal.append(prev,next);
+      photo.append(gal);
+    }
     // Preços vindos do catálogo: não recalcular o desconto aqui.
     const current=Number(p.price);
     const old=Number(p.originalPrice);
@@ -75,7 +106,14 @@
     }
     const buy=node("button","promo-buy","ADICIONAR AO CARRINHO ↗");buy.type="button";
     const feedback=node("p","promo-card-feedback","");feedback.setAttribute("role","status");
+    if (p.launchReady!==true) {
+      buy.disabled=true;
+      buy.textContent="LANÇAMENTO EM BREVE";
+      buy.setAttribute("aria-label","Em breve: "+p.name);
+      buy.classList.add("promo-coming-soon");
+    }
     buy.addEventListener("click",()=>{
+      if(p.launchReady!==true)return;
       const detail={id:p.id};
       for(const [field,choice] of Object.entries(choices)){
         detail[field]=typeof choice==="string"?choice:choice.value;
@@ -99,3 +137,4 @@
     info.append(buy,feedback);card.append(photo,info);root.append(card);
   }
 })();
+
