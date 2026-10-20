@@ -16,34 +16,6 @@
   background-image: radial-gradient(#ffffff08 .7px,transparent .7px);
   background-size: 7px 7px;
 }
-.order-punk .announcement {
-  background: #e8e4db;
-  color: #131313;
-  border-bottom: 2px solid #121212;
-  font: 800 11px/1.2 'Barlow Condensed',Impact,sans-serif;
-  letter-spacing: .2em;
-}
-.order-punk .header {
-  position: relative;
-  height: 83px;
-  margin: 0;
-  background: #080808;
-  border-bottom: 1px solid #72706a;
-  box-shadow: none;
-}
-.order-punk .brand {font-size: 28px;letter-spacing:-.035em}
-.order-punk .brand-mark {color: var(--bf-paper)}
-.order-punk .nav {gap: 32px}
-.order-punk .nav a[aria-current="page"] {color: #fff}
-.order-punk .nav a[aria-current="page"]:after {width:100%;background:var(--bf-red);height:2px}
-.order-punk .bf-back-shopping {
-  border: 1px solid #63605a;
-  padding: 12px 17px;
-  font: 800 12px 'Barlow Condensed',Impact,sans-serif;
-  letter-spacing:.12em;
-  transition: background .2s, color .2s;
-}
-.order-punk .bf-back-shopping:hover {background:var(--bf-paper);color:#111}
 
 .order-punk .order-main {
   max-width: 1530px;
@@ -433,14 +405,6 @@
   .order-punk .bf-aside-footer {margin:30px -25px -25px}
 }
 @media (max-width: 700px) {
-  .order-punk .announcement {justify-content:center;font-size:10px}
-  .order-punk .announcement span:not(:first-child) {display:none}
-  .order-punk .header {height:auto;min-height:70px;padding:12px 5% 55px;flex-wrap:wrap;gap:6px}
-  .order-punk .brand {font-size:24px}
-  .order-punk .brand-mark {font-size:26px}
-  .order-punk .nav {position:absolute;top:auto;left:0;right:0;bottom:0;display:flex;gap:28px;justify-content:center;padding:12px 5%;border-bottom:0;background:#111}
-  .order-punk .nav a {font-size:10px}
-  .order-punk .bf-back-shopping {font-size:10px;padding:10px 11px;margin-left:auto}
   .order-punk .order-main {padding:0 4% 40px}
   .order-punk .bf-checkout-hero {display:block;min-height:0}
   .order-punk .bf-hero-copy {padding:42px 7% 45px}

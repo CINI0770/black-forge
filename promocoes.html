@@ -9,31 +9,15 @@
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./promocoes.css">
   <script src="./catalogo.js" defer></script>
+  <script src="./navbar-menu.js" defer></script>
   <script src="./selecao.js" defer></script>
+  <script src="./carrinho.js" defer></script>
   <script src="./promocoes.js" defer></script>
 </head>
 <body class="products-page promo-page">
   <a class="skip-link" href="#colecao">Pular para a coleção</a>
-  <div class="announcement promo-announcement">
-    <span>BLACK FORGE / EDIÇÃO DE LANÇAMENTO</span>
-    <span>15% OFF EM PEÇAS SELECIONADAS</span>
-    <span>FRETE GRÁTIS ATÉ 31/10/2026</span>
-  </div>
-  <header class="header" id="topo">
-    <a class="brand" href="index.html" aria-label="Black Forge, voltar à página inicial">
-      <span class="brand-mark" aria-hidden="true">✦</span>
-      <span>BLACK<span class="brand-light">FORGE</span><small>DARKWEAR &amp; STREETWEAR</small></span>
-    </a>
-    <nav class="nav" aria-label="Navegação principal">
-      <a href="index.html">INÍCIO</a>
-      <a href="produtos.html">PRODUTOS</a>
-      <a href="promocoes.html" aria-current="page">PROMOÇÕES</a>
-      <a href="index.html#duvidas">DÚVIDAS</a>
-    </nav>
-    <a class="promo-cart-link" href="pedido.html" aria-label="Ver carrinho e finalizar pedido">
-      <span>CARRINHO</span><strong id="selectionCount">0</strong><span aria-hidden="true">↗</span>
-    </a>
-  </header>
+  <!-- Barra de navegação padrão: vem do navbar-menu.js -->
+  <div id="navbar-menu"></div>
   <main>
     <section class="promo-hero" aria-labelledby="promoTitle">
       <div class="promo-hero-copy">

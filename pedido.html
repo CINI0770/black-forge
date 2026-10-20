@@ -10,29 +10,15 @@
   <!-- CSS exclusivo desta página. Não substitui o estilo da home ou do catálogo. -->
   <link rel="stylesheet" href="./checkout-punk.css">
   <script src="./catalogo.js" defer></script>
+  <script src="./navbar-menu.js" defer></script>
+  <script src="./carrinho.js" defer></script>
   <script src="./pedido.js" defer></script>
 </head>
 <body class="products-page order-page order-punk">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <div class="announcement">
-    <span>BLACK FORGE / DARKWEAR &amp; STREETWEAR</span>
-    <span>FRETE GRÁTIS EM OUTUBRO</span>
-    <span>DESDE 2026</span>
-  </div>
-
-  <header class="header" id="topo">
-    <a class="brand" href="index.html" aria-label="Black Forge, página inicial">
-      <span class="brand-mark" aria-hidden="true">✦</span>
-      <span>BLACK<span class="brand-light">FORGE</span><small>DARKWEAR &amp; STREETWEAR</small></span>
-    </a>
-    <nav class="nav" aria-label="Navegação principal">
-      <a href="index.html">INÍCIO</a>
-      <a href="produtos.html">PRODUTOS</a>
-      <a href="pedido.html" aria-current="page">PEDIDO</a>
-    </nav>
-    <a class="bf-back-shopping" href="produtos.html">← VOLTAR À LOJA</a>
-  </header>
+  <!-- Barra de navegação padrão: vem do navbar-menu.js -->
+  <div id="navbar-menu"></div>
 
   <main class="order-main" id="conteudo">
     <section class="bf-checkout-hero" aria-labelledby="orderTitle">
