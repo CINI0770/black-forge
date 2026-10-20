@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="BLACK FORGE — roupas, calçados e acessórios alternativos. Moda punk, gótica, grunge e streetwear.">
+  <title>Produto | BLACK FORGE</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./produto.css">
+</head>
+<body class="bf-product-page">
+  <a class="skip-link" href="#produto">Pular para o conteúdo</a>
+
+  <!-- Barra de navegação padrão: vem do navbar-menu.js -->
+  <div id="navbar-menu"></div>
+
+  <nav class="produto-trilha" aria-label="Você está em">
+    <a href="produtos.html">← VOLTAR AO CATÁLOGO</a>
+    <span id="produtoTrilha"></span>
+  </nav>
+
+  <!-- O produto.js preenche este main com as fotos (esquerda) e os detalhes (direita) -->
+  <main id="produto" class="produto-pagina"></main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <a class="brand" href="index.html"><span class="brand-mark">✦</span><span>BLACK<span class="brand-light">FORGE</span><small>DARKWEAR &amp; STREETWEAR</small></span></a>
+      <p>MODA ALTERNATIVA.<br>SEU ESTILO, SEM PADRÕES.</p>
+      <div><a href="index.html">INÍCIO ↗</a><a href="produtos.html">PRODUTOS ↗</a><a href="index.html#duvidas">DÚVIDAS ↗</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 BLACK FORGE</span><span>ESTILO SEM REGRAS / PAGAMENTO SEGURO</span><a href="#topo">VOLTAR AO TOPO ↑</a></div>
+  </footer>
+
+  <!-- catalogo.js primeiro (cria a lista), depois produto.js (usa a lista) -->
+  <!-- selecao.js recebe o "adicionar ao carrinho" e salva no localStorage -->
+  <script src="./catalogo.js"></script>
+  <script src="./navbar-menu.js"></script>
+  <script src="./selecao.js"></script>
+  <script src="./carrinho.js"></script>
+  <script src="./produto.js"></script>
+</body>
+</html>

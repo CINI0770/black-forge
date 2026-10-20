@@ -11,28 +11,8 @@
 <body class="products-page bf-catalog-page">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <div class="announcement">
-    <span>BLACK FORGE / EST. 2026</span>
-    <span>FRETE GRÁTIS EM OUTUBRO</span>
-    <span>MAIS QUE MODA. IDENTIDADE.</span>
-  </div>
-
-  <header class="header" id="topo">
-    <a class="brand" href="index.html" aria-label="Black Forge, página inicial">
-      <span class="brand-mark">✦</span>
-      <span>BLACK<span class="brand-light">FORGE</span><small>DARKWEAR &amp; STREETWEAR</small></span>
-    </a>
-    <nav class="nav" aria-label="Navegação principal">
-      <a href="index.html">INÍCIO</a>
-      <a href="promocoes.html">PROMOÇÕES</a>
-      <a href="produtos.html" aria-current="page">PRODUTOS</a>
-      <a href="index.html#manifesto">SOBRE</a>
-      <a href="index.html#duvidas">DÚVIDAS</a>
-    </nav>
-    <a class="bf-header-cart" href="pedido.html" aria-label="Ir para o carrinho e finalizar pedido">
-      <span>CARRINHO</span><span aria-hidden="true">↗</span>
-    </a>
-  </header>
+  <!-- Barra de navegação padrão: vem do navbar-menu.js -->
+  <div id="navbar-menu"></div>
 
   <main id="conteudo">
     <section class="catalog-hero bf-catalog-hero" aria-labelledby="catalogTitle">
@@ -102,8 +82,10 @@
 
   <!-- A ordem destes scripts e os IDs são necessários para o catálogo e o carrinho existentes. -->
   <script src="./catalogo.js"></script>
+  <script src="./navbar-menu.js"></script>
   <script src="./render_catalogo.js"></script>
   <script src="./selecao.js"></script>
+  <script src="./carrinho.js"></script>
   <script>
   (function(){
     const sections=[...document.querySelectorAll('#catalogSections .category-section')];
