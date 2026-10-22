@@ -3069,4 +3069,281 @@ window.BLACK_FORGE_ITEMS = [
     "launchReady": true
   },
 
+{
+  id: "BF-138",
+  name: "Suéter Ossos da Meia-Noite",
+  category: "MOLETONS E CASACOS",
+  price: 159.90,
+  originalPrice: 0,
+  images: [
+    "images/BF-138-01.jpg",
+    "images/BF-138-02.jpg",
+    "images/BF-138-03.jpg"
+  ],
+  description: "Suéter de malha com estampa de esqueleto, estética gótica e inspiração underground. Uma peça marcante para compor looks darkwear e streetwear.",
+  sizes: ["P", "M", "G", "GG", "XGG"],
+  colors: [
+    "Opção 1 - Preto",
+    "Opção 4 - Cinza",
+    "Opção 6 - Cinza-escuro"
+  ],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "Suéter jacquard esqueleto AliExpress",
+  supplier_cost_reference: 74.21
+},
+
+{
+  id: "BF-139",
+  name: "Tênis Ivory Rebellion",
+  category: "CALÇADOS",
+  price: 199.90,
+  images: [
+    "images/BF-139-01.jpg",
+    "images/BF-139-02.jpg",
+    "images/BF-139-03.jpg"
+  ],
+  description: "Tênis feminino de plataforma robusta com solado escultural, cabedal em malha respirável e inspiração Y2K. Uma peça marcante para compor looks alternativos, urbanos e futuristas.",
+  sizes: ["35", "36", "37", "38", "39", "40"],
+  colors: ["Bege", "Verde", "Azul"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress 1005008293431469",
+  supplier_cost_reference: 140.92
+},
+{
+  id: "BF-140",
+  name: "Camisa Tokyo Harness Branca",
+  category: "CAMISETAS E CAMISAS",
+  price: 149.90,
+  originalPrice: 179.90,
+  images: [
+    "images/BF-140-01.jpg",
+    "images/BF-140-02.jpg",
+    "images/BF-140-03.jpg"
+  ],
+  description: "Camisa feminina branca de manga curta com gravata preta e tiras frontais de inspiração streetwear e alternativa.",
+  sizes: ["P", "M", "G", "GG"],
+  colors: ["Branco"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  launchPromo: true,
+  promotion: "lancamento",
+  collection: "october-drop",
+  supplier_search: "AliExpress conjunto casual camisa com gravata branca feminina",
+  supplier_cost_reference: 87.18
+},
+{
+  id: "BF-141",
+  name: "Conjunto Tokyo Harness Branco",
+  category: "CAMISETAS E CAMISAS",
+  price: 249.90,
+  originalPrice: 289.90,
+  images: [
+    "images/BF-141-01.jpg",
+    "images/BF-141-02.jpg",
+    "images/BF-141-03.jpg"
+  ],
+  description: "Conjunto feminino com camisa branca, gravata preta e calça cargo preta. Visual alternativo com influência streetwear e techwear.",
+  sizes: ["P", "M", "G", "GG"],
+  colors: ["Branco e Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  launchPromo: true,
+  promotion: "lancamento",
+  collection: "october-drop",
+  supplier_search: "AliExpress conjunto camisa branca e calça cargo preta feminina",
+  supplier_cost_reference: 163.77
+},
+{
+  id: "BF-142",
+  name: "Calça Cargo Nocturne Strap",
+  category: "CALÇAS E SAIAS",
+  price: 189.90,
+  originalPrice: 229.90,
+  images: [
+    "images/BF-142-01.jpg",
+    "images/BF-142-02.jpg",
+    "images/BF-142-03.jpg"
+  ],
+  description: "Calça cargo preta feminina com modelagem reta, detalhes utilitários e corrente decorativa. Estética urbana e alternativa.",
+  sizes: ["P", "M", "G", "GG"],
+  colors: ["Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  launchPromo: true,
+  promotion: "lancamento",
+  collection: "october-drop",
+  supplier_search: "AliExpress calça cargo feminina preta com corrente",
+  supplier_cost_reference: 112.92
+},
+{
+  id: "BF-143",
+  name: "Camisa Tokyo Harness Preta",
+  category: "CAMISETAS E CAMISAS",
+  price: 159.90,
+  originalPrice: 189.90,
+  images: [
+    "images/BF-143-01.jpg",
+    "images/BF-143-02.jpg",
+    "images/BF-143-03.jpg"
+  ],
+  description: "Camisa feminina preta de manga curta com gravata preta e tiras frontais. Peça marcante para compor looks darkwear e streetwear.",
+  sizes: ["P", "M", "G", "GG"],
+  colors: ["Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  launchPromo: true,
+  promotion: "lancamento",
+  collection: "october-drop",
+  supplier_search: "AliExpress camisa preta feminina com gravata e tiras",
+  supplier_cost_reference: 96.41
+},
+{
+  id: "BF-144",
+  name: "Conjunto Tokyo Harness Preto",
+  category: "CAMISETAS E CAMISAS",
+  price: 249.90,
+  originalPrice: 289.90,
+  images: [
+    "images/BF-144-01.jpg",
+    "images/BF-144-02.jpg",
+    "images/BF-144-03.jpg"
+  ],
+  description: "Conjunto feminino com camisa preta, gravata preta e calça cargo preta. Visual alternativo completo com pegada streetwear.",
+  sizes: ["P", "M", "G", "GG"],
+  colors: ["Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  launchPromo: true,
+  promotion: "lancamento",
+  collection: "october-drop",
+  supplier_search: "AliExpress conjunto preto feminino camisa e calça cargo",
+  supplier_cost_reference: 165.04
+},
+
+{
+  id: "BF-145",
+  name: "Vestido Eclipse da Bruxa",
+  category: "VESTIDOS",
+  price: 249.90,
+  images: [
+    "images/BF-145-01.jpg",
+    "images/BF-145-02.jpg"
+  ],
+  description: "Vestido gótico de inspiração medieval, com mangas longas transparentes, detalhes em renda e tule, amarração frontal e saia assimétrica. Uma peça marcante para composições dark romantic e visuais alternativos.",
+  sizes: ["P", "M", "G", "GG", "XGG", "XXGG"],
+  colors: ["Preto", "Vermelho e Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress vestido bruxa medieval mangas borboleta tule",
+  supplier_cost_reference: 143.06
+},
+
+{
+  id: "BF-146",
+  name: "Kit Trindade Sombria — 3 Camisetas",
+  category: "CAMISETAS E CAMISAS",
+  price: 199.90,
+  images: [
+    "images/BF-146-01.jpg"
+  ],
+  description: "Kit com 3 camisetas unissex nas cores preta, branca e vermelha, com estampas góticas inspiradas em asas, cruzes e elementos ornamentais. Uma combinação marcante de moda Y2K, rock e streetwear alternativo. O kit inclui as três peças.",
+  sizes: ["P", "M", "G", "GG", "XGG", "3GG", "4GG"],
+  colors: ["Kit Preto + Branco + Vermelho"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress kit 3 camisetas góticas asas anjo cruz Y2K",
+  supplier_cost_reference: 152.54
+},
+
+{
+  id: "BF-147",
+  name: "Bota Plataforma Estelar Preta",
+  category: "CALÇADOS",
+  price: 299.90,
+  images: [
+    "images/BF-147-01.jpg",
+    "images/BF-147-02.jpg",
+    "images/BF-147-03.jpg"
+  ],
+  description: "Bota feminina preta de plataforma com estética gótica e punk, acabamento brilhante, cadarços frontais, correntes decorativas e pingentes metálicos de estrelas e cruzes. Com solado robusto, é ideal para compor looks darkwear, alternativos e underground.",
+  sizes: ["35", "36", "37", "38", "39"],
+  colors: ["Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress bota gótica plataforma preta correntes estrelas",
+  supplier_cost_reference: 198.85
+},
+
+{
+  id: "BF-148",
+  name: "Corset Dark Romance",
+  category: "CAMISETAS E CAMISAS",
+  price: 159.90,
+  images: [
+    "images/BF-148-01.jpg"
+  ],
+  description: "Top feminino de inspiração gótica romântica com renda preta, detalhes em vermelho-escuro e modelagem ajustada. Uma peça marcante para looks dark romantic, Y2K e alternativos.",
+  sizes: ["P", "M", "G"],
+  colors: ["Preto e Vinho"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress top gotico renda preto vinho altgoth",
+  supplier_cost_reference: 85.13
+},
+{
+  id: "BF-149",
+  name: "Regata Gothic Cross",
+  category: "CAMISETAS E CAMISAS",
+  price: 179.90,
+  images: [
+    "images/BF-149-01.jpg"
+  ],
+  description: "Regata feminina preta de estética gótica com renda, transparências laterais e detalhe de cruz no busto. Ideal para composições darkwear, gothic e streetwear alternativo.",
+  sizes: ["P", "M", "G"],
+  colors: ["Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress regata gotica preta renda cruz feminina",
+  supplier_cost_reference: 101.20
+},
+{
+  id: "BF-150",
+  name: "Corset Midnight Crucifix",
+  category: "CAMISETAS E CAMISAS",
+  price: 199.90,
+  images: [
+    "images/BF-150-01.jpg"
+  ],
+  description: "Corset feminino preto tomara que caia, com detalhes em renda, amarração frontal e correntes decorativas com pingentes de cruz. Inspirado na estética gótica e dark romantic.",
+  sizes: ["P", "M", "G"],
+  colors: ["Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress corset gotico preto renda correntes cruz",
+  supplier_cost_reference: 113.08
+},
+
 ];
