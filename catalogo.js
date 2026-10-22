@@ -3076,9 +3076,9 @@ window.BLACK_FORGE_ITEMS = [
   price: 159.90,
   originalPrice: 0,
   images: [
-    "images/BF-138-01.jpg",
-    "images/BF-138-02.jpg",
-    "images/BF-138-03.jpg"
+    "imagens/BF-138-01.jpg",
+    "imagens/BF-138-02.jpg",
+    "imagens/BF-138-03.jpg"
   ],
   description: "Suéter de malha com estampa de esqueleto, estética gótica e inspiração underground. Uma peça marcante para compor looks darkwear e streetwear.",
   sizes: ["P", "M", "G", "GG", "XGG"],
@@ -3101,9 +3101,9 @@ window.BLACK_FORGE_ITEMS = [
   category: "CALÇADOS",
   price: 199.90,
   images: [
-    "images/BF-139-01.jpg",
-    "images/BF-139-02.jpg",
-    "images/BF-139-03.jpg"
+    "imagens/BF-139-01.jpg",
+    "imagens/BF-139-02.jpg",
+    "imagens/BF-139-03.jpg"
   ],
   description: "Tênis feminino de plataforma robusta com solado escultural, cabedal em malha respirável e inspiração Y2K. Uma peça marcante para compor looks alternativos, urbanos e futuristas.",
   sizes: ["35", "36", "37", "38", "39", "40"],
@@ -3122,9 +3122,9 @@ window.BLACK_FORGE_ITEMS = [
   price: 149.90,
   originalPrice: 179.90,
   images: [
-    "images/BF-140-01.jpg",
-    "images/BF-140-02.jpg",
-    "images/BF-140-03.jpg"
+    "imagens/BF-140-01.jpg",
+    "imagens/BF-140-02.jpg",
+    "imagens/BF-140-03.jpg"
   ],
   description: "Camisa feminina branca de manga curta com gravata preta e tiras frontais de inspiração streetwear e alternativa.",
   sizes: ["P", "M", "G", "GG"],
@@ -3145,9 +3145,9 @@ window.BLACK_FORGE_ITEMS = [
   price: 249.90,
   originalPrice: 289.90,
   images: [
-    "images/BF-141-01.jpg",
-    "images/BF-141-02.jpg",
-    "images/BF-141-03.jpg"
+    "imagens/BF-141-01.jpg",
+    "imagens/BF-141-02.jpg",
+    "imagens/BF-141-03.jpg"
   ],
   description: "Conjunto feminino com camisa branca, gravata preta e calça cargo preta. Visual alternativo com influência streetwear e techwear.",
   sizes: ["P", "M", "G", "GG"],
@@ -3168,9 +3168,9 @@ window.BLACK_FORGE_ITEMS = [
   price: 189.90,
   originalPrice: 229.90,
   images: [
-    "images/BF-142-01.jpg",
-    "images/BF-142-02.jpg",
-    "images/BF-142-03.jpg"
+    "imagens/BF-142-01.jpg",
+    "imagens/BF-142-02.jpg",
+    "imagens/BF-142-03.jpg"
   ],
   description: "Calça cargo preta feminina com modelagem reta, detalhes utilitários e corrente decorativa. Estética urbana e alternativa.",
   sizes: ["P", "M", "G", "GG"],
@@ -3191,9 +3191,9 @@ window.BLACK_FORGE_ITEMS = [
   price: 159.90,
   originalPrice: 189.90,
   images: [
-    "images/BF-143-01.jpg",
-    "images/BF-143-02.jpg",
-    "images/BF-143-03.jpg"
+    "imagens/BF-143-01.jpg",
+    "imagens/BF-143-02.jpg",
+    "imagens/BF-143-03.jpg"
   ],
   description: "Camisa feminina preta de manga curta com gravata preta e tiras frontais. Peça marcante para compor looks darkwear e streetwear.",
   sizes: ["P", "M", "G", "GG"],
@@ -3214,9 +3214,9 @@ window.BLACK_FORGE_ITEMS = [
   price: 249.90,
   originalPrice: 289.90,
   images: [
-    "images/BF-144-01.jpg",
-    "images/BF-144-02.jpg",
-    "images/BF-144-03.jpg"
+    "imagens/BF-144-01.jpg",
+    "imagens/BF-144-02.jpg",
+    "imagens/BF-144-03.jpg"
   ],
   description: "Conjunto feminino com camisa preta, gravata preta e calça cargo preta. Visual alternativo completo com pegada streetwear.",
   sizes: ["P", "M", "G", "GG"],
@@ -3237,8 +3237,8 @@ window.BLACK_FORGE_ITEMS = [
   category: "VESTIDOS",
   price: 249.90,
   images: [
-    "images/BF-145-01.jpg",
-    "images/BF-145-02.jpg"
+    "imagens/BF-145-01.jpg",
+    "imagens/BF-145-02.jpg"
   ],
   description: "Vestido gótico de inspiração medieval, com mangas longas transparentes, detalhes em renda e tule, amarração frontal e saia assimétrica. Uma peça marcante para composições dark romantic e visuais alternativos.",
   sizes: ["P", "M", "G", "GG", "XGG", "XXGG"],
@@ -3257,7 +3257,7 @@ window.BLACK_FORGE_ITEMS = [
   category: "CAMISETAS E CAMISAS",
   price: 199.90,
   images: [
-    "images/BF-146-01.jpg"
+    "imagens/BF-146-01.jpg"
   ],
   description: "Kit com 3 camisetas unissex nas cores preta, branca e vermelha, com estampas góticas inspiradas em asas, cruzes e elementos ornamentais. Uma combinação marcante de moda Y2K, rock e streetwear alternativo. O kit inclui as três peças.",
   sizes: ["P", "M", "G", "GG", "XGG", "3GG", "4GG"],
@@ -3276,9 +3276,9 @@ window.BLACK_FORGE_ITEMS = [
   category: "CALÇADOS",
   price: 299.90,
   images: [
-    "images/BF-147-01.jpg",
-    "images/BF-147-02.jpg",
-    "images/BF-147-03.jpg"
+    "imagens/BF-147-01.jpg",
+    "imagens/BF-147-02.jpg",
+    "imagens/BF-147-03.jpg"
   ],
   description: "Bota feminina preta de plataforma com estética gótica e punk, acabamento brilhante, cadarços frontais, correntes decorativas e pingentes metálicos de estrelas e cruzes. Com solado robusto, é ideal para compor looks darkwear, alternativos e underground.",
   sizes: ["35", "36", "37", "38", "39"],
@@ -3297,7 +3297,7 @@ window.BLACK_FORGE_ITEMS = [
   category: "CAMISETAS E CAMISAS",
   price: 159.90,
   images: [
-    "images/BF-148-01.jpg"
+    "imagens/BF-148-01.jpg"
   ],
   description: "Top feminino de inspiração gótica romântica com renda preta, detalhes em vermelho-escuro e modelagem ajustada. Uma peça marcante para looks dark romantic, Y2K e alternativos.",
   sizes: ["P", "M", "G"],
@@ -3315,7 +3315,7 @@ window.BLACK_FORGE_ITEMS = [
   category: "CAMISETAS E CAMISAS",
   price: 179.90,
   images: [
-    "images/BF-149-01.jpg"
+    "imagens/BF-149-01.jpg"
   ],
   description: "Regata feminina preta de estética gótica com renda, transparências laterais e detalhe de cruz no busto. Ideal para composições darkwear, gothic e streetwear alternativo.",
   sizes: ["P", "M", "G"],
@@ -3333,7 +3333,7 @@ window.BLACK_FORGE_ITEMS = [
   category: "CAMISETAS E CAMISAS",
   price: 199.90,
   images: [
-    "images/BF-150-01.jpg"
+    "imagens/BF-150-01.jpg"
   ],
   description: "Corset feminino preto tomara que caia, com detalhes em renda, amarração frontal e correntes decorativas com pingentes de cruz. Inspirado na estética gótica e dark romantic.",
   sizes: ["P", "M", "G"],
