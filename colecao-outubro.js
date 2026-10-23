@@ -2,9 +2,12 @@
 // BLACK FORGE — OCTOBER DROP 001.
 // Produtos vêm do catalogo.js; preços e fotos não são duplicados aqui.
 const OCTOBER_IDS = [
-  "BF-138", "BF-139", "BF-140", "BF-141", "BF-142",
-  "BF-143", "BF-144", "BF-145", "BF-146", "BF-147",
-  "BF-148", "BF-149", "BF-150"
+ "BF-138", "BF-139", "BF-140", "BF-141", "BF-142",
+"BF-143", "BF-144", "BF-145", "BF-146", "BF-147",
+"BF-148", "BF-149", "BF-150", "BF-151", "BF-152",
+"BF-153", "BF-154", "BF-155", "BF-156", "BF-157",
+"BF-158", "BF-159", "BF-160", "BF-161", "BF-162",
+"BF-163", "BF-164", "BF-165"
 ];
 (() => {
   const root = document.getElementById("octoberProducts");
