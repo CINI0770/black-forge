@@ -3429,7 +3429,7 @@ window.BLACK_FORGE_ITEMS = [
   id: "BF-155",
   name: "Top Gothic White Angel",
   category: "CAMISETAS E CAMISAS",
-  price: 139,90,
+  price: 139.90,
   images: [
     "imagens/BF-155-01.jpg"
   ],
@@ -3447,7 +3447,7 @@ window.BLACK_FORGE_ITEMS = [
   id: "BF-156",
   name: "Top Midnight Gothic",
   category: "CAMISETAS E CAMISAS",
-  price: 139,90,
+  price: 139.90,
   images: [
     "imagens/BF-156-01.jpg"
   ],
