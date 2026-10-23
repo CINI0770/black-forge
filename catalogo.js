@@ -3345,5 +3345,287 @@ window.BLACK_FORGE_ITEMS = [
   supplier_search: "AliExpress corset gotico preto renda correntes cruz",
   supplier_cost_reference: 113.08
 },
-
+{
+  id: "BF-151",
+  name: "Top Fallen Angel Y2K",
+  category: "CAMISETAS E CAMISAS",
+  price: 49.90,
+  images: [
+    "imagens/BF-151-01.jpg",
+    "imagens/BF-151-02.jpg",
+    "imagens/BF-151-03.jpg"
+  ],
+  description: "Top feminino preto tomara que caia, com estampa de asas angelicais em estilo gótico. Modelagem ajustada ao corpo, inspirado na estética Y2K, gothic streetwear e moda alternativa. Ideal para composições ousadas e autênticas.",
+  sizes: ["P", "M", "G"],
+  colors: ["Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress top feminino preto tomara que caia asas gotico Y2K",
+  supplier_cost_reference: 19.99
+},
+{
+  id: "BF-152",
+  name: "Meia-Calça Chaos Web Punk",
+  category: "ACESSÓRIOS",
+  price: 39.90,
+  images: [
+    "imagens/BF-152-01.jpg",
+    "imagens/BF-152-02.jpg",
+    "imagens/BF-152-03.jpg"
+  ],
+  description: "Meia-calça feminina preta com recortes irregulares e efeito rasgado em padrão de teia. Inspirada na estética punk, gótica e Y2K, ideal para compor looks alternativos com saias, shorts e botas plataforma. Uma peça marcante para quem busca atitude e originalidade.",
+  sizes: ["Único"],
+  colors: ["Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress meia calça preta rasgada punk gótica Y2K",
+  supplier_cost_reference: 15.99
+},
+{
+  id: "BF-153",
+  name: "Vestido Midnight Siren",
+  category: "VESTIDOS",
+  price: 129.90,
+  images: [
+    "imagens/BF-153-01.jpg",
+    "imagens/BF-153-02.jpg",
+    "imagens/BF-153-03.jpg"
+  ],
+  description: "Vestido feminino longo preto com decote em V, alças finas estilo frente única e modelagem ajustada na cintura. Possui recortes laterais marcantes e saia fluida, criando uma silhueta elegante e ousada. Inspirado na estética dark romantic e gothic fashion, perfeito para produções sofisticadas e alternativas.",
+  sizes: ["P"],
+  colors: ["Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress vestido preto longo decote V recortes laterais frente unica gotico",
+  supplier_cost_reference: 55.65
+},
+{
+  id: "BF-154",
+  name: "Cinto Corset Dark Lace",
+  category: "CINTOS",
+  price: 29.90,
+  images: [
+    "imagens/BF-154-01.jpg",
+    "imagens/BF-154-02.jpg",
+    "imagens/BF-154-03.jpg"
+  ],
+  description: "Cinto corset feminino preto em couro sintético PU, com amarração frontal em cadarço e laterais elásticas para melhor ajuste à cintura. Inspirado na estética gótica, punk e vintage, é perfeito para transformar vestidos, camisas e outras peças em produções alternativas cheias de personalidade.",
+  sizes: ["Único"],
+  colors: ["Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress cinto corset feminino preto couro PU amarração gótico",
+  supplier_cost_reference: 5.99
+},
+{
+  id: "BF-155",
+  name: "Top Gothic White Angel",
+  category: "CAMISETAS E CAMISAS",
+  price: 139,90,
+  images: [
+    "imagens/BF-155-01.jpg"
+  ],
+  description: "Top cropped feminino branco com estampa gótica preta, modelagem ajustada e amarração no pescoço. Inspirado na estética Y2K, gothic streetwear e moda alternativa.",
+  sizes: ["PP", "P", "M", "G", "GG"],
+  colors: ["Branco"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress top cropped halter Y2K 3205 white gothic",
+  supplier_cost_reference: null
+},
+{
+  id: "BF-156",
+  name: "Top Midnight Gothic",
+  category: "CAMISETAS E CAMISAS",
+  price: 139,90,
+  images: [
+    "imagens/BF-156-01.jpg"
+  ],
+  description: "Top cropped feminino preto com estampa gótica em tons claros, detalhes em renda e amarração no pescoço. Possui estética dark Y2K e modelagem ajustada, ideal para looks alternativos.",
+  sizes: ["PP", "P", "M", "G", "GG"],
+  colors: ["Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress top cropped halter Y2K 3206 black gothic",
+  supplier_cost_reference: 28.19
+},
+{
+  id: "BF-157",
+  name: "Top Dark Requiem Y2K",
+  category: "CAMISETAS E CAMISAS",
+  price: 49.90,
+  images: [
+    "imagens/BF-157-01.jpg",
+    "imagens/BF-157-02.jpg",
+    "imagens/BF-157-03.jpg"
+  ],
+  description: "Top feminino preto de alças finas, com estampa gráfica em tons claros, elementos góticos e referências à estética punk e Y2K. Possui modelagem ajustada ao corpo, ideal para compor looks alternativos, dark streetwear e gothic fashion.",
+  sizes: ["P", "M", "G"],
+  colors: ["Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress top feminino preto alças finas estampa gótica punk Y2K",
+  supplier_cost_reference: 19.45
+},
+{
+  id: "BF-158",
+  name: "Corset Crimson Ritual",
+  category: "CAMISETAS E CAMISAS",
+  price: 159.90,
+  images: [
+    "imagens/BF-158-01.jpg"
+  ],
+  description: "Corset feminino preto e vermelho com detalhes em renda floral, transparências e acabamento decorativo gótico. Possui alças finas, decote em V e modelagem ajustada à cintura, criando uma silhueta marcante. Inspirado nas estéticas gothic romantic, vampire goth e punk Y2K, ideal para looks alternativos cheios de personalidade.",
+  sizes: ["P", "M", "G"],
+  colors: ["Preto/Vermelho"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress YueeSoul Goth-Tops-205 corset gothic black red lace",
+  supplier_cost_reference: 67.79
+},
+{
+  id: "BF-159",
+  name: "Corset Dark Cathedral",
+  category: "CAMISETAS E CAMISAS",
+  price: 129.90,
+  images: [
+    "imagens/BF-159-01.jpg"
+  ],
+  description: "Corset feminino preto com detalhes em renda floral sobre fundo vermelho escuro, estampa de cruzes e acabamento delicado nas alças. Possui decote estruturado, laço decorativo frontal e modelagem ajustada à cintura. Inspirado nas estéticas gothic romantic, vampire goth e dark feminine, perfeito para composições alternativas elegantes e marcantes.",
+  sizes: ["P", "M", "G"],
+  colors: ["Preto/Vermelho"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress YueeSoul Goth-Tops-217 corset gothic lace black red",
+  supplier_cost_reference: 48.30
+},
+{
+  id: "BF-160",
+  name: "Corset Black Widow",
+  category: "CAMISETAS E CAMISAS",
+  price: 149.90,
+  images: [
+    "imagens/BF-160-01.jpg"
+  ],
+  description: "Corset feminino preto com detalhes em renda floral, decote adornado e amarração frontal decorativa. Possui alças finas, acabamento rendado e modelagem ajustada que valoriza a silhueta. Inspirado nas estéticas gothic romantic, dark feminine e vampire goth, ideal para composições alternativas sofisticadas e marcantes.",
+  sizes: ["P", "M", "G"],
+  colors: ["Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress YueeSoul Goth-Tops-213 corset preto renda amarração gothic",
+  supplier_cost_reference: 55.09
+},
+{
+  id: "BF-161",
+  name: "Top Crimson Star Punk",
+  category: "CAMISETAS E CAMISAS",
+  price: 129.90,
+  images: [
+    "imagens/BF-161-01.jpg"
+  ],
+  description: "Top feminino preto de alças finas, com estrela frontal em tecido xadrez vermelho e preto, detalhes metálicos e acabamento inspirado na moda alternativa. Possui modelagem ajustada ao corpo e elementos que remetem à estética punk, grunge e Y2K. Ideal para composições ousadas com saias, calças cargo e acessórios de inspiração underground.",
+  sizes: ["P", "M", "G"],
+  colors: ["Preto/Vermelho"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress YueeSoul Goth-Tops-222 top preto estrela xadrez vermelho punk Y2K",
+  supplier_cost_reference: 44.29
+},
+{
+  id: "BF-162",
+  name: "Camiseta Fallen Seraph Black",
+  category: "CAMISETAS E CAMISAS",
+  price: 59.90,
+  images: [
+    "imagens/BF-162-01.jpg",
+    "imagens/BF-162-02.jpg"
+  ],
+  description: "Camiseta preta com estampa frontal de anjo sombrio, asas imponentes e elementos gráficos inspirados na estética gótica. Possui mangas curtas e visual urbano com referências ao metal, grunge e streetwear alternativo. Ideal para composições dark e Y2K.",
+  sizes: ["M", "G", "GG", "2GG", "3GG", "4GG", "5GG", "6GG", "7GG"],
+  colors: ["Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress camiseta preta anjo asas gothic streetwear angel print",
+  supplier_cost_reference: 12.28
+},
+{
+  id: "BF-163",
+  name: "Camiseta Fallen Seraph Ivory",
+  category: "CAMISETAS E CAMISAS",
+  price: 59.90,
+  images: [
+    "imagens/BF-163-01.jpg",
+    "imagens/BF-163-02.jpg"
+  ],
+  description: "Camiseta em tom branco creme com estampa de anjo sombrio e asas em contraste escuro. Apresenta visual vintage inspirado nas estéticas gothic streetwear, grunge e Y2K, combinando elementos angelicais com referências ao rock e à moda underground.",
+  sizes: ["M", "G", "GG", "2GG", "3GG", "4GG", "5GG", "6GG", "7GG"],
+  colors: ["Branco/Creme"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress camiseta bege branca anjo asas gothic vintage streetwear",
+  supplier_cost_reference: null
+},
+{
+  id: "BF-164",
+  name: "Baby Tee Skull Bloom Black",
+  category: "CAMISETAS E CAMISAS",
+  price: 49.90,
+  images: [
+    "imagens/BF-164-01.jpg"
+  ],
+  description: "Baby tee feminina preta com estampa lateral de caveira e ornamentos florais em branco. Possui modelagem ajustada ao corpo, mangas curtas e visual inspirado na estética mall goth, Y2K e alternative fashion. Ideal para compor looks dark e autênticos no dia a dia.",
+  sizes: ["P", "M", "G"],
+  colors: ["Preto"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress baby tee preta caveira floral Y2K goth feminina",
+  supplier_cost_reference: 28.33
+},
+{
+  id: "BF-165",
+  name: "Baby Tee Skull Bloom White",
+  category: "CAMISETAS E CAMISAS",
+  price: 49.90,
+  images: [
+    "imagens/BF-165-01.jpg"
+  ],
+  description: "Baby tee feminina branca com estampa lateral de caveira e detalhes ornamentais em preto. A peça traz uma proposta alternativa com influência Y2K, mall goth e streetwear feminino, sendo perfeita para compor produções marcantes e estilosas.",
+  sizes: ["P", "M", "G"],
+  colors: ["Branco"],
+  variants: [],
+  active: true,
+  placeholder: false,
+  collection: "october-drop",
+  supplier_search: "AliExpress baby tee branca caveira floral Y2K goth feminina",
+  supplier_cost_reference: null
+},
+  
 ];
