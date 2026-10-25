@@ -4,7 +4,7 @@
    é carregada por este arquivo. Não inclua <noscript> de rastreamento nas páginas. */
 (() => {
   "use strict";
-  const META_PIXEL_ID = ""; // TODO: inserir o ID do Meta Pixel. Exemplo: "123456789012345".
+  const META_PIXEL_ID = "1848258306208127"; // BLACK FORGE — Pixel configurado.
   const CHOICE_KEY = "blackforge_marketing_consent_v1";
   let preference = null;
   let pixelLoaded = false;
