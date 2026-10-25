@@ -15,7 +15,19 @@
     else nav.append(link);
   }
   function update() {
-    document.querySelectorAll('header nav, .header nav, nav.nav, nav[aria-label="Navegação principal"], nav[aria-label="Menu principal"]').forEach(addLink);
+    document.querySelectorAll('header nav, .header nav, nav.nav, nav[aria-label="Navegação principal"], nav[aria-label="Menu principal"]').forEach(nav => {
+      // Mantém a ordem original: INÍCIO, PROMOÇÕES, PRODUTOS,
+      // OCTOBER DROP, ANIME DISTRICT, DÚVIDAS.
+      addLink(nav);
+      for (const link of nav.querySelectorAll('a')) {
+        if (/^manifesto\s*$/i.test((link.textContent || '').trim())) {
+          link.textContent = 'ANIME DISTRICT';
+          link.href = 'anime-district.html';
+          if (location.pathname.endsWith('/anime-district.html'))
+            link.setAttribute('aria-current','page');
+        }
+      }
+    });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', update, {once:true});
   else update();
