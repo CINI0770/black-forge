@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Anime District por Black Forge: coleção de roupas e acessórios inspirados na cultura anime e no streetwear alternativo.">
+  <title>ANIME DISTRICT | BLACK FORGE</title>
+  <link rel="stylesheet" href="./anime-district.css">
+  <script src="./anime-catalogo.js" defer></script>
+  <script src="./anime-district.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#catalogo">Ir para o catálogo</a>
+  <div class="ribbon"><span>BLACK FORGE // ANIME DISTRICT</span><span>NOT FOR EVERYONE</span><span>EDITION 001</span></div>
+  <header class="nav-shell">
+    <a class="brand" href="index.html" aria-label="Black Forge início"><span class="asterisk">✳</span> BLACK <span>FORGE</span><small>ALTERNATIVE CULTURE</small></a>
+    <nav aria-label="Menu principal"><a href="index.html">INÍCIO</a><a href="produtos.html">CATÁLOGO GERAL</a><a href="anime-district.html" aria-current="page">ANIME DISTRICT</a></nav>
+    <a class="back" href="index.html">VOLTAR À LOJA ↗</a>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><div class="overline"><span class="bullet"></span> BF / SPECIAL COLLECTION — 2026</div>
+        <div class="edition">STREETWEAR / ALTERNATIVE / OTAKU CULTURE</div>
+        <h1 id="hero-title">ANIME<br><span>DISTRICT</span><i>.</i></h1>
+        <p>Entre o universo dos animes e a estética underground. Peças com atitude para quem vive a cultura, não apenas assiste.</p>
+        <a class="primary" href="#catalogo">EXPLORAR CATEGORIAS <span aria-hidden="true">↘</span></a>
+        <div class="hero-bottom"><span>01 / NEW WORLD</span><span>BLACK FORGE ORIGINAL COLLECTION SERIES</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="art-ring"></div><div class="art-ring art-ring-2"></div><span class="art-jp">アニメ<br>地区</span><div class="art-caption">BF / AN / 001<br>NO RULES. JUST CULTURE.</div><div class="art-corner">✳</div></div>
+    </section>
+    <div class="marquee" aria-label="Moda alternativa e cultura anime"><div>✳ ANIME DISTRICT &nbsp; ✳ NO RULES JUST CULTURE &nbsp; ✳ BLACK FORGE &nbsp; ✳ ANIME DISTRICT &nbsp; ✳ NO RULES JUST CULTURE &nbsp; ✳ BLACK FORGE &nbsp;</div></div>
+    <section class="section intro" aria-labelledby="intro-title"><div class="section-kicker"><span>01 / OS UNIVERSOS</span><span>08 CATEGORIAS</span></div><div class="intro-heading"><h2 id="intro-title">ESCOLHA SEU<br><em>UNIVERSO.</em></h2><p>Camisetas, moletons, calças e acessórios. Uma nova linha independente dentro da Black Forge.</p></div><div class="category-tiles" id="categoryTiles" aria-label="Selecionar categoria"></div></section>
+    <section class="section products-section" id="catalogo" aria-labelledby="catalogTitle"><div class="section-kicker"><span>02 / ANIME DISTRICT</span><span id="stockSummary">COLEÇÃO EM PREPARAÇÃO</span></div><div class="products-heading"><div><p class="overline">BLACK FORGE / EXCLUSIVE COLLECTION</p><h2 id="catalogTitle">A NOVA<br><em>SELEÇÃO.</em></h2></div><p>Explore a coleção por categoria. Novos itens aparecerão conforme forem cadastrados e liberados.</p></div>
+      <div class="filters" aria-label="Filtros do catálogo"><div id="filterChips" class="chips"></div><label class="search"><span class="sr-only">Pesquisar produtos</span><input type="search" id="animeSearch" placeholder="BUSCAR PEÇAS OU ANIMES..." autocomplete="off"><span aria-hidden="true">⌕</span></label></div>
+      <div id="previewNotice" class="preview-note" hidden>PRÉVIA DE ADMINISTRAÇÃO — 50 BASES INATIVAS VISÍVEIS. ESTES ITENS NÃO PODEM SER COMPRADOS.</div>
+      <div id="animeGrid" class="product-grid" aria-live="polite"></div>
+      <div id="emptyState" class="empty" hidden><span class="empty-mark">✳</span><h3>O PRÓXIMO DROP<br>ESTÁ SENDO PREPARADO.</h3><p>Ainda não há produtos publicados nesta categoria. Em breve, novas peças entram no distrito.</p><a href="produtos.html">EXPLORAR O CATÁLOGO PRINCIPAL ↗</a></div>
+      <div class="collection-footer"><span id="visibleCount">00 PRODUTOS PUBLICADOS</span><a href="index.html">VOLTAR PARA BLACK FORGE ↗</a></div>
+    </section>
+    <section class="outro"><p>BLACK FORGE / COLLECTION 001</p><h2>YOUR WORLD.<br><em>YOUR RULES.</em></h2><a href="produtos.html">EXPLORAR TODA A LOJA ↗</a></section>
+  </main>
+  <footer><a class="brand" href="index.html"><span class="asterisk">✳</span> BLACK <span>FORGE</span></a><p>ANIME DISTRICT — CULTURA ALTERNATIVA, MODA E IDENTIDADE.</p><div><a href="index.html">INÍCIO</a><a href="produtos.html">PRODUTOS</a></div><small>© 2026 BLACK FORGE. TODOS OS DIREITOS RESERVADOS.</small></footer>
+  <dialog id="productDialog" class="product-dialog" aria-labelledby="dialogTitle"><form method="dialog"><button class="close-modal" aria-label="Fechar detalhes">✕</button></form><div id="dialogContent"></div></dialog>
+</body></html>
