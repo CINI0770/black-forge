@@ -7,12 +7,6 @@
   <meta name="description" content="BLACK FORGE — colares, anéis, roupas, acessórios e calçados alternativos. Moda punk, gótica e streetwear.">
   <title>Produtos | BLACK FORGE</title>
   <link rel="stylesheet" href="./style.css">
-<style>
-/* Espaçamento dos seis links do cabeçalho, sem alterar as categorias do catálogo. */
-#navbar-menu .nav { gap:clamp(10px,1.5vw,32px); }
-#navbar-menu .nav a { white-space:nowrap; }
-@media(max-width:700px) { #navbar-menu .nav { gap:14px; overflow-x:auto; justify-content:flex-start; } }
-</style>
 </head>
 <body class="products-page bf-catalog-page">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -111,68 +105,5 @@
     if(!sections.length)nav.hidden=true;
   })();
   </script>
-<script>
-/* BLACK FORGE: uniformiza os links criados por navbar-menu.js sem duplicar a navbar. */
-(() => {
-  'use strict';
-  const itens = [
-    ['INÍCIO','index.html'],
-    ['PROMOÇÕES','promocoes.html'],
-    ['PRODUTOS','produtos.html'],
-    ['OCTOBER DROP','colecao-outubro.html'],
-    ['ANIME DISTRICT','anime-district.html'],
-    ['DÚVIDAS','index.html#duvidas']
-  ];
-  const norm = t => (t || '').normalize('NFD')
-    .replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim().toUpperCase();
-  const conhecidos = new Set(['INICIO','PROMOCOES','PRODUTOS','OCTOBER DROP',
-    'ANIME DISTRICT','MANIFESTO','DUVIDAS','CATALOGO GERAL']);
-
-  function corrigir() {
-    const raiz = document.getElementById('navbar-menu');
-    if (!raiz) return;
-    const nav = [...raiz.querySelectorAll('nav')].find(n =>
-      [...n.querySelectorAll('a[href]')].filter(a => conhecidos.has(norm(a.textContent))).length >= 2);
-    if (!nav) return;
-    const links = [...nav.querySelectorAll('a[href]')].filter(a => conhecidos.has(norm(a.textContent)));
-    const alvo = links[0]?.parentElement;
-    if (!alvo || !links.every(a => a.parentElement === alvo)) return;
-    const pronto = links.length === itens.length && itens.every(([label,url],i) =>
-      norm(links[i].textContent) === norm(label) &&
-      links[i].getAttribute('href') === url);
-    if (pronto) return;
-    // Preserva event handlers e classes de navegação dos links já existentes.
-    const base = links[0];
-    const novos = itens.map(([label,url]) => {
-      const antigo = links.find(a => norm(a.textContent) === norm(label)) ||
-        (label === 'ANIME DISTRICT' ? links.find(a => norm(a.textContent) === 'MANIFESTO') : null);
-      const a = antigo ? antigo.cloneNode(true) : base.cloneNode(false);
-      a.textContent = label;
-      a.href = url;
-      a.removeAttribute('aria-current');
-      a.classList.remove('active','current','is-active');
-      if (url === 'produtos.html') { a.setAttribute('aria-current','page'); }
-      return a;
-    });
-    links[0].before(...novos);
-    links.forEach(a => a.remove());
-  }
-
-  function iniciar() {
-    corrigir();
-    const raiz = document.getElementById('navbar-menu');
-    if (!raiz) return;
-    // Se o script de menu atualizar o HTML depois, mantém os seis links corretos.
-    let ocupado = false;
-    new MutationObserver(() => {
-      if (ocupado) return;
-      ocupado = true;
-      queueMicrotask(() => { ocupado = false; corrigir(); });
-    }).observe(raiz,{childList:true,subtree:true});
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',iniciar,{once:true});
-  else iniciar();
-})();
-</script>
 </body>
 </html>

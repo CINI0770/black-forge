@@ -11,6 +11,53 @@
 	// A classe "bf-home" faz a barra usar o mesmo visual da página principal.
 	const navbarHTML = `
 <div class="bf-navbar bf-home">
+<style id="bf-navbar-responsive-css">
+/* Ajuste responsivo APENAS do menu compartilhado da Black Forge. */
+.bf-navbar .header .nav {
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:center;
+  gap:clamp(12px, 1.45vw, 28px);
+  white-space:nowrap;
+}
+.bf-navbar .header .nav a { flex-shrink:0; }
+@media (max-width:1220px) {
+  .bf-navbar .header {
+    height:auto;
+    min-height:84px;
+    flex-wrap:wrap;
+    row-gap:9px;
+    padding-top:14px;
+    padding-bottom:10px;
+  }
+  .bf-navbar .header .nav {
+    position:static;
+    order:3;
+    width:100%;
+    justify-content:center;
+    gap:clamp(12px, 2.3vw, 28px);
+    padding:9px 0 4px;
+    border-top:1px solid #302d2a;
+    background:transparent;
+  }
+  .bf-navbar .header-actions { margin-left:auto; }
+}
+@media (max-width:700px) {
+  .products-page .bf-navbar .header,
+  .bf-navbar .header { margin-bottom:0; }
+  .bf-navbar .header .nav {
+    position:static;
+    justify-content:flex-start;
+    overflow-x:auto;
+    overscroll-behavior-x:contain;
+    max-width:100%;
+    flex-wrap:nowrap;
+    gap:20px;
+    scrollbar-width:thin;
+  }
+  .bf-navbar .header .nav a { font-size:10px; }
+}
+</style>
 <div class="announcement" aria-label="Avisos da loja">
   <span>BLACK FORGE / EST. 2026</span>
   <span>FRETE GRÁTIS EM OUTUBRO</span>
@@ -26,7 +73,8 @@
     <a href="index.html">INÍCIO</a>
     <a href="promocoes.html">PROMOÇÕES</a>
     <a href="produtos.html">PRODUTOS</a>
-    <a href="index.html#manifesto">MANIFESTO</a>
+    <a href="colecao-outubro.html">OCTOBER DROP</a>
+    <a href="anime-district.html">ANIME DISTRICT</a>
     <a href="index.html#duvidas">DÚVIDAS</a>
   </nav>
   <div class="header-actions">

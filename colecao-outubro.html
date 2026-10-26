@@ -9,15 +9,6 @@
 <link rel="stylesheet" href="./colecao-outubro.css">
 <script src="./catalogo.js" defer></script>
 <script src="./colecao-outubro.js" defer></script>
-<style>
-/* Apenas o cabeçalho: acomoda os seis links sem alterar a coleção. */
-.navigation nav { gap:clamp(10px,1.3vw,24px); align-items:center; }
-.navigation .bf-header-actions { display:flex; align-items:center; gap:18px; }
-.navigation .bf-search-link { display:inline-flex; align-items:center; justify-content:center; color:var(--paper); min-width:22px; min-height:32px; }
-.navigation .bf-search-link:hover, .navigation .bf-search-link:focus-visible { color:#dd4254; }
-@media (max-width:1050px) { .navigation nav { width:100%; } }
-@media (max-width:690px) { .navigation .bf-header-actions { gap:12px; } .navigation nav { flex-wrap:nowrap; overflow-x:auto; scrollbar-width:thin; } }
-</style>
 </head>
 <body>
 <a class="skip-link" href="#colecao">Ir para os produtos</a>
@@ -30,18 +21,41 @@
 <a href="anime-district.html">ANIME DISTRICT</a>
 <a href="index.html#duvidas">DÚVIDAS</a>
 </nav><div class="bf-header-actions">
-<a class="bf-search-link" href="produtos.html" aria-label="Explorar e buscar produtos" title="Explorar produtos">
+<button class="bf-search-link" id="bfOctoberSearchToggle" type="button" aria-label="Buscar produtos" aria-expanded="false" aria-controls="bfOctoberSearchForm">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.7" cy="10.7" r="6.5"/><path d="m16 16 5 5"/></svg>
-</a>
+</button>
 <a class="cart" href="pedido.html">CARRINHO ↗</a>
-</div></div></header>
+</div></div>
+<form class="bf-october-search-form wrap" id="bfOctoberSearchForm" action="produtos.html" method="get" hidden role="search">
+  <label for="bfOctoberSearchInput">BUSCAR NO CATÁLOGO</label>
+  <input id="bfOctoberSearchInput" name="busca" type="search" placeholder="Digite o nome da peça..." autocomplete="off" required>
+  <button type="submit">BUSCAR ↗</button>
+</form>
+</header>
 <main>
-<section class="hero" aria-labelledby="page-title"><div class="wrap hero-grid"><div class="hero-copy"><p class="eyebrow"><span class="accent">✳</span> BLACK FORGE / COLEÇÃO MENSAL 001</p><h1 id="page-title">OCTOBER<br><span>DROP<span class="accent">.</span></span></h1><p class="hero-date">OUTUBRO / 2026</p><p class="hero-description">Uma nova seleção foi forjada. Peças alternativas, detalhes marcantes e liberdade para vestir quem você é.</p><div class="hero-buttons"><a class="button-primary" href="#colecao">EXPLORAR A COLEÇÃO <span>↗</span></a><a class="text-link" href="produtos.html">VER CATÁLOGO COMPLETO →</a></div></div><div class="hero-visual"><img src="./imagens/BF-OCTOBER-DROP.png" alt="Arte da Black Forge October Drop com figura encapuzada diante de eclipse vermelho" fetchpriority="high"><span class="hero-visual-footer">DROP 001 <span>✳</span> BLACK FORGE</span></div></div></section>
+<section class="hero" aria-labelledby="page-title"><div class="wrap hero-grid"><div class="hero-copy"><p class="eyebrow"><span class="accent">✳</span> BLACK FORGE / COLEÇÃO MENSAL 001</p><h1 id="page-title">OCTOBER<br><span>DROP<span class="accent">.</span></span></h1><p class="hero-date">OUTUBRO / 2026</p><p class="hero-description">Uma nova seleção foi forjada. Peças alternativas, detalhes marcantes e liberdade para vestir quem você é.</p><div class="hero-buttons"><a class="button-primary" href="#colecao">EXPLORAR A COLEÇÃO <span>↗</span></a><a class="text-link" href="produtos.html">VER CATÁLOGO COMPLETO →</a></div></div><div class="hero-visual"><img src="./imagens/BF-OCTOBER-DROP.png" alt="Arte da Black Forge: gato preto com a frase Seja a Tendência" fetchpriority="high" loading="eager" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center;"><span class="hero-visual-footer">DROP 001 <span>✳</span> BLACK FORGE</span></div></div></section>
 <div class="ticker"><div class="wrap">✳ SUA IDENTIDADE NÃO SEGUE TENDÊNCIAS &nbsp; ✳ OCTOBER DROP &nbsp; ✳ BLACK FORGE &nbsp; ✳ SUA IDENTIDADE NÃO SEGUE TENDÊNCIAS</div></div>
 <section class="intro wrap" aria-labelledby="intro-heading"><div class="section-index">01 / O MANIFESTO</div><div class="intro-copy"><h2 id="intro-heading">NÃO CRIAMOS<br>SUA IDENTIDADE.<br><span>VESTIMOS ELA.</span></h2><p>Moda não é sobre caber em padrões. A October Drop reúne peças para acompanhar sua personalidade — nunca escondê-la.</p></div></section>
 <section class="collection wrap" id="colecao" aria-labelledby="collection-title"><div class="section-index">02 / PEÇAS DO DROP <span>OUTUBRO 2026</span></div><div class="section-heading"><div><p class="eyebrow">BLACK FORGE / DROP 001</p><h2 id="collection-title">PEÇAS DA<br><span>COLEÇÃO.</span></h2></div><p>Seleção de outubro. Escolha uma peça para conferir fotos, tamanhos, cores e finalizar sua compra.</p></div><div id="octoberProducts" class="product-grid" aria-live="polite"><div class="empty-state"><strong>CARREGANDO COLEÇÃO...</strong><p>Se nada aparecer, confira os códigos BF-138 a BF-150 no catálogo publicado.</p></div></div></section>
 <section class="closing"><div class="wrap closing-inner"><p class="eyebrow">03 / A PRÓXIMA PÁGINA É SUA</p><h2>SEU ESTILO.<br><span>SUAS REGRAS.</span></h2><div class="closing-actions"><a class="button-primary" href="produtos.html">EXPLORAR O CATÁLOGO ↗</a><a class="text-link" href="https://www.instagram.com/lojablackforge/" target="_blank" rel="noopener noreferrer">INSTAGRAM DA BLACK FORGE →</a></div></div></section>
 </main>
 <footer class="footer"><div class="wrap footer-inner"><a href="index.html">✦ BLACK FORGE</a><span>OCTOBER DROP / 2026</span><a href="#page-title">VOLTAR AO TOPO ↑</a></div></footer>
+<script>
+(() => {
+  const botao = document.getElementById('bfOctoberSearchToggle');
+  const painel = document.getElementById('bfOctoberSearchForm');
+  const campo = document.getElementById('bfOctoberSearchInput');
+  if (!botao || !painel || !campo) return;
+  const mostrar = valor => {
+    painel.hidden = !valor;
+    botao.setAttribute('aria-expanded', String(valor));
+    if (valor) campo.focus();
+  };
+  botao.addEventListener('click', () => mostrar(painel.hidden));
+  document.addEventListener('keydown', evento => {
+    if (evento.key === 'Escape' && !painel.hidden) mostrar(false);
+  });
+})();
+</script>
 </body>
 </html>
