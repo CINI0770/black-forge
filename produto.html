@@ -15,17 +15,6 @@
   <!-- Barra de navegação padrão: vem do navbar-menu.js -->
   <div id="navbar-menu"></div>
 
-
-<nav class="nav" aria-label="Navegação principal">
-  <a href="index.html">INÍCIO</a>
-  <a href="promocoes.html">PROMOÇÕES</a>
-  <a href="produtos.html" aria-current="page">PRODUTOS</a>
-  <a href="colecao-outubro.html">OCTOBER DROP</a>
-  <a href="anime-district.html">ANIME DISTRICT</a>
-  <a href="index.html#duvidas">DÚVIDAS</a>
-</nav>
-
-
   <!-- O produto.js preenche este main com as fotos (esquerda) e os detalhes (direita) -->
   <main id="produto" class="produto-pagina"></main>
 
@@ -45,5 +34,89 @@
   <script src="./selecao.js"></script>
   <script src="./carrinho.js"></script>
   <script src="./produto.js"></script>
+  <!-- BLACK FORGE / menu unificado: mantém a logo, a busca e o carrinho originais. -->
+  <script>
+  (() => {
+    "use strict";
+    const itens = [
+      ["INÍCIO", "index.html"],
+      ["PROMOÇÕES", "promocoes.html"],
+      ["PRODUTOS", "produtos.html"],
+      ["OCTOBER DROP", "colecao-outubro.html"],
+      ["ANIME DISTRICT", "anime-district.html"],
+      ["DÚVIDAS", "index.html#duvidas"]
+    ];
+    const limpar = valor => String(valor || "").normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, " ").trim().toUpperCase();
+    const nomes = new Set([
+      "INICIO", "PROMOCOES", "PRODUTOS", "OCTOBER DROP", "ANIME DISTRICT",
+      "MANIFESTO", "DUVIDAS", "CATALOGO GERAL", "SOBRE", "SOBRE NOS"
+    ]);
+    const arquivoAtual = location.pathname.split("/").pop() || "index.html";
+    const destino = ref => {
+      try { const u = new URL(ref, location.href); return u.pathname.split("/").pop() + u.hash; }
+      catch { return ""; }
+    };
+
+    function ajustar(container) {
+      const links = [...container.children].filter(el => el.tagName === "A" && el.hasAttribute("href"));
+      const atuais = links.filter(a => nomes.has(limpar(a.textContent)));
+      if (atuais.length < 2) return;
+      const jaPronto = atuais.length === itens.length && itens.every(([nome, href], i) =>
+        limpar(atuais[i].textContent) === limpar(nome) &&
+        destino(atuais[i].getAttribute("href")) === destino(href));
+      if (jaPronto) return;
+
+      const marcador = document.createComment("Links Black Forge");
+      container.insertBefore(marcador, atuais[0]);
+      const usados = new Set();
+      const classePadrao = atuais[0].className;
+      for (const [nome, href] of itens) {
+        let a = atuais.find(link => !usados.has(link) && limpar(link.textContent) === limpar(nome));
+        if (!a && nome === "ANIME DISTRICT") {
+          a = atuais.find(link => !usados.has(link) && limpar(link.textContent) === "MANIFESTO");
+        }
+        if (!a) {
+          a = document.createElement("a");
+          if (classePadrao) a.className = classePadrao;
+        }
+        usados.add(a);
+        a.textContent = nome;
+        a.setAttribute("href", href);
+        if (href.split("#")[0] === arquivoAtual && nome !== "DÚVIDAS") {
+          a.setAttribute("aria-current", "page");
+        } else {
+          a.removeAttribute("aria-current");
+        }
+        container.insertBefore(a, marcador);
+      }
+      for (const antigo of atuais) if (!usados.has(antigo)) antigo.remove();
+      marcador.remove();
+    }
+
+    function atualizar() {
+      const candidatos = document.querySelectorAll(
+        "#navbar-menu nav, #navbar-menu .nav-links, #navbar-menu .menu-links, " +
+        "#navbar-menu .navbar-links, header nav, header .nav-links, nav.nav"
+      );
+      candidatos.forEach(ajustar);
+    }
+
+    function iniciar() {
+      atualizar();
+      let agendado = false;
+      const observador = new MutationObserver(() => {
+        if (agendado) return;
+        agendado = true;
+        queueMicrotask(() => { agendado = false; atualizar(); });
+      });
+      observador.observe(document.getElementById("navbar-menu") || document.body,
+        { childList: true, subtree: true });
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", iniciar, { once: true });
+    } else iniciar();
+  })();
+  </script>
 </body>
 </html>

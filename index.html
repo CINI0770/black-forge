@@ -38,7 +38,6 @@
         <div class="hero-actions">
           <a href="promocoes.html" class="btn btn-light">EXPLORAR PROMOÇÕES <span aria-hidden="true">↗</span></a>
           <a href="produtos.html" class="text-link">VER CATÁLOGO COMPLETO <span aria-hidden="true">→</span></a>
-          <script src="./october-menu.js" defer></script>
         </div>
         <p class="bf-home-promo-note">15% OFF EM PEÇAS SELECIONADAS ATÉ 09/11/2026. DESCONTO JÁ INCLUÍDO NOS PREÇOS.</p>
         <p class="bf-home-frete-note">FRETE GRÁTIS PARA PEDIDOS CONFIRMADOS ATÉ 31/10/2026.</p>
@@ -143,5 +142,89 @@
     <div class="footer-bottom"><span>© <span id="year">2026</span> BLACK FORGE</span><span>ESTILO ALTERNATIVO / SEM PADRÕES</span><a href="#conteudo">VOLTAR AO TOPO ↑</a></div>
   </footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <!-- BLACK FORGE / menu unificado: mantém a logo, a busca e o carrinho originais. -->
+  <script>
+  (() => {
+    "use strict";
+    const itens = [
+      ["INÍCIO", "index.html"],
+      ["PROMOÇÕES", "promocoes.html"],
+      ["PRODUTOS", "produtos.html"],
+      ["OCTOBER DROP", "colecao-outubro.html"],
+      ["ANIME DISTRICT", "anime-district.html"],
+      ["DÚVIDAS", "index.html#duvidas"]
+    ];
+    const limpar = valor => String(valor || "").normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, " ").trim().toUpperCase();
+    const nomes = new Set([
+      "INICIO", "PROMOCOES", "PRODUTOS", "OCTOBER DROP", "ANIME DISTRICT",
+      "MANIFESTO", "DUVIDAS", "CATALOGO GERAL", "SOBRE", "SOBRE NOS"
+    ]);
+    const arquivoAtual = location.pathname.split("/").pop() || "index.html";
+    const destino = ref => {
+      try { const u = new URL(ref, location.href); return u.pathname.split("/").pop() + u.hash; }
+      catch { return ""; }
+    };
+
+    function ajustar(container) {
+      const links = [...container.children].filter(el => el.tagName === "A" && el.hasAttribute("href"));
+      const atuais = links.filter(a => nomes.has(limpar(a.textContent)));
+      if (atuais.length < 2) return;
+      const jaPronto = atuais.length === itens.length && itens.every(([nome, href], i) =>
+        limpar(atuais[i].textContent) === limpar(nome) &&
+        destino(atuais[i].getAttribute("href")) === destino(href));
+      if (jaPronto) return;
+
+      const marcador = document.createComment("Links Black Forge");
+      container.insertBefore(marcador, atuais[0]);
+      const usados = new Set();
+      const classePadrao = atuais[0].className;
+      for (const [nome, href] of itens) {
+        let a = atuais.find(link => !usados.has(link) && limpar(link.textContent) === limpar(nome));
+        if (!a && nome === "ANIME DISTRICT") {
+          a = atuais.find(link => !usados.has(link) && limpar(link.textContent) === "MANIFESTO");
+        }
+        if (!a) {
+          a = document.createElement("a");
+          if (classePadrao) a.className = classePadrao;
+        }
+        usados.add(a);
+        a.textContent = nome;
+        a.setAttribute("href", href);
+        if (href.split("#")[0] === arquivoAtual && nome !== "DÚVIDAS") {
+          a.setAttribute("aria-current", "page");
+        } else {
+          a.removeAttribute("aria-current");
+        }
+        container.insertBefore(a, marcador);
+      }
+      for (const antigo of atuais) if (!usados.has(antigo)) antigo.remove();
+      marcador.remove();
+    }
+
+    function atualizar() {
+      const candidatos = document.querySelectorAll(
+        "#navbar-menu nav, #navbar-menu .nav-links, #navbar-menu .menu-links, " +
+        "#navbar-menu .navbar-links, header nav, header .nav-links, nav.nav"
+      );
+      candidatos.forEach(ajustar);
+    }
+
+    function iniciar() {
+      atualizar();
+      let agendado = false;
+      const observador = new MutationObserver(() => {
+        if (agendado) return;
+        agendado = true;
+        queueMicrotask(() => { agendado = false; atualizar(); });
+      });
+      observador.observe(document.getElementById("navbar-menu") || document.body,
+        { childList: true, subtree: true });
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", iniciar, { once: true });
+    } else iniciar();
+  })();
+  </script>
 </body>
 </html>
