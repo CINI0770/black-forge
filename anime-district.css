@@ -41,3 +41,116 @@
   .bf-site-navigation {justify-content:flex-start; flex-wrap:nowrap; gap:24px; overflow-x:auto; overflow-y:hidden; padding:11px 5% 14px; border-top:1px solid #262626; scrollbar-width:thin;}
   .bf-site-navigation a {font-size:9px;}
 }
+
+
+
+/* ================================================================
+   ANIME DISTRICT / DESIGN 02 — KYOTO INK 京都
+   Papel washi, sumi-e, carimbo vermelho, elegancia japonesa.
+   CSS completo, sem mudancas em HTML/JS.
+   ================================================================ */
+:root{--bg:#eee9de;--panel:#faf7ef;--paper:#25251f;--text:#21211e;--muted:#676459;--line:#c5baaa}
+body{background:#eee9de;color:#24231f}
+.bf-site-header{background:#22251f;border-bottom:3px solid #af423a}.bf-site-symbol{color:#d6bc92}.bf-site-navigation a[aria-current="page"]{color:#f2dac1;border-bottom:1px solid #c54a3e;padding-bottom:5px}
+.hero{background:#eae4d7;border-bottom:1px solid #9f9380}
+.hero-copy{position:relative;background:linear-gradient(160deg,#f6f1e8,#e4dbc8);overflow:hidden;isolation:isolate}
+.hero-copy:before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(0deg,#00000008 0 1px,transparent 1px 5px);opacity:.27}
+.hero-copy:after{content:"和";position:absolute;bottom:0;right:5%;font-size:clamp(180px,26vw,400px);line-height:1;color:#b0a39123;font-family:serif;pointer-events:none;z-index:-1}
+.overline{color:#af4138}.bullet{background:#b8433b;border-radius:0}.edition{color:#796f61}
+.hero h1{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:900;letter-spacing:-.055em;color:#292822}
+.hero h1 span{color:#aa4139}.hero h1 i{color:#a33b31}.hero-copy>p{color:#504d43;max-width:460px}
+.primary{color:#fff;background:#2b3029;box-shadow:5px 5px 0 #b64138}.primary:hover{background:#b64138;color:white}
+.hero-bottom{color:#847969}.hero-art{background:radial-gradient(circle at center,#f1e7d3 0 18%,#e4d4ba 58%,#ccbaa3);border-left:1px solid #a49a85}
+.hero-art:before{content:"";position:absolute;left:-18%;top:28%;width:130%;height:44%;background:radial-gradient(ellipse,#262a2480,transparent 62%);filter:blur(55px)}
+.hero-art:after{border:1px solid #ac9e88}.art-ring{border:8px solid #a94335;border-radius:50%;width:min(65%,390px);box-shadow:0 0 0 16px #a9433511;transform:none}.art-ring-2{border:1px solid #a9433566;width:min(76%,470px);transform:none}
+.art-jp{font-family:serif;font-weight:900;color:#292b28;letter-spacing:-.08em;text-shadow:5px 4px #cbbda5}
+.art-corner{color:#b34134}.art-caption{color:#625d50}
+.marquee{background:#27312c;color:#eee5d7;border-color:#b13f32}
+.section{background:#efeade}.section-kicker{color:#a13c34;border-color:#b8aa96}.intro h2 em,.products-section h2 em,.outro h2 em{color:#a34137}
+.intro-heading>p,.products-heading>p{color:#686054}
+.category-tiles{gap:12px}.category-card,.category-card:nth-child(2n){background:linear-gradient(150deg,#f8f4eb,#e6ddce);border:1px solid #ab9e88;min-height:220px;color:#302d28;box-shadow:3px 4px 0 #d2c3ae;transition:all .2s}
+.category-card:after{content:"";width:44px;height:4px;background:#b14339;position:absolute;bottom:20px;right:20px}.category-card{position:relative}
+.category-card:hover{border-color:#a53d32;transform:translateY(-4px);box-shadow:4px 9px 0 #d2c3ae}.category-card.active{background:#2d352e;border-color:#2d352e;color:#fff;box-shadow:4px 7px 0 #ab483d}
+.category-card-number,.category-card small{color:#857764}.category-card-number span{color:#ad4338}.category-card.active .category-card-number,.category-card.active small{color:#e3cfb8}.category-card.active .category-card-number span{color:#ebb79e}.category-card strong{font-weight:900}
+.products-section{background:linear-gradient(135deg,#e9e2d5,#f2ede3)}.products-heading .overline{color:#b04138}
+.filters{border-color:#b8aa96}.chip{color:#514b43;background:#faf7f0;border:1px solid #b9ae9b}.chip:hover,.chip[aria-pressed=true]{background:#30352d;color:#fff;border-color:#30352d}
+.search{border-color:#9d8f7a}.search input{color:#262720}.search input::placeholder{color:#928675}.search span:last-child{color:#af433b}
+.product-grid{gap:20px 15px}.product-card{border:1px solid #c9bead;background:#fffdf7;padding:12px;gap:11px;box-shadow:3px 4px 0 #d9cbb7}
+.product-image{border:1px solid #d7c9b4;background:linear-gradient(135deg,#e7dbcb,#f4ecdc)}.product-image:before{border-color:#806c561c}.product-image .frame-symbol{color:#ac9b86}
+.product-badge{color:#fff;background:#a73f36}.product-type{color:#a23d34}.product-name{color:#24241f}.product-price{color:#22231e}.product-meta{color:#615b50}
+.product-open{color:#fff;background:#30352e;border:1px solid #30352e;text-align:center}.product-open:hover{background:#a63c31;color:#fff}
+.preview-note{color:#5d3834;background:#e4cfba;border-color:#b78372}.empty,.collection-footer{border-color:#c2b4a1}.empty p,.collection-footer{color:#696153}.empty-mark{color:#a63e35}.collection-footer a{color:#9f3c30}
+.outro{background:#292e28;border-top:6px solid #b4453a;color:#fff}.outro h2{color:#f8f3ea}.outro h2 em{color:#ca7b69}.outro>p{color:#cec1ab}.outro>a{color:#fff;background:#b7443a}
+footer{background:#232822;color:#f7f1e6;border-color:#ad4336}footer>p,footer>small{color:#c6b7a0}
+.product-dialog{background:#f8f3e8;color:#292823;border:2px solid #a5493a}.close-modal{color:white;background:#333830;border-color:#333830}.modal-body p{color:#5d574a}.modal-body select{background:#fffdf8;border:1px solid #ad9e88;color:#25241e}.modal-notice{border-color:#b5a792}
+@media(max-width:760px){.hero-art{min-height:340px}.art-ring{width:220px;border-width:6px}.art-ring-2{width:300px}.category-card:after{bottom:10px;right:12px;width:23px}.product-card{padding:7px}}
+
+
+/* BLACK FORGE — KYOTO INK / SEO E CATEGORIAS REAIS 2026 */
+:root { --kyoto-paper:#f1e9d9; --kyoto-ink:#222620; --kyoto-red:#b44239; --kyoto-border:#b3a18c; }
+body {background:var(--kyoto-paper)}
+.hero {min-height:540px}
+.hero-copy {padding-top:70px;padding-bottom:60px}
+.hero h1 {font-size:clamp(70px,9vw,145px);letter-spacing:-.025em}
+.hero h1 span {color:var(--kyoto-red)}
+.hero-copy>p {color:#61584c;max-width:520px}
+.hero-art {background-image:linear-gradient(90deg,#2a1a170d,#150e0e15),url('./imagens/anime-kyoto-hero.webp');background-position:center center;background-size:cover}
+.hero-art:before,.hero-art:after {display:none}
+.hero-art .art-ring,.hero-art .art-ring-2 {display:none}
+.hero-art .art-jp{position:absolute;bottom:25px;right:22px;z-index:3;color:#fff7e7;font-size:clamp(34px,5vw,65px);line-height:.99;text-shadow:0 3px 9px #1a1414;transform:none;letter-spacing:.04em;padding:12px;background:#22171399;border-left:3px solid #d7b6a1}
+.hero-art .art-caption{position:absolute;bottom:22px;left:5%;z-index:4;color:#fff;font-size:9px;line-height:1.5;background:#1a1814b8;padding:10px}
+.art-corner{display:none}
+.section-kicker{font-weight:800}
+.category-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.category-card,.category-card:nth-child(2n){text-align:left;min-height:158px;display:flex;flex-direction:column;justify-content:space-between;padding:20px 19px;overflow:hidden;box-shadow:4px 5px 0 #d6c4ad;background:linear-gradient(130deg,#fffaf0,#ece0cf);border:1px solid #b8a88e}
+.category-card:before {content:'桜';font-size:87px;font-weight:900;position:absolute;right:11px;bottom:-27px;color:#ae453014;line-height:1}
+.category-card strong{position:relative;z-index:1;font-size:clamp(21px,2.2vw,36px);line-height:1.03;overflow-wrap:anywhere}
+.category-card small{position:relative;z-index:1;font-weight:800;letter-spacing:.10em;font-size:10px}
+.category-card .category-japanese{font-size:12px;font-weight:800;letter-spacing:.06em;color:#a9443a}
+.category-card.active .category-japanese{color:#e4a18d}
+.category-card.active:before{color:#ffffff1b}
+.category-card:after{background:#b54339}
+.filters{display:flex;flex-direction:column;align-items:stretch;gap:16px;padding-bottom:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;overflow:visible}
+.chip{font-size:10px;letter-spacing:.035em;padding:9px 11px;white-space:normal;border-color:#c6b59f}
+.filter-tools{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.filter-tools .search{flex:1 1 300px;border:1px solid #b8a88f;background:#fffaf1;padding:0 12px;min-width:200px}
+.search input{color:#312820;font-size:11px;min-height:43px}
+.search input::placeholder{color:#857462}
+.filter-select{display:block;flex:0 1 auto}
+.filter-select select{max-width:100%;min-height:45px;padding:0 33px 0 14px;background:#fffaf1;color:#34332d;border:1px solid #b8a88f;font:700 11px 'DM Sans',Arial,sans-serif}
+.catalog-current{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:26px 0 12px;padding-bottom:16px;border-bottom:2px solid #b6a18a}
+.catalog-current .catalog-jp{font-size:10px;color:#a64537;letter-spacing:.14em;font-weight:800}
+.catalog-current h3{font:900 clamp(32px,4vw,60px)/1 'Barlow Condensed',Impact,sans-serif;color:#282922;margin:7px 0 0}
+.clear-filters{border:1px solid #9f483f;color:#953d34;background:transparent;font-weight:800;font-size:10px;letter-spacing:.07em;padding:10px 14px}
+.clear-filters:hover{background:#9f483f;color:#fff}
+.product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 14px}
+.product-card{display:flex;flex-direction:column;padding:11px;background:#fffdf5;box-shadow:3px 5px 0 #d4c3aa}
+.product-image{display:block;position:relative;aspect-ratio:4/4.65;background:linear-gradient(130deg,#e8ddcf,#f3e9dc);border:1px solid #ddcdb6;overflow:hidden}
+.product-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.product-image:hover img{transform:scale(1.045)}
+.product-image .frame-symbol{height:100%;display:grid;place-items:center}
+.product-content{display:flex;flex-direction:column;gap:8px;flex:1;min-width:0}
+.product-name{display:block;color:#29291f;font-weight:800;font-size:14px;line-height:1.35;min-height:2.7em}
+.product-price{font-size:16px;color:#a73e34}
+.product-actions{margin-top:auto;display:grid;grid-template-columns:1fr auto;gap:7px}
+.product-open{display:block;text-align:center;padding:12px 8px;white-space:nowrap;font-size:9px;letter-spacing:.04em;background:#2b312a;color:#fff;border:1px solid #2b312a}
+.product-details{background:#fffaf1;border:1px solid #ac9981;color:#34322c;font-size:9px;font-weight:800;letter-spacing:.04em;padding:9px}
+.product-details:hover{background:#e6d8c3}
+.load-more-wrap{text-align:center;padding:24px 0 10px}
+.load-more{padding:15px 32px;background:#2b312b;border:2px solid #2b312b;color:#fff;font-weight:800;font-size:11px;letter-spacing:.1em}
+.load-more:hover{background:#ad463c;border-color:#ad463c}
+.load-more[hidden],.clear-filters[hidden]{display:none!important}
+.modal-gallery img{width:100%;object-fit:cover;aspect-ratio:4/5;max-height:520px}
+.modal-thumbs{display:flex;gap:9px;margin-top:12px}
+.modal-thumb{border:2px solid transparent;background:#e5dccf;width:65px;height:65px;padding:0}
+.modal-thumb.active{border-color:#a74435}
+.modal-thumb img{width:100%;height:100%;object-fit:cover;max-height:none;aspect-ratio:1}
+.modal-info h3{font-size:clamp(29px,3vw,45px)}
+.modal-price{font-size:22px;color:#aa4136}
+.modal-info .product-open{margin-top:20px}
+.modal-info .modal-options{font-size:11px;border-bottom:1px solid #c8b8a4;padding-bottom:8px}
+@media(max-width:1100px){.category-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}.product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.hero{min-height:auto}.hero-copy{padding:62px 5% 42px}.hero-art{min-height:410px;background-position:50% 30%}.category-tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.category-card,.category-card:nth-child(2n){min-height:135px;padding:15px}.category-card strong{font-size:23px}.filters{gap:12px}.filter-tools{align-items:stretch}.filter-select{flex:1 1 135px}.filter-select select{width:100%}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px}.product-card{padding:7px;gap:7px}.product-name{font-size:12px}.product-price{font-size:14px}.product-actions{display:flex;flex-direction:column;gap:5px}.product-open,.product-details{font-size:9px}.hero-art .art-jp{font-size:42px}}
+@media(max-width:420px){.product-name{min-height:3em}.category-card strong{font-size:19px}.catalog-current h3{font-size:32px}.catalog-current .catalog-jp{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.product-image img{transition:none}}
