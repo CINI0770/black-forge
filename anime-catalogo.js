@@ -2,7 +2,7 @@
    Precos mantidos exatamente como no cadastro recebido.
    Para a vitrine: carregue catalogo.js ANTES de anime-catalogo.js.
    Para o servidor Stripe: o payment-server.js le este arquivo apos catalogo.js.
-   As imagens .webp precisam existir em /imagens/ para exibicao real.
+   As imagens .jpg precisam existir em /imagens/ para exibicao real.
 */
 (function () {
   "use strict";
@@ -16,10 +16,10 @@
     "anime": "",
     "price": 89.9,
     "images": [
-      "imagens/BF-AN-001-01.webp"
+      "imagens/BF-AN-001-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-001-01.webp"
+      "imagens/BF-AN-001-01.jpg"
     ],
     "description": "Regata feminina Y2K com estampa estilo mangá, alças finas e estética grunge. Uma peça alternativa que combina influências góticas, emo e streetwear.",
     "sizes": [
@@ -47,12 +47,12 @@
     "anime": "One Piece",
     "price": 59.9,
     "images": [
-      "imagens/BF-AN-002-01.webp",
-      "imagens/BF-AN-002-02.webp"
+      "imagens/BF-AN-002-01.jpg",
+      "imagens/BF-AN-002-02.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-002-01.webp",
-      "imagens/BF-AN-002-02.webp"
+      "imagens/BF-AN-002-01.jpg",
+      "imagens/BF-AN-002-02.jpg"
     ],
     "description": "Brincos triplos de pressão inspirados na estética dos espadachins de anime. Design metálico com três argolas e pingentes alongados, sem necessidade de perfuração. Disponíveis em prata e dourado. Ideais para composições alternativas, streetwear e cosplay.",
     "sizes": [
@@ -78,10 +78,10 @@
     "anime": "Hunter x Hunter",
     "price": 79.9,
     "images": [
-      "imagens/BF-AN-003-01.webp"
+      "imagens/BF-AN-003-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-003-01.webp"
+      "imagens/BF-AN-003-01.jpg"
     ],
     "description": "Camiseta bege com estampa de mangá em preto, visual retrô e estética streetwear japonesa.",
     "sizes": [
@@ -111,10 +111,10 @@
     "anime": "Hunter x Hunter",
     "price": 79.9,
     "images": [
-      "imagens/BF-AN-004-01.webp"
+      "imagens/BF-AN-004-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-004-01.webp"
+      "imagens/BF-AN-004-01.jpg"
     ],
     "description": "Camiseta bege com estampa vintage de Gon e composição gráfica inspirada nos clássicos mangás japoneses.",
     "sizes": [
@@ -144,10 +144,10 @@
     "anime": "Hunter x Hunter",
     "price": 79.9,
     "images": [
-      "imagens/BF-AN-005-01.webp"
+      "imagens/BF-AN-005-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-005-01.webp"
+      "imagens/BF-AN-005-01.jpg"
     ],
     "description": "Camiseta preta com estampa de anime em tons azuis e brancos. Uma peça marcante para looks urbanos e alternativos.",
     "sizes": [
@@ -177,10 +177,10 @@
     "anime": "Hunter x Hunter",
     "price": 79.9,
     "images": [
-      "imagens/BF-AN-006-01.webp"
+      "imagens/BF-AN-006-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-006-01.webp"
+      "imagens/BF-AN-006-01.jpg"
     ],
     "description": "Camiseta bege com arte em quadros de mangá e tonalidades retrô. Combina estética japonesa com moda alternativa.",
     "sizes": [
@@ -210,10 +210,10 @@
     "anime": "Hunter x Hunter",
     "price": 79.9,
     "images": [
-      "imagens/BF-AN-007-01.webp"
+      "imagens/BF-AN-007-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-007-01.webp"
+      "imagens/BF-AN-007-01.jpg"
     ],
     "description": "Camiseta bege com composição de painéis de mangá em preto e branco, inspirada no visual das histórias japonesas.",
     "sizes": [
@@ -243,10 +243,10 @@
     "anime": "Hunter x Hunter",
     "price": 79.9,
     "images": [
-      "imagens/BF-AN-008-01.webp"
+      "imagens/BF-AN-008-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-008-01.webp"
+      "imagens/BF-AN-008-01.jpg"
     ],
     "description": "Camiseta preta com ilustração em tons roxos, combinando referências de anime, streetwear e estética dark.",
     "sizes": [
@@ -276,10 +276,10 @@
     "anime": "Hunter x Hunter",
     "price": 79.9,
     "images": [
-      "imagens/BF-AN-009-01.webp"
+      "imagens/BF-AN-009-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-009-01.webp"
+      "imagens/BF-AN-009-01.jpg"
     ],
     "description": "Camiseta bege com ilustração mística em roxo, trazendo um toque sombrio e alternativo ao estilo anime.",
     "sizes": [
@@ -309,10 +309,10 @@
     "anime": "Hunter x Hunter",
     "price": 79.9,
     "images": [
-      "imagens/BF-AN-010-01.webp"
+      "imagens/BF-AN-010-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-010-01.webp"
+      "imagens/BF-AN-010-01.jpg"
     ],
     "description": "Camiseta bege com estampa de personagem em moldura rosa, misturando referências de anime e pop art japonesa.",
     "sizes": [
@@ -342,10 +342,10 @@
     "anime": "Hunter x Hunter",
     "price": 79.9,
     "images": [
-      "imagens/BF-AN-011-01.webp"
+      "imagens/BF-AN-011-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-011-01.webp"
+      "imagens/BF-AN-011-01.jpg"
     ],
     "description": "Camiseta preta com composição gráfica colorida em tons de laranja e verde. Visual streetwear inspirado no universo anime.",
     "sizes": [
@@ -375,10 +375,10 @@
     "anime": "Hunter x Hunter",
     "price": 79.9,
     "images": [
-      "imagens/BF-AN-012-01.webp"
+      "imagens/BF-AN-012-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-012-01.webp"
+      "imagens/BF-AN-012-01.jpg"
     ],
     "description": "Camiseta bege com estampa monocromática de personagens em silhueta, ideal para um visual minimalista e alternativo.",
     "sizes": [
@@ -408,10 +408,10 @@
     "anime": "Hunter x Hunter",
     "price": 79.9,
     "images": [
-      "imagens/BF-AN-013-01.webp"
+      "imagens/BF-AN-013-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-013-01.webp"
+      "imagens/BF-AN-013-01.jpg"
     ],
     "description": "Camiseta bege com estampa horizontal de olhos em estilo mangá, trazendo uma estética discreta e misteriosa.",
     "sizes": [
@@ -441,10 +441,10 @@
     "anime": "Hunter x Hunter",
     "price": 79.9,
     "images": [
-      "imagens/BF-AN-014-01.webp"
+      "imagens/BF-AN-014-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-014-01.webp"
+      "imagens/BF-AN-014-01.jpg"
     ],
     "description": "Camiseta preta com arte de mangá em preto e branco, de visual intenso e urbano, perfeita para composições grunge.",
     "sizes": [
@@ -474,10 +474,10 @@
     "anime": "Hunter x Hunter",
     "price": 79.9,
     "images": [
-      "imagens/BF-AN-015-01.webp"
+      "imagens/BF-AN-015-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-015-01.webp"
+      "imagens/BF-AN-015-01.jpg"
     ],
     "description": "Camiseta preta com elementos gráficos roxos e ilustração de anime, combinando identidade underground e streetwear.",
     "sizes": [
@@ -507,10 +507,10 @@
     "anime": "Hunter x Hunter",
     "price": 79.9,
     "images": [
-      "imagens/BF-AN-016-01.webp"
+      "imagens/BF-AN-016-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-016-01.webp"
+      "imagens/BF-AN-016-01.jpg"
     ],
     "description": "Camiseta preta com estampa azul elétrica e composição de mangá, ideal para um estilo alternativo marcante.",
     "sizes": [
@@ -540,10 +540,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-017-01.webp"
+      "imagens/BF-AN-017-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-017-01.webp"
+      "imagens/BF-AN-017-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Visual azul-esverdeado e lâmina inspirada na estética dos caçadores de demônios.",
     "sizes": [
@@ -565,10 +565,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-018-01.webp"
+      "imagens/BF-AN-018-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-018-01.webp"
+      "imagens/BF-AN-018-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Visual amarelo e detalhes que remetem à velocidade do relâmpago.",
     "sizes": [
@@ -590,10 +590,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-019-01.webp"
+      "imagens/BF-AN-019-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-019-01.webp"
+      "imagens/BF-AN-019-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Estilo verde e preto com detalhes de katana.",
     "sizes": [
@@ -615,10 +615,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-020-01.webp"
+      "imagens/BF-AN-020-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-020-01.webp"
+      "imagens/BF-AN-020-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Estilo flamejante com detalhes vermelhos e dourados.",
     "sizes": [
@@ -640,10 +640,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-021-01.webp"
+      "imagens/BF-AN-021-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-021-01.webp"
+      "imagens/BF-AN-021-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Design delicado em rosa e verde, inspirado no universo dos animes.",
     "sizes": [
@@ -665,10 +665,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-022-01.webp"
+      "imagens/BF-AN-022-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-022-01.webp"
+      "imagens/BF-AN-022-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Detalhes roxos com visual leve e elegante.",
     "sizes": [
@@ -690,10 +690,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-023-01.webp"
+      "imagens/BF-AN-023-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-023-01.webp"
+      "imagens/BF-AN-023-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Estilo sóbrio com espada de acabamento prateado.",
     "sizes": [
@@ -715,10 +715,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-024-01.webp"
+      "imagens/BF-AN-024-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-024-01.webp"
+      "imagens/BF-AN-024-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Design com contraste escuro e detalhes metálicos.",
     "sizes": [
@@ -740,10 +740,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-025-01.webp"
+      "imagens/BF-AN-025-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-025-01.webp"
+      "imagens/BF-AN-025-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Estampa de caçador com detalhes verdes e espada estilizada.",
     "sizes": [
@@ -765,10 +765,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-026-01.webp"
+      "imagens/BF-AN-026-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-026-01.webp"
+      "imagens/BF-AN-026-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Visual de caçador mascarado e acabamento prateado.",
     "sizes": [
@@ -790,10 +790,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-027-01.webp"
+      "imagens/BF-AN-027-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-027-01.webp"
+      "imagens/BF-AN-027-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Modelo preto com detalhes inspirados em serpentes.",
     "sizes": [
@@ -815,10 +815,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-028-01.webp"
+      "imagens/BF-AN-028-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-028-01.webp"
+      "imagens/BF-AN-028-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Composição de personagem e espada em tons escuros.",
     "sizes": [
@@ -840,10 +840,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-029-01.webp"
+      "imagens/BF-AN-029-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-029-01.webp"
+      "imagens/BF-AN-029-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Estilo com lâmina em tons de vermelho e azul.",
     "sizes": [
@@ -865,10 +865,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-030-01.webp"
+      "imagens/BF-AN-030-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-030-01.webp"
+      "imagens/BF-AN-030-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Detalhes escuros e lâmina contrastante em vermelho e branco.",
     "sizes": [
@@ -890,10 +890,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-031-01.webp"
+      "imagens/BF-AN-031-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-031-01.webp"
+      "imagens/BF-AN-031-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Estampa de personagem e visual delicado em tons frios.",
     "sizes": [
@@ -915,10 +915,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-032-01.webp"
+      "imagens/BF-AN-032-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-032-01.webp"
+      "imagens/BF-AN-032-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Arte em tons avermelhados com estética de batalha.",
     "sizes": [
@@ -940,10 +940,10 @@
     "anime": "Demon Slayer",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-033-01.webp"
+      "imagens/BF-AN-033-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-033-01.webp"
+      "imagens/BF-AN-033-01.jpg"
     ],
     "description": "Caneta gel temática de anime com corpo inspirado em katana, ponta de 0,5 mm e tinta preta. Estilo de guerreiro e katana com detalhes marcantes.",
     "sizes": [
@@ -965,10 +965,10 @@
     "anime": "Death Note",
     "price": 49.9,
     "images": [
-      "imagens/BF-AN-034-01.webp"
+      "imagens/BF-AN-034-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-034-01.webp"
+      "imagens/BF-AN-034-01.jpg"
     ],
     "description": "Mini figura decorativa do personagem L Lawliet, inspirada em Death Note. Peça compacta e estilizada, ideal para fãs de anime, colecionadores e composições geek com visual alternativo.",
     "sizes": [
@@ -993,10 +993,10 @@
     "anime": "Death Note",
     "price": 49.9,
     "images": [
-      "imagens/BF-AN-035-01.webp"
+      "imagens/BF-AN-035-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-035-01.webp"
+      "imagens/BF-AN-035-01.jpg"
     ],
     "description": "Mini figura decorativa da Misa Amane, inspirada em Death Note. Modelo compacto com acabamento estilizado, perfeito para colecionadores e fãs de estética anime.",
     "sizes": [
@@ -1021,10 +1021,10 @@
     "anime": "Death Note",
     "price": 49.9,
     "images": [
-      "imagens/BF-AN-036-01.webp"
+      "imagens/BF-AN-036-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-036-01.webp"
+      "imagens/BF-AN-036-01.jpg"
     ],
     "description": "Mini figura decorativa do Ryuk, inspirada em Death Note. Uma peça compacta com visual marcante, ideal para coleções, decoração geek e fãs do universo dark do anime.",
     "sizes": [
@@ -1049,10 +1049,10 @@
     "anime": "Death Note",
     "price": 49.9,
     "images": [
-      "imagens/BF-AN-037-01.webp"
+      "imagens/BF-AN-037-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-037-01.webp"
+      "imagens/BF-AN-037-01.jpg"
     ],
     "description": "Mini figura decorativa do Light Yagami, inspirada em Death Note. Peça estilizada e compacta, perfeita para fãs do anime e para compor coleções com identidade geek.",
     "sizes": [
@@ -1077,10 +1077,10 @@
     "anime": "Pokémon",
     "price": 109.9,
     "images": [
-      "imagens/BF-AN-038-01.webp"
+      "imagens/BF-AN-038-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-038-01.webp"
+      "imagens/BF-AN-038-01.jpg"
     ],
     "description": "Mini figura colecionável do Bulbasaur, do universo Pokémon. Com visual adorável, acabamento colorido e tamanho compacto, é ideal para decorar mesas, estantes e espaços personalizados. Uma peça especial para fãs de anime e colecionadores.",
     "sizes": [
@@ -1105,12 +1105,12 @@
     "anime": "Demon Slayer",
     "price": 49.9,
     "images": [
-      "imagens/BF-AN-039-01.webp",
-      "imagens/BF-AN-039-02.webp"
+      "imagens/BF-AN-039-01.jpg",
+      "imagens/BF-AN-039-02.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-039-01.webp",
-      "imagens/BF-AN-039-02.webp"
+      "imagens/BF-AN-039-01.jpg",
+      "imagens/BF-AN-039-02.jpg"
     ],
     "description": "Laço de cabelo inspirado na Shinobu Kocho de Demon Slayer. Com design de asas de borboleta, tons delicados de rosa e verde e acabamento em preto, combina perfeitamente com produções kawaii, cosplay e moda alternativa. Um acessório marcante para transformar qualquer penteado.",
     "sizes": [
@@ -1135,10 +1135,10 @@
     "anime": "Chainsaw Man",
     "price": 109.9,
     "images": [
-      "imagens/BF-AN-040-01.webp"
+      "imagens/BF-AN-040-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-040-01.webp"
+      "imagens/BF-AN-040-01.jpg"
     ],
     "description": "Figura colecionável de Denji em sua transformação Chainsaw Man, sentado sobre as lâminas. Modelo em PVC com visual sombrio e detalhes marcantes. Versão sem caixa.",
     "sizes": [
@@ -1163,10 +1163,10 @@
     "anime": "Chainsaw Man",
     "price": 139.9,
     "images": [
-      "imagens/BF-AN-041-01.webp"
+      "imagens/BF-AN-041-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-041-01.webp"
+      "imagens/BF-AN-041-01.jpg"
     ],
     "description": "Figura colecionável de Denji em sua forma Chainsaw Man, com pose sentada sobre as lâminas. Acompanha caixa ilustrada temática, ideal para exposição e coleção.",
     "sizes": [
@@ -1191,10 +1191,10 @@
     "anime": "Chainsaw Man",
     "price": 179.9,
     "images": [
-      "imagens/BF-AN-042-01.webp"
+      "imagens/BF-AN-042-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-042-01.webp"
+      "imagens/BF-AN-042-01.jpg"
     ],
     "description": "Figura colecionável de Chainsaw Man em pose de combate, com motosserra, base de exposição e detalhes intensos. Acompanha caixa temática ilustrada.",
     "sizes": [
@@ -1219,10 +1219,10 @@
     "anime": "Chainsaw Man",
     "price": 159.9,
     "images": [
-      "imagens/BF-AN-043-01.webp"
+      "imagens/BF-AN-043-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-043-01.webp"
+      "imagens/BF-AN-043-01.jpg"
     ],
     "description": "Figura colecionável de Denji transformado em Chainsaw Man, com postura agressiva, lâminas de motosserra e base circular. Versão sem caixa.",
     "sizes": [
@@ -1247,10 +1247,10 @@
     "anime": "Chainsaw Man",
     "price": 149.9,
     "images": [
-      "imagens/BF-AN-044-01.webp"
+      "imagens/BF-AN-044-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-044-01.webp"
+      "imagens/BF-AN-044-01.jpg"
     ],
     "description": "Figura colecionável de Chainsaw Man em pé, com lâminas nos braços, uniforme característico e base de exposição. Acompanha caixa temática ilustrada.",
     "sizes": [
@@ -1275,10 +1275,10 @@
     "anime": "Chainsaw Man",
     "price": 129.9,
     "images": [
-      "imagens/BF-AN-045-01.webp"
+      "imagens/BF-AN-045-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-045-01.webp"
+      "imagens/BF-AN-045-01.jpg"
     ],
     "description": "Figura colecionável de Denji em sua transformação Chainsaw Man, com lâminas alongadas, camisa branca, gravata preta e base circular. Versão sem caixa.",
     "sizes": [
@@ -1303,10 +1303,10 @@
     "anime": "Hollow Knight",
     "price": 89.9,
     "images": [
-      "imagens/BF-AN-046-01.webp"
+      "imagens/BF-AN-046-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-046-01.webp"
+      "imagens/BF-AN-046-01.jpg"
     ],
     "description": "Mini figura colecionável inspirada no universo de Hollow Knight. Apresenta o icônico Cavaleiro com máscara branca, capa esvoaçante e base decorativa detalhada. Ideal para decorar mesas, estantes e setups gamers. Uma peça especial para colecionadores e apaixonados por jogos indie.",
     "sizes": [
@@ -1331,10 +1331,10 @@
     "anime": "",
     "price": 54.9,
     "images": [
-      "imagens/BF-AN-047-01.webp"
+      "imagens/BF-AN-047-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-047-01.webp"
+      "imagens/BF-AN-047-01.jpg"
     ],
     "description": "Mousepad gamer 30x60 cm para teclado e mouse. Estampa multicolorida de anime com tons de azul, roxo e amarelo sobre fundo escuro. Ideal para personalizar o setup com a estética alternativa da Black Forge.",
     "sizes": [
@@ -1356,10 +1356,10 @@
     "anime": "",
     "price": 54.9,
     "images": [
-      "imagens/BF-AN-048-01.webp"
+      "imagens/BF-AN-048-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-048-01.webp"
+      "imagens/BF-AN-048-01.jpg"
     ],
     "description": "Mousepad gamer 30x60 cm para teclado e mouse. Estampa monocromática de estilo mangá, com contraste intenso entre preto e branco. Ideal para personalizar o setup com a estética alternativa da Black Forge.",
     "sizes": [
@@ -1381,10 +1381,10 @@
     "anime": "",
     "price": 54.9,
     "images": [
-      "imagens/BF-AN-049-01.webp"
+      "imagens/BF-AN-049-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-049-01.webp"
+      "imagens/BF-AN-049-01.jpg"
     ],
     "description": "Mousepad gamer 30x60 cm para teclado e mouse. Estampa preta e branca com olhos espiralados e arte de personagem em estilo mangá. Ideal para personalizar o setup com a estética alternativa da Black Forge.",
     "sizes": [
@@ -1406,10 +1406,10 @@
     "anime": "",
     "price": 54.9,
     "images": [
-      "imagens/BF-AN-050-01.webp"
+      "imagens/BF-AN-050-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-050-01.webp"
+      "imagens/BF-AN-050-01.jpg"
     ],
     "description": "Mousepad gamer 30x60 cm para teclado e mouse. Composição gráfica escura com detalhes marcantes em vermelho. Ideal para personalizar o setup com a estética alternativa da Black Forge.",
     "sizes": [
@@ -1431,10 +1431,10 @@
     "anime": "",
     "price": 54.9,
     "images": [
-      "imagens/BF-AN-051-01.webp"
+      "imagens/BF-AN-051-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-051-01.webp"
+      "imagens/BF-AN-051-01.jpg"
     ],
     "description": "Mousepad gamer 30x60 cm para teclado e mouse. Arte em preto e branco com cenas de ação de inspiração mangá. Ideal para personalizar o setup com a estética alternativa da Black Forge.",
     "sizes": [
@@ -1456,10 +1456,10 @@
     "anime": "",
     "price": 54.9,
     "images": [
-      "imagens/BF-AN-052-01.webp"
+      "imagens/BF-AN-052-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-052-01.webp"
+      "imagens/BF-AN-052-01.jpg"
     ],
     "description": "Mousepad gamer 30x60 cm para teclado e mouse. Composição de quadrinhos em tons de cinza e preto, com estética de mangá. Ideal para personalizar o setup com a estética alternativa da Black Forge.",
     "sizes": [
@@ -1481,10 +1481,10 @@
     "anime": "",
     "price": 54.9,
     "images": [
-      "imagens/BF-AN-053-01.webp"
+      "imagens/BF-AN-053-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-053-01.webp"
+      "imagens/BF-AN-053-01.jpg"
     ],
     "description": "Mousepad gamer 30x60 cm para teclado e mouse. Colagem de cenas de anime em tons claros e contrastes delicados. Ideal para personalizar o setup com a estética alternativa da Black Forge.",
     "sizes": [
@@ -1506,10 +1506,10 @@
     "anime": "",
     "price": 54.9,
     "images": [
-      "imagens/BF-AN-054-01.webp"
+      "imagens/BF-AN-054-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-054-01.webp"
+      "imagens/BF-AN-054-01.jpg"
     ],
     "description": "Mousepad gamer 30x60 cm para teclado e mouse. Estampa vibrante em tons de roxo, amarelo e laranja, com visual pop-art. Ideal para personalizar o setup com a estética alternativa da Black Forge.",
     "sizes": [
@@ -1531,10 +1531,10 @@
     "anime": "",
     "price": 54.9,
     "images": [
-      "imagens/BF-AN-055-01.webp"
+      "imagens/BF-AN-055-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-055-01.webp"
+      "imagens/BF-AN-055-01.jpg"
     ],
     "description": "Mousepad gamer 30x60 cm para teclado e mouse. Arte de personagem em preto e vermelho para um setup de visual sombrio. Ideal para personalizar o setup com a estética alternativa da Black Forge.",
     "sizes": [
@@ -1556,10 +1556,10 @@
     "anime": "",
     "price": 54.9,
     "images": [
-      "imagens/BF-AN-056-01.webp"
+      "imagens/BF-AN-056-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-056-01.webp"
+      "imagens/BF-AN-056-01.jpg"
     ],
     "description": "Mousepad gamer 30x60 cm para teclado e mouse. Estampa de ação em preto, vermelho e cinza para setups gamers. Ideal para personalizar o setup com a estética alternativa da Black Forge.",
     "sizes": [
@@ -1581,10 +1581,10 @@
     "anime": "",
     "price": 54.9,
     "images": [
-      "imagens/BF-AN-057-01.webp"
+      "imagens/BF-AN-057-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-057-01.webp"
+      "imagens/BF-AN-057-01.jpg"
     ],
     "description": "Mousepad gamer 30x60 cm para teclado e mouse. Ilustração em preto e branco com composição dinâmica de mangá. Ideal para personalizar o setup com a estética alternativa da Black Forge.",
     "sizes": [
@@ -1606,10 +1606,10 @@
     "anime": "",
     "price": 54.9,
     "images": [
-      "imagens/BF-AN-058-01.webp"
+      "imagens/BF-AN-058-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-058-01.webp"
+      "imagens/BF-AN-058-01.jpg"
     ],
     "description": "Mousepad gamer 30x60 cm para teclado e mouse. Estampa de anime com detalhes em vermelho e cinza sobre fundo escuro. Ideal para personalizar o setup com a estética alternativa da Black Forge.",
     "sizes": [
@@ -1631,10 +1631,10 @@
     "anime": "",
     "price": 54.9,
     "images": [
-      "imagens/BF-AN-059-01.webp"
+      "imagens/BF-AN-059-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-059-01.webp"
+      "imagens/BF-AN-059-01.jpg"
     ],
     "description": "Mousepad gamer 30x60 cm para teclado e mouse. Colagem de quadros de mangá com detalhes em laranja e preto. Ideal para personalizar o setup com a estética alternativa da Black Forge.",
     "sizes": [
@@ -1656,10 +1656,10 @@
     "anime": "",
     "price": 54.9,
     "images": [
-      "imagens/BF-AN-060-01.webp"
+      "imagens/BF-AN-060-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-060-01.webp"
+      "imagens/BF-AN-060-01.jpg"
     ],
     "description": "Mousepad gamer 30x60 cm para teclado e mouse. Arte em preto e branco com traços intensos e estilo de quadrinhos japoneses. Ideal para personalizar o setup com a estética alternativa da Black Forge.",
     "sizes": [
@@ -1681,10 +1681,10 @@
     "anime": "",
     "price": 54.9,
     "images": [
-      "imagens/BF-AN-061-01.webp"
+      "imagens/BF-AN-061-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-061-01.webp"
+      "imagens/BF-AN-061-01.jpg"
     ],
     "description": "Mousepad gamer 30x60 cm para teclado e mouse. Estampa com detalhes vermelhos e verdes em fundo escuro, de estética gamer. Ideal para personalizar o setup com a estética alternativa da Black Forge.",
     "sizes": [
@@ -1706,10 +1706,10 @@
     "anime": "Kirby",
     "price": 19.9,
     "images": [
-      "imagens/BF-AN-062-01.webp"
+      "imagens/BF-AN-062-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-062-01.webp"
+      "imagens/BF-AN-062-01.jpg"
     ],
     "description": "Chaveiro colecionável do Kirby em versão fofinha e relaxada. Acessório compacto e kawaii, perfeito para mochilas, bolsas e chaves.",
     "sizes": [
@@ -1734,10 +1734,10 @@
     "anime": "Kirby",
     "price": 19.9,
     "images": [
-      "imagens/BF-AN-063-01.webp"
+      "imagens/BF-AN-063-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-063-01.webp"
+      "imagens/BF-AN-063-01.jpg"
     ],
     "description": "Chaveiro kawaii do Kirby sobre sua estrela amarela. Design colorido e divertido para personalizar bolsas, mochilas e acessórios.",
     "sizes": [
@@ -1762,10 +1762,10 @@
     "anime": "Kirby",
     "price": 19.9,
     "images": [
-      "imagens/BF-AN-064-01.webp"
+      "imagens/BF-AN-064-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-064-01.webp"
+      "imagens/BF-AN-064-01.jpg"
     ],
     "description": "Chaveiro do Kirby com chapéu de chef branco e detalhes encantadores. Uma miniatura kawaii para fãs do personagem.",
     "sizes": [
@@ -1790,10 +1790,10 @@
     "anime": "Kirby",
     "price": 19.9,
     "images": [
-      "imagens/BF-AN-065-01.webp"
+      "imagens/BF-AN-065-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-065-01.webp"
+      "imagens/BF-AN-065-01.jpg"
     ],
     "description": "Chaveiro do Kirby em pose dinâmica, acompanhado por detalhes de nuvem branca. Um acessório divertido para o dia a dia.",
     "sizes": [
@@ -1818,10 +1818,10 @@
     "anime": "Kirby",
     "price": 19.9,
     "images": [
-      "imagens/BF-AN-066-01.webp"
+      "imagens/BF-AN-066-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-066-01.webp"
+      "imagens/BF-AN-066-01.jpg"
     ],
     "description": "Chaveiro kawaii do Kirby acompanhado por uma maçã vermelha. Design compacto e delicado para personalizar seus acessórios.",
     "sizes": [
@@ -1846,10 +1846,10 @@
     "anime": "Kirby",
     "price": 19.9,
     "images": [
-      "imagens/BF-AN-067-01.webp"
+      "imagens/BF-AN-067-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-067-01.webp"
+      "imagens/BF-AN-067-01.jpg"
     ],
     "description": "Chaveiro do Kirby em sua versão clássica, com corpo rosa, olhos expressivos e pés vermelhos. Ideal para fãs e colecionadores.",
     "sizes": [
@@ -1874,14 +1874,14 @@
     "anime": "Pokémon",
     "price": 129.9,
     "images": [
-      "imagens/BF-AN-068-01.webp",
-      "imagens/BF-AN-068-02.webp",
-      "imagens/BF-AN-068-03.webp"
+      "imagens/BF-AN-068-01.jpg",
+      "imagens/BF-AN-068-02.jpg",
+      "imagens/BF-AN-068-03.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-068-01.webp",
-      "imagens/BF-AN-068-02.webp",
-      "imagens/BF-AN-068-03.webp"
+      "imagens/BF-AN-068-01.jpg",
+      "imagens/BF-AN-068-02.jpg",
+      "imagens/BF-AN-068-03.jpg"
     ],
     "description": "Pantufas de pelúcia inspiradas no Gengar de Pokémon. Com design roxo, expressão divertida e acabamento macio, são perfeitas para quem busca conforto sem abandonar o estilo alternativo. Modelo com meias, ideal para dias frios e momentos de descanso.",
     "sizes": [
@@ -1906,14 +1906,14 @@
     "anime": "Hatsune Miku",
     "price": 109.9,
     "images": [
-      "imagens/BF-AN-069-01.webp",
-      "imagens/BF-AN-069-02.webp",
-      "imagens/BF-AN-069-03.webp"
+      "imagens/BF-AN-069-01.jpg",
+      "imagens/BF-AN-069-02.jpg",
+      "imagens/BF-AN-069-03.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-069-01.webp",
-      "imagens/BF-AN-069-02.webp",
-      "imagens/BF-AN-069-03.webp"
+      "imagens/BF-AN-069-01.jpg",
+      "imagens/BF-AN-069-02.jpg",
+      "imagens/BF-AN-069-03.jpg"
     ],
     "description": "Bolsa de ombro de pelúcia inspirada na Hatsune Miku, com design kawaii, acabamento macio e detalhes em azul turquesa. Acompanha um chaveiro de pelúcia da personagem, formando um conjunto perfeito para fãs da cultura japonesa, moda alternativa e acessórios fofos. Ideal para passeios, eventos e composições criativas.",
     "sizes": [
@@ -1938,12 +1938,12 @@
     "anime": "Chainsaw Man",
     "price": 89.9,
     "images": [
-      "imagens/BF-AN-070-01.webp",
-      "imagens/BF-AN-070-02.webp"
+      "imagens/BF-AN-070-01.jpg",
+      "imagens/BF-AN-070-02.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-070-01.webp",
-      "imagens/BF-AN-070-02.webp"
+      "imagens/BF-AN-070-01.jpg",
+      "imagens/BF-AN-070-02.jpg"
     ],
     "description": "Pelúcia Pochita inspirada no anime Chainsaw Man. Com 25 cm de altura, tecido macio, corpo laranja, olhos expressivos e detalhes de motosserra, é perfeita para decorar quartos, setups e coleções. Um companheiro fofo para os fãs do universo Chainsaw Man.",
     "sizes": [
@@ -1968,10 +1968,10 @@
     "anime": "Hunter x Hunter",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-071-01.webp"
+      "imagens/BF-AN-071-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-071-01.webp"
+      "imagens/BF-AN-071-01.jpg"
     ],
     "description": "Brincos inspirados em Kurapika de Hunter x Hunter. Com correntes prateadas e pingentes vermelhos em formato de gota, apresentam um visual elegante e misterioso. Perfeitos para composições alternativas, cosplay e looks inspirados na cultura japonesa.",
     "sizes": [
@@ -1996,12 +1996,12 @@
     "anime": "Naruto",
     "price": 39.9,
     "images": [
-      "imagens/BF-AN-072-01.webp",
-      "imagens/BF-AN-072-02.webp"
+      "imagens/BF-AN-072-01.jpg",
+      "imagens/BF-AN-072-02.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-072-01.webp",
-      "imagens/BF-AN-072-02.webp"
+      "imagens/BF-AN-072-01.jpg",
+      "imagens/BF-AN-072-02.jpg"
     ],
     "description": "Porta-moedas de sapinho inspirado no famoso Gama-chan de Naruto. Com exterior verde de pelúcia, olhos expressivos, fechamento metálico e interior vermelho, combina fofura e praticidade. Ideal para guardar moedas e pequenos acessórios, perfeito para fãs de anime e cultura japonesa.",
     "sizes": [
@@ -2026,12 +2026,12 @@
     "anime": "Tokyo Ghoul",
     "price": 34.9,
     "images": [
-      "imagens/BF-AN-073-01.webp",
-      "imagens/BF-AN-073-02.webp"
+      "imagens/BF-AN-073-01.jpg",
+      "imagens/BF-AN-073-02.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-073-01.webp",
-      "imagens/BF-AN-073-02.webp"
+      "imagens/BF-AN-073-01.jpg",
+      "imagens/BF-AN-073-02.jpg"
     ],
     "description": "Anel ajustável inspirado na estética sombria de Tokyo Ghoul. Com acabamento prateado, detalhes de espinhos entrelaçados e design punk gótico, é perfeito para composições alternativas, streetwear e looks underground. Modelo unissex com abertura ajustável.",
     "sizes": [
@@ -2056,10 +2056,10 @@
     "anime": "Death Note",
     "price": 19.9,
     "images": [
-      "imagens/BF-AN-074-01.webp"
+      "imagens/BF-AN-074-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-074-01.webp"
+      "imagens/BF-AN-074-01.jpg"
     ],
     "description": "Colar inspirado no personagem L Lawliet de Death Note. Possui pingente metálico prateado em formato da icônica letra L e cordão preto. Um acessório minimalista e alternativo, perfeito para fãs de anime, moda gótica e estilo underground.",
     "sizes": [
@@ -2084,10 +2084,10 @@
     "anime": "One Piece",
     "price": 239.9,
     "images": [
-      "imagens/BF-AN-075-01.webp"
+      "imagens/BF-AN-075-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-075-01.webp"
+      "imagens/BF-AN-075-01.jpg"
     ],
     "description": "Moletom preto com capuz e estampa de Monkey D. Luffy Gear 5, inspirado em One Piece. Visual marcante com arte de anime, mangas longas e estética streetwear. Ideal para composições urbanas e alternativas.",
     "sizes": [
@@ -2118,10 +2118,10 @@
     "anime": "One Piece",
     "price": 239.9,
     "images": [
-      "imagens/BF-AN-076-01.webp"
+      "imagens/BF-AN-076-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-076-01.webp"
+      "imagens/BF-AN-076-01.jpg"
     ],
     "description": "Moletom branco com capuz e estampa de Luffy Gear 5. Inspirado no universo One Piece, combina arte japonesa com uma proposta streetwear moderna. Perfeito para fãs de anime e moda alternativa.",
     "sizes": [
@@ -2152,10 +2152,10 @@
     "anime": "One Piece",
     "price": 239.9,
     "images": [
-      "imagens/BF-AN-077-01.webp"
+      "imagens/BF-AN-077-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-077-01.webp"
+      "imagens/BF-AN-077-01.jpg"
     ],
     "description": "Moletom vermelho com capuz e estampa de Monkey D. Luffy em sua transformação Gear 5. Uma peça de visual intenso, com inspiração japonesa e identidade streetwear.",
     "sizes": [
@@ -2186,10 +2186,10 @@
     "anime": "One Piece",
     "price": 239.9,
     "images": [
-      "imagens/BF-AN-078-01.webp"
+      "imagens/BF-AN-078-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-078-01.webp"
+      "imagens/BF-AN-078-01.jpg"
     ],
     "description": "Moletom cinza com capuz e estampa de Luffy Gear 5, inspirado em One Piece. Combina tons neutros, ilustração de anime e estética urbana para um visual moderno e alternativo.",
     "sizes": [
@@ -2220,12 +2220,12 @@
     "anime": "Jujutsu Kaisen",
     "price": 99.9,
     "images": [
-      "imagens/BF-AN-079-01.webp",
-      "imagens/BF-AN-079-02.webp"
+      "imagens/BF-AN-079-01.jpg",
+      "imagens/BF-AN-079-02.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-079-01.webp",
-      "imagens/BF-AN-079-02.webp"
+      "imagens/BF-AN-079-01.jpg",
+      "imagens/BF-AN-079-02.jpg"
     ],
     "description": "Camiseta oversized inspirada em Hiromi Higuruma de Jujutsu Kaisen. Confeccionada em algodão com acabamento preto lavado, apresenta a palavra JUSTICE na parte frontal e uma ilustração marcante do personagem nas costas. Com estética dark, grunge e streetwear japonês, é perfeita para composições urbanas e alternativas.",
     "sizes": [
@@ -2255,10 +2255,10 @@
     "anime": "Demon Slayer",
     "price": 119.9,
     "images": [
-      "imagens/BF-AN-080-01.webp"
+      "imagens/BF-AN-080-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-080-01.webp"
+      "imagens/BF-AN-080-01.jpg"
     ],
     "description": "Camiseta oversized preta lavada com estampa monocromática de Kyojuro Rengoku, o Hashira das Chamas de Demon Slayer. Design marcante com estética grunge e streetwear japonês.",
     "sizes": [
@@ -2287,10 +2287,10 @@
     "anime": "Demon Slayer",
     "price": 119.9,
     "images": [
-      "imagens/BF-AN-081-01.webp"
+      "imagens/BF-AN-081-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-081-01.webp"
+      "imagens/BF-AN-081-01.jpg"
     ],
     "description": "Camiseta oversized preta com estampa de Akaza, a Lua Superior Três de Demon Slayer. Visual monocromático de alto contraste, inspirado na força e na intensidade do personagem.",
     "sizes": [
@@ -2319,10 +2319,10 @@
     "anime": "Demon Slayer",
     "price": 119.9,
     "images": [
-      "imagens/BF-AN-082-01.webp"
+      "imagens/BF-AN-082-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-082-01.webp"
+      "imagens/BF-AN-082-01.jpg"
     ],
     "description": "Camiseta oversized preta lavada com estampa de Tengen Uzui, o Hashira do Som de Demon Slayer. Uma peça com identidade marcante, estética japonesa e influência streetwear.",
     "sizes": [
@@ -2351,10 +2351,10 @@
     "anime": "Demon Slayer",
     "price": 119.9,
     "images": [
-      "imagens/BF-AN-083-01.webp"
+      "imagens/BF-AN-083-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-083-01.webp"
+      "imagens/BF-AN-083-01.jpg"
     ],
     "description": "Camiseta preta com estampa de Akaza, uma das Luas Superiores de Demon Slayer. Arte sombria e composição monocromática para um visual underground, grunge e alternativo.",
     "sizes": [
@@ -2383,10 +2383,10 @@
     "anime": "Demon Slayer",
     "price": 119.9,
     "images": [
-      "imagens/BF-AN-084-01.webp"
+      "imagens/BF-AN-084-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-084-01.webp"
+      "imagens/BF-AN-084-01.jpg"
     ],
     "description": "Camiseta oversized preta lavada com estampa de Kyojuro Rengoku, o lendário Hashira das Chamas de Demon Slayer. Combina elementos de mangá, visual vintage e moda streetwear alternativa.",
     "sizes": [
@@ -2415,10 +2415,10 @@
     "anime": "Demon Slayer",
     "price": 119.9,
     "images": [
-      "imagens/BF-AN-085-01.webp"
+      "imagens/BF-AN-085-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-085-01.webp"
+      "imagens/BF-AN-085-01.jpg"
     ],
     "description": "Camiseta oversized preta com estampa de Tanjiro Kamado, protagonista de Demon Slayer. Arte monocromática com visual urbano, inspiração japonesa e estética alternativa.",
     "sizes": [
@@ -2447,10 +2447,10 @@
     "anime": "",
     "price": 149.9,
     "images": [
-      "imagens/BF-AN-086-01.webp"
+      "imagens/BF-AN-086-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-086-01.webp"
+      "imagens/BF-AN-086-01.jpg"
     ],
     "description": "Moletom oversized creme com capuz e estampa artística de espada em tons rosados. Apresenta um visual alternativo com influências grunge, streetwear e estética dark. Ideal para composições urbanas e dias frios.",
     "sizes": [
@@ -2480,10 +2480,10 @@
     "anime": "",
     "price": 149.9,
     "images": [
-      "imagens/BF-AN-087-01.webp"
+      "imagens/BF-AN-087-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-087-01.webp"
+      "imagens/BF-AN-087-01.jpg"
     ],
     "description": "Moletom oversized preto com capuz e estampa de espada em tonalidades rosadas. Combina elementos góticos, grunge e streetwear em uma peça de visual sombrio e marcante.",
     "sizes": [
@@ -2513,10 +2513,10 @@
     "anime": "",
     "price": 149.9,
     "images": [
-      "imagens/BF-AN-088-01.webp"
+      "imagens/BF-AN-088-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-088-01.webp"
+      "imagens/BF-AN-088-01.jpg"
     ],
     "description": "Moletom oversized azul-marinho com capuz e estampa artística de espada. Seu design combina tons escuros com detalhes rosados, trazendo uma identidade alternativa, urbana e underground.",
     "sizes": [
@@ -2546,10 +2546,10 @@
     "anime": "",
     "price": 149.9,
     "images": [
-      "imagens/BF-AN-089-01.webp"
+      "imagens/BF-AN-089-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-089-01.webp"
+      "imagens/BF-AN-089-01.jpg"
     ],
     "description": "Moletom oversized vinho com capuz e estampa de espada em tons claros. Apresenta uma combinação de estética grunge, visual medieval alternativo e streetwear, criando uma peça marcante para o dia a dia.",
     "sizes": [
@@ -2579,10 +2579,10 @@
     "anime": "",
     "price": 149.9,
     "images": [
-      "imagens/BF-AN-090-01.webp"
+      "imagens/BF-AN-090-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-090-01.webp"
+      "imagens/BF-AN-090-01.jpg"
     ],
     "description": "Moletom oversized branco com capuz, estampa de aranha e teia em rosa vibrante. Com tecido de aparência macia e visual inspirado na estética Y2K, emo e streetwear alternativo, é perfeito para composições urbanas marcantes.",
     "sizes": [
@@ -2612,10 +2612,10 @@
     "anime": "",
     "price": 149.9,
     "images": [
-      "imagens/BF-AN-091-01.webp"
+      "imagens/BF-AN-091-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-091-01.webp"
+      "imagens/BF-AN-091-01.jpg"
     ],
     "description": "Moletom oversized cinza com capuz e estampa de aranha preta sobre teia rosa. Combina conforto e estética grunge, emo e Y2K, criando um visual alternativo para o dia a dia.",
     "sizes": [
@@ -2645,10 +2645,10 @@
     "anime": "",
     "price": 149.9,
     "images": [
-      "imagens/BF-AN-092-01.webp"
+      "imagens/BF-AN-092-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-092-01.webp"
+      "imagens/BF-AN-092-01.jpg"
     ],
     "description": "Moletom oversized preto com capuz e estampa de aranha e teia em tons rosa vibrante. Uma peça com identidade underground, perfeita para looks góticos, emo, grunge e streetwear.",
     "sizes": [
@@ -2678,10 +2678,10 @@
     "anime": "",
     "price": 149.9,
     "images": [
-      "imagens/BF-AN-093-01.webp"
+      "imagens/BF-AN-093-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-093-01.webp"
+      "imagens/BF-AN-093-01.jpg"
     ],
     "description": "Moletom oversized rosa com capuz e estampa de aranha sobre teia estilizada. Combina elementos kawaii, Y2K e emo em uma peça confortável e cheia de personalidade.",
     "sizes": [
@@ -2711,10 +2711,10 @@
     "anime": "",
     "price": 159.9,
     "images": [
-      "imagens/BF-AN-094-01.webp"
+      "imagens/BF-AN-094-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-094-01.webp"
+      "imagens/BF-AN-094-01.jpg"
     ],
     "description": "Moletom feminino oversized em pelúcia macia, com gola alta, fechamento em zíper e bordado California no peito. Na tonalidade bege, combina conforto térmico com estética casual coreana e streetwear.",
     "sizes": [
@@ -2741,10 +2741,10 @@
     "anime": "",
     "price": 159.9,
     "images": [
-      "imagens/BF-AN-095-01.webp"
+      "imagens/BF-AN-095-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-095-01.webp"
+      "imagens/BF-AN-095-01.jpg"
     ],
     "description": "Moletom feminino de pelúcia na cor creme, com gola alta, meio zíper e bordado California. Uma peça confortável e aconchegante, ideal para looks de inverno com influência da moda coreana.",
     "sizes": [
@@ -2771,10 +2771,10 @@
     "anime": "",
     "price": 159.9,
     "images": [
-      "imagens/BF-AN-096-01.webp"
+      "imagens/BF-AN-096-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-096-01.webp"
+      "imagens/BF-AN-096-01.jpg"
     ],
     "description": "Moletom feminino preto de pelúcia com modelagem ampla, gola alta, fechamento em meio zíper e bordado California. Combina estética minimalista com o conforto da moda streetwear.",
     "sizes": [
@@ -2801,10 +2801,10 @@
     "anime": "",
     "price": 159.9,
     "images": [
-      "imagens/BF-AN-097-01.webp"
+      "imagens/BF-AN-097-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-097-01.webp"
+      "imagens/BF-AN-097-01.jpg"
     ],
     "description": "Moletom feminino de pelúcia azul com gola alta, fechamento em zíper e bordado California. Sua modelagem confortável e estética casual japonesa e coreana criam uma peça versátil para dias frios.",
     "sizes": [
@@ -2831,10 +2831,10 @@
     "anime": "",
     "price": 219.9,
     "images": [
-      "imagens/BF-AN-098-01.webp"
+      "imagens/BF-AN-098-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-098-01.webp"
+      "imagens/BF-AN-098-01.jpg"
     ],
     "description": "Moletom oversized preto com capuz e estampa Tokyo Underground inspirada na cultura automobilística japonesa. Apresenta ilustração de carro esportivo, tipografia urbana e detalhes gráficos nas mangas. Perfeito para composições streetwear e underground.",
     "sizes": [
@@ -2864,10 +2864,10 @@
     "anime": "",
     "price": 219.9,
     "images": [
-      "imagens/BF-AN-099-01.webp"
+      "imagens/BF-AN-099-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-099-01.webp"
+      "imagens/BF-AN-099-01.jpg"
     ],
     "description": "Moletom oversized branco com estampa Tokyo Underground, carro esportivo japonês e detalhes gráficos contrastantes. Combina referências do automobilismo urbano com estética streetwear e moda alternativa.",
     "sizes": [
@@ -2897,10 +2897,10 @@
     "anime": "",
     "price": 219.9,
     "images": [
-      "imagens/BF-AN-100-01.webp"
+      "imagens/BF-AN-100-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-100-01.webp"
+      "imagens/BF-AN-100-01.jpg"
     ],
     "description": "Moletom oversized cinza com capuz e estampa inspirada nas corridas de rua japonesas. O design Tokyo Underground apresenta carro esportivo, letras marcantes e uma identidade urbana de influência Y2K.",
     "sizes": [
@@ -2930,10 +2930,10 @@
     "anime": "",
     "price": 219.9,
     "images": [
-      "imagens/BF-AN-101-01.webp"
+      "imagens/BF-AN-101-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-101-01.webp"
+      "imagens/BF-AN-101-01.jpg"
     ],
     "description": "Moletom oversized azul-marinho com estampa Tokyo Underground em alto contraste. Inspirado na cultura automotiva japonesa, apresenta ilustração de carro esportivo e grafismos urbanos para um visual streetwear marcante.",
     "sizes": [
@@ -2963,10 +2963,10 @@
     "anime": "",
     "price": 219.9,
     "images": [
-      "imagens/BF-AN-102-01.webp"
+      "imagens/BF-AN-102-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-102-01.webp"
+      "imagens/BF-AN-102-01.jpg"
     ],
     "description": "Moletom oversized marrom com capuz e estampa automobilística Tokyo Underground. A combinação de tons terrosos, ilustração de carro esportivo e detalhes gráficos cria uma estética urbana, casual e alternativa.",
     "sizes": [
@@ -2996,10 +2996,10 @@
     "anime": "",
     "price": 219.9,
     "images": [
-      "imagens/BF-AN-103-01.webp"
+      "imagens/BF-AN-103-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-103-01.webp"
+      "imagens/BF-AN-103-01.jpg"
     ],
     "description": "Moletom oversized verde-escuro com capuz, estampa Tokyo Underground e ilustração de carro esportivo. Com identidade inspirada no street racing japonês, combina elementos Y2K e underground em uma peça urbana.",
     "sizes": [
@@ -3029,10 +3029,10 @@
     "anime": "",
     "price": 189.9,
     "images": [
-      "imagens/BF-AN-104-01.webp"
+      "imagens/BF-AN-104-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-104-01.webp"
+      "imagens/BF-AN-104-01.jpg"
     ],
     "description": "Moletom oversized bege com capuz e estampa de flores de cerejeira japonesas nas costas. Apresenta galhos pretos, flores rosadas e detalhes em escrita oriental. Uma peça que combina estética harajuku, streetwear japonês e moda alternativa.",
     "sizes": [
@@ -3062,10 +3062,10 @@
     "anime": "",
     "price": 189.9,
     "images": [
-      "imagens/BF-AN-105-01.webp"
+      "imagens/BF-AN-105-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-105-01.webp"
+      "imagens/BF-AN-105-01.jpg"
     ],
     "description": "Moletom oversized branco com capuz e estampa artística de flores de cerejeira nas costas. Com galhos escuros, flores em tons rosados e elementos da cultura japonesa, combina conforto com estética harajuku, Y2K e streetwear alternativo.",
     "sizes": [
@@ -3095,10 +3095,10 @@
     "anime": "",
     "price": 199.9,
     "images": [
-      "imagens/BF-AN-106-01.webp"
+      "imagens/BF-AN-106-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-106-01.webp"
+      "imagens/BF-AN-106-01.jpg"
     ],
     "description": "Moletom oversized branco com capuz e estampa japonesa de flores de cerejeira nas costas e mangas. Com delicados detalhes florais em rosa, galhos escuros e elementos orientais, combina a elegância da cultura japonesa com a estética harajuku, Y2K e streetwear alternativo.",
     "sizes": [
@@ -3127,10 +3127,10 @@
     "anime": "",
     "price": 199.9,
     "images": [
-      "imagens/BF-AN-107-01.webp"
+      "imagens/BF-AN-107-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-107-01.webp"
+      "imagens/BF-AN-107-01.jpg"
     ],
     "description": "Moletom oversized bege com capuz e estampa de flores de cerejeira japonesas nas costas e mangas. Apresenta detalhes florais rosados, galhos estilizados e escrita oriental, criando uma combinação entre moda japonesa, streetwear e estética Y2K. Uma peça confortável e marcante para looks alternativos.",
     "sizes": [
@@ -3159,10 +3159,10 @@
     "anime": "",
     "price": 149.9,
     "images": [
-      "imagens/BF-AN-108-01.webp"
+      "imagens/BF-AN-108-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-108-01.webp"
+      "imagens/BF-AN-108-01.jpg"
     ],
     "description": "Moletom oversized preto com capuz e estampa branca de símbolos góticos inspirados na estética do metal underground. Com grafismos marcantes nas costas e mangas, combina influências dark, grunge, punk e streetwear alternativo.",
     "sizes": [
@@ -3192,10 +3192,10 @@
     "anime": "",
     "price": 149.9,
     "images": [
-      "imagens/BF-AN-109-01.webp"
+      "imagens/BF-AN-109-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-109-01.webp"
+      "imagens/BF-AN-109-01.jpg"
     ],
     "description": "Moletom oversized rosa com capuz e estampa de símbolos góticos em tons escuros. Uma peça que mistura a delicadeza do rosa com elementos do metal, emo e streetwear underground. Ideal para looks alternativos com personalidade.",
     "sizes": [
@@ -3225,10 +3225,10 @@
     "anime": "Vinland Saga",
     "price": 144.9,
     "images": [
-      "imagens/BF-AN-110-01.webp"
+      "imagens/BF-AN-110-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-110-01.webp"
+      "imagens/BF-AN-110-01.jpg"
     ],
     "description": "Moletom bege oversized com capuz e estampa de Thorfinn de Vinland Saga, em composição gráfica vermelha e preta. Uma peça que combina a estética dos mangás, referências vikings e streetwear alternativo.",
     "sizes": [
@@ -3258,10 +3258,10 @@
     "anime": "Vinland Saga",
     "price": 144.9,
     "images": [
-      "imagens/BF-AN-111-01.webp"
+      "imagens/BF-AN-111-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-111-01.webp"
+      "imagens/BF-AN-111-01.jpg"
     ],
     "description": "Moletom oversized bege com estampa monocromática em estilo mangá vintage, inspirada no universo de Vinland Saga. Combina arte japonesa, influência nórdica e visual streetwear.",
     "sizes": [
@@ -3291,10 +3291,10 @@
     "anime": "Vinland Saga",
     "price": 144.9,
     "images": [
-      "imagens/BF-AN-112-01.webp"
+      "imagens/BF-AN-112-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-112-01.webp"
+      "imagens/BF-AN-112-01.jpg"
     ],
     "description": "Moletom bege com capuz e estampa de arte mangá inspirada nos guerreiros de Vinland Saga. Apresenta composição monocromática, visual vintage e estética streetwear japonesa.",
     "sizes": [
@@ -3324,10 +3324,10 @@
     "anime": "Vinland Saga",
     "price": 144.9,
     "images": [
-      "imagens/BF-AN-113-01.webp"
+      "imagens/BF-AN-113-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-113-01.webp"
+      "imagens/BF-AN-113-01.jpg"
     ],
     "description": "Moletom oversized bege com estampa de quadros de mangá inspirados em Vinland Saga. Design em preto e branco que combina cultura japonesa, visual grunge e moda urbana.",
     "sizes": [
@@ -3357,10 +3357,10 @@
     "anime": "Vinland Saga",
     "price": 144.9,
     "images": [
-      "imagens/BF-AN-114-01.webp"
+      "imagens/BF-AN-114-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-114-01.webp"
+      "imagens/BF-AN-114-01.jpg"
     ],
     "description": "Moletom oversized bege com arte monocromática de Vinland Saga, em composição sombria e detalhada. Ideal para looks underground, grunge e streetwear com inspiração nórdica.",
     "sizes": [
@@ -3390,10 +3390,10 @@
     "anime": "Vinland Saga",
     "price": 144.9,
     "images": [
-      "imagens/BF-AN-115-01.webp"
+      "imagens/BF-AN-115-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-115-01.webp"
+      "imagens/BF-AN-115-01.jpg"
     ],
     "description": "Moletom bege com capuz e estampa minimalista inspirada no universo de Vinland Saga. Com elementos gráficos escuros e estética nórdica, combina conforto e identidade streetwear alternativa.",
     "sizes": [
@@ -3423,10 +3423,10 @@
     "anime": "Vinland Saga",
     "price": 144.9,
     "images": [
-      "imagens/BF-AN-116-01.webp"
+      "imagens/BF-AN-116-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-116-01.webp"
+      "imagens/BF-AN-116-01.jpg"
     ],
     "description": "Moletom oversized bege com ilustração em estilo mangá de Vinland Saga. Com arte centralizada, traços monocromáticos e visual vintage, é perfeito para composições urbanas e alternativas.",
     "sizes": [
@@ -3456,10 +3456,10 @@
     "anime": "Vinland Saga",
     "price": 144.9,
     "images": [
-      "imagens/BF-AN-117-01.webp"
+      "imagens/BF-AN-117-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-117-01.webp"
+      "imagens/BF-AN-117-01.jpg"
     ],
     "description": "Moletom oversized bege com estampa circular vermelha inspirada em Vinland Saga. O contraste entre a base clara e a arte vermelha cria um visual marcante, com referências japonesas e nórdicas.",
     "sizes": [
@@ -3489,10 +3489,10 @@
     "anime": "Vinland Saga",
     "price": 144.9,
     "images": [
-      "imagens/BF-AN-118-01.webp"
+      "imagens/BF-AN-118-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-118-01.webp"
+      "imagens/BF-AN-118-01.jpg"
     ],
     "description": "Moletom bege com capuz e estampa em estilo mangá de Vinland Saga, apresentando uma composição ilustrada em preto e branco. Ideal para quem busca uma estética vintage, alternativa e inspirada na cultura japonesa.",
     "sizes": [
@@ -3522,10 +3522,10 @@
     "anime": "",
     "price": 129.9,
     "images": [
-      "imagens/BF-AN-119-01.webp"
+      "imagens/BF-AN-119-01.jpg"
     ],
     "image_slots": [
-      "imagens/BF-AN-119-01.webp"
+      "imagens/BF-AN-119-01.jpg"
     ],
     "description": "Vestido feminino preto com gola halter, modelagem ajustada e recortes laterais com amarração entrelaçada. Apresenta comprimento assimétrico e fenda marcante, combinando influências góticas, grunge e Y2K. Uma peça ousada para composições alternativas, eventos e produções noturnas.",
     "sizes": [
