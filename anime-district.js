@@ -2,7 +2,7 @@
 (() => {
   "use strict";
   const items = Array.isArray(window.BLACK_FORGE_ANIME_ITEMS) ? window.BLACK_FORGE_ANIME_ITEMS : [];
-  const names = ["Camisetas", "Blusas e croppeds", "Moletons", "Calças", "Jaquetas e casacos", "Acessórios", "Bolsas e mochilas", "Bonés e gorros"];
+  const names = ["Camisetas", "Blusas e croppeds", "Moletons", "Calças", "Jaquetas e casacos", "Acessórios", "Bolsas e mochilas", "Bonés e gorros", "Calçados", "Vestidos"];
   const params = new URLSearchParams(window.location.search);
   const preview = params.get("preview") === "1";
   const root = document.querySelector("#animeGrid");
@@ -86,8 +86,8 @@
       options.forEach(opt=>{const option=document.createElement("option"); option.value=String(opt);text(option,opt);sel.append(option);});
       label.append(sel);right.append(label);
     });
-    right.append(node("p","modal-notice","Para comprar, confira o item no catálogo principal da Black Forge quando sua integração de carrinho estiver ativa."));
-    const a=node("a","product-open","IR AO CATÁLOGO GERAL ↗"); a.href="produtos.html";right.append(a);
+    right.append(node("p","modal-notice","Escolha o tamanho e a cor na página do produto e adicione ao carrinho com pagamento seguro."));
+    const a=node("a","product-open","VER PRODUTO / COMPRAR ↗"); a.href="produto.html#"+encodeURIComponent(p.id);right.append(a);
     shell.append(image,right);modalContent.append(shell);modal.showModal();
   }
   search.addEventListener("input",renderItems);

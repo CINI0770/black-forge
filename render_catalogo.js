@@ -11,7 +11,8 @@ const ordemCategorias = [
 	"MOLETONS E CASACOS",
 	"CALÇAS E SAIAS",
 	"CALÇADOS",
-	"PROMOÇÕES"
+	"PROMOÇÕES",
+  "ANIME DISTRICT"
 ];
 
 // As categorias já estão definidas no catalogo.js.
@@ -19,7 +20,8 @@ const gruposProdutos = Object.fromEntries(ordemCategorias.map(c => [c, []]));
 const numeroBF = p => Number((String(p.id || "").match(/\d+/) || [Infinity])[0]);
 for (const p of catalogItems) {
 	if (!p || p.active === false || p.placeholder || !(Number(p.price) > 0)) continue;
-	if (gruposProdutos[p.category]) gruposProdutos[p.category].push(p);
+	const grupo = p.collection === "anime-district" ? "ANIME DISTRICT" : p.category;
+	if (gruposProdutos[grupo]) gruposProdutos[grupo].push(p);
 }
 for (const lista of Object.values(gruposProdutos)) {
 	lista.sort((a, b) => numeroBF(a) - numeroBF(b) || String(a.id).localeCompare(String(b.id)));
