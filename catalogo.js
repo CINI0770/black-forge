@@ -838,7 +838,7 @@ window.BLACK_FORGE_ITEMS = [
     },
     {
       name: "Cáqui escuro",
-      image: "imagens/BF-036-04.jpg"
+      image: "imagens/BF-036-03.jpg"
     }
   ],
   active: true,
@@ -1368,7 +1368,7 @@ window.BLACK_FORGE_ITEMS = [
     "imagens/BF-056-01.jpg",
     "imagens/BF-056-02.jpg",
     "imagens/BF-056-03.jpg",
-    "imagens/BF-056-04.jpg"
+
   ],
   description: "Calça jeans baggy preta com acabamento desgastado, detalhes desfiados em formato de arame farpado e modelagem ampla. Inspirada no visual punk, grunge e Y2K, perfeita para combinações streetwear e alternativas.",
   sizes: [
@@ -2696,7 +2696,7 @@ window.BLACK_FORGE_ITEMS = [
     "images": [
       "imagens/BF-123-01.jpg",
       "imagens/BF-123-02.jpg",
-      "imagens/BF-123-03.jpg"
+
     ],
     "description": "Bota feminina de cano alto com fivelas, cadarço e solado tratorado. Estilo punk, gótico e streetwear.",
     "sizes": [
@@ -2727,8 +2727,7 @@ window.BLACK_FORGE_ITEMS = [
     "originalPrice": 296.15,
     "images": [
       "imagens/BF-124-01.jpg",
-      "imagens/BF-124-02.jpg",
-      "imagens/BF-124-03.jpg"
+
     ],
     "description": "Bota feminina de cano alto com fivelas, cadarço e solado tratorado. Estilo punk, gótico e streetwear.",
     "sizes": [
@@ -3123,8 +3122,7 @@ window.BLACK_FORGE_ITEMS = [
   originalPrice: 179.90,
   images: [
     "imagens/BF-140-01.jpg",
-    "imagens/BF-140-02.jpg",
-    "imagens/BF-140-03.jpg"
+
   ],
   description: "Camisa feminina branca de manga curta com gravata preta e tiras frontais de inspiração streetwear e alternativa.",
   sizes: ["P", "M", "G", "GG"],
@@ -3146,8 +3144,7 @@ window.BLACK_FORGE_ITEMS = [
   originalPrice: 289.90,
   images: [
     "imagens/BF-141-01.jpg",
-    "imagens/BF-141-02.jpg",
-    "imagens/BF-141-03.jpg"
+
   ],
   description: "Conjunto feminino com camisa branca, gravata preta e calça cargo preta. Visual alternativo com influência streetwear e techwear.",
   sizes: ["P", "M", "G", "GG"],
@@ -3169,8 +3166,7 @@ window.BLACK_FORGE_ITEMS = [
   originalPrice: 229.90,
   images: [
     "imagens/BF-142-01.jpg",
-    "imagens/BF-142-02.jpg",
-    "imagens/BF-142-03.jpg"
+
   ],
   description: "Calça cargo preta feminina com modelagem reta, detalhes utilitários e corrente decorativa. Estética urbana e alternativa.",
   sizes: ["P", "M", "G", "GG"],
@@ -3192,8 +3188,7 @@ window.BLACK_FORGE_ITEMS = [
   originalPrice: 189.90,
   images: [
     "imagens/BF-143-01.jpg",
-    "imagens/BF-143-02.jpg",
-    "imagens/BF-143-03.jpg"
+
   ],
   description: "Camisa feminina preta de manga curta com gravata preta e tiras frontais. Peça marcante para compor looks darkwear e streetwear.",
   sizes: ["P", "M", "G", "GG"],
@@ -3215,8 +3210,7 @@ window.BLACK_FORGE_ITEMS = [
   originalPrice: 289.90,
   images: [
     "imagens/BF-144-01.jpg",
-    "imagens/BF-144-02.jpg",
-    "imagens/BF-144-03.jpg"
+
   ],
   description: "Conjunto feminino com camisa preta, gravata preta e calça cargo preta. Visual alternativo completo com pegada streetwear.",
   sizes: ["P", "M", "G", "GG"],

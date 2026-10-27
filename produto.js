@@ -139,9 +139,10 @@ function mostrarProduto() {
 
 	// Quando "variants" são objetos {name, image}, elas são as próprias cores (com foto).
 	// Nesse caso não criamos "MODELO", só usamos a foto ao trocar a cor.
-	const variantesSaoCores = Array.isArray(produto.variants)
-		&& produto.variants.some(v => v && typeof v === "object");
-	const seletorModelo = variantesSaoCores ? null : criarSeletor("MODELO", "model", produto.variants);
+	const variantesSaoCores = window.BlackForgeVariants.variantsAreColors(produto);
+	const modelosEspelhados = window.BlackForgeVariants.mirroredModel(produto);
+	// Evita dois seletores repetidos no BF-078, mas mantém model=color no pedido.
+	const seletorModelo = (variantesSaoCores || modelosEspelhados) ? null : criarSeletor("MODELO", "model", produto.variants);
 
 	// Trocar a cor mostra a foto daquela cor.
 	if (seletorCor) {
@@ -187,7 +188,13 @@ function mostrarProduto() {
 			// Monta { id, size, color, model } e avisa o selecao.js, que salva no carrinho.
 			const dados = { id: produto.id };
 			for (const s of seletores) dados[s.dataset.field] = s.value;
-			document.dispatchEvent(new CustomEvent("bf:add-to-cart", { detail: dados }));
+			if (modelosEspelhados) dados.model = dados.color;
+			// Só anuncia sucesso quando o item foi realmente aceito pelo carrinho.
+			const evento = new CustomEvent("bf:add-to-cart", { detail: dados, cancelable:true });
+			if (!document.dispatchEvent(evento)) {
+				aviso.textContent = "Não foi possível adicionar. Confira as opções selecionadas.";
+				return;
+			}
 
 			botao.textContent = "ADICIONADO ✓";
 			setTimeout(() => { botao.textContent = "ADICIONAR AO CARRINHO +"; }, 1400);

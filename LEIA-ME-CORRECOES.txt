@@ -1,0 +1,36 @@
+BLACK FORGE — Revisão do carrinho e variações (27/10/2026)
+
+ALTERAÇÕES NO ZIP
+- Novo variacoes.js: valida cada escolha (tamanho/cor/modelo) e calcula preços de opções.
+- BF-020: valores diferentes por modelo agora aparecem corretamente no carrinho e no resumo.
+- BF-078: a mesma lista de cor e modelo não é mostrada duas vezes; o pedido envia model=cor.
+- Produtos com variantes {name,image}, incluindo BF-052: continuam selecionando COR,
+  sem exigir um MODELO adicional; foto por cor preservada.
+- Itens antigos com escolhas inválidas são sinalizados e bloqueados antes do pagamento.
+- Botão de produto só mostra 'ADICIONADO' se o carrinho realmente aceitar.
+- Removidas 14 referências de fotos inexistentes no ZIP; BF-036 corrigido para a
+  terceira foto já existente. Verifique visualmente essa terceira foto.
+- O envio ao servidor mantém o formato {items:[{id,qty,size,color,model}],customer}.
+
+ATENÇÃO: O CÓDIGO DO SERVIDOR DE PAGAMENTOS NÃO ESTÁ NESTE ZIP.
+O checkout chama https://black-forge-pagamentos.onrender.com/api/checkout/preference.
+O erro 'Variação inválida para BF-052' é devolvido pelo servidor; por isso NÃO É
+POSSÍVEL GARANTIR A CORREÇÃO DESSA MENSAGEM COM ALTERAÇÕES APENAS NO SITE.
+
+AÇÃO NECESSÁRIA NO SERVIDOR (Render / back-end Stripe):
+1. Sincronizar o catálogo dos produtos com o catálogo publicado no GitHub.
+2. Para p.variants do tipo {name,image}, reconhecer os nomes como CORES (não
+   exigir um campo model para o mesmo item). Validar o campo color em p.colors.
+3. Para p.variants que são strings, validar o campo model contra essas strings.
+4. Em BF-078, validar que model=cor e que ambos correspondem à lista permitida.
+5. Usar o valor em variantPrices escolhido por model no cálculo no SERVIDOR (BF-020).
+6. Nunca aceitar preço enviado pelo navegador para cobrança; validar IDs, preços,
+   combinações permitidas e valores no servidor, usando centavos inteiros.
+7. Testar com a Stripe em ambiente de teste, sem concluir compras reais.
+
+PARA PUBLICAR
+Envie todos os arquivos atualizados (inclusive variacoes.js) ao MESMO repositório
+utilizado pelo GitHub Pages, mantendo a estrutura de pastas.
+Publique o backend corrigido SEPARADAMENTE. Teste carrinho vazio, BF-052 Preto e
+Jeans azul, BF-020 os 3 modelos, BF-078 e um produto simples.
+Não envie chaves secretas da Stripe para o chat ou para o GitHub.

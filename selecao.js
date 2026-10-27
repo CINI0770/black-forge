@@ -1,50 +1,73 @@
 "use strict";
-const selectionKey="blackforge-selection-v4";
-const catalog=window.BLACK_FORGE_ITEMS||[];
-const validProducts=new Map(catalog.map(p=>[p.id,p]));
-const cleanText=x=>typeof x==="string"?x.slice(0,60):"";
-function readSelection(){
- try{
-  const raw=JSON.parse(localStorage.getItem(selectionKey)||"{}");const valid={};
-  for(const p of catalog){const entry=raw[p.id];if(!entry)continue;
-   const old=Array.isArray(entry.items)?entry.items:[entry];const items=[];
-   for(const x of old){if(!x||!Number.isInteger(x.qty)||x.qty<1)continue;
-    const item={qty:Math.min(x.qty,20),size:cleanText(x.size),color:cleanText(x.color),model:cleanText(x.model)};
-    const existing=items.find(y=>y.size===item.size&&y.color===item.color&&y.model===item.model);
-    if(existing)existing.qty=Math.min(20,existing.qty+item.qty);else items.push(item);
-   }if(items.length)valid[p.id]={items};
-  }return valid;
- }catch{return {}}
+const selectionKey = "blackforge-selection-v4";
+const catalog = window.BLACK_FORGE_ITEMS || [];
+const validProducts = new Map(catalog.map(p => [p.id, p]));
+const options = window.BlackForgeVariants;
+const cleanText = value => typeof value === "string" ? value.trim().slice(0, 60) : "";
+
+function readSelection() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(selectionKey) || "{}");
+    const valid = {};
+    for (const product of catalog) {
+      const entry = raw[product.id];
+      if (!entry) continue;
+      const old = Array.isArray(entry.items) ? entry.items : [entry];
+      const items = [];
+      for (const current of old) {
+        if (!current || !Number.isInteger(current.qty) || current.qty < 1) continue;
+        const item = options.normalize(product, {
+          qty: Math.min(current.qty, 20),
+          size: cleanText(current.size), color: cleanText(current.color), model: cleanText(current.model)
+        });
+        const existing = items.find(x => x.size === item.size && x.color === item.color && x.model === item.model);
+        if (existing) existing.qty = Math.min(20, existing.qty + item.qty);
+        else items.push(item);
+      }
+      if (items.length) valid[product.id] = {items};
+    }
+    return valid;
+  } catch { return {}; }
 }
-function writeSelection(x){try{localStorage.setItem(selectionKey,JSON.stringify(x))}catch{}
- // Avisa o carrinho.js para redesenhar a gaveta e o contador.
- document.dispatchEvent(new CustomEvent("bf:cart-updated"))}
-const countEl=document.getElementById("selectionCount");
-function updateCount(){if(countEl)countEl.textContent=Object.values(readSelection()).reduce((sum,p)=>sum+p.items.reduce((n,i)=>n+i.qty,0),0)}
-function addToSelection(detail){
- const p=validProducts.get(detail.id);if(!p||p.active!==true||p.placeholder||!(Number(p.price)>0))return;
- const fields={size:"sizes",color:"colors",model:"variants"};
- for(const [field,list] of Object.entries(fields)){
-  // Variações em objeto ({name,image}) são cores com foto: a cor já foi validada.
-  if(Array.isArray(p[list])&&p[list].some(v=>v&&typeof v==="object"))continue;
-  const choices=Array.isArray(p[list])?p[list].map(String).map(s=>s.trim()).filter(Boolean):[];
-  if(choices.length&&!choices.includes(detail[field]))return;
- }
- const selected=readSelection();const group=selected[p.id]||{items:[]};
- const item={qty:1,size:cleanText(detail.size),color:cleanText(detail.color),model:cleanText(detail.model)};
- const old=group.items.find(x=>x.size===item.size&&x.color===item.color&&x.model===item.model);
- if(old)old.qty=Math.min(20,old.qty+1);else group.items.push(item);
- selected[p.id]=group;writeSelection(selected);updateCount();
-document.addEventListener("bf:cart-updated",updateCount);
+function writeSelection(value) {
+  try { localStorage.setItem(selectionKey, JSON.stringify(value)); } catch {}
+  document.dispatchEvent(new CustomEvent("bf:cart-updated"));
 }
-document.addEventListener("bf:add-to-cart",e=>addToSelection(e.detail||{}));
-document.addEventListener("click",e=>{
- const b=e.target.closest("[data-select]");if(!b)return;
- const p=validProducts.get(b.dataset.select);if(!p)return;
- if([p.sizes,p.colors,p.variants].some(a=>Array.isArray(a)&&a.length)){
-  location.href="produto.html#"+encodeURIComponent(p.id);return;
- }
- addToSelection({id:p.id});b.textContent="ADICIONADO ✓";
- setTimeout(()=>{b.textContent="ADICIONAR AO CARRINHO +"},1300);
+const countEl = document.getElementById("selectionCount");
+function updateCount() {
+  if (countEl) countEl.textContent = Object.values(readSelection()).reduce((sum, group) =>
+    sum + group.items.reduce((total, item) => total + item.qty, 0), 0);
+}
+function addToSelection(detail) {
+  const product = validProducts.get(detail.id);
+  const check = options.validate(product, {qty:1, size:detail.size, color:detail.color, model:detail.model});
+  if (!check.valid) return false;
+  const selected = readSelection();
+  const group = selected[product.id] || {items:[]};
+  const item = check.choice;
+  const old = group.items.find(x => x.size === item.size && x.color === item.color && x.model === item.model);
+  if (old) old.qty = Math.min(20, old.qty + 1);
+  else group.items.push(item);
+  selected[product.id] = group;
+  writeSelection(selected);
+  updateCount();
+  return true;
+}
+document.addEventListener("bf:cart-updated", updateCount);
+document.addEventListener("bf:add-to-cart", event => {
+  if (!addToSelection(event.detail || {})) event.preventDefault();
+});
+document.addEventListener("click", event => {
+  const button = event.target.closest("[data-select]");
+  if (!button) return;
+  const product = validProducts.get(button.dataset.select);
+  if (!product) return;
+  if ([product.sizes, product.colors, product.variants].some(list => Array.isArray(list) && list.length)) {
+    location.href = "produto.html#" + encodeURIComponent(product.id);
+    return;
+  }
+  if (!addToSelection({id:product.id})) return;
+  button.textContent = "ADICIONADO ✓";
+  setTimeout(() => { button.textContent = "ADICIONAR AO CARRINHO +"; }, 1300);
 });
 updateCount();

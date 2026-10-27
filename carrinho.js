@@ -8,6 +8,7 @@
 	const products = window.BLACK_FORGE_ITEMS || [];
 	const cartKey = "blackforge-selection-v4";
 	const $ = selector => document.querySelector(selector);
+	const optionRules = window.BlackForgeVariants;
 	const money = value => Number(value).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
 	// ---------- Cria a gaveta (overlay + aside) se a página ainda não tiver ----------
@@ -80,6 +81,7 @@
 
 		let count = 0;
 		let subtotal = 0;
+		let invalidCount = 0;
 
 		for (const product of products) {
 			const group = cart[product.id];
@@ -87,7 +89,9 @@
 
 			group.items.forEach((item, index) => {
 				count += item.qty;
-				subtotal += Number(product.price) * item.qty;
+				const validation = optionRules.validate(product, item);
+				if (validation.valid) subtotal += validation.unitPrice * item.qty;
+				else invalidCount++;
 
 				const row = el("div", "cart-item");
 				const thumb = el("div", "cart-thumb", "✦");
@@ -108,7 +112,10 @@
 				plus.addEventListener("click", () => changeQuantity(product.id, index, 1));
 				quantity.append(minus, el("span", "", item.qty), plus);
 
-				info.append(el("h3", "", product.name), el("p", "", money(product.price)), el("p", "", variants), quantity);
+				info.append(el("h3", "", product.name),
+					el("p", "", validation.valid ? money(validation.unitPrice) : "PREÇO PENDENTE"),
+					el("p", "", variants), quantity);
+				if (!validation.valid) info.append(el("p", "", validation.reason + " Revise este produto antes de pagar."));
 
 				const remove = el("button", "remove", "REMOVER");
 				remove.type = "button";
@@ -135,7 +142,9 @@
 		const contador = $("#cartCount");
 		if (contador) contador.textContent = count;
 		$("#drawerCount").textContent = `(${count})`;
-		$("#cartSubtotal").textContent = money(subtotal);
+		$("#cartSubtotal").textContent = invalidCount ? money(subtotal) + " + itens para revisar" : money(subtotal);
+		const checkout = $("#cartDrawer .checkout");
+		if (checkout) checkout.textContent = invalidCount ? "REVISAR PEDIDO ↗" : "FINALIZAR COMPRA ↗";
 	}
 
 	function changeQuantity(id, index, difference) {
