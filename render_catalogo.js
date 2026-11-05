@@ -11,6 +11,7 @@ const ordemCategorias = [
 	"MOLETONS E CASACOS",
 	"CALÇAS E SAIAS",
 	"CALÇADOS",
+	"VESTIDOS",
 	"PROMOÇÕES",
   "ANIME DISTRICT"
 ];
@@ -20,7 +21,7 @@ const gruposProdutos = Object.fromEntries(ordemCategorias.map(c => [c, []]));
 const numeroBF = p => Number((String(p.id || "").match(/\d+/) || [Infinity])[0]);
 for (const p of catalogItems) {
 	if (!p || p.active === false || p.placeholder || !(Number(p.price) > 0)) continue;
-	const grupo = p.collection === "anime-district" ? "ANIME DISTRICT" : p.category;
+	const grupo = p.collection === "anime-district" ? "ANIME DISTRICT" : (["ACESSÓRIOS", "CINTOS"].includes(p.category) ? "CINTOS E ACESSÓRIOS" : p.category);
 	if (gruposProdutos[grupo]) gruposProdutos[grupo].push(p);
 }
 for (const lista of Object.values(gruposProdutos)) {
@@ -59,12 +60,10 @@ for (const category of groups) {
 		art.append(el("span", "slot-index", String(i + 1).padStart(2, "0") + " / " + items.length));
 		const info = el("div", "slot-info"); info.append(el("p", "", category), el("h3", "", p.name || "PRODUTO " + p.id + " — NÃO CADASTRADO"));
 		if (p.description) info.append(el("p", "bf-description", p.description));
-		if (p.category === "PROMOÇÕES" && Number(p.originalPrice) > Number(p.price)) {
-			const oldPrice = el("s", "bf-original-price", money(p.originalPrice));
-			oldPrice.style.cssText = "display:block;opacity:.65;font-size:.84em;margin:8px 0 3px";
-			info.append(oldPrice);
+		if (Number(p.price) > 0) {
+			info.append(el("strong", "bf-price", money(p.price)));
+			window.BFPromo?.decorate(info, p.price, {variable:Array.isArray(p.variantPrices) && p.variantPrices.length>0});
 		}
-		if (Number(p.price) > 0) info.append(el("strong", "bf-price", money(p.price)));
 		else info.append(el("span", "", p.placeholder ? "ESPAÇO RESERVADO" : "PREÇO A DEFINIR"));
 		if (active) { const btn = el("button", "slot-choose", "ADICIONAR AO CARRINHO +"); btn.type = "button"; if ([p.sizes, p.colors, p.variants].some(a => Array.isArray(a) && a.length)) { btn.addEventListener("click", () => irParaProduto(p)); btn.textContent = "ESCOLHER OPÇÕES +"; } else btn.dataset.select = p.id; info.append(btn) }
 		else info.append(el("span", "bf-reserved", "INDISPONÍVEL ATÉ CADASTRAR PREÇO"));

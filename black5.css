@@ -1,0 +1,28 @@
+/* BLACK FORGE / NOVEMBRO 2026 — aplicação universal da campanha. */
+.bf-black5-price{display:flex;flex-direction:column;align-items:flex-start;gap:5px;margin:10px 0 14px;font-family:inherit;line-height:1.3}
+.bf-black5-price .bf-black5-base{color:#bfb8ad;font-size:12px;letter-spacing:0}
+.bf-black5-badge{display:inline-block;width:max-content;max-width:100%;padding:5px 8px;border:1px solid #d8c9ac;color:#eadac0;background:#231f1a;font-size:10px;font-weight:800;letter-spacing:.05em}
+.bf-black5-offer{font-size:clamp(15px,1.4vw,19px);color:#f7e8cc;font-weight:800;letter-spacing:0}
+.bf-black5-shipping{color:#b7afa3;font-size:11px;letter-spacing:0}
+.bf-black5-variable{color:#b7afa3;font-size:10px}
+.bf-coupon-form{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0 4px}
+.bf-coupon-form input{min-width:130px;flex:1;border:1px solid #84776b;background:#151310;padding:11px 12px;color:#fff;text-transform:uppercase;font-size:12px}
+.bf-coupon-form button{border:1px solid #d6c7b3;background:#d6c7b3;padding:11px 14px;color:#151310;font-weight:800;letter-spacing:.04em;font-size:11px;cursor:pointer}
+.bf-coupon-form button[disabled]{opacity:.55;cursor:wait}
+.bf-coupon-message{font-size:11px;line-height:1.5;color:#dcd0bd;margin:9px 0;min-height:16px}
+.bf-coupon-message[data-error="true"]{color:#ffaeb1}
+.bf-coupon-clear{background:transparent!important;color:#eee!important;border:1px solid #777!important}
+.bf-coupon-totals{border-top:1px solid #564c40;margin-top:12px;padding-top:8px}
+.bf-coupon-totals>div{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:8px 0;font-size:12px;color:#d6d0c7}
+.bf-coupon-totals .bf-coupon-total{padding-top:8px;border-top:1px solid #564c40;font-size:16px;font-weight:800;color:#f7e8cc}
+.bf-black5-hero-tag{display:inline-block;padding:9px 12px;background:#d5c8b5;color:#151310;font:800 12px/1.2 'DM Sans',Arial,sans-serif;letter-spacing:.1em;margin:12px 0}
+.bf-black5-note{font-size:12px;color:#e6d8c6;letter-spacing:.08em;font-weight:700}
+.bf-black5-topline{display:block;text-align:center;background:#d4c7b2;color:#151310;font-weight:800;letter-spacing:.07em;font:800 11px/1.4 'DM Sans',Arial,sans-serif;padding:10px 12px}
+.bf-site-header .bf-black5-topline{width:100%}
+.slot-card .bf-black5-price{gap:5px}
+.slot-card .bf-black5-offer{font-size:15px}
+.product-card .bf-black5-price{margin:8px 0}
+.product-card .bf-black5-offer{font-size:15px}
+.promo-card .bf-black5-price{margin:15px 0}
+.cart-drawer .bf-coupon-message{max-width:100%}
+@media(max-width:700px){.bf-coupon-form{flex-direction:column}.bf-coupon-form input,.bf-coupon-form button{width:100%;min-width:0}.bf-black5-topline{font-size:10px}.bf-black5-offer{font-size:15px}}

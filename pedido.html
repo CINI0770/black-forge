@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0b0b">
-  <meta name="description" content="Finalize sua compra na Black Forge com pagamento seguro e frete grátis promocional durante outubro de 2026.">
+  <meta name="description" content="Finalize sua compra na Black Forge com pagamento seguro Stripe e cupom BLACK5 para 5% OFF e frete grátis.">
   <title>Finalizar pedido | BLACK FORGE</title>
   <link rel="stylesheet" href="./style.css">
   <!-- CSS exclusivo desta página. Não substitui o estilo da home ou do catálogo. -->
@@ -15,6 +15,8 @@
   <script src="./navbar-menu.js" defer></script>
   <script src="./carrinho.js" defer></script>
   <script src="./pedido.js" defer></script>
+  <link rel="stylesheet" href="./black5.css">
+  <script src="./black5.js"></script>
 </head>
 <body class="products-page order-page order-punk">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -123,16 +125,21 @@
           <h2 id="summaryHeading">RESUMO</h2>
         </div>
         <div class="bf-order-mini-banner">
-          <span>EDIÇÃO / OUTUBRO 2026</span>
-          <strong>FRETE<br>GRÁTIS<span>.</span></strong>
-          <small>PARA TODO O BRASIL · ATÉ 31/10</small>
+          <span>BLACK FORGE / BLACK5</span>
+          <strong>5% OFF<br>+ FRETE<span>.</span></strong>
+          <small>CUPOM BLACK5 · SEM VALOR MÍNIMO</small>
         </div>
         <div class="order-summary">
           <p>ITENS <strong id="orderQty">0</strong></p>
           <p>SUBTOTAL <strong id="orderSubtotal">R$ 0,00</strong></p>
-          <p>FRETE <strong class="bf-free-label">GRÁTIS</strong></p>
+          <p id="orderCouponRow" hidden>CUPOM <strong id="orderDiscount">R$ 0,00</strong></p>
+          <p>FRETE <strong id="orderShipping">A calcular</strong></p>
+          <p class="bf-summary-total">TOTAL <strong id="orderTotal">R$ 0,00</strong></p>
         </div>
-        <p class="order-hint">Frete grátis promocional em pedidos feitos até 31 de outubro de 2026. O valor do pagamento é calculado pelo servidor.</p>
+        <label class="bf-label-text" for="orderCouponInput">CÓDIGO DO CUPOM</label>
+        <div class="bf-coupon-form"><input id="orderCouponInput" placeholder="BLACK5" autocomplete="off" maxlength="40"><button id="orderCouponApply" type="button">APLICAR CUPOM</button><button id="orderCouponRemove" class="bf-coupon-clear" type="button" hidden>REMOVER</button></div>
+        <p id="orderCouponMessage" class="bf-coupon-message" role="status" aria-live="polite"></p>
+        <p class="order-hint">O desconto só é válido ao aplicar BLACK5. O total será confirmado pelo servidor da Black Forge antes do pagamento na Stripe.</p>
         <button class="order-secondary" id="clearOrder" type="button">LIMPAR SELEÇÃO <span aria-hidden="true">×</span></button>
         <div class="bf-aside-footer"><span aria-hidden="true">✳</span> ESTILO NÃO PEDE PERMISSÃO.</div>
       </aside>

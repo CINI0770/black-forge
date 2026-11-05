@@ -60,7 +60,7 @@
 </style>
 <div class="announcement" aria-label="Avisos da loja">
   <span>BLACK FORGE / EST. 2026</span>
-  <span>FRETE GRÁTIS EM OUTUBRO</span>
+  <span>5% OFF + FRETE GRÁTIS COM O CUPOM BLACK5</span>
   <span>MODA ALTERNATIVA • BRASIL</span>
 </div>
 
@@ -73,7 +73,6 @@
     <a href="index.html">INÍCIO</a>
     <a href="promocoes.html">PROMOÇÕES</a>
     <a href="produtos.html">PRODUTOS</a>
-    <a href="colecao-outubro.html">OCTOBER DROP</a>
     <a href="anime-district.html">ANIME DISTRICT</a>
     <a href="index.html#duvidas">DÚVIDAS</a>
   </nav>

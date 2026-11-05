@@ -10,6 +10,8 @@
 	const $ = selector => document.querySelector(selector);
 	const optionRules = window.BlackForgeVariants;
 	const money = value => Number(value).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+	const promo = window.BFPromo;
+	let activeQuote = 0;
 
 	// ---------- Cria a gaveta (overlay + aside) se a página ainda não tiver ----------
 	function criarGaveta() {
@@ -24,7 +26,10 @@
 				<div id="cartItems" class="cart-items"></div>
 				<div class="drawer-foot">
 					<div class="subtotal"><span>SUBTOTAL</span><strong id="cartSubtotal">R$ 0,00</strong></div>
-					<p>FRETE GRÁTIS PROMOCIONAL DURANTE OUTUBRO DE 2026.</p>
+					<label for="cartCouponInput">CÓDIGO DO CUPOM</label>
+					<div class="bf-coupon-form"><input id="cartCouponInput" placeholder="BLACK5" maxlength="40" autocomplete="off"><button id="cartCouponApply" type="button">APLICAR CUPOM</button><button id="cartCouponRemove" type="button" class="bf-coupon-clear" hidden>REMOVER</button></div>
+					<p id="cartCouponMessage" class="bf-coupon-message" role="status" aria-live="polite"></p>
+					<div id="cartTotals" class="bf-coupon-totals"><div><span>FRETE</span><strong id="cartShipping">A calcular</strong></div><div id="cartDiscountRow" hidden><span>CUPOM <span id="cartCouponCode">BLACK5</span> (5%)</span><strong id="cartDiscount">R$ 0,00</strong></div><div class="bf-coupon-total"><span>TOTAL</span><strong id="cartTotal">A calcular</strong></div></div>
 					<a class="btn btn-light checkout" href="pedido.html">FINALIZAR COMPRA ↗</a>
 					<button id="continueShopping" class="continue" type="button">CONTINUAR COMPRANDO</button>
 				</div>
@@ -143,8 +148,45 @@
 		if (contador) contador.textContent = count;
 		$("#drawerCount").textContent = `(${count})`;
 		$("#cartSubtotal").textContent = invalidCount ? money(subtotal) + " + itens para revisar" : money(subtotal);
+		updateTotals(cart, subtotal, invalidCount);
 		const checkout = $("#cartDrawer .checkout");
 		if (checkout) checkout.textContent = invalidCount ? "REVISAR PEDIDO ↗" : "FINALIZAR COMPRA ↗";
+	}
+
+	function feedback(message, error = false) {
+		const status = $("#cartCouponMessage");
+		if (!status) return;
+		status.textContent = message;
+		status.dataset.error = String(error);
+	}
+	function updateTotals(cart, subtotal, invalidCount) {
+		const code = promo?.get() || "";
+		const input = $("#cartCouponInput");
+		if (input && document.activeElement !== input) input.value = code;
+		$("#cartCouponRemove").hidden = !code;
+		const subtotalCents = Math.round(subtotal * 100);
+		const estimateCents = code === "BLACK5" && promo.active() ? Math.round(subtotalCents * 5 / 100) : 0;
+		$("#cartDiscountRow").hidden = !code;
+		$("#cartCouponCode").textContent = code;
+		$("#cartDiscount").textContent = "−" + money(estimateCents/100);
+		$("#cartShipping").textContent = estimateCents ? "GRÁTIS (a confirmar)" : "A calcular";
+		$("#cartTotal").textContent = invalidCount || !subtotalCents ? "Revise seu carrinho" : estimateCents ? money((subtotalCents-estimateCents)/100) + "*" : "A calcular";
+		if (invalidCount || !subtotalCents) { ++activeQuote; return; }
+		const version = ++activeQuote;
+		promo.quote(promo.extractCart(cart), code).then(summary => {
+			if (version !== activeQuote) return;
+			$("#cartCouponCode").textContent = summary.coupon || "";
+			$("#cartDiscountRow").hidden = !summary.coupon;
+			$("#cartDiscount").textContent = "−" + money(summary.discount_cents/100);
+			$("#cartShipping").textContent = summary.shipping_cents === 0 ? "GRÁTIS" : money(summary.shipping_cents/100);
+			$("#cartTotal").textContent = money(summary.total_cents/100);
+			if (summary.coupon) feedback("Cupom " + summary.coupon + " aplicado: desconto e frete grátis confirmados.");
+		}).catch(error => {
+			if (version !== activeQuote) return;
+			$("#cartTotal").textContent = "Confirme no checkout";
+			$("#cartShipping").textContent = "A confirmar";
+			feedback(error.message + " O servidor confirmará os valores antes do pagamento.", true);
+		});
 	}
 
 	function changeQuantity(id, index, difference) {
@@ -195,6 +237,24 @@
 	$("#cartClose").addEventListener("click", closeCart);
 	$("#continueShopping").addEventListener("click", closeCart);
 	$("#overlay").addEventListener("click", closeCart);
+	$("#cartCouponApply").addEventListener("click", async () => {
+		const code = $("#cartCouponInput").value.trim().toUpperCase();
+		if (!code) { feedback("Digite um código de cupom.", true); return; }
+		const button = $("#cartCouponApply");
+		button.disabled = true;
+		feedback("Validando cupom com o servidor...");
+		try {
+			const selected = readCart();
+			const summary = await promo.quote(promo.extractCart(selected), code);
+			if (!summary.coupon) throw Error("Cupom não aplicável.");
+			promo.set(summary.coupon);
+			feedback("Cupom " + summary.coupon + " aplicado! Frete grátis confirmado.");
+		} catch (err) { feedback(err.message, true); }
+		finally { button.disabled = false; }
+	});
+	$("#cartCouponRemove").addEventListener("click", () => { promo.set(""); feedback("Cupom removido."); });
+	$("#cartCouponInput").addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); $("#cartCouponApply").click(); } });
+	document.addEventListener("bf:coupon-updated", renderCart);
 
 	document.addEventListener("keydown", event => {
 		if (event.key === "Escape" && $("#cartDrawer").classList.contains("open")) closeCart();

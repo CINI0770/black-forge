@@ -4,6 +4,8 @@ const key = "blackforge-selection-v4";
 const $ = id => document.getElementById(id);
 const money = value => Number(value).toLocaleString("pt-BR", {style:"currency",currency:"BRL"});
 const rules = window.BlackForgeVariants;
+const promo = window.BFPromo;
+let quoteCounter = 0;
 
 function read() {
   try {
@@ -99,6 +101,7 @@ function render() {
   if (!quantity) container.textContent = "Nenhum produto selecionado.";
   $("orderQty").textContent = quantity;
   $("orderSubtotal").textContent = money(total);
+  updateQuote(selected, total);
   const problems = cartProblems(selected);
   $("payButton").disabled = !quantity || problems.length > 0;
   const status = $("checkoutStatus");
@@ -110,6 +113,56 @@ function render() {
     delete status.dataset.cartWarning;
   }
 }
+function couponFeedback(message, error = false) {
+  $("orderCouponMessage").textContent = message;
+  $("orderCouponMessage").dataset.error = String(error);
+}
+function updateQuote(cart, subtotal) {
+  const code = promo.get();
+  if (document.activeElement !== $("orderCouponInput")) $("orderCouponInput").value = code;
+  $("orderCouponRemove").hidden = !code;
+  const items = promo.extractCart(cart);
+  const cents = Math.round(subtotal * 100);
+  const discount = code === "BLACK5" && promo.active() ? Math.round(cents * 0.05) : 0;
+  $("orderCouponRow").hidden = !code;
+  $("orderDiscount").textContent = "−" + money(discount/100);
+  $("orderShipping").textContent = discount ? "GRÁTIS (a confirmar)" : "A calcular";
+  $("orderTotal").textContent = discount ? money((cents - discount)/100) + "*" : "A calcular";
+  const version = ++quoteCounter;
+  if (!items.length || cartProblems(cart).length) {
+    $("orderTotal").textContent = "Revise os itens";
+    return;
+  }
+  promo.quote(items, code).then(data => {
+    if (version !== quoteCounter) return;
+    $("orderCouponRow").hidden = !data.coupon;
+    $("orderDiscount").textContent = "−" + money(data.discount_cents/100);
+    $("orderShipping").textContent = data.shipping_cents === 0 ? "GRÁTIS" : money(data.shipping_cents/100);
+    $("orderTotal").textContent = money(data.total_cents/100);
+    if (data.coupon) couponFeedback("Cupom " + data.coupon + " confirmado no servidor.");
+  }).catch(err => {
+    if (version !== quoteCounter) return;
+    $("orderTotal").textContent = "A confirmar";
+    $("orderShipping").textContent = "A confirmar";
+    couponFeedback(err.message, true);
+  });
+}
+$("orderCouponApply").addEventListener("click", async () => {
+  const code = $("orderCouponInput").value.trim().toUpperCase();
+  if (!code) { couponFeedback("Digite um código de cupom.", true); return; }
+  const button = $("orderCouponApply");
+  button.disabled = true;couponFeedback("Validando cupom...");
+  try {
+    const summary = await promo.quote(promo.extractCart(read()), code);
+    if (!summary.coupon) throw Error("Cupom inválido.");
+    promo.set(summary.coupon);
+    couponFeedback("BLACK5 aplicado: frete grátis + desconto confirmados.");
+  } catch (error) { couponFeedback(error.message, true); }
+  finally {button.disabled = false;}
+});
+$("orderCouponRemove").addEventListener("click", () => { promo.set(""); couponFeedback("Cupom removido."); });
+$("orderCouponInput").addEventListener("keydown", e => {if(e.key === "Enter"){e.preventDefault();$("orderCouponApply").click();}});
+document.addEventListener("bf:coupon-updated", render);
 $("clearOrder").addEventListener("click", () => { save({}); render(); });
 $("checkoutForm").addEventListener("submit", async event => {
   event.preventDefault();
@@ -125,9 +178,12 @@ $("checkoutForm").addEventListener("submit", async event => {
     if (!items.length) throw Error("Seu carrinho está vazio.");
     const customer = Object.fromEntries(new FormData(event.currentTarget));
     if (!customer.consent) throw Error("Confirme o consentimento.");
-    const response = await fetch("https://black-forge-pagamentos.onrender.com/api/checkout/preference", {
+    const coupon = promo.get();
+    // Pré-validação: o servidor recalcula tudo novamente ao criar o checkout.
+    await promo.quote(items, coupon);
+    const response = await fetch(promo.API + "/api/checkout/preference", {
       method:"POST", headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({items, customer})
+      body:JSON.stringify({items, customer, coupon})
     });
     let data;
     try { data = await response.json(); } catch { throw Error("O servidor de pagamentos não respondeu corretamente."); }

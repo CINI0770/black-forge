@@ -99,11 +99,11 @@ function mostrarProduto() {
 	const precos = el("div", "produto-precos");
 	const preco = el("strong", "produto-preco", money(produto.price));
 	precos.append(preco);
-	if (produto.category === "PROMOÇÕES" && Number(produto.originalPrice) > Number(produto.price)) {
-		precos.append(el("s", "produto-preco-antigo", money(produto.originalPrice)));
-	}
+
 	precos.append(el("span", "produto-parcela", "PAGAMENTO SEGURO"));
 	info.append(precos);
+	const bf5Price = window.BFPromo?.decorate(info, produto.price,
+		{ variable: Array.isArray(produto.variantPrices) && produto.variantPrices.length > 0 });
 
 	if (produto.description) info.append(el("p", "produto-descricao", produto.description));
 
@@ -162,7 +162,9 @@ function mostrarProduto() {
 			const i = seletorModelo.selectedIndex - 1;
 			if (fotos.length === seletorModelo.options.length - 1 && i >= 0) mostrarFoto(i);
 			if (Array.isArray(produto.variantPrices) && produto.variantPrices.length === produto.variants.length) {
-				preco.textContent = money(i >= 0 ? produto.variantPrices[i] : produto.price);
+				const selectedPrice = i >= 0 ? produto.variantPrices[i] : produto.price;
+				preco.textContent = money(selectedPrice);
+				bf5Price?.update(selectedPrice);
 			}
 		});
 	}
@@ -209,7 +211,7 @@ function mostrarProduto() {
 
 	// Vantagens da loja
 	const vantagens = el("ul", "produto-vantagens");
-	for (const texto of ["Frete grátis durante todo o mês de outubro", "Pagamento seguro ao finalizar o pedido", "Confira as fotos e opções antes de comprar"]) {
+	for (const texto of ["Use BLACK5: 5% OFF + frete grátis", "Pagamento seguro ao finalizar o pedido", "Confira as fotos e opções antes de comprar"]) {
 		vantagens.append(el("li", "", texto));
 	}
 	info.append(vantagens);

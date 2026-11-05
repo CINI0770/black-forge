@@ -37,8 +37,8 @@
   `;
   document.head.append(style);
 
-  const promos = all.filter(p => p && p.active === true && !p.placeholder && Number(p.price) > 0 &&
-    (p.id === "BF-109" || p.promotion === "lancamento" || p.launchPromo === true));
+  const promos = all.filter(p => p && p.active === true && !p.placeholder && Number(p.price) > 0)
+    .filter(p => p.collection !== "anime-district").slice(0, 36);
   root.replaceChildren();
 
   if (!promos.length) {
@@ -91,35 +91,16 @@
     }
 
     const current = Number(p.price);
-    const previous = Number(p.originalPrice);
-    const hasOriginal = Number.isFinite(previous) && previous > current;
-    if (hasOriginal) {
-      photo.append(node("span", "promo-off-label", Math.round((1 - current / previous) * 100) + "% OFF"));
-    }
-    photo.append(node("span", "promo-image-index", p.id + " / DROP 001"));
-
+    photo.append(node("span", "promo-image-index", p.id + " / BLACK5"));
     const info = node("div", "promo-card-info");
-    info.append(node("p", "promo-card-kicker", "BLACK FORGE / LANÇAMENTO"));
+    info.append(node("p", "promo-card-kicker", "BLACK FORGE / CUPOM BLACK5"));
     const title = node("h3", "promo-product-title", p.name || p.id);
     title.addEventListener("click", openPage);
-    info.append(title, node("p", "promo-description", p.description || "Nova peça da coleção Black Forge."));
-
+    info.append(title, node("p", "promo-description", p.description || "Peça Black Forge."));
     const prices = node("div", "promo-prices promo-price-feature");
-    if (hasOriginal) {
-      const original = node("div", "promo-price-original");
-      original.append(node("span", "promo-price-caption", "PREÇO ORIGINAL"), node("s", "promo-oldprice", money(previous)));
-      prices.append(original);
-    }
-    const promotional = node("div", "promo-price-new");
-    promotional.append(
-      node("span", "promo-price-caption", hasOriginal ? "PREÇO DE LANÇAMENTO" : "PREÇO ATUAL"),
-      node("strong", "promo-price", money(current))
-    );
-    prices.append(promotional);
-    if (hasOriginal) {
-      prices.append(node("span", "promo-price-saving", "VOCÊ ECONOMIZA " + money(Math.round((previous - current) * 100) / 100)));
-    }
+    prices.append(node("strong", "promo-price", money(current)));
     info.append(prices);
+    window.BFPromo?.decorate(info, current);
 
     // Sem janela pop-up: tanto as opções quanto os detalhes levam à página individual.
     const buy = node("button", "promo-buy", hasOptions(p) ? "ESCOLHER OPÇÕES +" : "VER PRODUTO +");
