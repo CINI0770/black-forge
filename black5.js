@@ -41,7 +41,19 @@
     const response = await fetch(API + "/api/checkout/quote", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({items, coupon:code}), signal });
     let data;
     try { data = await response.json(); } catch { throw new Error("Servidor de pagamentos sem resposta válida."); }
-    if (!response.ok) throw new Error(data.error || "Não foi possível validar o cupom.");
+    if (!response.ok) throw new Error(data.error || "Não foi possível validar o pedido.");
+    // Proteção: um backend antigo pode devolver um pedido SEM desconto.
+    // Nesse caso, não permitimos continuar com cobrança em preço cheio.
+    if (window.BFBlackFriday?.active()) {
+      const percent = window.BFBlackFriday.config.discount;
+      if (data.campaign !== 'BLACK_FRIDAY_2026' || data.percent_off !== percent ||
+          data.coupon != null || !Number.isSafeInteger(data.discount_cents) ||
+          !Number.isSafeInteger(data.subtotal_cents) ||
+          data.discount_cents <= 0 ||
+          data.discounted_subtotal_cents !== data.subtotal_cents - data.discount_cents) {
+        throw new Error('Black Friday ainda não confirmada pelo servidor de pagamentos. Publique os arquivos de pagamentos corrigidos antes de aceitar pedidos.');
+      }
+    }
     return data;
   }
   // Preços finais sem cupom permanecem os preços do catálogo; a oferta só vale com BLACK5.

@@ -1,10 +1,16 @@
-/* BLACK FORGE — BLACK FRIDAY 2026. O backend /api/campaign é a autoridade.
-   Sem configuração válida do servidor, NÃO divulgamos descontos automáticos. */
+/* BLACK FORGE — BLACK FRIDAY 2026.
+   A vitrine pode pré-exibir o preço promocional enquanto o servidor responde.
+   NUNCA inicia pagamento sem validação de 30% pelo backend. */
 (() => {
   'use strict';
   const API = 'https://black-forge-pagamentos.onrender.com';
   const nodes = new Set();
-  let configuration = {active:false,discount:0,startDate:null,endDate:null};
+  // Espelho de EXIBIÇÃO da promoção ativa no backend.
+  // A cobrança continua sob autoridade do backend (black-friday.json).
+  // Se alterar/desativar a campanha, publique os dois lados.
+  let configuration = {active:true,discount:30,startDate:null,endDate:null,
+    couponRequired:false,stackable:false};
+  let serverVerified = false;
   const money = cents => (cents / 100).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
   const cents = price => Math.round(Number(price) * 100);
   const promotionalCents = value => Math.round(value * (100 - configuration.discount) / 100);
@@ -126,9 +132,12 @@
       if (typeof data.active!=='boolean' || !Number.isInteger(data.discount) || data.discount<0 || data.discount>=100 ||
           data.stackable!==false || data.couponRequired!==false)throw Error('Dados da campanha inválidos');
       configuration=data;
+      serverVerified=true;
     }catch(error){
-      configuration={active:false,discount:0,startDate:null,endDate:null};
-      console.warn('Black Friday: não foi possível confirmar a configuração no backend.',error.message);
+      // Sem conexão, mantém a prévia visual. Não transforma prévia em pagamento:
+      // o método BFPromo.quote exige a promoção válida no servidor.
+      serverVerified=false;
+      console.warn('Black Friday: o backend ainda não confirmou os 30%. Checkout protegido.',error.message);
     }
     if(document.readyState==='loading') await new Promise(resolve=>document.addEventListener('DOMContentLoaded',resolve,{once:true}));
     renderSite();
@@ -137,6 +146,14 @@
   }
   const ready=refresh();
   window.BFBlackFriday=Object.freeze({ready,refresh,active,price,decorate,cents,money,
+    get serverVerified(){return serverVerified},
     get config(){return {...configuration}},
     previewUnitCents(originalCents){return active()?promotionalCents(originalCents):originalCents;}});
+  const showPreview=()=>{
+    renderSite();
+    document.dispatchEvent(new CustomEvent('bf:campaign-updated',{detail:{...configuration}}));
+  };
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',showPreview,{once:true});
+  else showPreview();
 })();
