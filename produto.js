@@ -104,6 +104,8 @@ function mostrarProduto() {
 	info.append(precos);
 	const bf5Price = window.BFPromo?.decorate(info, produto.price,
 		{ variable: Array.isArray(produto.variantPrices) && produto.variantPrices.length > 0 });
+	const bfFridayPrice = window.BFBlackFriday?.decorate(info, produto.price, preco,
+		{ variable: Array.isArray(produto.variantPrices) && produto.variantPrices.length > 0 });
 
 	if (produto.description) info.append(el("p", "produto-descricao", produto.description));
 
@@ -165,6 +167,7 @@ function mostrarProduto() {
 				const selectedPrice = i >= 0 ? produto.variantPrices[i] : produto.price;
 				preco.textContent = money(selectedPrice);
 				bf5Price?.update(selectedPrice);
+				bfFridayPrice?.update(selectedPrice);
 			}
 		});
 	}
@@ -211,9 +214,13 @@ function mostrarProduto() {
 
 	// Vantagens da loja
 	const vantagens = el("ul", "produto-vantagens");
-	for (const texto of ["Use BLACK5: 5% OFF + frete grátis", "Pagamento seguro ao finalizar o pedido", "Confira as fotos e opções antes de comprar"]) {
-		vantagens.append(el("li", "", texto));
-	}
+	const promoBenefit=el("li", "", "Use BLACK5: 5% OFF + frete grátis");
+	const updateBenefit=()=>{promoBenefit.textContent=window.BFBlackFriday?.active()?
+		"BLACK FRIDAY: 30% OFF automático em todas as peças":"Use BLACK5: 5% OFF + frete grátis";};
+	vantagens.append(promoBenefit,el("li", "", "Pagamento seguro ao finalizar o pedido"),
+		el("li", "", "Confira as fotos e opções antes de comprar"));
+	document.addEventListener("bf:campaign-updated", updateBenefit,{once:true});
+	updateBenefit();
 	info.append(vantagens);
 
 	area.append(visual, info);

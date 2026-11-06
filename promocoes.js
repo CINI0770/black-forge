@@ -91,16 +91,24 @@
     }
 
     const current = Number(p.price);
-    photo.append(node("span", "promo-image-index", p.id + " / BLACK5"));
+    const indexLabel=node("span", "promo-image-index", p.id + " / BLACK5");
+    photo.append(indexLabel);
+    const updateIndex=()=>{indexLabel.textContent=p.id+(window.BFBlackFriday?.active()?" / BLACK FRIDAY":" / BLACK5");};
+    document.addEventListener('bf:campaign-updated',updateIndex);updateIndex();
     const info = node("div", "promo-card-info");
-    info.append(node("p", "promo-card-kicker", "BLACK FORGE / CUPOM BLACK5"));
+    const cardKicker=node("p", "promo-card-kicker", "BLACK FORGE / CUPOM BLACK5");
+    info.append(cardKicker);
+    const updateKicker=()=>{cardKicker.textContent=window.BFBlackFriday?.active()?"BLACK FORGE / BLACK FRIDAY":"BLACK FORGE / CUPOM BLACK5";};
+    document.addEventListener('bf:campaign-updated',updateKicker);updateKicker();
     const title = node("h3", "promo-product-title", p.name || p.id);
     title.addEventListener("click", openPage);
     info.append(title, node("p", "promo-description", p.description || "Peça Black Forge."));
     const prices = node("div", "promo-prices promo-price-feature");
-    prices.append(node("strong", "promo-price", money(current)));
+    const regularPrice=node("strong", "promo-price", money(current));
+    prices.append(regularPrice);
     info.append(prices);
     window.BFPromo?.decorate(info, current);
+    window.BFBlackFriday?.decorate(info, current, regularPrice);
 
     // Sem janela pop-up: tanto as opções quanto os detalhes levam à página individual.
     const buy = node("button", "promo-buy", hasOptions(p) ? "ESCOLHER OPÇÕES +" : "VER PRODUTO +");

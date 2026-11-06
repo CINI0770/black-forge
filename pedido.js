@@ -54,14 +54,18 @@ function render() {
       row.className = "order-item";
       const info = document.createElement("div");
       const title = document.createElement("strong");
-      title.textContent = product.name + " — " + (validation.valid ? money(validation.unitPrice) : "REVISAR OPÇÕES");
+      title.textContent = product.name;
+      const priceLabel = document.createElement("span");
+      priceLabel.className = "bf-order-unit-price";
+      priceLabel.textContent = validation.valid ? money(validation.unitPrice) : "REVISAR OPÇÕES";
       const sub = document.createElement("small");
       sub.textContent = [
         item.size && "Tamanho: " + item.size,
         item.color && "Cor: " + item.color,
         item.model && "Modelo: " + item.model
       ].filter(Boolean).join(" · ");
-      info.append(title, sub);
+      info.append(title, priceLabel, sub);
+      if(validation.valid)window.BFBlackFriday?.decorate(info,validation.unitPrice,priceLabel);
       if (!validation.valid) {
         const warning = document.createElement("p");
         warning.textContent = validation.reason + " Remova este item e escolha novamente as opções.";
@@ -118,16 +122,18 @@ function couponFeedback(message, error = false) {
   $("orderCouponMessage").dataset.error = String(error);
 }
 function updateQuote(cart, subtotal) {
-  const code = promo.get();
+  const friday=window.BFBlackFriday?.active()===true;
+  const code = friday ? "" : promo.get();
   if (document.activeElement !== $("orderCouponInput")) $("orderCouponInput").value = code;
   $("orderCouponRemove").hidden = !code;
   const items = promo.extractCart(cart);
   const cents = Math.round(subtotal * 100);
   const discount = code === "BLACK5" && promo.active() ? Math.round(cents * 0.05) : 0;
-  $("orderCouponRow").hidden = !code;
-  $("orderDiscount").textContent = "−" + money(discount/100);
-  $("orderShipping").textContent = discount ? "GRÁTIS (a confirmar)" : "A calcular";
-  $("orderTotal").textContent = discount ? money((cents - discount)/100) + "*" : "A calcular";
+  $("orderCouponRow").hidden = !code && !friday;
+  $("orderDiscountLabel").textContent=friday?'BLACK FRIDAY ('+window.BFBlackFriday.config.discount+'% OFF)':'CUPOM '+code;
+  $("orderDiscount").textContent = friday ? 'Calculando' : "−" + money(discount/100);
+  $("orderShipping").textContent = !friday && discount ? "GRÁTIS (a confirmar)" : "A calcular";
+  $("orderTotal").textContent = "Confirmando total…";
   const version = ++quoteCounter;
   if (!items.length || cartProblems(cart).length) {
     $("orderTotal").textContent = "Revise os itens";
@@ -135,7 +141,8 @@ function updateQuote(cart, subtotal) {
   }
   promo.quote(items, code).then(data => {
     if (version !== quoteCounter) return;
-    $("orderCouponRow").hidden = !data.coupon;
+    $("orderCouponRow").hidden = !data.coupon && !data.campaign;
+    $("orderDiscountLabel").textContent = data.campaign?'BLACK FRIDAY ('+data.percent_off+'% OFF)':'CUPOM '+data.coupon;
     $("orderDiscount").textContent = "−" + money(data.discount_cents/100);
     $("orderShipping").textContent = data.shipping_cents === 0 ? "GRÁTIS" : money(data.shipping_cents/100);
     $("orderTotal").textContent = money(data.total_cents/100);
@@ -163,6 +170,13 @@ $("orderCouponApply").addEventListener("click", async () => {
 $("orderCouponRemove").addEventListener("click", () => { promo.set(""); couponFeedback("Cupom removido."); });
 $("orderCouponInput").addEventListener("keydown", e => {if(e.key === "Enter"){e.preventDefault();$("orderCouponApply").click();}});
 document.addEventListener("bf:coupon-updated", render);
+document.addEventListener("bf:campaign-updated",()=>{
+  const banner=document.querySelector('.bf-order-mini-banner');
+  if(banner && window.BFBlackFriday?.active()){
+    banner.innerHTML='<span>BLACK FORGE / BLACK FRIDAY</span><strong>'+window.BFBlackFriday.config.discount+'% OFF<br>EM TODO O SITE<span>.</span></strong><small>DESCONTO AUTOMÁTICO / SEM CUPOM</small>';
+  }
+  render();
+});
 $("clearOrder").addEventListener("click", () => { save({}); render(); });
 $("checkoutForm").addEventListener("submit", async event => {
   event.preventDefault();
@@ -178,6 +192,7 @@ $("checkoutForm").addEventListener("submit", async event => {
     if (!items.length) throw Error("Seu carrinho está vazio.");
     const customer = Object.fromEntries(new FormData(event.currentTarget));
     if (!customer.consent) throw Error("Confirme o consentimento.");
+    await window.BFBlackFriday?.ready;
     const coupon = promo.get();
     // Pré-validação: o servidor recalcula tudo novamente ao criar o checkout.
     await promo.quote(items, coupon);

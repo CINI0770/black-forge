@@ -1,0 +1,66 @@
+/* BLACK FORGE / BLACK FRIDAY 2026 — editorial industrial, sem imagens externas. */
+:root{--bf-friday-red:#772832;--bf-friday-ink:#0a0a0a;--bf-friday-paper:#ded4c5}
+.bf-friday-priceblock[hidden],.bf-friday-countdown[hidden]{display:none!important}
+.bf-friday-priceblock{display:flex;flex-direction:column;gap:5px;align-items:flex-start;margin:7px 0 13px;max-width:100%;min-width:0}
+.bf-friday-original{text-decoration:line-through!important;text-decoration-thickness:1px!important;color:#aaa39a!important;opacity:.78;font-size:.85em!important}
+.bf-friday-badge{display:inline-block;max-width:100%;background:#63262d;color:#fff1e5;border:1px solid #ac5960;padding:5px 9px;font:800 10px/1.4 'DM Sans',Arial,sans-serif;letter-spacing:.1em;white-space:normal}
+.bf-friday-price{display:block;color:#f6e8d3;font:900 clamp(17px,1.7vw,24px)/1.15 'DM Sans',Arial,sans-serif;letter-spacing:-.035em;overflow-wrap:break-word}
+.bf-friday-price-note,.bf-friday-variable{color:#afa59a;font:500 10px/1.35 'DM Sans',Arial,sans-serif;letter-spacing:.07em}
+.bf-friday-active .bf-black5-price{display:none!important}
+.bf-friday-active .bf-home-launch-hero,.bf-friday-active .bf-drop-banner,
+.bf-friday-active .promo-hero,.bf-friday-active .promo-ticker,.bf-friday-active .promo-benefits{display:none!important}
+.bf-friday-active .bf-coupon-form,.bf-friday-active .bf-coupon-message,.bf-friday-active .bf-coupon-field-label{display:none!important}
+.bf-friday-active .bf-site-header+.bf-friday-anime-ribbon{display:block}
+.bf-friday-anime-ribbon{display:block;background:#2b1015;color:#eee0cf;text-align:center;padding:10px 16px;font:800 11px/1.4 'DM Sans',Arial,sans-serif;letter-spacing:.09em;text-decoration:none}
+.bf-friday-active .announcement{background:#1c1113;color:#f0d4d0;border-bottom:1px solid #743640}
+.bf-friday-active .announcement span:nth-child(2){color:#fff;letter-spacing:.11em}
+.bf-friday-active .bf-black5-topline{background:#2a1418;color:#f4ded3}
+/* Home hero: editorial tipográfico / concreto / estrutura metálica */
+.bf-friday-home-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);min-height:clamp(520px,57vw,720px);background:#111111;border-bottom:1px solid #5b5050;overflow:hidden;isolation:isolate}
+.bf-friday-home-hero::before,.bf-friday-art::before,.bf-friday-promo-intro::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:repeating-linear-gradient(90deg,transparent,transparent 92px,rgba(243,236,224,.03) 93px,transparent 94px),repeating-linear-gradient(0deg,transparent,transparent 9px,rgba(255,255,255,.017) 10px);mix-blend-mode:screen}
+.bf-friday-hero-copy{position:relative;padding:clamp(32px,5.3vw,84px) clamp(24px,5.4vw,90px) 32px;display:flex;align-items:flex-start;flex-direction:column;justify-content:center;z-index:1;background:radial-gradient(ellipse at 10% 10%,#33302d 0,transparent 45%),linear-gradient(138deg,#151515 5%,#090909 95%);color:#eee9dd}
+.bf-friday-eyebrow{color:#d2c6b7;font:700 10px/1.65 'DM Sans',Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;margin-bottom:auto}
+.bf-friday-eyebrow span{color:#b34d56;padding:0 6px}
+.bf-friday-micro{display:block;font:700 10px/1.4 'DM Sans',Arial,sans-serif;letter-spacing:.12em;margin:32px 0 18px;color:#c1afa3}
+.bf-friday-hero-copy h1{display:flex;flex-direction:column;max-width:100%;font:950 clamp(58px,8.6vw,140px)/.84 Impact,'Arial Narrow','Arial Black',sans-serif;letter-spacing:-.045em;text-transform:uppercase;margin:0;transform:scaleX(.96);transform-origin:left center}
+.bf-friday-hero-copy h1 span{display:block;white-space:nowrap}.bf-friday-hero-copy h1 span:nth-child(2){color:#dfd1bf}
+.bf-friday-hero-copy h1 i{color:#92363f;font-style:normal}
+.bf-friday-hero-off{font:950 clamp(29px,4.5vw,58px)/1 Impact,'Arial Narrow',sans-serif;letter-spacing:.01em;margin:24px 0 16px;color:#dfd1bf}
+.bf-friday-hero-off small{font:700 clamp(10px,1.15vw,14px)/1.2 'DM Sans',Arial,sans-serif;letter-spacing:.08em;color:#ded5ca;display:inline-block}
+.bf-friday-hero-copyline{font:400 clamp(15px,1.3vw,19px)/1.5 'DM Sans',Arial,sans-serif;color:#cabfb2;margin-bottom:24px}
+.bf-friday-hero-cta,.bf-friday-promo-intro>a{display:inline-flex;align-items:center;justify-content:space-between;gap:22px;min-height:55px;background:#dcd0bf;color:#111;text-decoration:none;padding:17px 22px;font:900 12px/1.25 'DM Sans',Arial,sans-serif;letter-spacing:.09em;transition:background .16s ease,transform .16s ease}
+.bf-friday-hero-cta:hover,.bf-friday-promo-intro>a:hover{background:#fff3e4;transform:translateY(-2px)}
+.bf-friday-countdown{margin:20px 0;color:#e9d2c6;border:1px solid #8f4548;padding:10px;font:700 12px/1.5 'DM Sans',Arial,sans-serif}
+.bf-friday-hero-baseline{margin-top:auto;padding-top:32px;display:flex;width:100%;justify-content:space-between;gap:10px;color:#9f9386;font:700 10px/1.4 'DM Sans',Arial,sans-serif;letter-spacing:.15em}
+.bf-friday-art{position:relative;min-height:420px;background:radial-gradient(circle at 70% 27%,#493438 0,transparent 55%),repeating-linear-gradient(165deg,#282526 0,#282526 3px,#211f20 3px,#211f20 5px);overflow:hidden;border-left:1px solid #3a3432}
+.bf-friday-art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.08),rgba(0,0,0,.35));pointer-events:none}
+.bf-friday-art-inner{position:absolute;inset:clamp(19px,3vw,44px);display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid #86776a;outline:1px solid rgba(255,255,255,.09);outline-offset:8px;z-index:1;color:#dcd0bf;transform:rotate(-2deg)}
+.bf-friday-art-label,.bf-friday-art-footer{font:800 10px/1.6 'DM Sans',Arial,sans-serif;letter-spacing:.2em;text-align:center;color:#eee0d4}
+.bf-friday-art-mark{font:900 clamp(34px,5vw,66px)/1 Impact,'Arial Black',sans-serif;letter-spacing:-.08em;border-bottom:3px solid #74323a;padding:16px}
+.bf-friday-art-mark span{color:#ab424b;font-size:17px;vertical-align:top;letter-spacing:0}
+.bf-friday-art-inner strong{font:950 clamp(120px,20vw,305px)/.84 Impact,'Arial Black',sans-serif;letter-spacing:-.08em;color:#ecdfd0;text-shadow:6px 8px 0 #401d23}
+.bf-friday-art-inner sup{font-size:.25em;vertical-align:top;letter-spacing:0;position:relative;top:.14em}
+.bf-friday-art-off{font:950 clamp(40px,6vw,88px)/1 Impact,'Arial Black',sans-serif;letter-spacing:.1em;color:#c0a99e;margin-bottom:26px}
+.bf-friday-secondary{background:#e0d6c6;color:#111;padding:clamp(36px,5vw,70px) clamp(26px,6vw,90px);display:flex;flex-direction:column;align-items:flex-start;gap:12px;border-top:8px solid #792d38}
+.bf-friday-secondary span{font:900 10px/1.4 'DM Sans',Arial,sans-serif;letter-spacing:.18em}
+.bf-friday-secondary h2{font:900 clamp(35px,6vw,74px)/.94 Impact,'Arial Black',sans-serif;margin:0}
+.bf-friday-secondary h2 em{font-style:normal;color:#79343a}
+.bf-friday-secondary p{max-width:560px;line-height:1.6;margin:0}.bf-friday-secondary a{color:#281113;font-weight:900;margin-top:16px;text-decoration:underline;text-underline-offset:6px}
+.bf-friday-promo-intro{position:relative;padding:clamp(38px,7vw,100px) clamp(23px,6vw,80px);display:flex;align-items:flex-start;flex-direction:column;gap:15px;background:radial-gradient(circle at 95% 10%,#39272b,transparent 45%),#151515;color:#e7dbcb;border-bottom:1px solid #625251}
+.bf-friday-promo-intro>span{font:800 10px/1.4 'DM Sans',Arial,sans-serif;letter-spacing:.2em}.bf-friday-promo-intro h1{font:950 clamp(84px,15vw,210px)/.78 Impact,'Arial Black',sans-serif;margin:25px 0 8px;letter-spacing:-.03em}.bf-friday-promo-intro h1 span{color:#83323d}
+.bf-friday-promo-intro p{font:900 clamp(25px,4vw,52px)/1.1 Impact,'Arial Black',sans-serif;margin:0}
+.bf-friday-promo-intro .bf-friday-caption{font:400 clamp(14px,2vw,19px)/1.5 'DM Sans',Arial,sans-serif;color:#cabfb2;margin-bottom:20px}
+.bf-friday-active .bf-order-mini-banner{background:linear-gradient(120deg,#32161c,#111)!important;border-color:#76323c!important}
+.bf-friday-active .bf-order-mini-banner span:first-child{font-size:10px}
+.bf-friday-active .bf-coupon-totals .bf-coupon-total strong{color:#ffe8d0}
+.bf-friday-active .slot-card,.bf-friday-active .product-card,.bf-friday-active .promo-card{min-width:0}
+.bf-friday-active .slot-info,.bf-friday-active .product-content,.bf-friday-active .promo-card{overflow-wrap:anywhere}
+.bf-friday-active .slot-info .bf-friday-price,.bf-friday-active .product-content .bf-friday-price{font-size:clamp(16px,2vw,22px)}
+@media(max-width:880px){.bf-friday-home-hero{grid-template-columns:1fr}.bf-friday-hero-copy{min-height:490px}.bf-friday-art{min-height:320px}.bf-friday-art-inner{inset:35px}.bf-friday-art-inner strong{font-size:160px}.bf-friday-art-off{font-size:45px}.bf-friday-hero-copy h1{font-size:clamp(62px,12vw,105px)}}
+@media(max-width:550px){.bf-friday-hero-copy{padding:34px 23px 27px;min-height:490px}.bf-friday-eyebrow{font-size:9px;letter-spacing:.12em}.bf-friday-micro{margin:28px 0 16px}.bf-friday-hero-copy h1{font-size:clamp(56px,14vw,76px)}.bf-friday-hero-off{margin:25px 0 15px}.bf-friday-hero-cta{width:100%;font-size:11px}.bf-friday-art{min-height:250px}.bf-friday-art-inner{inset:24px}.bf-friday-art-inner strong{font-size:130px}.bf-friday-art-inner .bf-friday-art-off{font-size:36px;margin-bottom:10px}.bf-friday-art-mark{font-size:28px;padding:4px}.bf-friday-art-label,.bf-friday-art-footer{font-size:8px}.bf-friday-promo-intro h1{font-size:clamp(62px,18vw,110px)}.bf-friday-promo-intro{padding:50px 22px}.bf-friday-price{font-size:19px}.bf-friday-badge{font-size:9px}.bf-friday-active .cart-drawer{max-width:100vw}.bf-friday-active .drawer-foot{overflow-wrap:anywhere}}
+@media(prefers-reduced-motion:reduce){.bf-friday-hero-cta{transition:none}}
+
+.bf-order-unit-price{display:block;font-size:13px;color:#cdc4b8;margin:3px 0 6px}
+.bf-order-unit-price.bf-friday-original{font-size:12px!important}
+
+.bf-friday-active .bf-black5-only{display:none!important}

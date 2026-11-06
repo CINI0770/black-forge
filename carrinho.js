@@ -26,10 +26,10 @@
 				<div id="cartItems" class="cart-items"></div>
 				<div class="drawer-foot">
 					<div class="subtotal"><span>SUBTOTAL</span><strong id="cartSubtotal">R$ 0,00</strong></div>
-					<label for="cartCouponInput">CÓDIGO DO CUPOM</label>
+					<label for="cartCouponInput" class="bf-coupon-field-label">CÓDIGO DO CUPOM</label>
 					<div class="bf-coupon-form"><input id="cartCouponInput" placeholder="BLACK5" maxlength="40" autocomplete="off"><button id="cartCouponApply" type="button">APLICAR CUPOM</button><button id="cartCouponRemove" type="button" class="bf-coupon-clear" hidden>REMOVER</button></div>
 					<p id="cartCouponMessage" class="bf-coupon-message" role="status" aria-live="polite"></p>
-					<div id="cartTotals" class="bf-coupon-totals"><div><span>FRETE</span><strong id="cartShipping">A calcular</strong></div><div id="cartDiscountRow" hidden><span>CUPOM <span id="cartCouponCode">BLACK5</span> (5%)</span><strong id="cartDiscount">R$ 0,00</strong></div><div class="bf-coupon-total"><span>TOTAL</span><strong id="cartTotal">A calcular</strong></div></div>
+					<div id="cartTotals" class="bf-coupon-totals"><div><span>FRETE</span><strong id="cartShipping">A calcular</strong></div><div id="cartDiscountRow" hidden><span id="cartDiscountLabel">CUPOM <span id="cartCouponCode">BLACK5</span> (5%)</span><strong id="cartDiscount">R$ 0,00</strong></div><div class="bf-coupon-total"><span>TOTAL</span><strong id="cartTotal">A calcular</strong></div></div>
 					<a class="btn btn-light checkout" href="pedido.html">FINALIZAR COMPRA ↗</a>
 					<button id="continueShopping" class="continue" type="button">CONTINUAR COMPRANDO</button>
 				</div>
@@ -117,9 +117,12 @@
 				plus.addEventListener("click", () => changeQuantity(product.id, index, 1));
 				quantity.append(minus, el("span", "", item.qty), plus);
 
-				info.append(el("h3", "", product.name),
-					el("p", "", validation.valid ? money(validation.unitPrice) : "PREÇO PENDENTE"),
-					el("p", "", variants), quantity);
+				const linePrice = el("p", "", validation.valid ? money(validation.unitPrice) : "PREÇO PENDENTE");
+				info.append(el("h3", "", product.name), linePrice, el("p", "", variants), quantity);
+				if (validation.valid) {
+					window.BFBlackFriday?.decorate(info, validation.unitPrice, linePrice);
+					info.append(el("small", "bf-cart-quantity", `QUANTIDADE: ${item.qty}`));
+				}
 				if (!validation.valid) info.append(el("p", "", validation.reason + " Revise este produto antes de pagar."));
 
 				const remove = el("button", "remove", "REMOVER");
@@ -160,23 +163,31 @@
 		status.dataset.error = String(error);
 	}
 	function updateTotals(cart, subtotal, invalidCount) {
-		const code = promo?.get() || "";
+		const friday = window.BFBlackFriday?.active() === true;
+		const code = friday ? "" : (promo?.get() || "");
 		const input = $("#cartCouponInput");
 		if (input && document.activeElement !== input) input.value = code;
 		$("#cartCouponRemove").hidden = !code;
 		const subtotalCents = Math.round(subtotal * 100);
-		const estimateCents = code === "BLACK5" && promo.active() ? Math.round(subtotalCents * 5 / 100) : 0;
-		$("#cartDiscountRow").hidden = !code;
+		const estimatedFridaySavings = friday ? products.reduce((sum,product) => (cart[product.id]?.items||[]).reduce((s,item)=>{
+			const validation=optionRules.validate(product,item);
+			const unitCents=Math.round(validation.unitPrice*100);
+			return s+(validation.valid ? (unitCents-window.BFBlackFriday.previewUnitCents(unitCents))*item.qty : 0);
+		},sum),0) : 0;
+		const estimateCents = friday ? estimatedFridaySavings : (code === "BLACK5" && promo.active() ? Math.round(subtotalCents * 5 / 100) : 0);
+		$("#cartDiscountRow").hidden = !code && !friday;
+		$("#cartDiscountLabel").textContent=friday?'BLACK FRIDAY ('+window.BFBlackFriday.config.discount+'% OFF)':'CUPOM '+code+' (5%)';
 		$("#cartCouponCode").textContent = code;
 		$("#cartDiscount").textContent = "−" + money(estimateCents/100);
-		$("#cartShipping").textContent = estimateCents ? "GRÁTIS (a confirmar)" : "A calcular";
-		$("#cartTotal").textContent = invalidCount || !subtotalCents ? "Revise seu carrinho" : estimateCents ? money((subtotalCents-estimateCents)/100) + "*" : "A calcular";
+		$("#cartShipping").textContent = !friday && estimateCents ? "GRÁTIS (a confirmar)" : "A calcular";
+		$("#cartTotal").textContent = invalidCount || !subtotalCents ? "Revise seu carrinho" : "Confirmando total…";
 		if (invalidCount || !subtotalCents) { ++activeQuote; return; }
 		const version = ++activeQuote;
 		promo.quote(promo.extractCart(cart), code).then(summary => {
 			if (version !== activeQuote) return;
 			$("#cartCouponCode").textContent = summary.coupon || "";
-			$("#cartDiscountRow").hidden = !summary.coupon;
+			$("#cartDiscountRow").hidden = !summary.coupon && !summary.campaign;
+			$("#cartDiscountLabel").textContent=summary.campaign?'BLACK FRIDAY ('+summary.percent_off+'% OFF)':'CUPOM '+summary.coupon+' ('+summary.percent_off+'%)';
 			$("#cartDiscount").textContent = "−" + money(summary.discount_cents/100);
 			$("#cartShipping").textContent = summary.shipping_cents === 0 ? "GRÁTIS" : money(summary.shipping_cents/100);
 			$("#cartTotal").textContent = money(summary.total_cents/100);
@@ -255,6 +266,7 @@
 	$("#cartCouponRemove").addEventListener("click", () => { promo.set(""); feedback("Cupom removido."); });
 	$("#cartCouponInput").addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); $("#cartCouponApply").click(); } });
 	document.addEventListener("bf:coupon-updated", renderCart);
+	document.addEventListener("bf:campaign-updated", renderCart);
 
 	document.addEventListener("keydown", event => {
 		if (event.key === "Escape" && $("#cartDrawer").classList.contains("open")) closeCart();

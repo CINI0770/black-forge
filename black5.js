@@ -7,7 +7,10 @@
   const money = value => Number(value).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
   const cents = n => Math.round(Number(n) * 100);
   const active = () => Date.now() >= Date.parse(PROMO.startsAt) && (!PROMO.endsAt || Date.now() <= Date.parse(PROMO.endsAt));
-  function get() { try { return String(localStorage.getItem(STORAGE) || "").trim().toUpperCase(); } catch { return ""; } }
+  function get() {
+    if (window.BFBlackFriday?.active()) return "";
+    try { return String(localStorage.getItem(STORAGE) || "").trim().toUpperCase(); } catch { return ""; }
+  }
   function set(value) {
     const code = String(value || "").trim().toUpperCase();
     try { if (code) localStorage.setItem(STORAGE, code); else localStorage.removeItem(STORAGE); } catch { }
@@ -32,6 +35,9 @@
   }
   function extractCart(cart) { return Object.entries(cart).flatMap(([id,group]) => (group.items || []).map(item => ({ id, qty:item.qty, size:item.size||"", color:item.color||"", model:item.model||"" }))); }
   async function quote(items, code = get(), signal) {
+    // Aguarda a campanha ser confirmada pelo servidor, evitando reenviar BLACK5 durante BF.
+    if (window.BFBlackFriday?.ready) await window.BFBlackFriday.ready;
+    if (window.BFBlackFriday?.active()) code = "";
     const response = await fetch(API + "/api/checkout/quote", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({items, coupon:code}), signal });
     let data;
     try { data = await response.json(); } catch { throw new Error("Servidor de pagamentos sem resposta válida."); }

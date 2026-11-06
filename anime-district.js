@@ -79,8 +79,10 @@
     img.addEventListener('error',()=>{img.remove();imageBox.append(node('span','frame-symbol','BF / AN'));},{once:true});
     imageBox.append(img,node('span','product-badge','DISPONÍVEL'));
     const info=node('div','product-content');
-    info.append(node('div','product-type',p.anime_category.toUpperCase()),linkToProduct(p,'product-name',p.name),node('div','product-price',money(p.price)));
+    const basePrice=node('div','product-price',money(p.price));
+    info.append(node('div','product-type',p.anime_category.toUpperCase()),linkToProduct(p,'product-name',p.name),basePrice);
     window.BFPromo?.decorate(info, p.price);
+    window.BFBlackFriday?.decorate(info, p.price, basePrice);
     const actions=node('div','product-actions');actions.append(linkToProduct(p,'product-open','VER PRODUTO ↗'));
     const details=node('button','product-details','DETALHES');details.type='button';details.addEventListener('click',()=>showDetails(p));actions.append(details);
     info.append(actions);card.append(imageBox,info);return card;
@@ -118,8 +120,10 @@
     }
     const right=node('div','modal-info');
     const heading=node('h3','',p.name);heading.id='dialogTitle';
-    right.append(node('div','product-type',p.anime_category.toUpperCase()),heading,node('strong','modal-price',money(p.price)),node('p','',p.description||''));
+    const baseModal=node('strong','modal-price',money(p.price));
+    right.append(node('div','product-type',p.anime_category.toUpperCase()),heading,baseModal,node('p','',p.description||''));
     window.BFPromo?.decorate(right, p.price);
+    window.BFBlackFriday?.decorate(right, p.price, baseModal);
     if(Array.isArray(p.sizes)&&p.sizes.length)right.append(node('p','modal-options','TAMANHOS: '+p.sizes.join(' · ')));
     if(Array.isArray(p.colors)&&p.colors.length)right.append(node('p','modal-options','CORES: '+p.colors.join(' · ')));
     right.append(node('p','modal-notice','Frete incluso no preço. Escolha as opções na página do produto para adicionar ao carrinho.'));
