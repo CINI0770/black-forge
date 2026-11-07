@@ -2349,7 +2349,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-109",
     "name": "Vestido Eclipse de Renda",
-    "category": "PROMOÇÕES",
+    "category": "VESTIDOS",
     "price": 169.92,
     "originalPrice": 199.9,
     "images": [
@@ -2378,7 +2378,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-110",
     "name": "Vestido Nocturne de Babados",
-    "category": "PROMOÇÕES",
+    "category": "VESTIDOS",
     "price": 223.8,
     "originalPrice": 263.29,
     "images": [
@@ -2403,7 +2403,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-111",
     "name": "Vestido Véu Sombrio",
-    "category": "PROMOÇÕES",
+    "category": "VESTIDOS",
     "price": 223.8,
     "originalPrice": 263.29,
     "images": [
@@ -2428,7 +2428,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-112",
     "name": "Vestido Crepúsculo Gótico",
-    "category": "PROMOÇÕES",
+    "category": "VESTIDOS",
     "price": 223.8,
     "originalPrice": 263.29,
     "images": [
@@ -2453,7 +2453,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-113",
     "name": "Vestido Corvo Imperial",
-    "category": "PROMOÇÕES",
+    "category": "VESTIDOS",
     "price": 223.8,
     "originalPrice": 263.29,
     "images": [
@@ -2478,7 +2478,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-114",
     "name": "Vestido Eclipse Y2K",
-    "category": "PROMOÇÕES",
+    "category": "VESTIDOS",
     "price": 223.8,
     "originalPrice": 263.29,
     "images": [
@@ -2503,7 +2503,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-115",
     "name": "Meia-Calça Gótica Cruz Noturna",
-    "category": "PROMOÇÕES",
+    "category": "CINTOS E ACESSÓRIOS",
     "price": 39.9,
     "originalPrice": 46.94,
     "images": [
@@ -2525,7 +2525,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-116",
     "name": "Meia-Calça Véu Sombrio",
-    "category": "PROMOÇÕES",
+    "category": "CINTOS E ACESSÓRIOS",
     "price": 39.9,
     "originalPrice": 46.94,
     "images": [
@@ -2547,7 +2547,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-117",
     "name": "Meia-Calça Eclipse Alternativo",
-    "category": "PROMOÇÕES",
+    "category": "CINTOS E ACESSÓRIOS",
     "price": 39.9,
     "originalPrice": 46.94,
     "images": [
@@ -2569,7 +2569,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-118",
     "name": "Meia-Calça Ritual Urbano",
-    "category": "PROMOÇÕES",
+    "category": "CINTOS E ACESSÓRIOS",
     "price": 39.9,
     "originalPrice": 46.94,
     "images": [
@@ -2591,7 +2591,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-119",
     "name": "Meia-Calça Dark Lace",
-    "category": "PROMOÇÕES",
+    "category": "CINTOS E ACESSÓRIOS",
     "price": 39.9,
     "originalPrice": 46.94,
     "images": [
@@ -2613,7 +2613,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-120",
     "name": "Meia-Calça Noite Rebelde",
-    "category": "PROMOÇÕES",
+    "category": "CINTOS E ACESSÓRIOS",
     "price": 39.9,
     "originalPrice": 46.94,
     "images": [
@@ -2635,7 +2635,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-121",
     "name": "Meia-Calça Lolita Underground",
-    "category": "PROMOÇÕES",
+    "category": "CINTOS E ACESSÓRIOS",
     "price": 39.9,
     "originalPrice": 46.94,
     "images": [
@@ -2657,7 +2657,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-122",
     "name": "Bota Plataforma Sombra Negra",
-    "category": "PROMOÇÕES",
+    "category": "CALÇADOS",
     "price": 286.65,
     "originalPrice": 337.24,
     "images": [
@@ -2690,7 +2690,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-123",
     "name": "Bota Punk Reino Unido Preta",
-    "category": "PROMOÇÕES",
+    "category": "CALÇADOS",
     "price": 251.73,
     "originalPrice": 296.15,
     "images": [
@@ -2722,7 +2722,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-124",
     "name": "Bota Punk Reino Unido Branca",
-    "category": "PROMOÇÕES",
+    "category": "CALÇADOS",
     "price": 251.73,
     "originalPrice": 296.15,
     "images": [
@@ -2753,7 +2753,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-125",
     "name": "Bota Combat Black Steel",
-    "category": "PROMOÇÕES",
+    "category": "CALÇADOS",
     "price": 439.6,
     "originalPrice": 517.18,
     "images": [
@@ -2783,7 +2783,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-126",
     "name": "Bota Punk Correntes da Noite",
-    "category": "PROMOÇÕES",
+    "category": "CALÇADOS",
     "price": 220.08,
     "originalPrice": 258.92,
     "images": [
@@ -2812,7 +2812,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-127",
     "name": "Bota Moto Rebel Black",
-    "category": "PROMOÇÕES",
+    "category": "CALÇADOS",
     "price": 311.2,
     "originalPrice": 366.12,
     "images": [
@@ -2843,7 +2843,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-128",
     "name": "Saia Assimétrica Noite Eterna",
-    "category": "PROMOÇÕES",
+    "category": "CALÇAS E SAIAS",
     "price": 229.9,
     "originalPrice": 270.47,
     "images": [
@@ -2874,7 +2874,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-130",
     "name": "Camisa Black Ritual",
-    "category": "PROMOÇÕES",
+    "category": "CAMISETAS E CAMISAS",
     "price": 203.75,
     "originalPrice": 239.71,
     "images": [
@@ -2902,7 +2902,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-131",
     "name": "Camisa Shadow Scripture",
-    "category": "PROMOÇÕES",
+    "category": "CAMISETAS E CAMISAS",
     "price": 203.75,
     "originalPrice": 239.71,
     "images": [
@@ -2930,7 +2930,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-132",
     "name": "Camisa Gothic Testament",
-    "category": "PROMOÇÕES",
+    "category": "CAMISETAS E CAMISAS",
     "price": 203.75,
     "originalPrice": 239.71,
     "images": [
@@ -2958,7 +2958,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-133",
     "name": "Camisa Fallen Angel",
-    "category": "PROMOÇÕES",
+    "category": "CAMISETAS E CAMISAS",
     "price": 203.75,
     "originalPrice": 239.71,
     "images": [
@@ -2986,7 +2986,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-134",
     "name": "Camisa Crimson Cross",
-    "category": "PROMOÇÕES",
+    "category": "CAMISETAS E CAMISAS",
     "price": 203.75,
     "originalPrice": 239.71,
     "images": [
@@ -3014,7 +3014,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-135",
     "name": "Camisa Silent Requiem",
-    "category": "PROMOÇÕES",
+    "category": "CAMISETAS E CAMISAS",
     "price": 203.75,
     "originalPrice": 239.71,
     "images": [
@@ -3042,7 +3042,7 @@ window.BLACK_FORGE_ITEMS = [
   {
     "id": "BF-136",
     "name": "Camisa Scarlet Rebellion",
-    "category": "PROMOÇÕES",
+    "category": "CAMISETAS E CAMISAS",
     "price": 203.75,
     "originalPrice": 239.71,
     "images": [

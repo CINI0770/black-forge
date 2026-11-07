@@ -99,7 +99,14 @@
 				else invalidCount++;
 
 				const row = el("div", "cart-item");
-				const thumb = el("div", "cart-thumb", "✦");
+				const thumb = el("div", "cart-thumb");
+				const variant = Array.isArray(product.variants) ? product.variants.find(v =>
+					v && typeof v === 'object' && v.image && v.name === (item.color || item.model)) : null;
+				const photo = variant?.image || (Array.isArray(product.images) && product.images.find(Boolean)) || product.image;
+				if (photo) {
+					const img = el('img');img.src=photo;img.alt=product.name;img.loading='lazy';
+					img.addEventListener('error',()=>{img.remove();thumb.textContent='✦';},{once:true});thumb.append(img);
+				} else thumb.textContent='✦';
 				const info = el("div");
 
 				const variants = [

@@ -7,7 +7,6 @@
 .bf-friday-price{display:block;color:#f6e8d3;font:900 clamp(17px,1.7vw,24px)/1.15 'DM Sans',Arial,sans-serif;letter-spacing:-.035em;overflow-wrap:break-word}
 .bf-friday-price-note,.bf-friday-variable{color:#afa59a;font:500 10px/1.35 'DM Sans',Arial,sans-serif;letter-spacing:.07em}
 .bf-friday-active .bf-black5-price{display:none!important}
-.bf-friday-active .bf-home-launch-hero,.bf-friday-active .bf-drop-banner,
 .bf-friday-active .promo-hero,.bf-friday-active .promo-ticker,.bf-friday-active .promo-benefits{display:none!important}
 .bf-friday-active .bf-coupon-form,.bf-friday-active .bf-coupon-message,.bf-friday-active .bf-coupon-field-label{display:none!important}
 .bf-friday-active .bf-site-header+.bf-friday-anime-ribbon{display:block}

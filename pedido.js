@@ -98,6 +98,13 @@ function render() {
         save(updated); render();
       });
       controls.append(input, remove);
+      const variant = Array.isArray(product.variants) ? product.variants.find(v =>
+        v && typeof v === 'object' && v.image && v.name === (item.color || item.model)) : null;
+      const photo = variant?.image || (Array.isArray(product.images) && product.images.find(Boolean)) || product.image;
+      if (photo) {
+        const image = document.createElement('img');image.src=photo;image.alt='';image.loading='lazy';
+        image.className='forge-order-thumb';row.append(image);
+      }
       row.append(info, controls);
       container.append(row);
     });

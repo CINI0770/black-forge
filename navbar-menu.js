@@ -60,7 +60,7 @@
 </style>
 <div class="announcement" aria-label="Avisos da loja">
   <span>BLACK FORGE / EST. 2026</span>
-  <span>5% OFF + FRETE GRÁTIS COM O CUPOM BLACK5</span>
+  <span>FEITO PARA SER DIFERENTE · MODA ALTERNATIVA</span>
   <span>MODA ALTERNATIVA • BRASIL</span>
 </div>
 
@@ -71,10 +71,10 @@
   </a>
   <nav class="nav" aria-label="Navegação principal">
     <a href="index.html">INÍCIO</a>
-    <a href="promocoes.html">PROMOÇÕES</a>
+    
     <a href="produtos.html">PRODUTOS</a>
     <a href="anime-district.html">ANIME DISTRICT</a>
-    <a href="index.html#duvidas">DÚVIDAS</a>
+    <a href="index.html#sobre">SOBRE A BLACK FORGE</a>
   </nav>
   <div class="header-actions">
     <button id="searchToggle" class="icon-btn" type="button" aria-label="Buscar produtos" aria-expanded="false">

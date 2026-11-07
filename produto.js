@@ -57,6 +57,10 @@ function mostrarProduto() {
 	// ---------- Fotos: uma grande + miniaturas ----------
 	const fotos = (Array.isArray(produto.images) ? produto.images : []).filter(Boolean);
 	if (!fotos.length && produto.image) fotos.push(produto.image);
+	// Acrescentar fotos explicitamente associadas a variações, sem inventar caminhos.
+	if (Array.isArray(produto.variants)) for (const v of produto.variants) {
+		if (v && typeof v === 'object' && v.image && !fotos.includes(v.image)) fotos.push(v.image);
+	}
 
 	const visual = el("div", "produto-fotos");
 	const fotoGrande = el("img", "produto-foto-principal");
@@ -146,31 +150,42 @@ function mostrarProduto() {
 	// Evita dois seletores repetidos no BF-078, mas mantém model=color no pedido.
 	const seletorModelo = (variantesSaoCores || modelosEspelhados) ? null : criarSeletor("MODELO", "model", produto.variants);
 
-	// Trocar a cor mostra a foto daquela cor.
-	if (seletorCor) {
-		seletorCor.addEventListener("change", () => {
-			const i = seletorCor.selectedIndex - 1;
-			if (i < 0) return;
-			const variante = variantesSaoCores
-				? produto.variants.find(v => v && v.name === seletorCor.value)
-				: null;
-			mostrarFoto(variante && variante.image ? fotos.indexOf(variante.image) : i);
-		});
+	// Não presumir correspondência entre imagens e cores se as contagens forem diferentes.
+	const optionMemory = 'bf-product-options:' + produto.id;
+	function saveOptions() {
+		try { sessionStorage.setItem(optionMemory, JSON.stringify(Object.fromEntries(
+			seletores.map(s => [s.dataset.field,s.value])))); } catch {}
 	}
-
-	// Trocar o modelo mostra a foto do modelo e, se houver, o preço do modelo.
-	if (seletorModelo) {
-		seletorModelo.addEventListener("change", () => {
-			const i = seletorModelo.selectedIndex - 1;
-			if (fotos.length === seletorModelo.options.length - 1 && i >= 0) mostrarFoto(i);
-			if (Array.isArray(produto.variantPrices) && produto.variantPrices.length === produto.variants.length) {
-				const selectedPrice = i >= 0 ? produto.variantPrices[i] : produto.price;
-				preco.textContent = money(selectedPrice);
-				bf5Price?.update(selectedPrice);
-				bfFridayPrice?.update(selectedPrice);
-			}
-		});
+	function showAssociatedImage(option, index, count) {
+		const matching = Array.isArray(produto.variants) ? produto.variants.find(v =>
+			v && typeof v === 'object' && v.name === option && v.image) : null;
+		if (matching && fotos.includes(matching.image)) mostrarFoto(fotos.indexOf(matching.image));
+		else if (fotos.length === count && index >= 0) mostrarFoto(index);
 	}
+	if (seletorCor) seletorCor.addEventListener('change', () => {
+		if (seletorCor.value) showAssociatedImage(seletorCor.value, seletorCor.selectedIndex - 1,
+			seletorCor.options.length - 1);
+		saveOptions();
+	});
+	if (seletorModelo) seletorModelo.addEventListener('change', () => {
+		const i = seletorModelo.selectedIndex - 1;
+		if (seletorModelo.value) showAssociatedImage(seletorModelo.value, i, seletorModelo.options.length - 1);
+		if (Array.isArray(produto.variantPrices) && produto.variantPrices.length === produto.variants.length) {
+			const selectedPrice = i >= 0 ? produto.variantPrices[i] : produto.price;
+			preco.textContent = money(selectedPrice);
+			bf5Price?.update(selectedPrice);
+			bfFridayPrice?.update(selectedPrice);
+		}
+		saveOptions();
+	});
+	for (const s of seletores) if (s !== seletorCor && s !== seletorModelo) s.addEventListener('change', saveOptions);
+	// Restaura as seleções feitas ao atualizar a página do mesmo produto.
+	try {
+		const saved = JSON.parse(sessionStorage.getItem(optionMemory) || '{}');
+		for (const s of seletores) if ([...s.options].some(o=>o.value===saved[s.dataset.field])) {
+			s.value=saved[s.dataset.field];s.dispatchEvent(new Event('change'));
+		}
+	} catch {}
 
 	// ---------- Botão adicionar ao carrinho ----------
 	const disponivel = produto.active === true && !produto.placeholder && Number(produto.price) > 0;

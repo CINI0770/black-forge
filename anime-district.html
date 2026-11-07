@@ -12,11 +12,12 @@
   <script src="./black5.js"></script>
   <link rel="stylesheet" href="./black-friday.css">
   <script src="./black-friday.js"></script>
+  <link rel="stylesheet" href="./bf-redesign.css?v=20261107">
 </head>
-<body>
+<body class="bf-v2 bf-v2-anime">
   <a class="skip" href="#catalogo">Ir para o catálogo</a>
   <!-- Mesmo padrão visual e ordem de links do cabeçalho principal da Black Forge. -->
-  <div class="bf-black5-topline">5% OFF + FRETE GRÁTIS COM O CUPOM BLACK5</div>
+  <div class="bf-black5-topline">ANIME DISTRICT · BLACK FORGE / MODA SEM PADRÕES</div>
   <header class="bf-site-header">
     <a class="bf-site-logo" href="index.html" aria-label="Black Forge — Início">
       <span class="bf-site-symbol" aria-hidden="true">✦</span>
@@ -24,12 +25,12 @@
     </a>
     <nav class="bf-site-navigation" aria-label="Menu principal">
       <a href="index.html">INÍCIO</a>
-      <a href="promocoes.html">PROMOÇÕES</a>
+      
       <a href="produtos.html">PRODUTOS</a>
       <a href="anime-district.html" aria-current="page">ANIME DISTRICT</a>
-      <a href="index.html#duvidas">DÚVIDAS</a>
+      <a href="index.html#sobre">SOBRE A MARCA</a>
     </nav>
-    <div class="bf-site-balance" aria-hidden="true"></div>
+    <div class="bf-site-balance"><a class="bf-anime-cart-link" href="pedido.html" aria-label="Ver carrinho">CARRINHO <span id="animeCartCount">0</span> ↗</a></div>
   </header>
   <main>
     <section class="hero" aria-labelledby="hero-title">
@@ -62,6 +63,16 @@
     </section>
     <section class="outro"><p>BLACK FORGE / COLLECTION 001</p><h2>YOUR WORLD.<br><em>YOUR RULES.</em></h2><a href="produtos.html">EXPLORAR TODA A LOJA ↗</a></section>
   </main>
-  <footer><a class="brand" href="index.html"><span class="asterisk">✳</span> BLACK <span>FORGE</span></a><p>ANIME DISTRICT — CULTURA ALTERNATIVA, MODA E IDENTIDADE.</p><div><a href="index.html">INÍCIO</a><a href="produtos.html">PRODUTOS</a><a href="anime-district.html">ANIME DISTRICT</a></div><small>© 2026 BLACK FORGE. TODOS OS DIREITOS RESERVADOS.</small></footer>
+  <footer><a class="brand" href="index.html"><span class="asterisk">✳</span> BLACK <span>FORGE</span></a><p>ANIME DISTRICT — CULTURA ALTERNATIVA, MODA E IDENTIDADE.</p><div><a href="index.html">INÍCIO</a><a href="produtos.html">PRODUTOS</a><a href="anime-district.html">ANIME DISTRICT</a></div><small>© 2026 BLACK FORGE. TODOS OS DIREITOS RESERVADOS.</small><nav class="forge-footer-links" aria-label="Informações e políticas da loja"><a href="politica-entrega.html">ENTREGA E FRETE</a><a href="trocas-devolucoes.html">TROCAS E DEVOLUÇÕES</a><a href="termos-de-compra.html">TERMOS DE COMPRA</a><a href="politica-privacidade.html">PRIVACIDADE</a><a href="mailto:blackforge.oficial@gmail.com">CONTATO</a></nav></footer>
   <dialog id="productDialog" class="product-dialog" aria-labelledby="dialogTitle"><form method="dialog"><button class="close-modal" aria-label="Fechar detalhes">✕</button></form><div id="dialogContent"></div></dialog>
-</body></html>
+<script>
+(function(){
+  const node=document.getElementById('animeCartCount');
+  const update=()=>{
+    try {const cart=JSON.parse(localStorage.getItem('blackforge-selection-v4')||'{}');
+      node.textContent=Object.values(cart).reduce((sum,g)=>sum+(g.items||[]).reduce((s,p)=>s+(Number(p.qty)||0),0),0);
+    } catch {node.textContent='0';}
+  };
+  update();window.addEventListener('storage',update);
+})();
+</script></body></html>
