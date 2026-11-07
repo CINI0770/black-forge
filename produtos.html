@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#E7DDC9">
-  <meta name="description" content="BLACK FORGE — colares, anéis, roupas, acessórios e calçados alternativos. Moda punk, gótica e streetwear.">
-  <title>Produtos | BLACK FORGE</title>
+  <meta name="description" content="Explore o universo Alternativo da Black Forge: roupas, acessórios e calçados com identidade gótica, rock e grunge.">
+  <title>Alternativo | BLACK FORGE</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./black5.css">
   <script src="./black5.js"></script>
   <link rel="stylesheet" href="./black-friday.css">
-  <script src="./black-friday.js"></script>
-  <link rel="stylesheet" href="./bf-redesign.css?v=20261107">
+  <script src="./black-friday.js?v=20261107-fix2"></script>
+  <link rel="stylesheet" href="./bf-redesign.css?v=20261107-fix2">
 </head>
 <body class="products-page bf-catalog-page bf-v2 bf-v2-catalog">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -20,11 +20,19 @@
   <div id="navbar-menu"></div>
 
 <main id="conteudo" class="forge-catalog-main">
-<section class="forge-catalog-intro"><div><p class="forge-eyebrow">BLACK FORGE / CATÁLOGO 2026</p><h1>UMA VITRINE<br><em>SEM PADRÕES.</em></h1><p>Roupas, acessórios e calçados para vestir sua identidade. Encontre, filtre e descubra.</p><a href="#catalogSections" class="forge-btn">EXPLORAR PRODUTOS ↗</a></div><div class="forge-catalog-visual"><img src="imagens/BF-021-01.jpg" alt="Acessório de moda alternativa Black Forge"><span>NOT FOR EVERYONE / 2026</span></div></section>
+<section class="forge-catalog-intro" aria-labelledby="forgeIntroTitle">
+  <div class="forge-catalog-copy"><p class="forge-eyebrow">BLACK FORGE / UNIVERSO 001 — ALTERNATIVO</p><h1 id="forgeIntroTitle">CÓDIGO<br><em>ALTERNATIVO.</em></h1><p>Gótico, punk, grunge, rock e tudo que foge do óbvio. Um acervo para vestir a própria identidade.</p><a href="#forgeCategoryModes" class="forge-btn">ESCOLHER MEU ESTILO ↘</a><div class="forge-intro-footnote">ESCOLHA POR CATEGORIA · ENCONTRE SUA PRÓXIMA PEÇA</div></div>
+  <div class="forge-catalog-visual"><img src="imagens/BF-021-01.jpg" alt="Choker Estrela Profana da Black Forge"><span>BF / ALTERNATIVE ARCHIVE 001</span></div>
+</section>
+<section class="forge-mode-section" id="forgeCategoryModes" aria-labelledby="forgeModesTitle">
+  <div class="forge-mode-heading"><div><p class="forge-eyebrow">01 / SEU ESTILO COMEÇA AQUI</p><h2 id="forgeModesTitle">EXPLORE O<br><em>ALTERNATIVO.</em></h2></div><p>Escolha o tipo de peça que combina com você. Toque em uma categoria e descubra só os itens daquele estilo.</p></div>
+  <div class="forge-mode-grid" id="forgeCategoryTiles" role="group" aria-label="Escolher categoria do catálogo alternativo"></div>
+</section>
+<section class="forge-collection-guide" aria-label="Universos da marca"><div><span>BLACK FORGE / UNIVERSOS</span><strong>UMA MARCA. VÁRIAS IDENTIDADES.</strong></div><div class="forge-collection-options"><span class="forge-collection-current" aria-current="true">ALTERNATIVO <small>ATUAL</small></span><a href="anime-district.html">ANIME DISTRICT ↗</a><span class="forge-collection-upcoming">STREETWEAR <small>EM BREVE</small></span><span class="forge-collection-upcoming">OLD MONEY <small>EM BREVE</small></span></div></section>
 <section class="forge-section forge-catalog-list" id="catalogSections" aria-label="Catálogo de produtos">
-  <div class="forge-section-top"><div><p class="forge-eyebrow">01 / ENCONTRE SUA PRÓXIMA PEÇA</p><h2>ESCOLHA <em>SEM LIMITES.</em></h2></div><span class="forge-count" id="bfProductCount"></span></div>
-  <div class="forge-catalog-controls"><div class="forge-chips" id="categoryNav" aria-label="Filtrar por categoria"></div><div class="forge-filter-row"><label class="forge-search"><span class="forge-sr">Pesquisar produtos</span><input id="catalogSearch" type="search" placeholder="PESQUISAR PEÇA, CATEGORIA OU CÓDIGO..." autocomplete="off"></label><label class="forge-sort"><span>ORDENAR POR</span><select id="catalogSort"><option value="recomendados">RECOMENDADOS</option><option value="menor">MENOR PREÇO</option><option value="maior">MAIOR PREÇO</option><option value="nome">NOME A–Z</option></select></label></div></div>
-  <div class="forge-results-bar"><strong id="catalogCurrent">TODOS OS PRODUTOS</strong><button id="catalogReset" type="button" hidden>LIMPAR FILTROS ×</button></div>
+  <div class="forge-section-top"><div><p class="forge-eyebrow">02 / ENCONTRE SUA PRÓXIMA PEÇA</p><h2>ENCONTRE <em>SUA PEÇA.</em></h2></div><span class="forge-count" id="bfProductCount"></span></div>
+  <div class="forge-catalog-controls"><div class="forge-chips" id="categoryNav" aria-label="Filtrar por categoria"></div><div class="forge-filter-row"><label class="forge-search"><span class="forge-sr">Pesquisar produtos</span><input id="catalogSearch" type="search" placeholder="BUSCAR PEÇA, CATEGORIA OU CÓDIGO..." autocomplete="off"></label><label class="forge-sort"><span>ORDENAR POR</span><select id="catalogSort"><option value="recomendados">RECOMENDADOS</option><option value="menor">MENOR PREÇO</option><option value="maior">MAIOR PREÇO</option><option value="nome">NOME A–Z</option></select></label></div></div>
+  <div class="forge-results-bar"><strong id="catalogCurrent">TODO O ALTERNATIVO</strong><button id="catalogReset" type="button" hidden>LIMPAR FILTROS ×</button></div>
   <div id="catalogGrid" class="forge-product-grid" aria-live="polite"></div>
   <div class="forge-empty" id="catalogEmpty" hidden><h3>NENHUMA PEÇA ENCONTRADA.</h3><p>Tente outro nome, categoria ou código de produto.</p><button type="button" id="catalogClearEmpty">LIMPAR BUSCA ↗</button></div>
   <div class="forge-load-wrap"><button type="button" id="catalogLoadMore" class="forge-load" hidden>VER MAIS PRODUTOS ↓</button><p id="catalogVisibleCount" aria-live="polite"></p></div>
@@ -36,7 +44,7 @@
     <div class="footer-top">
       <a class="brand" href="index.html"><span class="brand-mark">✦</span><span>BLACK<span class="brand-light">FORGE</span><small>DARKWEAR &amp; STREETWEAR</small></span></a>
       <p>MODA ALTERNATIVA.<br>SEU ESTILO, SEM PADRÕES.</p>
-      <div><a href="index.html">INÍCIO ↗</a><a href="produtos.html">PRODUTOS ↗</a><a href="index.html#duvidas">DÚVIDAS ↗</a></div>
+      <div><a href="index.html">INÍCIO ↗</a><a href="produtos.html">ALTERNATIVO ↗</a><a href="index.html#duvidas">DÚVIDAS ↗</a></div>
     </div>
     <div class="footer-bottom"><span>© 2026 BLACK FORGE</span><span>ESTILO SEM REGRAS / PAGAMENTO SEGURO</span><a href="#topo">VOLTAR AO TOPO ↑</a></div>
   <nav class="forge-footer-links" aria-label="Informações e políticas da loja"><a href="politica-entrega.html">ENTREGA E FRETE</a><a href="trocas-devolucoes.html">TROCAS E DEVOLUÇÕES</a><a href="termos-de-compra.html">TERMOS DE COMPRA</a><a href="politica-privacidade.html">PRIVACIDADE</a><a href="mailto:blackforge.oficial@gmail.com">CONTATO</a></nav></footer>
@@ -47,7 +55,7 @@
   <script src="./variacoes.js"></script>
   <script src="./navbar-menu.js"></script>
   <script src="./bf-featured.js"></script>
-  <script src="./render_catalogo.js"></script>
+  <script src="./render_catalogo.js?v=20261107-fix2"></script>
   <script src="./selecao.js"></script>
   <script src="./carrinho.js"></script>
 </body>

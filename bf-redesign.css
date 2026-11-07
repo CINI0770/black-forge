@@ -367,3 +367,39 @@ body.bf-v2{--bg:#e7ddc9;--fg:#171513;--panel:#f4efe5;--muted:#665c4f;--line:#c8b
 .bf-v2-anime .bf-anime-cart-link span{display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#e7ddc9;color:#171513}
 @media(max-width:1120px){.bf-v2-anime .bf-site-balance{justify-self:auto}}
 @media(max-width:760px){.bf-v2-anime .bf-site-balance{margin:9px 5% 7px}.bf-v2-anime .bf-anime-cart-link{font-size:9px;padding:8px 10px}}
+
+/* ALTERNATIVO / CATEGORY ARCHIVE — edição 2026-11-07. Visual distinto do Anime District. */
+.bf-v2-catalog .forge-catalog-intro{background:#eee5d7}
+.bf-v2-catalog .forge-catalog-visual{background:radial-gradient(circle at 55% 40%,#cfbda9,#97826c)}
+.bf-v2-catalog .forge-catalog-intro .forge-intro-footnote{font-size:9px;font-weight:800;letter-spacing:.16em;color:#7d6d5c;margin-top:25px}
+.bf-v2-catalog .forge-catalog-intro h1{font-size:clamp(62px,7vw,110px);line-height:.88;overflow-wrap:anywhere}
+.bf-v2-catalog .forge-mode-section{padding:clamp(45px,5vw,80px) 5%;background:#292622;color:#f4efe5}
+.bf-v2-catalog .forge-mode-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:26px;border-bottom:1px solid #807365;padding-bottom:25px}
+.bf-v2-catalog .forge-mode-heading .forge-eyebrow{color:#ccad94}
+.bf-v2-catalog .forge-mode-heading h2{margin:0;font:900 clamp(52px,6vw,100px)/.86 'Barlow Condensed',Impact,'Arial Narrow',sans-serif;letter-spacing:-.04em;color:#f6ecdc}
+.bf-v2-catalog .forge-mode-heading h2 em{font-style:normal;color:#c8af90}
+.bf-v2-catalog .forge-mode-heading>p{max-width:340px;color:#d1c3b3;font-size:13px;line-height:1.7}
+.bf-v2-catalog .forge-mode-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.bf-v2-catalog .forge-mode-card{border:1px solid #817467;background:#eee5d6;color:#211d1a;min-height:192px;padding:17px 16px;text-align:left;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;cursor:pointer;transition:background .2s,transform .2s,border-color .2s}
+.bf-v2-catalog .forge-mode-card::after{content:'';position:absolute;right:-32px;bottom:-60px;width:140px;height:140px;border:1px solid #d4c3ad;transform:rotate(37deg);pointer-events:none}
+.bf-v2-catalog .forge-mode-numeral{font:900 16px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.09em;color:#a27467}
+.bf-v2-catalog .forge-mode-copy{display:flex;flex-direction:column;align-items:flex-start;gap:10px;position:relative;z-index:1}
+.bf-v2-catalog .forge-mode-subtitle{font-size:8px;font-weight:800;letter-spacing:.1em;color:#827162}
+.bf-v2-catalog .forge-mode-copy strong{font:900 clamp(20px,2.2vw,31px)/.98 'Barlow Condensed',Impact,sans-serif;letter-spacing:-.005em;text-transform:uppercase;color:#1e1a17;overflow-wrap:anywhere}
+.bf-v2-catalog .forge-mode-copy small{font-size:9px;font-weight:800;letter-spacing:.09em;color:#635448}
+.bf-v2-catalog .forge-mode-card:hover,.bf-v2-catalog .forge-mode-card.selected{background:#bfa991;border-color:#f7ede1;transform:translateY(-3px)}
+.bf-v2-catalog .forge-mode-card:focus-visible{outline:3px solid #dfb89a;outline-offset:3px}
+.bf-v2-catalog .forge-collection-guide{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:#dacbb5;padding:26px 5%;border-bottom:1px solid #b7a791}
+.bf-v2-catalog .forge-collection-guide>div:first-child{display:grid;gap:6px}
+.bf-v2-catalog .forge-collection-guide>div:first-child span{font-size:9px;color:#8f544b;letter-spacing:.15em;font-weight:900}
+.bf-v2-catalog .forge-collection-guide>div:first-child strong{font:900 23px 'Barlow Condensed',Impact,sans-serif;color:#25221e;letter-spacing:.02em}
+.bf-v2-catalog .forge-collection-options{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.bf-v2-catalog .forge-collection-options>a,.bf-v2-catalog .forge-collection-options>span{font-size:10px;font-weight:900;letter-spacing:.04em;color:#292622;padding:11px 12px;border:1px solid #ab997f;background:#f4eadc;display:inline-flex;align-items:center;gap:7px}
+.bf-v2-catalog .forge-collection-options>.forge-collection-current{background:#292622;color:#fff;border-color:#292622}
+.bf-v2-catalog .forge-collection-options>.forge-collection-upcoming{opacity:.58;cursor:default}
+.bf-v2-catalog .forge-collection-options small{font-size:8px;font-weight:800;letter-spacing:.05em}
+.bf-v2-catalog .forge-collection-options>a:hover{background:#b19b83}
+.bf-v2-catalog .forge-catalog-list{scroll-margin-top:40px}
+@media(max-width:1000px){.bf-v2-catalog .forge-mode-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.bf-v2-catalog .forge-mode-heading h2{font-size:clamp(48px,7vw,76px)}}
+@media(max-width:760px){.bf-v2-catalog .forge-mode-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bf-v2-catalog .forge-mode-heading{display:block}.bf-v2-catalog .forge-mode-heading>p{margin-top:20px}.bf-v2-catalog .forge-mode-card{min-height:166px;padding:14px}.bf-v2-catalog .forge-mode-copy strong{font-size:clamp(21px,4.5vw,30px)}.bf-v2-catalog .forge-collection-guide{align-items:start}}
+@media(max-width:420px){.bf-v2-catalog .forge-mode-grid{gap:8px}.bf-v2-catalog .forge-mode-card{min-height:160px;padding:11px}.bf-v2-catalog .forge-mode-copy strong{font-size:22px}.bf-v2-catalog .forge-mode-subtitle{font-size:7px}.bf-v2-catalog .forge-collection-guide>div:first-child strong{font-size:20px}.bf-v2-catalog .forge-collection-options>a,.bf-v2-catalog .forge-collection-options>span{font-size:9px;padding:9px}}

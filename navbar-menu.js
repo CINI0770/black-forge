@@ -72,7 +72,7 @@
   <nav class="nav" aria-label="Navegação principal">
     <a href="index.html">INÍCIO</a>
     
-    <a href="produtos.html">PRODUTOS</a>
+    <a href="produtos.html">ALTERNATIVO</a>
     <a href="anime-district.html">ANIME DISTRICT</a>
     <a href="index.html#sobre">SOBRE A BLACK FORGE</a>
   </nav>
@@ -90,7 +90,7 @@
 <div id="searchPanel" class="search-panel" hidden>
   <label for="searchInput">ENCONTRE SUA PRÓXIMA PEÇA</label>
   <div class="search-row">
-    <input id="searchInput" type="search" placeholder="Buscar roupas, acessórios, calçados..." autocomplete="off">
+    <input id="searchInput" type="search" placeholder="Buscar peças alternativas..." autocomplete="off">
     <button id="searchClose" type="button" aria-label="Fechar busca">✕</button>
   </div>
 </div>

@@ -3,13 +3,29 @@
   'use strict';
   const visual=window.BFStoreVisual;
   const $=s=>document.querySelector(s);
-  const grid=$('#catalogGrid'),chips=$('#categoryNav'),search=$('#catalogSearch'),sort=$('#catalogSort');
+  const grid=$('#catalogGrid'),chips=$('#categoryNav'),tiles=$('#forgeCategoryTiles'),search=$('#catalogSearch'),sort=$('#catalogSort');
   const more=$('#catalogLoadMore'),empty=$('#catalogEmpty'),reset=$('#catalogReset');
   const dialog=$('#catalogDialog'),dialogContent=$('#catalogDialogContent');
   if(!grid||!visual)return;
   const {items,available,normal,money,el,card,sorted,productUrl}=visual;
   const published=items.filter(p=>available(p)&&p.category!=='PROMOÇÕES'&&p.collection!=='anime-district');
-  const categories=[...new Set(published.map(p=>p.category))].sort((a,b)=>a.localeCompare(b,'pt-BR'));
+  const categoryOrder=['CAMISETAS E CAMISAS','MOLETONS E CASACOS','CALÇAS E SAIAS','CALÇADOS','COLARES','ANÉIS E PULSEIRAS','CINTOS E ACESSÓRIOS','VESTIDOS','CINTOS','ACESSÓRIOS'];
+  const categories=[...new Set(published.map(p=>p.category))].sort((a,b)=>{
+    const ia=categoryOrder.indexOf(a),ib=categoryOrder.indexOf(b);
+    return (ia<0?100:ia)-(ib<0?100:ib)||a.localeCompare(b,'pt-BR');
+  });
+  const modeMeta={
+    'CAMISETAS E CAMISAS':['CAMISETAS','CAMADAS COM PERSONALIDADE'],
+    'MOLETONS E CASACOS':['MOLETONS & CASACOS','CONFORTO FORA DO PADRÃO'],
+    'CALÇAS E SAIAS':['CALÇAS & SAIAS','SILHUETAS SEM REGRAS'],
+    'CALÇADOS':['CALÇADOS','PASSOS QUE MARCAM'],
+    'COLARES':['COLARES','DETALHES DE ATITUDE'],
+    'ANÉIS E PULSEIRAS':['ANÉIS & PULSEIRAS','IDENTIDADE EM CADA DETALHE'],
+    'CINTOS E ACESSÓRIOS':['CINTOS & ACESSÓRIOS','PARA FECHAR O LOOK'],
+    'VESTIDOS':['VESTIDOS','AUTENTICIDADE SEM MEDO'],
+    'CINTOS':['CINTOS','DETALHES QUE TRANSFORMAM'],
+    'ACESSÓRIOS':['ACESSÓRIOS','O TOQUE FINAL']
+  };
   const url=new URLSearchParams(location.search);
   let category=categories.includes(url.get('categoria'))?url.get('categoria'):'Todas';
   let visible=24;
@@ -23,13 +39,26 @@
     if(sort.value==='recomendados')u.searchParams.delete('ordem');else u.searchParams.set('ordem',sort.value);
     if(location.protocol==='http:'||location.protocol==='https:')history.replaceState(null,'',u.pathname+u.search+u.hash);
   }
+  function choose(name,goToResults=false){
+    category=name;visible=24;controls();render();syncUrl();
+    if(goToResults) $('#catalogSections')?.scrollIntoView({behavior:'smooth',block:'start'});
+  }
   function controls(){
     chips.replaceChildren();
-    for(const name of ['Todas',...categories]){
+    tiles?.replaceChildren();
+    for(const [i,name] of ['Todas',...categories].entries()){
       const count=name==='Todas'?published.length:published.filter(p=>p.category===name).length;
       const b=el('button','forge-chip'+(category===name?' active':''),`${name==='Todas'?'TODOS':name} · ${count}`);
       b.type='button';b.setAttribute('aria-pressed',String(category===name));
-      b.addEventListener('click',()=>{category=name;visible=24;controls();render();syncUrl();});chips.append(b);
+      b.addEventListener('click',()=>choose(name));chips.append(b);
+      if(name==='Todas')continue;
+      const [short,subtitle]=modeMeta[name]||[name,'ALTERNATIVO / BLACK FORGE'];
+      const tile=el('button','forge-mode-card'+(category===name?' selected':''));
+      tile.type='button';tile.setAttribute('aria-pressed',String(category===name));
+      tile.setAttribute('aria-label',`Ver ${count} peças de ${short}`);
+      tile.append(el('span','forge-mode-numeral',String(i).padStart(2,'0')));
+      const inner=el('span','forge-mode-copy');inner.append(el('span','forge-mode-subtitle',subtitle),el('strong','',short),el('small','',`${count} ${count===1?'PEÇA':'PEÇAS'} · VER COLEÇÃO ↗`));
+      tile.append(inner);tile.addEventListener('click',()=>choose(name,true));tiles?.append(tile);
     }
   }
   function filtered(){
@@ -44,7 +73,7 @@
   function render(){
     const result=filtered(),part=result.slice(0,visible);
     grid.replaceChildren(...part.map(p=>card(p)));
-    $('#catalogCurrent').textContent=category==='Todas'?'TODOS OS PRODUTOS':category;
+    $('#catalogCurrent').textContent=category==='Todas'?'TODO O ALTERNATIVO':(modeMeta[category]?.[0]||category);
     $('#catalogVisibleCount').textContent=`${part.length} DE ${result.length} PRODUTOS EXIBIDOS`;
     more.hidden=part.length>=result.length;empty.hidden=result.length>0;
     reset.hidden=category==='Todas'&&!search.value.trim()&&sort.value==='recomendados';

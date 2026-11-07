@@ -11,6 +11,7 @@
   let configuration = {active:false,discount:30,startDate:null,endDate:null,
     couponRequired:false,stackable:false};
   let serverVerified = false;
+  const element = (tag, cls, content) => { const node=document.createElement(tag); if(cls)node.className=cls; if(content!==undefined)node.textContent=String(content); return node; };
   const money = cents => (cents / 100).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
   const cents = price => Math.round(Number(price) * 100);
   const promotionalCents = value => Math.round(value * (100 - configuration.discount) / 100);
