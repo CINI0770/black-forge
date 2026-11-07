@@ -42,14 +42,14 @@ function cartProblems(selected) {
 function render() {
   const selected = read(), container = $("orderItems");
   container.replaceChildren();
-  let quantity = 0, total = 0;
+  let quantity = 0, totalCents = 0;
   for (const product of catalog) {
     const group = selected[product.id];
     if (!group) continue;
     group.items.forEach((item, index) => {
       const validation = rules.validate(product, item);
       quantity += item.qty;
-      if (validation.valid) total += item.qty * validation.unitPrice;
+      if (validation.valid) totalCents += item.qty * Math.round(validation.unitPrice * 100);
       const row = document.createElement("div");
       row.className = "order-item";
       const info = document.createElement("div");
@@ -111,8 +111,8 @@ function render() {
   }
   if (!quantity) container.textContent = "Nenhum produto selecionado.";
   $("orderQty").textContent = quantity;
-  $("orderSubtotal").textContent = money(total);
-  updateQuote(selected, total);
+  $("orderSubtotal").textContent = money(totalCents / 100);
+  updateQuote(selected, totalCents);
   const problems = cartProblems(selected);
   $("payButton").disabled = !quantity || problems.length > 0;
   const status = $("checkoutStatus");
@@ -128,19 +128,32 @@ function couponFeedback(message, error = false) {
   $("orderCouponMessage").textContent = message;
   $("orderCouponMessage").dataset.error = String(error);
 }
-function updateQuote(cart, subtotal) {
-  const friday=window.BFBlackFriday?.active()===true;
+function previewSavingsCents(cart, subtotalCents, friday, code) {
+  if (friday) {
+    return catalog.reduce((sum, product) => sum + (cart[product.id]?.items || [])
+      .reduce((itemSum, item) => {
+        const validation = rules.validate(product, item);
+        if (!validation.valid) return itemSum;
+        const unitCents = Math.round(validation.unitPrice * 100);
+        return itemSum + (unitCents - window.BFBlackFriday.previewUnitCents(unitCents)) * item.qty;
+      }, 0), 0);
+  }
+  return code === "BLACK5" && promo.active() ? Math.round(subtotalCents * 5 / 100) : 0;
+}
+function updateQuote(cart, subtotalCents) {
+  const friday = window.BFBlackFriday?.active() === true;
   const code = friday ? "" : promo.get();
   if (document.activeElement !== $("orderCouponInput")) $("orderCouponInput").value = code;
   $("orderCouponRemove").hidden = !code;
   const items = promo.extractCart(cart);
-  const cents = Math.round(subtotal * 100);
-  const discount = code === "BLACK5" && promo.active() ? Math.round(cents * 0.05) : 0;
+  const discountCents = previewSavingsCents(cart, subtotalCents, friday, code);
+  const partialCents = Math.max(0, subtotalCents - discountCents);
   $("orderCouponRow").hidden = !code && !friday;
-  $("orderDiscountLabel").textContent=friday?'BLACK FRIDAY ('+window.BFBlackFriday.config.discount+'% OFF)':'CUPOM '+code;
-  $("orderDiscount").textContent = friday ? 'Calculando' : "−" + money(discount/100);
-  $("orderShipping").textContent = !friday && discount ? "GRÁTIS (a confirmar)" : "A calcular";
-  $("orderTotal").textContent = "Confirmando total…";
+  $("orderDiscountLabel").textContent = friday
+    ? `BLACK FRIDAY (${window.BFBlackFriday.config.discount}% OFF)` : `CUPOM ${code}`;
+  $("orderDiscount").textContent = "−" + money(discountCents / 100);
+  $("orderShipping").textContent = !friday && discountCents ? "GRÁTIS (a confirmar)" : "A calcular";
+  $("orderTotal").textContent = subtotalCents ? money(partialCents / 100) + " + frete" : "Revise os itens";
   const version = ++quoteCounter;
   if (!items.length || cartProblems(cart).length) {
     $("orderTotal").textContent = "Revise os itens";
@@ -148,19 +161,24 @@ function updateQuote(cart, subtotal) {
   }
   promo.quote(items, code).then(data => {
     if (version !== quoteCounter) return;
+    if (!Number.isSafeInteger(data.total_cents) || !Number.isSafeInteger(data.discount_cents) ||
+        !Number.isSafeInteger(data.shipping_cents)) throw Error("Cotação inválida do servidor.");
     $("orderCouponRow").hidden = !data.coupon && !data.campaign;
-    $("orderDiscountLabel").textContent = data.campaign?'BLACK FRIDAY ('+data.percent_off+'% OFF)':'CUPOM '+data.coupon;
-    $("orderDiscount").textContent = "−" + money(data.discount_cents/100);
-    $("orderShipping").textContent = data.shipping_cents === 0 ? "GRÁTIS" : money(data.shipping_cents/100);
-    $("orderTotal").textContent = money(data.total_cents/100);
-    if (data.coupon) couponFeedback("Cupom " + data.coupon + " confirmado no servidor.");
+    $("orderDiscountLabel").textContent = data.campaign
+      ? `BLACK FRIDAY (${data.percent_off}% OFF)` : `CUPOM ${data.coupon}`;
+    $("orderDiscount").textContent = "−" + money(data.discount_cents / 100);
+    $("orderShipping").textContent = data.shipping_cents === 0 ? "GRÁTIS" : money(data.shipping_cents / 100);
+    $("orderTotal").textContent = money(data.total_cents / 100);
+    couponFeedback(data.coupon ? "Cupom " + data.coupon + " confirmado no servidor." : "Valor final confirmado pelo servidor.");
   }).catch(err => {
     if (version !== quoteCounter) return;
-    $("orderTotal").textContent = "A confirmar";
     $("orderShipping").textContent = "A confirmar";
-    couponFeedback(err.message, true);
+    // Mantém a previsão matemática correta, sem confundi-la com preço final.
+    $("orderTotal").textContent = money(partialCents / 100) + " + frete (estimado)";
+    couponFeedback("O valor acima é uma estimativa sem frete, não uma cotação confirmada. " + err.message, true);
   });
 }
+
 $("orderCouponApply").addEventListener("click", async () => {
   const code = $("orderCouponInput").value.trim().toUpperCase();
   if (!code) { couponFeedback("Digite um código de cupom.", true); return; }

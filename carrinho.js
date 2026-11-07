@@ -25,7 +25,7 @@
 				</div>
 				<div id="cartItems" class="cart-items"></div>
 				<div class="drawer-foot">
-					<div class="subtotal"><span>SUBTOTAL</span><strong id="cartSubtotal">R$ 0,00</strong></div>
+					<div class="subtotal"><span>SUBTOTAL ANTES DO DESCONTO</span><strong id="cartSubtotal">R$ 0,00</strong></div>
 					<label for="cartCouponInput" class="bf-coupon-field-label">CÓDIGO DO CUPOM</label>
 					<div class="bf-coupon-form"><input id="cartCouponInput" placeholder="BLACK5" maxlength="40" autocomplete="off"><button id="cartCouponApply" type="button">APLICAR CUPOM</button><button id="cartCouponRemove" type="button" class="bf-coupon-clear" hidden>REMOVER</button></div>
 					<p id="cartCouponMessage" class="bf-coupon-message" role="status" aria-live="polite"></p>
@@ -85,7 +85,7 @@
 		container.replaceChildren();
 
 		let count = 0;
-		let subtotal = 0;
+		let subtotalCents = 0;
 		let invalidCount = 0;
 
 		for (const product of products) {
@@ -95,7 +95,7 @@
 			group.items.forEach((item, index) => {
 				count += item.qty;
 				const validation = optionRules.validate(product, item);
-				if (validation.valid) subtotal += validation.unitPrice * item.qty;
+				if (validation.valid) subtotalCents += Math.round(validation.unitPrice * 100) * item.qty;
 				else invalidCount++;
 
 				const row = el("div", "cart-item");
@@ -157,8 +157,8 @@
 		const contador = $("#cartCount");
 		if (contador) contador.textContent = count;
 		$("#drawerCount").textContent = `(${count})`;
-		$("#cartSubtotal").textContent = invalidCount ? money(subtotal) + " + itens para revisar" : money(subtotal);
-		updateTotals(cart, subtotal, invalidCount);
+		$("#cartSubtotal").textContent = invalidCount ? money(subtotalCents / 100) + " + itens para revisar" : money(subtotalCents / 100);
+		updateTotals(cart, subtotalCents, invalidCount);
 		const checkout = $("#cartDrawer .checkout");
 		if (checkout) checkout.textContent = invalidCount ? "REVISAR PEDIDO ↗" : "FINALIZAR COMPRA ↗";
 	}
@@ -169,41 +169,63 @@
 		status.textContent = message;
 		status.dataset.error = String(error);
 	}
-	function updateTotals(cart, subtotal, invalidCount) {
+	// Calcula cada unidade em centavos, com o mesmo arredondamento do preço
+	// anunciado na etiqueta promocional. A cotação do servidor continua sendo
+	// a única fonte autorizada para o valor cobrado no checkout.
+	function estimatedDiscountCents(cart, subtotalCents, friday, code) {
+		if (friday) {
+			return products.reduce((sum, product) => sum + (cart[product.id]?.items || [])
+				.reduce((itemSum, item) => {
+					const validation = optionRules.validate(product, item);
+					if (!validation.valid) return itemSum;
+					const unitCents = Math.round(validation.unitPrice * 100);
+					const discountUnitCents = unitCents - window.BFBlackFriday.previewUnitCents(unitCents);
+					return itemSum + discountUnitCents * item.qty;
+				}, 0), 0);
+		}
+		return code === "BLACK5" && promo.active() ? Math.round(subtotalCents * 5 / 100) : 0;
+	}
+
+	function updateTotals(cart, subtotalCents, invalidCount) {
 		const friday = window.BFBlackFriday?.active() === true;
 		const code = friday ? "" : (promo?.get() || "");
 		const input = $("#cartCouponInput");
 		if (input && document.activeElement !== input) input.value = code;
 		$("#cartCouponRemove").hidden = !code;
-		const subtotalCents = Math.round(subtotal * 100);
-		const estimatedFridaySavings = friday ? products.reduce((sum,product) => (cart[product.id]?.items||[]).reduce((s,item)=>{
-			const validation=optionRules.validate(product,item);
-			const unitCents=Math.round(validation.unitPrice*100);
-			return s+(validation.valid ? (unitCents-window.BFBlackFriday.previewUnitCents(unitCents))*item.qty : 0);
-		},sum),0) : 0;
-		const estimateCents = friday ? estimatedFridaySavings : (code === "BLACK5" && promo.active() ? Math.round(subtotalCents * 5 / 100) : 0);
+		const discountCents = estimatedDiscountCents(cart, subtotalCents, friday, code);
+		const partialCents = Math.max(0, subtotalCents - discountCents);
+		const totalLabel = $("#cartTotals .bf-coupon-total span");
 		$("#cartDiscountRow").hidden = !code && !friday;
-		$("#cartDiscountLabel").textContent=friday?'BLACK FRIDAY ('+window.BFBlackFriday.config.discount+'% OFF)':'CUPOM '+code+' (5%)';
-		$("#cartCouponCode").textContent = code;
-		$("#cartDiscount").textContent = "−" + money(estimateCents/100);
-		$("#cartShipping").textContent = !friday && estimateCents ? "GRÁTIS (a confirmar)" : "A calcular";
-		$("#cartTotal").textContent = invalidCount || !subtotalCents ? "Revise seu carrinho" : "Confirmando total…";
+		$("#cartDiscountLabel").textContent = friday
+			? `BLACK FRIDAY (${window.BFBlackFriday.config.discount}% OFF)` : `CUPOM ${code} (5%)`;
+		$("#cartDiscount").textContent = "−" + money(discountCents / 100);
+		$("#cartShipping").textContent = !friday && discountCents ? "GRÁTIS (a confirmar)" : "A calcular";
+		totalLabel.textContent = "TOTAL PARCIAL (SEM FRETE)";
+		$("#cartTotal").textContent = invalidCount || !subtotalCents
+			? "Revise seu carrinho" : money(partialCents / 100);
 		if (invalidCount || !subtotalCents) { ++activeQuote; return; }
+
+		// Enquanto a cotação carrega, mantém o valor parcial consistente com a
+		// etiqueta do produto. Frete e valor final só são confirmados pelo backend.
 		const version = ++activeQuote;
 		promo.quote(promo.extractCart(cart), code).then(summary => {
 			if (version !== activeQuote) return;
-			$("#cartCouponCode").textContent = summary.coupon || "";
+			if (!Number.isSafeInteger(summary.total_cents) || !Number.isSafeInteger(summary.discount_cents) ||
+				!Number.isSafeInteger(summary.shipping_cents)) throw Error("Cotação inválida do servidor.");
 			$("#cartDiscountRow").hidden = !summary.coupon && !summary.campaign;
-			$("#cartDiscountLabel").textContent=summary.campaign?'BLACK FRIDAY ('+summary.percent_off+'% OFF)':'CUPOM '+summary.coupon+' ('+summary.percent_off+'%)';
-			$("#cartDiscount").textContent = "−" + money(summary.discount_cents/100);
-			$("#cartShipping").textContent = summary.shipping_cents === 0 ? "GRÁTIS" : money(summary.shipping_cents/100);
-			$("#cartTotal").textContent = money(summary.total_cents/100);
-			if (summary.coupon) feedback("Cupom " + summary.coupon + " aplicado: desconto e frete grátis confirmados.");
+			$("#cartDiscountLabel").textContent = summary.campaign
+				? `BLACK FRIDAY (${summary.percent_off}% OFF)` : `CUPOM ${summary.coupon} (${summary.percent_off}%)`;
+			$("#cartDiscount").textContent = "−" + money(summary.discount_cents / 100);
+			$("#cartShipping").textContent = summary.shipping_cents === 0 ? "GRÁTIS" : money(summary.shipping_cents / 100);
+			$("#cartTotal").textContent = money(summary.total_cents / 100);
+			totalLabel.textContent = "TOTAL CONFIRMADO";
+			feedback(summary.coupon ? "Cupom " + summary.coupon + " aplicado: desconto e frete confirmados."
+				: "Valores confirmados pelo servidor de pagamentos.");
 		}).catch(error => {
 			if (version !== activeQuote) return;
-			$("#cartTotal").textContent = "Confirme no checkout";
+			// Não apaga o valor parcial correto nem finge que o frete é grátis.
 			$("#cartShipping").textContent = "A confirmar";
-			feedback(error.message + " O servidor confirmará os valores antes do pagamento.", true);
+			feedback("Estimativa sem frete. O desconto e o valor final precisam ser confirmados no checkout. " + error.message, true);
 		});
 	}
 

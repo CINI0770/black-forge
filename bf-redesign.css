@@ -403,3 +403,12 @@ body.bf-v2{--bg:#e7ddc9;--fg:#171513;--panel:#f4efe5;--muted:#665c4f;--line:#c8b
 @media(max-width:1000px){.bf-v2-catalog .forge-mode-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.bf-v2-catalog .forge-mode-heading h2{font-size:clamp(48px,7vw,76px)}}
 @media(max-width:760px){.bf-v2-catalog .forge-mode-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bf-v2-catalog .forge-mode-heading{display:block}.bf-v2-catalog .forge-mode-heading>p{margin-top:20px}.bf-v2-catalog .forge-mode-card{min-height:166px;padding:14px}.bf-v2-catalog .forge-mode-copy strong{font-size:clamp(21px,4.5vw,30px)}.bf-v2-catalog .forge-collection-guide{align-items:start}}
 @media(max-width:420px){.bf-v2-catalog .forge-mode-grid{gap:8px}.bf-v2-catalog .forge-mode-card{min-height:160px;padding:11px}.bf-v2-catalog .forge-mode-copy strong{font-size:22px}.bf-v2-catalog .forge-mode-subtitle{font-size:7px}.bf-v2-catalog .forge-collection-guide>div:first-child strong{font-size:20px}.bf-v2-catalog .forge-collection-options>a,.bf-v2-catalog .forge-collection-options>span{font-size:9px;padding:9px}}
+
+/* Correção do resumo do carrinho: preço/total legíveis no tema bege. */
+.bf-v2 .cart-drawer .bf-coupon-totals>div,
+.bf-v2 .cart-drawer .bf-coupon-totals .bf-coupon-total,
+.bf-v2.bf-friday-active .cart-drawer .bf-coupon-totals .bf-coupon-total strong,
+.bf-v2 .cart-drawer :is(#cartShipping,#cartDiscount,#cartTotal,#cartDiscountLabel){color:#29231e!important;opacity:1!important}
+.bf-v2 .cart-drawer .bf-coupon-totals .bf-coupon-total strong{font-size:clamp(15px,3.8vw,21px)!important;line-height:1.4;text-align:right}
+.bf-v2 .cart-drawer .bf-coupon-totals .bf-coupon-total span{font-size:10px;letter-spacing:.07em;line-height:1.4}
+.bf-v2 .cart-drawer .subtotal span{font-size:10px;letter-spacing:.06em;max-width:52%;line-height:1.4}
