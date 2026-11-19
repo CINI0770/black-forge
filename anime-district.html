@@ -1,78 +1,47 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#262720">
-  <meta name="description" content="Anime District por Black Forge: coleção de roupas e acessórios inspirados na cultura anime e no streetwear alternativo.">
-  <title>ANIME DISTRICT | BLACK FORGE</title>
-  <link rel="stylesheet" href="./anime-district.css">
-  <script src="./anime-catalogo.js" defer></script>
-  <script src="./anime-district.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0b">
+  <meta name="robots" content="noindex, follow">
+  <title>Anime District encerrada | BLACK FORGE</title>
+  <meta name="description" content="A linha Anime District foi encerrada e não faz mais parte das coleções ativas da Black Forge. O atendimento a pedidos continua disponível.">
+  <link rel="canonical" href="https://lojablackforge.com.br/produtos.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./black5.css">
-  <script src="./black5.js"></script>
   <link rel="stylesheet" href="./black-friday.css">
+  <link rel="stylesheet" href="./forge.css?v=20261119">
+  <script src="./black5.js"></script>
   <script src="./black-friday.js?v=20261107-fix2"></script>
-  <link rel="stylesheet" href="./bf-redesign.css?v=20261107-fix2">
+  <!-- Os dados da linha (anime-catalogo.js, anime-district.js/css e imagens BF-AN) foram mantidos
+       no repositório para histórico, carrinhos antigos, pedidos e atendimento. -->
+  <script src="./catalogo.js" defer></script>
+  <script src="./anime-catalogo.js" defer></script>
+  <script src="./variacoes.js" defer></script>
+  <script src="./navbar-menu.js" defer></script>
+  <script src="./carrinho.js" defer></script>
+  <script src="./site-footer.js" defer></script>
 </head>
-<body class="bf-v2 bf-v2-anime">
-  <a class="skip" href="#catalogo">Ir para o catálogo</a>
-  <!-- Mesmo padrão visual e ordem de links do cabeçalho principal da Black Forge. -->
-  <div class="bf-black5-topline">ANIME DISTRICT · BLACK FORGE / MODA SEM PADRÕES</div>
-  <header class="bf-site-header">
-    <a class="bf-site-logo" href="index.html" aria-label="Black Forge — Início">
-      <span class="bf-site-symbol" aria-hidden="true">✦</span>
-      <span class="bf-site-wordmark">BLACK<span>FORGE</span><small>DARKWEAR &amp; STREETWEAR</small></span>
-    </a>
-    <nav class="bf-site-navigation" aria-label="Menu principal">
-      <a href="index.html">INÍCIO</a>
-      
-      <a href="produtos.html">ALTERNATIVO</a>
-      <a href="anime-district.html" aria-current="page">ANIME DISTRICT</a>
-      <a href="index.html#sobre">SOBRE A MARCA</a>
-    </nav>
-    <div class="bf-site-balance"><a class="bf-anime-cart-link" href="pedido.html" aria-label="Ver carrinho">CARRINHO <span id="animeCartCount">0</span> ↗</a></div>
-  </header>
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy"><div class="overline"><span class="bullet"></span> BF / SPECIAL COLLECTION — 2026</div>
-        <div class="edition">日本文化 / MANGÁ / MODA ALTERNATIVA</div>
-        <h1 id="hero-title">ANIME<br><span>DISTRICT</span><i>.</i></h1>
-        <p>Moda alternativa com alma japonesa. Um distrito de camisetas, figuras, canetas, mousepads e colecionáveis, criado para quem vive a cultura anime.</p>
-        <a class="primary" href="#catalogo">EXPLORAR CATEGORIAS <span aria-hidden="true">↘</span></a>
-        <div class="hero-bottom"><span>01 / NEW WORLD</span><span>JAPANESE STYLE / BLACK FORGE</span></div>
-      </div>
-      <div class="hero-art" aria-hidden="true"><div class="art-ring"></div><div class="art-ring art-ring-2"></div><span class="art-jp">アニメ<br>地区</span><div class="art-caption">黒・桜・魂<br>BLACK FORGE / ANIME DISTRICT</div><div class="art-corner">✳</div></div>
-    </section>
-    <div class="marquee" aria-label="Moda alternativa e cultura anime"><div>✳ ANIME DISTRICT &nbsp; ✳ 京都・東京 / JAPAN STREET CULTURE &nbsp; ✳ BLACK FORGE &nbsp; ✳ ANIME DISTRICT &nbsp; ✳ 京都・東京 / JAPAN STREET CULTURE &nbsp; ✳ BLACK FORGE &nbsp;</div></div>
-    <section class="section intro" aria-labelledby="intro-title"><div class="section-kicker"><span>01 / OS UNIVERSOS</span><span>CATEGORIAS DO DISTRITO</span></div><div class="intro-heading"><h2 id="intro-title">ESCOLHA SEU<br><em>UNIVERSO.</em></h2><p>Encontre cada produto no seu lugar: camisetas, moletons, canetas, mousepads, colecionáveis e muito mais.</p></div><div class="category-tiles" id="categoryTiles" aria-label="Selecionar categoria"></div></section>
-    <section class="section products-section" id="catalogo" aria-labelledby="catalogTitle"><div class="section-kicker"><span>02 / ANIME DISTRICT</span><span id="stockSummary">COLEÇÃO EM PREPARAÇÃO</span></div><div class="products-heading"><div><p class="overline">BLACK FORGE / EXCLUSIVE COLLECTION</p><h2 id="catalogTitle">A NOVA<br><em>SELEÇÃO.</em></h2></div><p>Explore a coleção por categoria. Escolha uma categoria, pesquise seu anime e abra o produto para comprar com segurança.</p></div>
-      <div class="filters" aria-label="Filtros do catálogo">
-        <div id="filterChips" class="chips" role="group" aria-label="Filtrar por categoria"></div>
-        <div class="filter-tools">
-          <label class="search"><span class="sr-only">Pesquisar produtos</span><input type="search" id="animeSearch" placeholder="BUSCAR PEÇA, PERSONAGEM OU ANIME..." autocomplete="off"><span aria-hidden="true">⌕</span></label>
-          <label class="filter-select"><span class="sr-only">Filtrar anime</span><select id="animeSeriesFilter" aria-label="Filtrar por anime"><option value="">TODOS OS ANIMES</option></select></label>
-          <label class="filter-select"><span class="sr-only">Ordenar produtos</span><select id="animeSort" aria-label="Ordenar produtos"><option value="padrao">ORDEM DO CATÁLOGO</option><option value="menor">MENOR PREÇO</option><option value="maior">MAIOR PREÇO</option><option value="nome">NOME A–Z</option></select></label>
-        </div>
-      </div>
-      <div class="catalog-current"><div><span class="catalog-jp">商品一覧 / LISTA DE PRODUTOS</span><h3 id="currentCategory" aria-live="polite">TODOS OS PRODUTOS</h3></div><button type="button" id="resetAnimeFilters" class="clear-filters" hidden>LIMPAR FILTROS ×</button></div>
-      <div id="previewNotice" class="preview-note" hidden>PRÉVIA DE ADMINISTRAÇÃO — VISUALIZAÇÃO DE PRODUTOS CADASTRADOS.</div>
-      <div id="animeGrid" class="product-grid" aria-live="polite"></div>
-      <div id="emptyState" class="empty" hidden><span class="empty-mark">✳</span><h3>O PRÓXIMO DROP<br>ESTÁ SENDO PREPARADO.</h3><p>Ainda não há produtos publicados nesta categoria. Em breve, novas peças entram no distrito.</p><a href="produtos.html">EXPLORAR O ALTERNATIVO ↗</a></div>
-      <div class="load-more-wrap"><button id="animeLoadMore" type="button" class="load-more" hidden>VER MAIS PRODUTOS ↓</button></div>
-      <div class="collection-footer"><span id="visibleCount">00 PRODUTOS PUBLICADOS</span><a href="index.html">VOLTAR PARA BLACK FORGE ↗</a></div>
-    </section>
-    <section class="outro"><p>BLACK FORGE / COLLECTION 001</p><h2>YOUR WORLD.<br><em>YOUR RULES.</em></h2><a href="produtos.html">EXPLORAR O ALTERNATIVO ↗</a></section>
-  </main>
-  <footer><a class="brand" href="index.html"><span class="asterisk">✳</span> BLACK <span>FORGE</span></a><p>ANIME DISTRICT — CULTURA ALTERNATIVA, MODA E IDENTIDADE.</p><div><a href="index.html">INÍCIO</a><a href="produtos.html">ALTERNATIVO</a><a href="anime-district.html">ANIME DISTRICT</a></div><small>© 2026 BLACK FORGE. TODOS OS DIREITOS RESERVADOS.</small><nav class="forge-footer-links" aria-label="Informações e políticas da loja"><a href="politica-entrega.html">ENTREGA E FRETE</a><a href="trocas-devolucoes.html">TROCAS E DEVOLUÇÕES</a><a href="termos-de-compra.html">TERMOS DE COMPRA</a><a href="politica-privacidade.html">PRIVACIDADE</a><a href="mailto:blackforge.oficial@gmail.com">CONTATO</a></nav></footer>
-  <dialog id="productDialog" class="product-dialog" aria-labelledby="dialogTitle"><form method="dialog"><button class="close-modal" aria-label="Fechar detalhes">✕</button></form><div id="dialogContent"></div></dialog>
-<script>
-(function(){
-  const node=document.getElementById('animeCartCount');
-  const update=()=>{
-    try {const cart=JSON.parse(localStorage.getItem('blackforge-selection-v4')||'{}');
-      node.textContent=Object.values(cart).reduce((sum,g)=>sum+(g.items||[]).reduce((s,p)=>s+(Number(p.qty)||0),0),0);
-    } catch {node.textContent='0';}
-  };
-  update();window.addEventListener('storage',update);
-})();
-</script></body></html>
+<body class="fx">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div id="navbar-menu"></div>
+
+<main id="conteudo">
+  <section class="fx-section fx-closed" aria-labelledby="closedTitle">
+    <p class="fx-eyebrow">ANIME DISTRICT / LINHA ENCERRADA</p>
+    <h1 id="closedTitle" class="fx-title">ESTA COLEÇÃO<br><em>FOI ENCERRADA.</em></h1>
+    <p class="fx-closed-text">A Anime District não faz mais parte das coleções ativas da Black Forge. Se você tem um pedido dessa linha, precisa de troca, devolução ou qualquer informação, nosso atendimento continua disponível.</p>
+    <div class="fx-actions">
+      <a class="fx-btn" href="produtos.html">VER O CATÁLOGO BLACK FORGE <span aria-hidden="true">→</span></a>
+      <a class="fx-btn fx-btn-ghost" href="https://wa.me/5549991729078" rel="noopener noreferrer" target="_blank">FALAR NO WHATSAPP</a>
+    </div>
+    <p class="fx-closed-note">E-mail: <a href="mailto:blackforge.oficial@gmail.com">blackforge.oficial@gmail.com</a> · <a href="trocas-devolucoes.html">Trocas e devoluções</a></p>
+  </section>
+</main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

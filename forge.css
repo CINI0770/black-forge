@@ -384,3 +384,9 @@ body.fx.order-punk{--bf-red:#4a443d;--bf-paper:#e9e4da}
 @media (prefers-reduced-motion:reduce){
   .fx *,.fx *:before,.fx *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+/* ---------- 14. Aviso de coleção encerrada (anime-district.html) ---------- */
+.fx-closed{min-height:60vh;display:flex;flex-direction:column;justify-content:center;max-width:980px}
+.fx-closed-text{max-width:560px;margin:28px 0 0;color:var(--fx-stone);font-size:17px;line-height:1.75}
+.fx-closed-note{margin:28px 0 0;color:var(--fx-mute);font-size:14px}
+.fx-closed-note a{color:var(--fx-bone);text-decoration:underline;text-underline-offset:3px}
