@@ -17,7 +17,7 @@
   --fx-sand:#cbbfa8;       /* bege de apoio */
   --fx-sand-2:#e4dccd;
   --fx-stone:#9a948a;      /* texto secundário (contraste AA sobre preto) */
-  --fx-mute:#6f6a62;
+  --fx-mute:#857f76;
   --fx-display:'Barlow Condensed',Impact,'Arial Narrow',sans-serif;
   --fx-text:'DM Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
   --fx-pad:clamp(20px,5vw,80px);
@@ -41,7 +41,7 @@ body.fx{margin:0;background:var(--fx-ink);color:var(--fx-bone);font-family:var(-
 .fx-eyebrow{margin:0 0 18px;font:700 11px/1.5 var(--fx-text);letter-spacing:.22em;text-transform:uppercase;color:var(--fx-stone)}
 .fx-display,.fx-title{font-family:var(--fx-display);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;line-height:.86;margin:0}
 .fx-display em,.fx-title em{font-style:normal;color:var(--fx-sand)}
-.fx-title{font-size:clamp(46px,6.2vw,96px)}
+.fx-title{font-size:clamp(40px,6.2vw,96px)}
 .fx-state{grid-column:1/-1;margin:0;padding:40px 0;color:var(--fx-stone);font-size:14px}
 
 /* Botões e links */
@@ -113,6 +113,8 @@ body.fx{margin:0;background:var(--fx-ink);color:var(--fx-bone);font-family:var(-
 .fx .bf-black5-offer{color:var(--fx-sand-2)!important;font:600 12px/1.3 var(--fx-text)}
 .fx .forge-product .bf-black5-base,.fx .forge-product .bf-black5-shipping,.fx .forge-product .bf-black5-variable{display:none}
 .fx .bf-friday-priceblock{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:2px 0 0}
+.fx .forge-product .bf-friday-priceblock{flex-direction:row;justify-content:flex-start;align-self:stretch;width:100%;text-align:left;margin:2px 0 0!important}
+.fx .forge-product .bf-friday-price-note{flex-basis:100%}
 .fx .bf-friday-badge{padding:3px 6px;background:var(--fx-bone)!important;color:var(--fx-ink)!important;border:0!important;font:700 9px/1 var(--fx-text);letter-spacing:.14em}
 .fx .bf-friday-price{color:var(--fx-bone)!important;font:700 15px/1.2 var(--fx-text)!important}
 .fx .bf-friday-price-note,.fx .bf-friday-variable{color:var(--fx-stone)!important;font-size:10px}
@@ -175,7 +177,7 @@ body.fx{margin:0;background:var(--fx-ink);color:var(--fx-bone);font-family:var(-
 
 /* Sobre */
 .fx-about{padding:clamp(90px,12vw,170px) var(--fx-pad);text-align:center;border-bottom:1px solid var(--fx-line)}
-.fx-about .fx-title{font-size:clamp(50px,8vw,124px)}
+.fx-about .fx-title{font-size:clamp(38px,8vw,124px)}
 .fx-about>p:last-child{max-width:560px;margin:30px auto 0;color:var(--fx-stone);font-size:17px;line-height:1.75}
 
 /* Informações de compra */
@@ -380,6 +382,13 @@ body.fx.order-punk{--bf-red:#4a443d;--bf-paper:#e9e4da}
   .fx-collection{padding:18px var(--fx-pad)}
   .fx-footer-top{grid-template-columns:1fr}
   .fx-bt-soon{position:static;display:block;margin-top:40px}
+}
+@media (max-width:380px){
+  .fx-brand-word{font-size:20px}
+  .fx .header-actions{gap:0}
+  .fx .header-actions .icon-btn{width:38px}
+  .fx .cart-trigger{padding:0 4px}
+  .fx .fx-menu-toggle{width:38px}
 }
 @media (prefers-reduced-motion:reduce){
   .fx *,.fx *:before,.fx *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
