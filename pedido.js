@@ -220,7 +220,7 @@ $("checkoutForm").addEventListener("submit", async event => {
     await window.BFBlackFriday?.ready;
     const coupon = promo.get();
     // Pré-validação: o servidor recalcula tudo novamente ao criar o checkout.
-    await promo.quote(items, coupon);
+    const quoteData = await promo.quote(items, coupon);
     const response = await fetch(promo.API + "/api/checkout/preference", {
       method:"POST", headers:{"Content-Type":"application/json"},
       body:JSON.stringify({items, customer, coupon})
@@ -229,6 +229,8 @@ $("checkoutForm").addEventListener("submit", async event => {
     try { data = await response.json(); } catch { throw Error("O servidor de pagamentos não respondeu corretamente."); }
     if (!response.ok) throw Error(data.error || "Não foi possível iniciar o pagamento.");
     if (!/^https:\/\//.test(data.checkout_url || "")) throw Error("Checkout indisponível.");
+    // Meta Pixel: checkout efetivamente iniciado (sessão Stripe criada). Nunca impede o pagamento.
+    try { await window.BFMeta?.initiateCheckout(items, quoteData, data.order_id); } catch {}
     window.location.assign(data.checkout_url);
   } catch (error) {
     status.textContent = error.message;

@@ -38,15 +38,20 @@
     window.fbq('init', META_PIXEL_ID);
     window.fbq('track', 'PageView');
   }
-  // Gancho opcional para eventos futuros, a conectar no carrinho/checkout.
+  // Gancho único para os eventos padrão (usado por meta-eventos.js e retorno.js).
+  // Só envia com consentimento e Pixel carregado. options.eventID deduplica com a API de Conversões.
   // Não enviar CPF, e-mail, telefone, endereço nem detalhes sensíveis aos eventos.
-  window.blackForgeMetaTrack = function(eventName, params = {}) {
+  window.blackForgeMetaTrack = function(eventName, params = {}, options = {}) {
     const allowlist = ['ViewContent','AddToCart','InitiateCheckout','Purchase'];
     if (!allowlist.includes(eventName) || preference !== 'accept' || !pixelLoaded) return false;
     if (typeof window.fbq !== 'function') return false;
-    window.fbq('track', eventName, params);
+    const eventID = typeof options.eventID === 'string' && options.eventID ? options.eventID.slice(0, 120) : null;
+    if (eventID) window.fbq('track', eventName, params, { eventID });
+    else window.fbq('track', eventName, params);
     return true;
   };
+  // Estado do consentimento para outros scripts (ex.: enviar ao servidor no checkout).
+  window.blackForgeMarketingConsent = () => preference;
   function showBanner() {
     let banner = document.getElementById('bf-privacy-banner');
     if (banner) { banner.hidden = false; return; }
@@ -81,6 +86,7 @@
         window.fbq('track', 'PageView');
       } else loadMetaPixel();
     } else if (typeof window.fbq === 'function') window.fbq('consent', 'revoke');
+    document.dispatchEvent(new CustomEvent('bf:marketing-consent', { detail: { value } }));
     // Se o Pixel já tiver sido carregado nesta visita, uma rejeição posterior
     // impede novos eventos via blackForgeMetaTrack. Outras integrações precisam
     // obedecer à mesma preferência separadamente.
@@ -93,6 +99,7 @@
     preference = readChoice();
     if (preference === 'accept') loadMetaPixel();
     if (!preference) showBanner();
+    document.dispatchEvent(new CustomEvent('bf:marketing-ready', { detail: { value: preference } }));
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
