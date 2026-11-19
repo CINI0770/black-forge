@@ -3,63 +3,92 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#050505">
-  <title>BALCKER — Beyond the ordinary. Em breve | BLACK FORGE</title>
-  <meta name="description" content="BALCKER: a nova coleção da Black Forge. Streetwear, Essentials, Old Money e Casual Premium. Something different is coming. Em breve.">
+  <meta name="theme-color" content="#0B0B0B">
+  <title>BALCKER — Beyond the ordinary. 05.12.2026 | BLACK FORGE</title>
+  <meta name="description" content="BALCKER, a nova marca da Black Forge. Streetwear, Essentials, Old Money e Casual Premium. A new era is coming: lançamento em 05/12/2026.">
   <link rel="canonical" href="https://lojablackforge.com.br/balcker.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="BALCKER — Beyond the ordinary.">
-  <meta property="og:description" content="Something different is coming. Em breve.">
+  <meta property="og:site_name" content="BLACK FORGE">
+  <meta property="og:title" content="BALCKER — A new era is coming. 05.12.2026">
+  <meta property="og:description" content="Beyond the ordinary. A nova marca da Black Forge chega em 05/12/2026.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./black5.css">
   <link rel="stylesheet" href="./black-friday.css">
-  <link rel="stylesheet" href="./forge.css?v=20261119">
-  <link rel="stylesheet" href="./balcker.css?v=20261119">
+  <link rel="stylesheet" href="./forge.css?v=20261119b">
+  <link rel="stylesheet" href="./balcker.css?v=20261119b">
   <script src="./black5.js"></script>
   <script src="./black-friday.js?v=20261107-fix2"></script>
   <!-- Catálogo carregado apenas para o carrinho lateral funcionar. Nenhum produto BALCKER é vendido. -->
   <script src="./catalogo.js" defer></script>
   <script src="./anime-catalogo.js" defer></script>
+  <script src="./descontinuados.js" defer></script>
   <script src="./variacoes.js" defer></script>
   <script src="./navbar-menu.js" defer></script>
   <script src="./carrinho.js" defer></script>
   <script src="./site-footer.js" defer></script>
+  <script src="./balcker.js?v=20261119b" defer></script>
 </head>
 <body class="fx bk">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <div id="navbar-menu"></div>
 
 <main id="conteudo">
+  <!-- 01 · ABERTURA -->
   <section class="bk-hero" aria-labelledby="bkTitle">
-    <div class="bk-orbit" aria-hidden="true"><span></span><span></span></div>
+    <div class="bk-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
     <span class="bk-axis bk-axis-v" aria-hidden="true"></span>
     <span class="bk-axis bk-axis-h" aria-hidden="true"></span>
-    <p class="bk-kicker"><span>BLACK FORGE PRESENTS</span><span>PRÉ-LANÇAMENTO</span></p>
-    <h1 id="bkTitle" class="bk-word" aria-label="BALCKER"><span aria-hidden="true">B</span><span aria-hidden="true">A</span><span aria-hidden="true">L</span><span aria-hidden="true">C</span><span aria-hidden="true">K</span><span aria-hidden="true">E</span><span aria-hidden="true">R</span></h1>
+    <span class="bk-corner bk-corner-tl" aria-hidden="true">N° 001</span>
+    <span class="bk-corner bk-corner-tr" aria-hidden="true">BLACK FORGE / BALCKER</span>
+    <span class="bk-corner bk-corner-bl" aria-hidden="true">05 · 12 · 26</span>
+    <span class="bk-corner bk-corner-br" aria-hidden="true">BRASIL</span>
+
+    <p class="bk-kicker">BLACK FORGE PRESENTS</p>
+    <h1 id="bkTitle" class="bk-logo" aria-label="BALCKER"><span aria-hidden="true">B</span><span aria-hidden="true">A</span><span aria-hidden="true">L</span><span aria-hidden="true">C</span><span aria-hidden="true">K</span><span aria-hidden="true">E</span><span aria-hidden="true">R</span></h1>
+    <span class="bk-rule" aria-hidden="true"></span>
     <p class="bk-claim">BEYOND THE ORDINARY.</p>
-    <p class="bk-coming">SOMETHING DIFFERENT IS COMING.</p>
-    <a class="bk-scroll" href="#linhas" aria-label="Conhecer as futuras linhas">
-      <span>EM BREVE</span><i aria-hidden="true"></i>
-    </a>
+    <p class="bk-coming">A NEW ERA IS COMING.</p>
   </section>
 
-  <section class="bk-lines" id="linhas" aria-labelledby="bkLinesTitle">
+  <!-- 02 · DATA E CONTAGEM -->
+  <section class="bk-launch" aria-labelledby="bkDate">
+    <p class="bk-label">LANÇAMENTO OFICIAL</p>
+    <p id="bkDate" class="bk-date"><time datetime="2026-12-05T00:00:00-03:00">05.12.2026</time></p>
+    <div class="bk-countdown" id="bkCountdown" role="timer" aria-labelledby="bkCountdownLabel" hidden>
+      <span id="bkCountdownLabel" class="fx-sr">Contagem regressiva para 5 de dezembro de 2026, 00h00, horário de Brasília.</span>
+      <div class="bk-unit"><span class="bk-num" data-unit="d" aria-hidden="true">00</span><span class="bk-cap">DIAS</span></div>
+      <div class="bk-unit"><span class="bk-num" data-unit="h" aria-hidden="true">00</span><span class="bk-cap">HORAS</span></div>
+      <div class="bk-unit"><span class="bk-num" data-unit="m" aria-hidden="true">00</span><span class="bk-cap">MINUTOS</span></div>
+      <div class="bk-unit"><span class="bk-num" data-unit="s" aria-hidden="true">00</span><span class="bk-cap">SEGUNDOS</span></div>
+      <span class="fx-sr" id="bkCountdownText"></span>
+    </div>
+    <p class="bk-arrived" id="bkArrived" hidden>THE NEW ERA HAS ARRIVED.</p>
+    <p class="bk-tz">00H00 · HORÁRIO DE BRASÍLIA</p>
+    <p class="bk-soon" id="bkSoon">EM BREVE.</p>
+  </section>
+
+  <!-- 03 · AS LINHAS (conceitual, sem produtos) -->
+  <section class="bk-lines" aria-labelledby="bkLinesTitle">
     <div class="bk-lines-head">
       <p class="bk-label">AS LINHAS</p>
-      <h2 id="bkLinesTitle">Quatro caminhos.<br><em>Uma nova assinatura.</em></h2>
+      <h2 id="bkLinesTitle">Quatro expressões.<br><em>Uma nova assinatura.</em></h2>
     </div>
-    <ol class="bk-list">
-      <li><span class="bk-n">01</span><strong>Streetwear</strong><span class="bk-soon">EM BREVE</span></li>
-      <li><span class="bk-n">02</span><strong>Essentials</strong><span class="bk-soon">EM BREVE</span></li>
-      <li><span class="bk-n">03</span><strong>Old Money</strong><span class="bk-soon">EM BREVE</span></li>
-      <li><span class="bk-n">04</span><strong>Casual Premium</strong><span class="bk-soon">EM BREVE</span></li>
-    </ol>
+    <ul class="bk-grid">
+      <li class="bk-card bk-card-street"><span class="bk-art" aria-hidden="true"></span><span class="bk-n">01</span><h3>STREETWEAR</h3><p>A new urban expression.</p></li>
+      <li class="bk-card bk-card-ess"><span class="bk-art" aria-hidden="true"></span><span class="bk-n">02</span><h3>ESSENTIALS</h3><p>Less, but better.</p></li>
+      <li class="bk-card bk-card-old"><span class="bk-art" aria-hidden="true"></span><span class="bk-n">03</span><h3>OLD MONEY</h3><p>Timeless attitude.</p></li>
+      <li class="bk-card bk-card-casual"><span class="bk-art" aria-hidden="true"></span><span class="bk-n">04</span><h3>CASUAL PREMIUM</h3><p>Elevated everyday wear.</p></li>
+    </ul>
+    <p class="bk-lines-note">Peças, preços e disponibilidade serão revelados no lançamento.</p>
   </section>
 
+  <!-- 04 · FECHAMENTO -->
   <section class="bk-end" aria-labelledby="bkEndTitle">
-    <h2 id="bkEndTitle" class="bk-end-word">EM BREVE.</h2>
+    <p class="bk-label bk-label-dark">ATÉ LÁ</p>
+    <h2 id="bkEndTitle" class="bk-end-word">05.12.2026</h2>
     <p>A BALCKER ainda não está à venda. Enquanto isso, a Black Forge continua aberta.</p>
     <a class="fx-btn fx-btn-ghost" href="produtos.html">EXPLORAR A BLACK FORGE <span aria-hidden="true">→</span></a>
   </section>

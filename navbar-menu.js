@@ -14,7 +14,7 @@
 <div class="announcement" aria-label="Avisos da loja">
   <span>BLACK FORGE / BRASIL</span>
   <span>FEITO PARA SER DIFERENTE · MODA ALTERNATIVA</span>
-  <span>BALCKER — EM BREVE</span>
+  <span>BALCKER — 05.12.2026</span>
 </div>
 
 <header class="header fx-header" id="topo">
@@ -28,7 +28,7 @@
     <a href="index.html">INÍCIO</a>
     <a href="produtos.html" data-nav="catalogo">BLACK FORGE</a>
     <a href="produtos.html#estilos" data-nav="estilos">ESTILOS</a>
-    <a href="balcker.html" class="fx-nav-balcker">BALCKER <small>EM BREVE</small></a>
+    <a href="balcker.html" class="fx-nav-balcker">BALCKER <small>— EM BREVE</small></a>
     <a href="index.html#sobre">SOBRE</a>
   </nav>
   <div class="header-actions">
