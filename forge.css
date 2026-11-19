@@ -26,7 +26,8 @@
 }
 
 /* ---------- 2. Base ---------- */
-body.fx{background:var(--fx-ink);color:var(--fx-bone);font-family:var(--fx-text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.fx *,.fx *:before,.fx *:after{box-sizing:border-box}
+body.fx{margin:0;background:var(--fx-ink);color:var(--fx-bone);font-family:var(--fx-text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 .fx img{max-width:100%}
 .fx :is(button,input,select,textarea){font-family:inherit}
 .fx :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline:2px solid var(--fx-sand);outline-offset:3px}
@@ -106,7 +107,7 @@ body.fx{background:var(--fx-ink);color:var(--fx-bone);font-family:var(--fx-text)
 .fx .forge-product-actions,.fx .forge-product-link{display:none}
 
 /* Preço com cupom BLACK5 (dados reais do black5.js) — versão compacta */
-.fx .bf-black5-price{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:flex-start;align-self:stretch;width:100%;text-align:left;gap:6px 8px;margin:2px 0 0!important;color:var(--fx-stone);font-size:12px}
+.fx .forge-product .bf-black5-price{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:flex-start;align-self:stretch;width:100%;text-align:left;gap:6px 8px;margin:2px 0 0!important;color:var(--fx-stone);font-size:12px}
 .fx .bf-black5-price :is(span,strong,small){color:inherit}
 .fx .bf-black5-badge{order:-1;padding:3px 6px;border:1px solid var(--fx-line-2)!important;background:transparent!important;color:var(--fx-sand)!important;font:700 9px/1 var(--fx-text);letter-spacing:.14em}
 .fx .bf-black5-offer{color:var(--fx-sand-2)!important;font:600 12px/1.3 var(--fx-text)}
@@ -297,7 +298,19 @@ a.fx-chip-soon:hover{color:var(--fx-bone);border-color:var(--fx-stone)}
 
 /* ---------- 11. Checkout (pedido.html) — tom neutro, sem vermelho ---------- */
 body.fx.order-punk{--bf-red:#4a443d;--bf-paper:#e9e4da}
-.fx.order-punk .bf-checkout-hero{border-color:var(--fx-line)}
+.fx.order-punk .bf-checkout-hero{grid-template-columns:1fr;min-height:0;background:var(--fx-ink);color:var(--fx-bone);border:0;border-bottom:1px solid var(--fx-line)}
+.fx.order-punk .bf-hero-copy{background:none;padding:clamp(40px,5vw,72px) 0 clamp(28px,3vw,40px)}
+.fx.order-punk .bf-overline{font:700 11px/1.5 var(--fx-text);letter-spacing:.22em;color:var(--fx-stone)}
+.fx.order-punk .bf-overline span{color:var(--fx-sand);font-size:12px}
+.fx.order-punk .order-main .bf-checkout-hero h1{font:800 clamp(56px,7vw,110px)/.88 var(--fx-display);letter-spacing:-.02em;color:var(--fx-bone);transform:none}
+.fx.order-punk .bf-checkout-hero h1>span:not(.bf-title-period){display:inline;background:none;color:var(--fx-sand);padding:0;margin:0}
+.fx.order-punk .bf-hero-subtitle{font:600 12px/1.5 var(--fx-text);letter-spacing:.18em;color:var(--fx-stone)}
+.fx.order-punk .bf-hero-poster,.fx.order-punk .bf-bottom-ribbon,.fx.order-punk .bf-panel-scribble{display:none}
+.fx.order-punk .bf-order-mini-banner{background:var(--fx-graphite);color:var(--fx-bone);border:1px solid var(--fx-line-2)}
+.fx.order-punk .bf-order-mini-banner :is(span,small){color:var(--fx-stone)}
+.fx.order-punk .bf-order-mini-banner>strong{color:var(--fx-bone)}
+.fx.order-punk .bf-order-mini-banner>strong span{color:var(--fx-sand)}
+.fx.order-punk .bf-order-mini-banner:after,.fx.order-punk .bf-order-mini-banner:before{display:none}
 
 /* ---------- 12. Páginas legais ---------- */
 .fx.bf-legal-page{background:var(--fx-ink);color:var(--fx-bone)}
