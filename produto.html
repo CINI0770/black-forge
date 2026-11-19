@@ -12,9 +12,9 @@
   <script src="./black5.js"></script>
   <link rel="stylesheet" href="./black-friday.css">
   <script src="./black-friday.js"></script>
-  <link rel="stylesheet" href="./bf-redesign.css?v=20261107">
+  <link rel="stylesheet" href="./forge.css?v=20261119">
 </head>
-<body class="bf-v2 bf-product-page">
+<body class="fx bf-product-page">
   <a class="skip-link" href="#produto">Pular para o conteúdo</a>
 
   <!-- Barra de navegação padrão: vem do navbar-menu.js -->
@@ -23,14 +23,7 @@
   <!-- O produto.js preenche este main com as fotos (esquerda) e os detalhes (direita) -->
   <main id="produto" class="produto-pagina"></main>
 
-  <footer class="footer">
-    <div class="footer-top">
-      <a class="brand" href="index.html"><span class="brand-mark">✦</span><span>BLACK<span class="brand-light">FORGE</span><small>DARKWEAR &amp; STREETWEAR</small></span></a>
-      <p>MODA ALTERNATIVA.<br>SEU ESTILO, SEM PADRÕES.</p>
-      <div><a href="index.html">INÍCIO ↗</a><a href="produtos.html">PRODUTOS ↗</a><a href="index.html#duvidas">DÚVIDAS ↗</a></div>
-    </div>
-    <div class="footer-bottom"><span>© 2026 BLACK FORGE</span><span>ESTILO SEM REGRAS / PAGAMENTO SEGURO</span><a href="#topo">VOLTAR AO TOPO ↑</a></div>
-  <nav class="forge-footer-links" aria-label="Informações e políticas da loja"><a href="politica-entrega.html">ENTREGA E FRETE</a><a href="trocas-devolucoes.html">TROCAS E DEVOLUÇÕES</a><a href="termos-de-compra.html">TERMOS DE COMPRA</a><a href="politica-privacidade.html">PRIVACIDADE</a><a href="mailto:blackforge.oficial@gmail.com">CONTATO</a></nav></footer>
+  <div id="site-footer"></div>
 
   <!-- catalogo.js primeiro (cria a lista), depois produto.js (usa a lista) -->
   <!-- selecao.js recebe o "adicionar ao carrinho" e salva no localStorage -->
@@ -39,6 +32,7 @@
   <script src="./variacoes.js"></script>
   <script src="./navbar-menu.js"></script>
   <script src="./selecao.js"></script>
+  <script src="./site-footer.js" defer></script>
   <script src="./carrinho.js"></script>
   <script src="./produto.js"></script>
 </body>
