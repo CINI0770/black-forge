@@ -399,3 +399,15 @@ body.fx.order-punk{--bf-red:#4a443d;--bf-paper:#e9e4da}
 .fx-closed-text{max-width:560px;margin:28px 0 0;color:var(--fx-stone);font-size:17px;line-height:1.75}
 .fx-closed-note{margin:28px 0 0;color:var(--fx-mute);font-size:14px}
 .fx-closed-note a{color:var(--fx-bone);text-decoration:underline;text-underline-offset:3px}
+.fx-closed-next{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px;margin-top:44px;padding:22px 0;border-top:1px solid var(--fx-line);border-bottom:1px solid var(--fx-line);text-decoration:none;color:var(--fx-stone);font:700 10px/1 var(--fx-text);letter-spacing:.24em}
+.fx-closed-next strong{font:300 32px/1 'Cormorant Garamond',Didot,Georgia,serif;letter-spacing:.24em;color:var(--fx-bone)}
+.fx-closed-next:hover strong{color:var(--fx-sand)}
+
+/* ---------- 15. Destaque BALCKER na home (05.12.2026) ---------- */
+.fx-bt-word{font-family:'Cormorant Garamond',Didot,'Bodoni 72',Georgia,serif!important;font-weight:300!important}
+.fx-bt-date{margin:22px 0 0;font:300 clamp(30px,3.4vw,48px)/1 'Cormorant Garamond',Didot,Georgia,serif;letter-spacing:.12em;padding-left:.12em}
+.fx-bt-claim{margin-top:26px}
+
+/* ---------- 16. Peça descontinuada (descontinuados.js) ---------- */
+.fx .bf-discontinued-note{margin:14px 0 0;padding:18px 20px;border:1px solid var(--fx-line-2);color:var(--fx-stone);font-size:14px;line-height:1.7}
+.fx .bf-discontinued-note a{color:var(--fx-bone);text-decoration:underline;text-underline-offset:3px}
